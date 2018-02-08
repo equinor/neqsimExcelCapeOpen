@@ -1,0 +1,9 @@
+diff a/NeqSimCapeOpen/Material.cs b/NeqSimCapeOpen/Material.cs	(rejected hunks)
+@@ -4,6 +4,7 @@
+ using System.Text;
+ using CAPEOPEN110;
+ 
++// TEST!
+ 
+ namespace CapeOpenThermo
+ {

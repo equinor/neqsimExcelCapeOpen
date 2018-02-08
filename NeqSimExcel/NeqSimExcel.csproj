@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <OSVersion />
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>NeqSimExcel</RootNamespace>
+    <AssemblyName>NeqSimExcel</AssemblyName>
+    <VSTO_HostDocumentName>NeqSimExcel.xlsx</VSTO_HostDocumentName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <DefineConstants>VSTO40</DefineConstants>
+    <OfficeApplication>Excel</OfficeApplication>
+    <ProjectGuid>{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}</ProjectGuid>
+    <SolutionID>ca1a3dd7-f7b1-4541-8f38-594d57ea9ce4</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>C:\programming\CapeOpenThermo\NeqSimExcel\publish\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.3</ApplicationVersion>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateInterval>0</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>NeqSimExcel</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>NeqSimExcel</FriendlyName>
+    <OfficeApplicationDescription />
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VSTO_EmbedTypeLibraryInAssembly>false</VSTO_EmbedTypeLibraryInAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IPDMCTRL, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\IPDMCTRL.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Outlook.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Vbe.Interop, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NeqSim, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dllfiles\NeqSim.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, PublicKeyToken=6f7d66a3bb7de652, processorArchitecture=MSIL">
+      <HintPath>..\packages\MacroView.VSTO.2.3.0\lib\net45\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Westwind.Utilities, Version=2.71.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MacroView.VSTO.2.3.0\lib\net45\Westwind.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NeqSimThermoSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sheet1.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet1.Designer.cs">
+      <DependentUpon>Sheet1.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet104.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet104.Designer.cs">
+      <DependentUpon>Sheet104.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet111.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet111.Designer.cs">
+      <DependentUpon>Sheet111.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet16.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet16.Designer.cs">
+      <DependentUpon>Sheet16.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet17.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet17.Designer.cs">
+      <DependentUpon>Sheet17.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet18.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet18.Designer.cs">
+      <DependentUpon>Sheet18.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet191.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet191.Designer.cs">
+      <DependentUpon>Sheet191.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet20.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet20.Designer.cs">
+      <DependentUpon>Sheet20.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet21.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet21.Designer.cs">
+      <DependentUpon>Sheet21.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet22.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet22.Designer.cs">
+      <DependentUpon>Sheet22.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet23.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet23.Designer.cs">
+      <DependentUpon>Sheet23.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet241.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet241.Designer.cs">
+      <DependentUpon>Sheet241.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet25.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet25.Designer.cs">
+      <DependentUpon>Sheet25.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet26.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet26.Designer.cs">
+      <DependentUpon>Sheet26.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet27.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet27.Designer.cs">
+      <DependentUpon>Sheet27.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet28.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet28.Designer.cs">
+      <DependentUpon>Sheet28.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="StartUpSheet.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="StartUpSheet.Designer.cs">
+      <DependentUpon>StartUpSheet.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet13.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet13.Designer.cs">
+      <DependentUpon>Sheet13.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet14.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet14.Designer.cs">
+      <DependentUpon>Sheet14.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet15.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet15.Designer.cs">
+      <DependentUpon>Sheet15.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet2.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet2.Designer.cs">
+      <DependentUpon>Sheet2.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet3.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet3.Designer.cs">
+      <DependentUpon>Sheet3.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="hydrate.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="hydrate.Designer.cs">
+      <DependentUpon>hydrate.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="phaseEnvelope.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="phaseEnvelope.Designer.cs">
+      <DependentUpon>phaseEnvelope.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Hysys.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Hysys.Designer.cs">
+      <DependentUpon>Hysys.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Olga.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Olga.Designer.cs">
+      <DependentUpon>Olga.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet81.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet81.Designer.cs">
+      <DependentUpon>Sheet81.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet9.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet9.Designer.cs">
+      <DependentUpon>Sheet9.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="ThisWorkbook.Designer.cs">
+      <DependentUpon>ThisWorkbook.Designer.xml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="phaseEnvelope.resx">
+      <DependentUpon>phaseEnvelope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sheet1.resx">
+      <DependentUpon>Sheet1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet104.resx">
+      <DependentUpon>Sheet104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet111.resx">
+      <DependentUpon>Sheet111.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet13.resx">
+      <DependentUpon>Sheet13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet14.resx">
+      <DependentUpon>Sheet14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet15.resx">
+      <DependentUpon>Sheet15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet16.resx">
+      <DependentUpon>Sheet16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet17.resx">
+      <DependentUpon>Sheet17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet18.resx">
+      <DependentUpon>Sheet18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet2.resx">
+      <DependentUpon>Sheet2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet21.resx">
+      <DependentUpon>Sheet21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet22.resx">
+      <DependentUpon>Sheet22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet23.resx">
+      <DependentUpon>Sheet23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet241.resx">
+      <DependentUpon>Sheet241.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet25.resx">
+      <DependentUpon>Sheet25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet26.resx">
+      <DependentUpon>Sheet26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet27.resx">
+      <DependentUpon>Sheet27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet28.resx">
+      <DependentUpon>Sheet28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet3.resx">
+      <DependentUpon>Sheet3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hydrate.resx">
+      <DependentUpon>hydrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hysys.resx">
+      <DependentUpon>Hysys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Olga.resx">
+      <DependentUpon>Olga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet81.resx">
+      <DependentUpon>Sheet81.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet9.resx">
+      <DependentUpon>Sheet9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUpSheet.resx">
+      <DependentUpon>StartUpSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="NeqSimExcel.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NeqSimExcel_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="ThisWorkbook.Designer.xml">
+      <DependentUpon>ThisWorkbook.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet1.Designer.xml">
+      <DependentUpon>Sheet1.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet2.Designer.xml">
+      <DependentUpon>Sheet2.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet3.Designer.xml">
+      <DependentUpon>Sheet3.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hydrate.Designer.xml">
+      <DependentUpon>hydrate.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="phaseEnvelope.Designer.xml">
+      <DependentUpon>phaseEnvelope.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hysys.Designer.xml">
+      <DependentUpon>Hysys.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Olga.Designer.xml">
+      <DependentUpon>Olga.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet9.Designer.xml">
+      <DependentUpon>Sheet9.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet81.Designer.xml">
+      <DependentUpon>Sheet81.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet104.Designer.xml">
+      <DependentUpon>Sheet104.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet111.Designer.xml">
+      <DependentUpon>Sheet111.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet13.Designer.xml">
+      <DependentUpon>Sheet13.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet14.Designer.xml">
+      <DependentUpon>Sheet14.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet15.Designer.xml">
+      <DependentUpon>Sheet15.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StartUpSheet.Designer.xml">
+      <DependentUpon>StartUpSheet.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet16.Designer.xml">
+      <DependentUpon>Sheet16.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet17.Designer.xml">
+      <DependentUpon>Sheet17.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet18.Designer.xml">
+      <DependentUpon>Sheet18.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseConnection\DatabaseConnection.csproj">
+      <Project>{d9a74316-c0e1-4072-b258-8b832f4f2b64}</Project>
+      <Name>DatabaseConnection</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet191.Designer.xml">
+      <DependentUpon>Sheet191.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet20.Designer.xml">
+      <DependentUpon>Sheet20.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet21.Designer.xml">
+      <DependentUpon>Sheet21.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet22.Designer.xml">
+      <DependentUpon>Sheet22.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet23.Designer.xml">
+      <DependentUpon>Sheet23.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet25.Designer.xml">
+      <DependentUpon>Sheet25.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet241.Designer.xml">
+      <DependentUpon>Sheet241.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet26.Designer.xml">
+      <DependentUpon>Sheet26.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet27.Designer.xml">
+      <DependentUpon>Sheet27.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet28.Designer.xml">
+      <DependentUpon>Sheet28.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>NeqSimExcel_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>818A675C1287F9B20D277F90B3E8A50378277278</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="NeqSimExcel.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\Excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]NeqSimExcel.xlsx&quot;" />
+        <Host Name="Excel Document" Path=".\NeqSimExcel.xlsx" GeneratedCodeNamespace="NeqSimExcel" PublishedHash="DDA7FC0E41ADCD2E9FB212F9720146BD696D064C">
+          <HostItem Name="Sheet4" Code="hydrate.cs" CanonicalName="Sheet4" PublishedHash="AAE8A5B0ABCEF3D0C2617DC2E6B9883E83D8E5C5" DisplayName="Gas hydrate" Blueprint="hydrate.Designer.xml" GeneratedCode="hydrate.Designer.cs" />
+          <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="1901C28F6D79260E3EF0D7EF2E7CB7C4A17DC165" DisplayName="Cape Open" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
+          <HostItem Name="Sheet7" Code="Olga.cs" CanonicalName="Sheet7" PublishedHash="7DE1F6F0630A70C7E2F2CD905D0C5C62175B1BCC" DisplayName="OLGA" Blueprint="Olga.Designer.xml" GeneratedCode="Olga.Designer.cs" />
+          <HostItem Name="Sheet5" Code="phaseEnvelope.cs" CanonicalName="Sheet5" PublishedHash="70B33402A2432D5200B2C8704D3DB2692216DCCD" DisplayName="phase envelope" Blueprint="phaseEnvelope.Designer.xml" GeneratedCode="phaseEnvelope.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="8820C74F3D5C50B50F58259A9785000B6300A2CA" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
+          <HostItem Name="Sheet10" Code="Sheet104.cs" CanonicalName="Sheet10" PublishedHash="10D5840094C0AB35A0F9FF9D8722E0F3CBDC634B" DisplayName="waxT" Blueprint="Sheet104.Designer.xml" GeneratedCode="Sheet104.Designer.cs" />
+          <HostItem Name="Sheet11" Code="Sheet111.cs" CanonicalName="Sheet11" PublishedHash="F34DEB7A80272A2C8B5FCEB28C2858870A9389CA" DisplayName="freezeT" Blueprint="Sheet111.Designer.xml" GeneratedCode="Sheet111.Designer.cs" />
+          <HostItem Name="Sheet13" Code="Sheet13.cs" CanonicalName="Sheet13" PublishedHash="1560BEBB3AB61C9CDE2F45BED040B16CFB122C3F" DisplayName="Property generator" Blueprint="Sheet13.Designer.xml" GeneratedCode="Sheet13.Designer.cs" />
+          <HostItem Name="Sheet14" Code="Sheet14.cs" CanonicalName="Sheet14" PublishedHash="7C92FB77EC30DFEE784B11DB6209B075687EE009" DisplayName="Scale" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.cs" />
+          <HostItem Name="Sheet15" Code="Sheet15.cs" CanonicalName="Sheet15" PublishedHash="FD91D68602F79997CBC942CD94DE22AB7EBA10AA" DisplayName="PVTfit" Blueprint="Sheet15.Designer.xml" GeneratedCode="Sheet15.Designer.cs" />
+          <HostItem Name="Sheet16" Code="Sheet16.cs" CanonicalName="Sheet16" PublishedHash="8B234130E0D1654704C293A9EAC280E18939605B" DisplayName="NeqSimWeb" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.cs" />
+          <HostItem Name="Sheet17" Code="Sheet17.cs" CanonicalName="Sheet17" PublishedHash="0D8D7DAD0A706131F19D30FAE72BB978A7422766" DisplayName="RFOpipedehyd" Blueprint="Sheet17.Designer.xml" GeneratedCode="Sheet17.Designer.cs" />
+          <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="C37561CB44357FBA9473743AD5DD4E8CA6D65F46" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
+          <HostItem Name="Sheet19" Code="Sheet191.cs" CanonicalName="Sheet19" PublishedHash="AF5DCD306C0B0D9F05CC43A1512A743111474BF4" DisplayName="Recombine" Blueprint="Sheet191.Designer.xml" GeneratedCode="Sheet191.Designer.cs" />
+          <HostItem Name="Sheet2" Code="Sheet2.cs" CanonicalName="Sheet2" PublishedHash="B526AFE875AF8BE0DA6AA1362C325009491F2097" DisplayName="HC dew point" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.cs" />
+          <HostItem Name="Sheet20" Code="Sheet20.cs" CanonicalName="Sheet20" PublishedHash="408AA55BBEA7A6D36ACF8B0C32F102B73C8638BC" DisplayName="Mix" Blueprint="Sheet20.Designer.xml" GeneratedCode="Sheet20.Designer.cs" />
+          <HostItem Name="Sheet21" Code="Sheet21.cs" CanonicalName="Sheet21" PublishedHash="5FDE4CC06650B470C70B291B44CF7D235B094E80" DisplayName="Valve" Blueprint="Sheet21.Designer.xml" GeneratedCode="Sheet21.Designer.cs" />
+          <HostItem Name="Sheet22" Code="Sheet22.cs" CanonicalName="Sheet22" PublishedHash="034D46B8F30D7C5DCD100CA26239BC0588C4AE72" DisplayName="Compressor" Blueprint="Sheet22.Designer.xml" GeneratedCode="Sheet22.Designer.cs" />
+          <HostItem Name="Sheet23" Code="Sheet23.cs" CanonicalName="Sheet23" PublishedHash="33774714919AF888464F1D6451E44812C3E78DB1" DisplayName="SepProcess" Blueprint="Sheet23.Designer.xml" GeneratedCode="Sheet23.Designer.cs" />
+          <HostItem Name="Sheet24" Code="Sheet241.cs" CanonicalName="Sheet24" PublishedHash="970A1CC7612B94F29B1E9D3AF4D70C36CEBCDF6C" DisplayName="BinaryCalc" Blueprint="Sheet241.Designer.xml" GeneratedCode="Sheet241.Designer.cs" />
+          <HostItem Name="Sheet25" Code="Sheet25.cs" CanonicalName="Sheet25" PublishedHash="47C33FACDD758756ED485D2B4AD8D012CE988D1F" DisplayName="DewPointControl" Blueprint="Sheet25.Designer.xml" GeneratedCode="Sheet25.Designer.cs" />
+          <HostItem Name="Sheet26" Code="Sheet26.cs" CanonicalName="Sheet26" PublishedHash="0D7AFF37F7A6C8CA5125A671E33E26237A3A6C26" DisplayName="AddPseudo" Blueprint="Sheet26.Designer.xml" GeneratedCode="Sheet26.Designer.cs" />
+          <HostItem Name="Sheet27" Code="Sheet27.cs" CanonicalName="Sheet27" PublishedHash="EF611CAC376208E2DCF054DC026BE1F5B3F17277" DisplayName="ReadFluid" Blueprint="Sheet27.Designer.xml" GeneratedCode="Sheet27.Designer.cs" />
+          <HostItem Name="Sheet28" Code="Sheet28.cs" CanonicalName="Sheet28" PublishedHash="DE3139E2848F2BFD75A4F98594D6CE8C412F3B16" DisplayName="wellstream" Blueprint="Sheet28.Designer.xml" GeneratedCode="Sheet28.Designer.cs" />
+          <HostItem Name="Sheet3" Code="Sheet3.cs" CanonicalName="Sheet3" PublishedHash="B40DAEEFF5B462B15A86B3EF36A74D149D4C21CB" DisplayName="TPflash" Blueprint="Sheet3.Designer.xml" GeneratedCode="Sheet3.Designer.cs" />
+          <HostItem Name="Sheet8" Code="Sheet81.cs" CanonicalName="Sheet8" PublishedHash="62C8AE8EC1F1489F0B1624C95CBAEF4A4B9A923F" DisplayName="PVTcalc" Blueprint="Sheet81.Designer.xml" GeneratedCode="Sheet81.Designer.cs" />
+          <HostItem Name="Sheet9" Code="Sheet9.cs" CanonicalName="Sheet9" PublishedHash="259883135835C5485C641464D9D1357D13461552" DisplayName="Characterized fluid" Blueprint="Sheet9.Designer.xml" GeneratedCode="Sheet9.Designer.cs" />
+          <HostItem Name="Sheet12" Code="StartUpSheet.cs" CanonicalName="Sheet12" PublishedHash="6A41F0BD1465264DC2EFB33C2952FA63C1A8F0C4" DisplayName="Startup" Blueprint="StartUpSheet.Designer.xml" GeneratedCode="StartUpSheet.Designer.cs" />
+          <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="339984E18B321BA9D93BE186A47D8A45AF4749BD" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!--
+    To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
