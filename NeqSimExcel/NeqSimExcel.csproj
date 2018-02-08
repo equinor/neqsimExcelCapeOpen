@@ -686,14 +686,14 @@
     <ManifestKeyFile>NeqSimExcel_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>82560DF97931A0DF31C19FEEC3D8BDD5BD98C47F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>818A675C1287F9B20D277F90B3E8A50378277278</ManifestCertificateThumbprint>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="NeqSimExcel.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]NeqSimExcel.xlsx&quot;" />
+        <ProjectProperties HostName="NeqSimExcel.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\Excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]NeqSimExcel.xlsx&quot;" />
         <Host Name="Excel Document" Path=".\NeqSimExcel.xlsx" GeneratedCodeNamespace="NeqSimExcel" PublishedHash="DDA7FC0E41ADCD2E9FB212F9720146BD696D064C">
           <HostItem Name="Sheet4" Code="hydrate.cs" CanonicalName="Sheet4" PublishedHash="AAE8A5B0ABCEF3D0C2617DC2E6B9883E83D8E5C5" DisplayName="Gas hydrate" Blueprint="hydrate.Designer.xml" GeneratedCode="hydrate.Designer.cs" />
           <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="1901C28F6D79260E3EF0D7EF2E7CB7C4A17DC165" DisplayName="Cape Open" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
