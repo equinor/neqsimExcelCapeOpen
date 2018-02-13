@@ -21,7 +21,7 @@ namespace NeqSimNET
         {
 
             thermoSystem = thermoSystem.readObject(672);
-            
+
             ThermodynamicOperations ops = new ThermodynamicOperations(thermoSystem);
             ops.TPflash();
             thermoSystem.display();
@@ -46,14 +46,13 @@ namespace NeqSimNET
             oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             thermoSystem.init(0);
             thermoSystem.useVolumeCorrection(true);
-            thermoSystem.setNumberOfPhases(1);
-            thermoSystem.setMaxNumberOfPhases(1);
             thermoSystem.init(1);
+            thermoSystem.setNumberOfPhases(1);
+            thermoSystem.setMaxNumberOfPhases(3);
         }
 
         public SystemInterface getThermoSystem()
         {
-
             return thermoSystem;
         }
 
@@ -103,21 +102,22 @@ namespace NeqSimNET
         public void initFlashCalc()
         {
             thermoSystem.setMultiPhaseCheck(true);
-            thermoSystem.setMaxNumberOfPhases(3);
+            //  thermoSystem.setMaxNumberOfPhases(3);
+            //thermoSystem.init(0);
         }
 
         public void setTPFractionFlash(double T, double P, double[] x)
         {
-            thermoSystem.init(0);
             thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
+            //thermoSystem.init(0);
         }
 
         public void endFlashCalc()
         {
-            thermoSystem.setMaxNumberOfPhases(1);
+          //  thermoSystem.setMaxNumberOfPhases(1);
         }
 
         public void init(string phase, int initType)
@@ -127,7 +127,16 @@ namespace NeqSimNET
             {
                 phasetype = 1;
             }
-           // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
+            else if (phase.Equals("Liquid"))
+            {
+                phasetype = 0;
+            }
+            else
+            {
+                phasetype = 1; // stop here - to check for errors
+                string nonHandeledPhase = phase;
+            }
+            // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
             thermoSystem.setPhaseType(0, phasetype);
             thermoSystem.init(initType, 0);
         }
@@ -146,19 +155,19 @@ namespace NeqSimNET
                 thermoSystem.init(1);
             }
             double factor = 1.0;
-           if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
-           {
+            if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
+            {
                 factor = 0.1;
             }
             else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) && phase.Equals("Vapor"))
             {
                 factor = 0.1;
             }
-           
+
             double[] fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < fugacityCoef.Length; i++)
             {
-                fugacityCoef[i] = factor*thermoSystem.getPhase(0).getComponent(i).getFugasityCoefficient();
+                fugacityCoef[i] = factor * thermoSystem.getPhase(0).getComponent(i).getFugasityCoefficient();
             }
 
             return fugacityCoef;
@@ -191,19 +200,20 @@ namespace NeqSimNET
             double[] fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < fugacityCoef.Length; i++)
             {
-                if (factor > 5) { 
-                if (thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient() > 0)
+                if (factor > 5)
                 {
-                    fugacityCoef[i] = factor * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    if (thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient() > 0)
+                    {
+                        fugacityCoef[i] = factor * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    }
+                    else
+                    {
+                        fugacityCoef[i] = 0.1 * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    }
                 }
                 else
                 {
-                    fugacityCoef[i] = 0.1 * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
-                }
-            }
-                else
-                {
-                    fugacityCoef[i] =  thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
                 }
 
             }
@@ -237,7 +247,7 @@ namespace NeqSimNET
         public void PHflash(double enthalpySpec)
         {
             ThermodynamicOperations ops = new ThermodynamicOperations(thermoSystem);
-            ops.PHflash(enthalpySpec,0);
+            ops.PHflash(enthalpySpec, 0);
         }
 
         public void PSflash(double entropySpec)
@@ -258,50 +268,52 @@ namespace NeqSimNET
 
         public Boolean checkIfInitNeed(double T, double P, double[] x, string phase)
         {
-          
-             int phasetype = 0;
-                if (phase.Equals("Vapor"))
-                {
-                    phasetype = 1;
-                }
+
+            int phasetype = 0;
+            if (phase.Equals("Vapor"))
+            {
+                phasetype = 1;
+            }
 
 
-                //if (true)
-                //setCurrentProps(T, P, x, phasetype);
-                //return true;
+            //if (true)
+            //setCurrentProps(T, P, x, phasetype);
+            //return true;
 
-                if (oldPhaseType != phasetype)                {
-                    setCurrentProps(T, P, x, phasetype);
-                    return true;
-                }
+            if (oldPhaseType != phasetype)
+            {
+                setCurrentProps(T, P, x, phasetype);
+                return true;
+            }
 
-                double sum = 0.0;
-                sum += Math.Abs(T - oldTemperature) + Math.Abs(P - oldPressure);
-                if (sum > 1e-50)
-                {
-                    setCurrentProps(T, P, x, phasetype);
-                    return true;
-                }
-           
-            for(int i=0;i<x.Length;i++)
+            double sum = 0.0;
+            sum += Math.Abs(T - oldTemperature) + Math.Abs(P - oldPressure);
+            if (sum > 1e-50)
+            {
+                setCurrentProps(T, P, x, phasetype);
+                return true;
+            }
+
+            for (int i = 0; i < x.Length; i++)
             {
                 sum += Math.Abs(x[i] - oldMoleFraction[i]);
-                if (sum > 1e-50) break;  
+                if (sum > 1e-50) break;
             }
             if (sum > 1e-50)
             {
                 setCurrentProps(T, P, x, phasetype);
                 return true;
             }
-           
-              return false;
+
+            return false;
         }
 
-        public void setCurrentProps(double T, double P, double[] x, int localOldPhaseType){
-            oldPhaseType = localOldPhaseType; 
+        public void setCurrentProps(double T, double P, double[] x, int localOldPhaseType)
+        {
+            oldPhaseType = localOldPhaseType;
             oldTemperature = T;
             oldPressure = P;
-            Array.Copy(x,oldMoleFraction, x.Length);
+            Array.Copy(x, oldMoleFraction, x.Length);
         }
 
         public double[,] getlogFugacityCoefficientsDmoles(string phase, Boolean doInit = true)
@@ -353,8 +365,8 @@ namespace NeqSimNET
             return fugacityCoef;
         }
 
-     
-       
+
+
 
         public double[] getlogFugacityCoefficientsDpressure(string phase, Boolean doInit = true)
         {
@@ -374,7 +386,7 @@ namespace NeqSimNET
             double[] fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < fugacityCoef.Length; i++)
             {
-                fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getdfugdp()/1.0e5;
+                fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getdfugdp() / 1.0e5;
             }
 
             return fugacityCoef;
@@ -382,8 +394,8 @@ namespace NeqSimNET
 
         public double getSurfaceTension(int phase1, int phase2)
         {
-                thermoSystem.calcInterfaceProperties();
-                return thermoSystem.getInterphaseProperties().getSurfaceTension(phase1, phase2);
+            thermoSystem.calcInterfaceProperties();
+            return thermoSystem.getInterphaseProperties().getSurfaceTension(phase1, phase2);
         }
 
         public double getSurfaceTension(string phase1, string phase2)
@@ -427,7 +439,7 @@ namespace NeqSimNET
 
         public double getEnthalpydT(string phase, Boolean doInit = true)
         {
-            return getHeatCapacityCp(phase,doInit);
+            return getHeatCapacityCp(phase, doInit);
         }
 
         public double getEnthalpydP(string phase, Boolean doInit = true)
@@ -451,7 +463,7 @@ namespace NeqSimNET
             return getHeatCapacityCv(phase, doInit);
         }
 
-          public double[] getEnthalpydN(string phase, Boolean doInit = true)
+        public double[] getEnthalpydN(string phase, Boolean doInit = true)
         {
             if (doInit)
             {
@@ -468,40 +480,40 @@ namespace NeqSimNET
             double[] entdn = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < entdn.Length; i++)
             {
-                entdn[i] = thermoSystem.getPhase(0).getComponent(i).getEnthalpy(thermoSystem.getPhase(0).getTemperature())/thermoSystem.getPhase(0).getComponent(i).getNumberOfMolesInPhase();
+                entdn[i] = thermoSystem.getPhase(0).getComponent(i).getEnthalpy(thermoSystem.getPhase(0).getTemperature()) / thermoSystem.getPhase(0).getComponent(i).getNumberOfMolesInPhase();
             }
 
             return entdn;
         }
 
-          public double[] getEntropydN(string phase, Boolean doInit = true)
-          {
-              if (doInit)
-              {
-                  thermoSystem.setNumberOfPhases(1);
-                  int phasetype = 0;
-                  if (phase.Equals("Vapor"))
-                  {
-                      phasetype = 1;
-                  }
-                  thermoSystem.setPhaseType(0, phasetype);
-                  thermoSystem.init(2);
-              }
+        public double[] getEntropydN(string phase, Boolean doInit = true)
+        {
+            if (doInit)
+            {
+                thermoSystem.setNumberOfPhases(1);
+                int phasetype = 0;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                }
+                thermoSystem.setPhaseType(0, phasetype);
+                thermoSystem.init(2);
+            }
 
-              double[] entdn = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
-              for (int i = 0; i < entdn.Length; i++)
-              {
-                  entdn[i] = thermoSystem.getPhase(0).getComponent(i).getEntropy(thermoSystem.getPhase(0).getTemperature(), thermoSystem.getPhase(0).getPressure())/thermoSystem.getPhase(0).getComponent(i).getNumberOfMolesInPhase();
-              }
+            double[] entdn = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+            for (int i = 0; i < entdn.Length; i++)
+            {
+                entdn[i] = thermoSystem.getPhase(0).getComponent(i).getEntropy(thermoSystem.getPhase(0).getTemperature(), thermoSystem.getPhase(0).getPressure()) / thermoSystem.getPhase(0).getComponent(i).getNumberOfMolesInPhase();
+            }
 
-              return entdn;
-          }
-
-
+            return entdn;
+        }
 
 
-         //TODO write your implementation code here:
-          
+
+
+        //TODO write your implementation code here:
+
 
         public double getEntropy(string phase, Boolean doInit = true)
         {
@@ -599,7 +611,7 @@ namespace NeqSimNET
             return thermoSystem.getPhase(0).getInternalEnergy() / thermoSystem.getPhase(0).getNumberOfMolesInPhase();
         }
 
-      
+
 
         public double getJouleThomsonCoefficient(string phase, Boolean doInit = true)
         {
@@ -614,7 +626,7 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
-            return thermoSystem.getPhase(0).getJouleThomsonCoefficient()/1.0e5;
+            return thermoSystem.getPhase(0).getJouleThomsonCoefficient() / 1.0e5;
         }
 
         public double getSpeedOfSound(string phase, Boolean doInit = true)
@@ -679,7 +691,7 @@ namespace NeqSimNET
                 thermoSystem.init(1);
             }
             thermoSystem.getPhase(0).initPhysicalProperties("density");
-          //  thermoSystem.useVolumeCorrection(true);
+            //  thermoSystem.useVolumeCorrection(true);
             return thermoSystem.getPhase(0).getPhysicalProperties().getDensity() / thermoSystem.getPhase(0).getMolarMass();
         }
 
@@ -696,7 +708,7 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
-           return thermoSystem.getPhase(0).getZ();
+            return thermoSystem.getPhase(0).getZ();
         }
 
         public double getMolecularWeight(string phase, Boolean doInit = true)
@@ -712,7 +724,7 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
-            return thermoSystem.getPhase(0).getMolarMass()*1000.0;
+            return thermoSystem.getPhase(0).getMolarMass() * 1000.0;
         }
 
         public double getDensitydT(string phase, Boolean doInit = true)
@@ -788,7 +800,7 @@ namespace NeqSimNET
             double[] molMass = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < molMass.Length; i++)
             {
-                molMass[i] = (thermoSystem.getPhase(0).getComponent(i).getMolarMass() / thermoSystem.getPhase(0).getNumberOfMolesInPhase() - thermoSystem.getPhase(0).getMolarMass() / thermoSystem.getPhase(0).getNumberOfMolesInPhase())*1000.0;
+                molMass[i] = (thermoSystem.getPhase(0).getComponent(i).getMolarMass() / thermoSystem.getPhase(0).getNumberOfMolesInPhase() - thermoSystem.getPhase(0).getMolarMass() / thermoSystem.getPhase(0).getNumberOfMolesInPhase()) * 1000.0;
             }
 
             return molMass;
@@ -796,7 +808,7 @@ namespace NeqSimNET
 
         public double getVolume(string phase, Boolean doInit = true)
         {
-            return 1.0/getDensity(phase, doInit);
+            return 1.0 / getDensity(phase, doInit);
             /*
             if (doInit)
             {
@@ -816,8 +828,8 @@ namespace NeqSimNET
         public double getVolumedT(string phase, Boolean doInit = true)
         {
             double densit2 = getDensity(phase, doInit);
-            return -1.0 / (densit2*densit2)*getDensitydT(phase, doInit);
-           
+            return -1.0 / (densit2 * densit2) * getDensitydT(phase, doInit);
+
         }
 
         public double getVolumedP(string phase, Boolean doInit = true)
@@ -862,7 +874,7 @@ namespace NeqSimNET
             double[] VC = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int j = 0; j < VC.Length; j++)
             {
-                VC[j] = thermoSystem.getPhase(0).getComponent(j).getCriticalVolume()/1e6;
+                VC[j] = thermoSystem.getPhase(0).getComponent(j).getCriticalVolume() / 1e6;
             }
             return VC;
         }
@@ -875,8 +887,9 @@ namespace NeqSimNET
         public double[] getCriticalPressures()
         {
             double[] PC = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
-            for (int j = 0; j < PC.Length; j++){
-                PC[j] = thermoSystem.getPhase(0).getComponent(j).getPC()*1e5;
+            for (int j = 0; j < PC.Length; j++)
+            {
+                PC[j] = thermoSystem.getPhase(0).getComponent(j).getPC() * 1e5;
             }
             return PC;
         }
@@ -922,7 +935,7 @@ namespace NeqSimNET
             double[] PC = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int j = 0; j < PC.Length; j++)
             {
-                PC[j] = thermoSystem.getPhase(0).getComponent(j).getNormalBoilingPoint()+273.15;
+                PC[j] = thermoSystem.getPhase(0).getComponent(j).getNormalBoilingPoint() + 273.15;
             }
             return PC;
         }
@@ -937,7 +950,7 @@ namespace NeqSimNET
             double[] PC = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int j = 0; j < PC.Length; j++)
             {
-                PC[j] = thermoSystem.getPhase(0).getComponent(j).getMolarMass()*1000.0;
+                PC[j] = thermoSystem.getPhase(0).getComponent(j).getMolarMass() * 1000.0;
             }
             return PC;
         }
@@ -1016,10 +1029,11 @@ namespace NeqSimNET
         {
             string[] phases = new string[thermoSystem.getNumberOfPhases()];
 
-            for(int i=0;i<phases.Length;i++){
-                if(thermoSystem.getPhase(i).getPhaseTypeName().Equals("gas")) phases[i] = "Vapor";
-                if(thermoSystem.getPhase(i).getPhaseTypeName().Equals("oil")) phases[i] = "Liquid";
-                if(thermoSystem.getPhase(i).getPhaseTypeName().Equals("aqueous")) phases[i] = "Liquid2";
+            for (int i = 0; i < phases.Length; i++)
+            {
+                if (thermoSystem.getPhase(i).getPhaseTypeName().Equals("gas")) phases[i] = "Vapor";
+                if (thermoSystem.getPhase(i).getPhaseTypeName().Equals("oil")) phases[i] = "Liquid";
+                if (thermoSystem.getPhase(i).getPhaseTypeName().Equals("aqueous")) phases[i] = "Liquid2";
             }
             return phases;
 
@@ -1039,6 +1053,6 @@ namespace NeqSimNET
 
         }
 
-        
+
     }
 }

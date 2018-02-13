@@ -12,10 +12,7 @@ namespace CapeOpenThermo
 
         public NeqSimNETService neqsimService = null;
         int initNumb = 0, oldInitNumb = 0;
-        double[] lnPhiTemp;
-        double[] lnPhiDTTemp;
-        double[] lnPhiDPTemp;
-        double[,] lnPhiDnTemp;
+       
 
 
         public NeqSimNETClientCO11()
@@ -39,11 +36,6 @@ namespace CapeOpenThermo
             ComponentName = "NeqSim thermo package";
             ComponentDescription = "NeqSim thermo package";
             constPropList = new String[] { "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure", "criticalTemperature", "criticalVolume" };
-
-            lnPhiTemp = new double[nNumComp];
-            lnPhiDTTemp = new double[nNumComp];
-            lnPhiDPTemp = new double[nNumComp];
-            lnPhiDnTemp = new double[nNumComp, nNumComp];
 
         }
 
@@ -77,8 +69,7 @@ namespace CapeOpenThermo
             if (propLength == 0) return null;
 
             object[] propsVal = new object[numberOfComponents];
-
-         
+            
                 for (int j = 0; j < numberOfComponents; j++)
                 {
                 string stringID = ((string[])compIds)[j];
@@ -106,9 +97,21 @@ namespace CapeOpenThermo
             
             neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
 
-            if (fFlags >= 8) neqsimService.init(phaseLabel, 3);
-            else if (fFlags >= 2) neqsimService.init(phaseLabel, 2);
-            else neqsimService.init(phaseLabel, 1);
+            if (fFlags >= 8)
+            {
+                neqsimService.init(phaseLabel, 3);
+                oldInitNumb = 3;
+            }
+            else if (fFlags >= 2)
+            {
+                neqsimService.init(phaseLabel, 2);
+                oldInitNumb = 2;
+            }
+            else
+            {
+                neqsimService.init(phaseLabel, 1);
+                oldInitNumb = 3;
+            }
 
             if (fFlags >= 8) lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
             if (fFlags >= 4) lnPhiDP = neqsimService.getlogFugacityCoefficientsDpressure(phaseLabel, false);
@@ -147,7 +150,7 @@ namespace CapeOpenThermo
 
                 for (int i = 0; i < length; i++)
                 {
-                    if (tempString[i].Equals("logFugacityCoefficient") || tempString[i].Equals("fugacityCoefficient") || tempString[i].StartsWith("molecularWeight") || tempString[i].Equals("volume.Dpressure") || tempString[i].Equals("density") || tempString[i].Equals("compressibilityFactor") || tempString[i].Equals("density.Dpressure") || tempString[i].Equals("density.Dmoles") || tempString[i].Equals("volume") || tempString[i].Equals("helmholtzEnergy") || tempString[i].Equals("gibbsEnergy") || tempString[i].Equals("viscosity") || tempString[i].Equals("thermalConductivity")) initNumb = 1;
+                    if (tempString[i].Equals("logFugacityCoefficient") || tempString[i].Equals("volume") || tempString[i].Equals("fugacityCoefficient") || tempString[i].StartsWith("molecularWeight") || tempString[i].Equals("volume.Dpressure") || tempString[i].Equals("density") || tempString[i].Equals("compressibilityFactor") || tempString[i].Equals("density.Dpressure") || tempString[i].Equals("density.Dmoles") || tempString[i].Equals("helmholtzEnergy") || tempString[i].Equals("gibbsEnergy") || tempString[i].Equals("viscosity") || tempString[i].Equals("thermalConductivity")) initNumb = 1;
                     else if (tempString[i].Equals("logFugacityCoefficient.Dmoles")) initNumb = 3;
                     else initNumb = 2;
 
@@ -172,15 +175,32 @@ namespace CapeOpenThermo
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "", fugCoefs);
                         continue;
                     }
+                    else if (tempString[i].Equals("volume"))
+                    {
+                        double[] volume = new double[1];
+                        volume[0] = neqsimService.getVolume(phaseLabel, doInit);
+                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", volume);
+                        continue;
+                    }
                     else if (tempString[i].Equals("logFugacityCoefficient"))
                     {
-                        //double[] lnPhiTemp = new double[nNumComp];
                         double[] lnPhiTemp = neqsimService.getLogFugacityCoefficients(phaseLabel, doInit);
-                        //for (int k = 0; k < fugCoef.Length; k++)
-                        //{
-                        //    lnPhiTemp[k] = Math.Log(fugCoef[k]);
-                       // }
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "", lnPhiTemp);
+                        continue;
+                    }
+                    else if (tempString[i].Equals("enthalpy"))
+                    {
+                        double[] enthalpy = new double[1];
+                        enthalpy[0] = neqsimService.getEnthalpy(phaseLabel, doInit);
+                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", enthalpy);
+                        continue;
+                    }
+
+                    else if (tempString[i].Equals("entropy"))
+                    {
+                        double[] entropy = new double[1];
+                        entropy[0] = neqsimService.getEntropy(phaseLabel, doInit);
+                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", entropy);
                         continue;
                     }
                     else if (tempString[i].Equals("logFugacityCoefficient.Dtemperature"))
@@ -255,13 +275,6 @@ namespace CapeOpenThermo
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", enthalpydn);
                         continue;
                     }
-                    else if (tempString[i].Equals("volume"))
-                    {
-                        double[] volume = new double[1];
-                        volume[0] = neqsimService.getVolume(phaseLabel, doInit);
-                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", volume);
-                        continue;
-                    }
                     if (tempString[i].Equals("volume.Dtemperature"))
                     {
                         double[] volumedT = new double[1];
@@ -290,13 +303,7 @@ namespace CapeOpenThermo
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", heatCapacityCv);
                         continue;
                     }
-                    else if (tempString[i].Equals("enthalpy"))
-                    {
-                        double[] enthalpy = new double[1];
-                        enthalpy[0] = neqsimService.getEnthalpy(phaseLabel, doInit);
-                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", enthalpy);
-                        continue;
-                    }
+                   
                     else if (tempString[i].Equals("enthalpy.Dtemperature"))
                     {
                         double[] enthalpy = new double[1];
@@ -315,13 +322,6 @@ namespace CapeOpenThermo
                     {
                         double[] enthalpydn = neqsimService.getEnthalpydN(phaseLabel, doInit);
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", enthalpydn);
-                        continue;
-                    }
-                    else if (tempString[i].Equals("entropy"))
-                    {
-                        double[] entropy = new double[1];
-                        entropy[0] = neqsimService.getEntropy(phaseLabel, doInit);
-                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", entropy);
                         continue;
                     }
                     else if (tempString[i].Equals("entropy.Dpressure"))
@@ -428,11 +428,6 @@ namespace CapeOpenThermo
             {
                 neqsimService.initFlashCalc();
 
-                if (spec1[0].Equals("enthalpy") || spec1[0].Equals("entropy"))
-                {
-                    CalcEquilibrium(spec2, spec1, name);
-                }
-
                 if (spec1[0].Equals("temperature") && spec1[1].Equals("") && spec1[2].Equals("overall"))
                 {
                     if (spec2[0].Equals("pressure") && spec2[1].Equals("") && spec2[2].Equals("overall"))
@@ -441,6 +436,12 @@ namespace CapeOpenThermo
                     }
                 }
 
+                if (spec1[0].Equals("enthalpy") || spec1[0].Equals("entropy"))
+                {
+                    CalcEquilibrium(spec2, spec1, name);
+                }
+               
+
                 if (spec1[0].Equals("pressure") && spec1[1].Equals("") && spec1[2].Equals("overall"))
                 {
                     if (spec2[0].Equals("enthalpy") && spec2[1].Equals("") && spec2[2].Equals("overall"))
@@ -448,6 +449,7 @@ namespace CapeOpenThermo
                         PHflash();
                     }
                 }
+
                 if (spec1[0].Equals("pressure") && spec1[1].Equals("") && spec1[2].Equals("overall"))
                 {
                     if (spec2[0].Equals("entropy") && spec2[1].Equals("") && spec2[2].Equals("overall"))
@@ -455,6 +457,7 @@ namespace CapeOpenThermo
                         PSflash();
                     }
                 }
+
                 if (spec1[0].Equals("temperature") && spec1[1].Equals("") && spec1[2].Equals("overall"))
                 {
                     if (spec2[0].Equals("phasefraction") && spec2[1].Equals("mole") && spec2[2].Equals("vapor"))
