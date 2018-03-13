@@ -16,6 +16,8 @@ namespace NeqSimNET
         double oldPressure = 1.00112;
         int oldPhaseType = 2;
         public static int packageID = 0;
+        
+
 
         public void test()
         {
@@ -42,8 +44,17 @@ namespace NeqSimNET
         }
         public void readFluidFromGQIT(int ID)
         {
-            thermoSystem = thermoSystem.readObject(ID);
-            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+            try
+            {
+                thermoSystem = thermoSystem.readObject(ID);
+                oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+   
+            } catch(System.NullReferenceException e) {
+                oldMoleFraction = new double[1];
+                thermoSystem = (SystemInterface)new SystemSrkCPAstatoil(298, 10);
+                thermoSystem.addComponent("methane", 1.0);
+                thermoSystem.createDatabase(true);
+            }
             thermoSystem.init(0);
             thermoSystem.useVolumeCorrection(true);
             thermoSystem.init(1);
@@ -78,6 +89,17 @@ namespace NeqSimNET
         }
 
 
+        public void setTPFraction(double T, double P, double[] x, int activePhaseIndex)
+        {
+            thermoSystem.removeMoles();
+            thermoSystem.setMolarComposition(x);
+            //     thermoSystem.setPhaseIndex(0, activePhaseIndex);
+            //     thermoSystem.init(0, activePhaseIndex); 
+            thermoSystem.init(0, 0);
+            thermoSystem.setTemperature(T);
+            thermoSystem.setPressure(P);
+        }
+
         public void setTPFraction(double T, double P, double[] x)
         {
             thermoSystem.removeMoles();
@@ -86,6 +108,7 @@ namespace NeqSimNET
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
         }
+
 
 
         public void setTPFraction(double T, double P, double[] x1, double[] x2)
@@ -123,13 +146,16 @@ namespace NeqSimNET
         public void init(string phase, int initType)
         {
             int phasetype = 0;
+            int phaseindex = 0;
             if (phase.Equals("Vapor"))
             {
                 phasetype = 1;
+                phaseindex = 0;
             }
             else if (phase.Equals("Liquid"))
             {
                 phasetype = 0;
+                phaseindex = 1;
             }
             else
             {
@@ -137,8 +163,12 @@ namespace NeqSimNET
                 string nonHandeledPhase = phase;
             }
             // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
+            //    thermoSystem.setPhaseIndex(0, phaseindex);
+            //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
+            //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
             thermoSystem.setPhaseType(0, phasetype);
             thermoSystem.init(initType, 0);
+        
         }
 
         public double[] getFugacityCoefficients(string phase, Boolean doInit = true)
