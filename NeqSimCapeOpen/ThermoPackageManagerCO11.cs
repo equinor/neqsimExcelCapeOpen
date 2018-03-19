@@ -55,6 +55,7 @@ namespace CapeOpenThermo
                 names.Add(row.ID.ToString() + " " + tempString);
                
             }
+            test.Dispose();
 
         // testing GIT
 

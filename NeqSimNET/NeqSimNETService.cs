@@ -12,6 +12,7 @@ namespace NeqSimNET
         SystemInterface thermoSystem = (SystemInterface)new SystemSrkEos(298, 10);
 
         double[] oldMoleFraction = null;
+        Boolean phaseExist = true;
         double oldTemperature = 1.00112;
         double oldPressure = 1.00112;
         int oldPhaseType = 2;
@@ -42,7 +43,24 @@ namespace NeqSimNET
         }
         public void readFluidFromGQIT(int ID)
         {
-            thermoSystem = thermoSystem.readObject(ID);
+            try
+            {
+                thermoSystem = thermoSystem.readObject(ID);
+            }
+            catch(Exception e)
+            {
+              //  thermoSystem = null;
+            }
+            if (thermoSystem == null)
+            {
+                thermoSystem = (SystemInterface)new SystemSrkEos(298, 10);
+                thermoSystem.addComponent("methane", 1.0);
+                thermoSystem.createDatabase(true);
+                thermoSystem.init(0);
+                thermoSystem.init(3);
+        
+            }
+
             oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             thermoSystem.init(0);
             thermoSystem.useVolumeCorrection(true);
@@ -123,6 +141,7 @@ namespace NeqSimNET
         public void init(string phase, int initType)
         {
             int phasetype = 0;
+            PhaseExist = true;
             if (phase.Equals("Vapor"))
             {
                 phasetype = 1;
@@ -136,13 +155,23 @@ namespace NeqSimNET
                 phasetype = 1; // stop here - to check for errors
                 string nonHandeledPhase = phase;
             }
-            // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
             thermoSystem.setPhaseType(0, phasetype);
             thermoSystem.init(initType, 0);
+
+            if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
+            {
+                PhaseExist = false;
+            }
+            else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) && phase.Equals("Vapor"))
+            {
+                PhaseExist = false;
+            }
+
         }
 
         public double[] getFugacityCoefficients(string phase, Boolean doInit = true)
         {
+            double factor = 1.0;
             if (doInit)
             {
                 thermoSystem.setNumberOfPhases(1);
@@ -154,20 +183,28 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
-            double factor = 1.0;
+
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
             {
-                factor = 0.1;
+                factor = 10.0;
             }
-            else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) && phase.Equals("Vapor"))
+            else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) && phase.Equals("Vapor"))
             {
-                factor = 0.1;
+                factor = 10.0;
             }
 
             double[] fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < fugacityCoef.Length; i++)
             {
-                fugacityCoef[i] = factor * thermoSystem.getPhase(0).getComponent(i).getFugasityCoefficient();
+                if (factor > 5.0)
+                {
+                    fugacityCoef[i] = Math.Exp(1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient());
+                }
+                else
+                {
+                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getFugasityCoeffisient();
+                }
+
             }
 
             return fugacityCoef;
@@ -192,7 +229,7 @@ namespace NeqSimNET
             {
                 factor = 10.0;
             }
-            else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) && phase.Equals("Vapor"))
+            else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") || thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) && phase.Equals("Vapor"))
             {
                 factor = 10.0;
             }
@@ -200,16 +237,9 @@ namespace NeqSimNET
             double[] fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (int i = 0; i < fugacityCoef.Length; i++)
             {
-                if (factor > 5)
+                if (factor > 5.0)
                 {
-                    if (thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient() > 0)
-                    {
-                        fugacityCoef[i] = factor * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
-                    }
-                    else
-                    {
-                        fugacityCoef[i] = 0.1 * thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
-                    }
+                   fugacityCoef[i] = 1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
                 }
                 else
                 {
@@ -993,7 +1023,7 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
-            thermoSystem.initPhysicalProperties();
+            thermoSystem.getPhase(0).initPhysicalProperties("viscosity");
             return thermoSystem.getPhase(0).getPhysicalProperties().getViscosity();
         }
 
@@ -1010,7 +1040,7 @@ namespace NeqSimNET
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
-            thermoSystem.initPhysicalProperties();
+            thermoSystem.getPhase(0).initPhysicalProperties("conductivity");
             return thermoSystem.getPhase(0).getPhysicalProperties().getConductivity();
         }
 
@@ -1053,6 +1083,7 @@ namespace NeqSimNET
 
         }
 
-
+        public bool PhaseExist { get => PhaseExist1; set => PhaseExist1 = value; }
+        public bool PhaseExist1 { get => phaseExist; set => phaseExist = value; }
     }
 }

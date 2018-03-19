@@ -12,7 +12,6 @@ namespace CapeOpenThermo
 
         public NeqSimNETService neqsimService = null;
         int initNumb = 0, oldInitNumb = 0;
-       
 
 
         public NeqSimNETClientCO11()
@@ -95,28 +94,36 @@ namespace CapeOpenThermo
         {
             if (fFlags == 0) return;
             
-            neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
-
+           
             if (fFlags >= 8)
             {
-                neqsimService.init(phaseLabel, 3);
-                oldInitNumb = 3;
+
+                initNumb = 3;
             }
             else if (fFlags >= 2)
             {
-                neqsimService.init(phaseLabel, 2);
-                oldInitNumb = 2;
+                initNumb = 2;
             }
             else
             {
-                neqsimService.init(phaseLabel, 1);
-                oldInitNumb = 3;
+                initNumb = 1;
+            }
+            if (initNumb > oldInitNumb || (neqsimService.checkIfInitNeed(temperature, pressure / 1.0e5, (double[])moleNumbers, phaseLabel)))
+            {
+                oldInitNumb = initNumb;
+                neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
+                neqsimService.init(phaseLabel, initNumb);
+            }
+            if (!neqsimService.PhaseExist)
+            {
+                throw new PhaseDoesNotExcistExeption("phase noes not exsist");
             }
 
             if (fFlags >= 8) lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
-            if (fFlags >= 4) lnPhiDP = neqsimService.getlogFugacityCoefficientsDpressure(phaseLabel, false);
-            if (fFlags >= 2) lnPhiDT = neqsimService.getlogFugacityCoefficientsDtemperature(phaseLabel, false);
-            if (fFlags >= 1) lnPhi = neqsimService.getLogFugacityCoefficients(phaseLabel, false);
+                if (fFlags >= 4) lnPhiDP = neqsimService.getlogFugacityCoefficientsDpressure(phaseLabel, false);
+                if (fFlags >= 2) lnPhiDT = neqsimService.getlogFugacityCoefficientsDtemperature(phaseLabel, false);
+                if (fFlags >= 1) lnPhi = neqsimService.getLogFugacityCoefficients(phaseLabel, false);
+
             return;
         }
 
@@ -160,13 +167,21 @@ namespace CapeOpenThermo
                         neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])composition);
                         neqsimService.init(phaseLabel, initNumb);
                         doInit = false;
+                        /*
+                        if (!neqsimService.PhaseExist)
+                        {
+                            throw new PhaseDoesNotExcistExeption("phase noes not exsist");
+                        }
+                        */
+
                     }
                     else
                     {
                         doInit = false;
                     }
                 }
-
+               
+                
                 for (int i = 0; i < length; i++)
                 {
                     if (tempString[i].Equals("fugacityCoefficient"))

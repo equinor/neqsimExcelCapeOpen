@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NeqSimNETClientCO10.cs" />
+    <Compile Include="PhaseDoesNotExcistExeption.cs" />
     <Compile Include="ThermoPackageManagerCO10.cs" />
     <Compile Include="NeqSimNETClientCO11.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
