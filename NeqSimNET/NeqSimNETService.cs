@@ -12,7 +12,6 @@ namespace NeqSimNET
         SystemInterface thermoSystem = (SystemInterface)new SystemSrkEos(298, 10);
 
         double[] oldMoleFraction = null;
-        Boolean phaseExist = true;
         double oldTemperature = 1.00112;
         double oldPressure = 1.00112;
         int oldPhaseType = 2;
@@ -1095,7 +1094,6 @@ namespace NeqSimNET
 
         }
 
-        public bool PhaseExist { get => PhaseExist1; set => PhaseExist1 = value; }
-        public bool PhaseExist1 { get => phaseExist; set => phaseExist = value; }
+        public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
     }
 }
