@@ -256,7 +256,7 @@ namespace NeqSimExcel
             }
             else
             {
-                addComponentButoon.Text = "Add Comps";
+                addComponentButoon.Text = "Show More Comps";
                 extendedComponentRowsRange.Hidden = true;
                 extendedComponentRowsRange2.Hidden = true;
             }
