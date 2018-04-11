@@ -114,9 +114,15 @@ namespace CapeOpenThermo
                 neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
                 neqsimService.init(phaseLabel, initNumb);
             }
-            if (!neqsimService.PhaseExist)
+            try
             {
-                throw new PhaseDoesNotExcistExeption("phase noes not exsist");
+                if (!neqsimService.PhaseExist)
+                {
+                    throw new PhaseDoesNotExcistExeption("phase noes not exsist");   // this exception needs to be handled
+                }
+            } catch(PhaseDoesNotExcistExeption e)
+            {
+                // do something (here or elsewhere)
             }
 
             if (fFlags >= 8) lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);

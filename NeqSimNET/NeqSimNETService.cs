@@ -172,7 +172,6 @@ namespace NeqSimNET
                 PhaseExist = false;
             }
             
-            // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
             //    thermoSystem.setPhaseIndex(0, phaseindex);
             //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
             //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
@@ -1094,6 +1093,18 @@ namespace NeqSimNET
 
         }
 
-        public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
+        private bool phaseExist;
+        public bool PhaseExist
+        {
+            get
+            {
+                return this.phaseExist;
+            }
+
+            set
+            {
+                this.phaseExist = value;
+            }
+        }
     }
 }
