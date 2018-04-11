@@ -26,7 +26,7 @@ namespace NeqSimExcel
         Excel.Range sumMolPrecentRange;
 
         Excel.Range molPrecentCompRange;
-        Excel.Range allComponentRowsRange, extendedComponentRowsRange, extendedComponentRowsRange2;
+        Excel.Range allComponentRowsRange, extendedComponentRowsRange, extendedComponentRowsRange2, extendedComponentRowsRange3, extendedComponentRowsRange4, extendedComponentRowsRange5, extendedComponentRowsRange6;
         Excel.Range averageMolWtRange;
         Excel.Range TBPCompRange;
         Excel.Range waterPrecentRange, MEGPrecentRange, TEGPrecentRange, ethanolPrecentRange, methanolPrecentRange;
@@ -34,20 +34,24 @@ namespace NeqSimExcel
 
         private void Sheet1_Startup(object sender, System.EventArgs e)
         {
-            statusRange = this.Range["I17"];
-            sumMolPrecentRange = this.Range["B108"];
-            molPrecentCompRange = this.Range["B2", "B107"];
-            allComponentRowsRange= this.Range["A1:A107"].EntireRow;
-            extendedComponentRowsRange = this.Range["A35:A95"].EntireRow;
-            extendedComponentRowsRange2 = this.Range["A101:A107"].EntireRow;
-            averageMolWtRange = this.Range["C108"];
-            TBPCompRange = this.Range["B21", "B95"];
-            waterPrecentRange = this.Range["B96"];
-            MEGPrecentRange = this.Range["B99"];
-            TEGPrecentRange = this.Range["B100"];
-            ethanolPrecentRange = this.Range["B98"];
-            methanolPrecentRange = this.Range["B97"];
-            polarComPrecentRange = this.Range["B96", "B100"];
+            statusRange = this.Range["I22"];
+            sumMolPrecentRange = this.Range["B116"];
+            molPrecentCompRange = this.Range["B2", "B115"];
+            allComponentRowsRange= this.Range["A1:A115"].EntireRow;
+            extendedComponentRowsRange = this.Range["A44:A103"].EntireRow;
+            extendedComponentRowsRange2 = this.Range["A109:A115"].EntireRow;
+            extendedComponentRowsRange3 = this.Range["A10"].EntireRow;
+            extendedComponentRowsRange4 = this.Range["A13:A17"].EntireRow;
+            extendedComponentRowsRange5 = this.Range["A23"].EntireRow;
+            extendedComponentRowsRange6 = this.Range["A26"].EntireRow;
+            averageMolWtRange = this.Range["C116"];
+            TBPCompRange = this.Range["B29", "B103"];
+            waterPrecentRange = this.Range["B104"];
+            MEGPrecentRange = this.Range["B107"];
+            TEGPrecentRange = this.Range["B108"];
+            ethanolPrecentRange = this.Range["B106"];
+            methanolPrecentRange = this.Range["B105"];
+            polarComPrecentRange = this.Range["B104", "B108"]; //???? check!
         }
 
         private void Sheet1_Shutdown(object sender, System.EventArgs e)
@@ -110,13 +114,13 @@ namespace NeqSimExcel
 
             SystemInterface thermoSystem = (SystemInterface)new SystemSrkEos(298, 10);
 
-            if (this.Range["B101"].Value2 > 0 && !(this.Range["B101"].Value2 == null)) thermoSystem.addComponent("oxygen", this.Range["B101"].Value2);
-            if (this.Range["B102"].Value2 > 0 && !(this.Range["B102"].Value2 == null)) thermoSystem.addComponent("hydrogen", this.Range["B102"].Value2);
-            if (this.Range["B103"].Value2 > 0 && !(this.Range["B103"].Value2 == null)) thermoSystem.addComponent("argon", this.Range["B103"].Value2);
-            if (this.Range["B104"].Value2 > 0 && !(this.Range["B104"].Value2 == null)) thermoSystem.addComponent("helium", this.Range["B104"].Value2);
-            if (this.Range["B105"].Value2 > 0 && !(this.Range["B105"].Value2 == null)) thermoSystem.addComponent("mercury", this.Range["B105"].Value2);
-            if (this.Range["B106"].Value2 > 0 && !(this.Range["B106"].Value2 == null)) thermoSystem.addComponent("S8", this.Range["B106"].Value2);
-            if (this.Range["B107"].Value2 > 0 && !(this.Range["B107"].Value2 == null)) thermoSystem.addComponent("MDEA", this.Range["B107"].Value2);
+            if (this.Range["B109"].Value2 > 0 && !(this.Range["B109"].Value2 == null)) thermoSystem.addComponent("oxygen", this.Range["B109"].Value2);
+            if (this.Range["B110"].Value2 > 0 && !(this.Range["B110"].Value2 == null)) thermoSystem.addComponent("hydrogen", this.Range["B110"].Value2);
+            if (this.Range["B111"].Value2 > 0 && !(this.Range["B111"].Value2 == null)) thermoSystem.addComponent("argon", this.Range["B111"].Value2);
+            if (this.Range["B112"].Value2 > 0 && !(this.Range["B112"].Value2 == null)) thermoSystem.addComponent("helium", this.Range["B112"].Value2);
+            if (this.Range["B113"].Value2 > 0 && !(this.Range["B113"].Value2 == null)) thermoSystem.addComponent("mercury", this.Range["B113"].Value2);
+            if (this.Range["B114"].Value2 > 0 && !(this.Range["B114"].Value2 == null)) thermoSystem.addComponent("S8", this.Range["B114"].Value2);
+            if (this.Range["B115"].Value2 > 0 && !(this.Range["B115"].Value2 == null)) thermoSystem.addComponent("MDEA", this.Range["B115"].Value2);
 
             if (this.Range["B2"].Value2 > 0 && !(this.Range["B2"].Value2 == null)) thermoSystem.addComponent("nitrogen", this.Range["B2"].Value2);
             if (this.Range["B3"].Value2 > 0 && !(this.Range["B3"].Value2 == null)) thermoSystem.addComponent("CO2", this.Range["B3"].Value2);
@@ -127,23 +131,30 @@ namespace NeqSimExcel
             if (this.Range["B7"].Value2 > 0 && !(this.Range["B7"].Value2 == null)) thermoSystem.addComponent("propane", this.Range["B7"].Value2);
             if (this.Range["B8"].Value2 > 0 && !(this.Range["B8"].Value2 == null)) thermoSystem.addComponent("i-butane", this.Range["B8"].Value2);
             if (this.Range["B9"].Value2 > 0 && !(this.Range["B9"].Value2 == null)) thermoSystem.addComponent("n-butane", this.Range["B9"].Value2);
-            if (this.Range["B10"].Value2 > 0 && !(this.Range["B10"].Value2 == null)) thermoSystem.addComponent("i-pentane", this.Range["B10"].Value2);
-            if (this.Range["B11"].Value2 > 0 && !(this.Range["B11"].Value2 == null)) thermoSystem.addComponent("n-pentane", this.Range["B11"].Value2);
+            if (this.Range["B10"].Value2 > 0 && !(this.Range["B10"].Value2 == null)) thermoSystem.addComponent("22-dim-C3", this.Range["B10"].Value2);
+            if (this.Range["B11"].Value2 > 0 && !(this.Range["B11"].Value2 == null)) thermoSystem.addComponent("i-pentane", this.Range["B11"].Value2);
+            if (this.Range["B12"].Value2 > 0 && !(this.Range["B12"].Value2 == null)) thermoSystem.addComponent("n-pentane", this.Range["B12"].Value2);
+            if (this.Range["B13"].Value2 > 0 && !(this.Range["B13"].Value2 == null)) thermoSystem.addComponent("c-C5", this.Range["B13"].Value2);
+            if (this.Range["B14"].Value2 > 0 && !(this.Range["B14"].Value2 == null)) thermoSystem.addComponent("22-dim-C4", this.Range["B14"].Value2);
+            if (this.Range["B15"].Value2 > 0 && !(this.Range["B15"].Value2 == null)) thermoSystem.addComponent("23-dim-C4", this.Range["B15"].Value2);
+            if (this.Range["B16"].Value2 > 0 && !(this.Range["B16"].Value2 == null)) thermoSystem.addComponent("2-m-C5", this.Range["B16"].Value2);
+            if (this.Range["B17"].Value2 > 0 && !(this.Range["B17"].Value2 == null)) thermoSystem.addComponent("3-m-C5", this.Range["B17"].Value2);
 
 
-          
-            if (this.Range["B12"].Value2 > 0 && !(this.Range["B12"].Value2 == null)) thermoSystem.addComponent("n-hexane", this.Range["B12"].Value2);
-            if (this.Range["B13"].Value2 > 0 && !(this.Range["B13"].Value2 == null)) thermoSystem.addComponent("c-hexane", this.Range["B13"].Value2);
-            if (this.Range["B14"].Value2 > 0 && !(this.Range["B14"].Value2 == null)) thermoSystem.addComponent("benzene", this.Range["B14"].Value2);
-            if (this.Range["B15"].Value2 > 0 && !(this.Range["B15"].Value2 == null)) thermoSystem.addComponent("n-heptane", this.Range["B15"].Value2);
-            if (this.Range["B16"].Value2 > 0 && !(this.Range["B16"].Value2 == null)) thermoSystem.addComponent("toluene", this.Range["B16"].Value2);
-            if (this.Range["B17"].Value2 > 0 && !(this.Range["B17"].Value2 == null)) thermoSystem.addComponent("n-octane", this.Range["B17"].Value2);
-            if (this.Range["B18"].Value2 > 0 && !(this.Range["B18"].Value2 == null)) thermoSystem.addComponent("m-xylene", this.Range["B18"].Value2);
-            if (this.Range["B19"].Value2 > 0 && !(this.Range["B19"].Value2 == null)) thermoSystem.addComponent("n-nonane", this.Range["B19"].Value2);
-            if (this.Range["B20"].Value2 > 0 && !(this.Range["B20"].Value2 == null)) thermoSystem.addComponent("nC10", this.Range["B20"].Value2);
+            if (this.Range["B18"].Value2 > 0 && !(this.Range["B18"].Value2 == null)) thermoSystem.addComponent("n-hexane", this.Range["B18"].Value2);
+            if (this.Range["B19"].Value2 > 0 && !(this.Range["B19"].Value2 == null)) thermoSystem.addComponent("c-hexane", this.Range["B19"].Value2);
+            if (this.Range["B20"].Value2 > 0 && !(this.Range["B20"].Value2 == null)) thermoSystem.addComponent("benzene", this.Range["B20"].Value2);
+            if (this.Range["B21"].Value2 > 0 && !(this.Range["B21"].Value2 == null)) thermoSystem.addComponent("n-heptane", this.Range["B21"].Value2);
+            if (this.Range["B22"].Value2 > 0 && !(this.Range["B22"].Value2 == null)) thermoSystem.addComponent("toluene", this.Range["B22"].Value2);
+            if (this.Range["B23"].Value2 > 0 && !(this.Range["B23"].Value2 == null)) thermoSystem.addComponent("c-C7", this.Range["B23"].Value2);
+            if (this.Range["B24"].Value2 > 0 && !(this.Range["B24"].Value2 == null)) thermoSystem.addComponent("n-octane", this.Range["B24"].Value2);
+            if (this.Range["B25"].Value2 > 0 && !(this.Range["B25"].Value2 == null)) thermoSystem.addComponent("m-xylene", this.Range["B25"].Value2);
+            if (this.Range["B26"].Value2 > 0 && !(this.Range["B26"].Value2 == null)) thermoSystem.addComponent("c-C8", this.Range["B26"].Value2);
+            if (this.Range["B27"].Value2 > 0 && !(this.Range["B27"].Value2 == null)) thermoSystem.addComponent("n-nonane", this.Range["B27"].Value2);
+            if (this.Range["B28"].Value2 > 0 && !(this.Range["B28"].Value2 == null)) thermoSystem.addComponent("nC10", this.Range["B28"].Value2);
 
             int Cnumb = 5;
-            for (int i = 21; i <= 95; i++)
+            for (int i = 29; i <= 103; i++)
             {
                 Cnumb++;
                 if (this.Range["B" + i.ToString()].Value2 > 0 && !(this.Range["B" + i.ToString()].Value2 == null)) thermoSystem.addTBPfraction(this.Range["A" + i.ToString()].Value2, this.Range["B" + i.ToString()].Value2, this.Range["C" + i.ToString()].Value2 / 1000.0, this.Range["D" + i.ToString()].Value2);
@@ -253,12 +264,20 @@ namespace NeqSimExcel
                 addComponentButoon.Text = "Hide Comps";
                 extendedComponentRowsRange.Hidden = false;
                 extendedComponentRowsRange2.Hidden = false;
+                extendedComponentRowsRange3.Hidden = false;
+                extendedComponentRowsRange4.Hidden = false;
+                extendedComponentRowsRange5.Hidden = false;
+                extendedComponentRowsRange6.Hidden = false;
             }
             else
             {
                 addComponentButoon.Text = "Show More Comps";
                 extendedComponentRowsRange.Hidden = true;
                 extendedComponentRowsRange2.Hidden = true;
+                extendedComponentRowsRange3.Hidden = true;
+                extendedComponentRowsRange4.Hidden = true;
+                extendedComponentRowsRange5.Hidden = true;
+                extendedComponentRowsRange6.Hidden = true;
             }
         }
 
