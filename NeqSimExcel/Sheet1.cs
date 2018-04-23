@@ -77,6 +77,7 @@ namespace NeqSimExcel
             this.plusFracRadioButton.Click += new System.EventHandler(this.plusClicked);
             this.noPlusRadioButton.Click += new System.EventHandler(this.noPlusClicked);
             this.tuneOkbutton.Click += new System.EventHandler(this.tuneOkbutton_Click);
+            this.EoScombobox.SelectedIndexChanged += new System.EventHandler(this.EoScombobox_SelectedIndexChanged);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.numberOfPseudoCompComboBox.SelectedIndexChanged += new System.EventHandler(this.numberOfPseudoCompComboBox_SelectedIndexChanged);
             this.inhibitorCalcTypecomboBox.SelectedIndexChanged += new System.EventHandler(this.inhibitorCalcTypecomboBox_SelectedIndexChanged);
@@ -406,6 +407,11 @@ namespace NeqSimExcel
         private void plusClicked(object sender, EventArgs e)
         {
             noPlusRadioButton.Checked = false;
+        }
+
+        private void EoScombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void noPlusClicked(object sender, EventArgs e)
