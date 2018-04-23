@@ -2,11 +2,12 @@
 <xs:schema id="NeqSimDatabaseSet" targetNamespace="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns:mstns="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionNTNU" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionNTNU (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionNTNU" Provider="MySql.Data.MySqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionStatoil (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil2" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionStatoil2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil2" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionStatoil2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil2" Provider="MySql.Data.MySqlClient" />
+          <Connection ConnectionStringObject="server=tr-w33;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase" IsAppSettingsProperty="false" Modifier="Assembly" Name="tr-w33(neqsimdatabase)" ParameterPrefix="@" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fluidinfoTableAdapter" GeneratorDataComponentClassName="fluidinfoTableAdapter" Name="fluidinfo" UserDataComponentName="fluidinfoTableAdapter">
@@ -166,6 +167,154 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT fluidinfo.ACETICACID, fluidinfo.BENZENE, fluidinfo.C10, fluidinfo.C10DENSITY, fluidinfo.C10MOLARMASS, fluidinfo.C11, fluidinfo.C11DENSITY, fluidinfo.C11MOLARMASS, fluidinfo.C12, fluidinfo.C12DENSITY, fluidinfo.C12MOLARMASS, fluidinfo.C13, fluidinfo.C13DENSITY, fluidinfo.C13MOLARMASS, fluidinfo.C14, fluidinfo.C14DENSITY, fluidinfo.C14MOLARMASS, fluidinfo.C15, fluidinfo.C15DENSITY, fluidinfo.C15MOLARMASS, fluidinfo.C16, fluidinfo.C16DENSITY, fluidinfo.C16MOLARMASS, fluidinfo.C17, fluidinfo.C17DENSITY, fluidinfo.C17MOLARMASS, fluidinfo.C18, fluidinfo.C18DENSITY, fluidinfo.C18MOLARMASS, fluidinfo.C19, fluidinfo.C19DENSITY, fluidinfo.C19MOLARMASS, fluidinfo.C20, fluidinfo.C20DENSITY, fluidinfo.C20MOLARMASS, fluidinfo.C21, fluidinfo.C21DENSITY, fluidinfo.C21MOLARMASS, fluidinfo.C22, fluidinfo.C22DENSITY, fluidinfo.C22MOLARMASS, fluidinfo.C23, fluidinfo.C23DENSITY, fluidinfo.C23MOLARMASS, fluidinfo.C24, fluidinfo.C24DENSITY, fluidinfo.C24MOLARMASS, fluidinfo.C25, fluidinfo.C25DENSITY, fluidinfo.C25MOLARMASS, fluidinfo.C6, fluidinfo.C6DENSITY, fluidinfo.C6MOLARMASS, fluidinfo.C7, fluidinfo.C7DENSITY, fluidinfo.C7MOLARMASS, fluidinfo.C8, fluidinfo.C8DENSITY, fluidinfo.C8MOLARMASS, fluidinfo.C9, fluidinfo.C9DENSITY, fluidinfo.C9MOLARMASS, fluidinfo.CAPLUS, fluidinfo.CLMINUS, fluidinfo.CO2, fluidinfo.CO3MINUS, fluidinfo.CPLUS, fluidinfo.CPLUSDENSITY, fluidinfo.CPLUSMOLARMASS, fluidinfo.CYCHEXANE, fluidinfo.CYCPENTANE, fluidinfo.`DATE`, fluidinfo.DEG, fluidinfo.ETHANE, fluidinfo.ETHANOL, fluidinfo.FEPLUS, fluidinfo.FIELD, fluidinfo.H2S, fluidinfo.H3OPLUS, fluidinfo.HASPLUSFRACTION, fluidinfo.HISTORY, fluidinfo.IBUTANE, fluidinfo.ID, fluidinfo.MDEA, fluidinfo.MEG, fluidinfo.METHANE, fluidinfo.METHANOL, fluidinfo.MXYLENE, fluidinfo.NAPLUS, fluidinfo.NBUTANE, fluidinfo.NDECANE, fluidinfo.NHEPTANE, fluidinfo.NHEXANE, fluidinfo.NITROGEN, fluidinfo.NNONANE, fluidinfo.NOCTANE, fluidinfo.OHMINUS, fluidinfo.OXYLENE, fluidinfo.PENTANE, fluidinfo.PIPERAZINE, fluidinfo.PROPANE, fluidinfo.PROPIONICACID, fluidinfo.PXYLENE, fluidinfo.SAMPLE, fluidinfo.SHARED, fluidinfo.SO4MINUS, fluidinfo.TEG, fluidinfo.TEST, fluidinfo.TEXT, fluidinfo.TOLUENE, fluidinfo.USERID, fluidinfo.WATER, fluidinfo.WELL, fluidinfo.argon, fluidinfo.cbutane, fluidinfo.cheptane, fluidinfo.coctane, fluidinfo.cpropane, fluidinfo.hydrogen, fluidinfo.i22dimC3, fluidinfo.i22dimC4, fluidinfo.i23dimC4, fluidinfo.i2mC5, fluidinfo.i3mC5, fluidinfo.iPENTANE, fluidinfo.mcheptane, fluidinfo.mcpentane, fluidinfo.mercury, fluidinfo.nc11, fluidinfo.nc12, fluidinfo.nc13, fluidinfo.nc14, fluidinfo.nc15, fluidinfo.nc16, fluidinfo.nc17, fluidinfo.nc18, fluidinfo.nc19, fluidinfo.nc20, fluidinfo.oxygen FROM fluidinfo INNER JOIN userdb ON fluidinfo.USERID = userdb.ID WHERE (fluidinfo.SHARED = '1') OR (userdb.USERNAME = @username) ORDER BY fluidinfo.ID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME" DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewFluidRow" Modifier="Public" Name="InsertNewFluidRow" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertNewFluidRow">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID();
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDescription" Modifier="Public" Name="UpdateDescription" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateDescription">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo set TEXT = ? WHERE (ID = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="TEXT" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEXT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@Param2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateField" Modifier="Public" Name="UpdateField" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateField">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET FIELD= @fieldtext WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="fieldtext" ColumnName="FIELD" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@fieldtext" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="FIELD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateHistory" Modifier="Public" Name="UpdateHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateHistory">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET HISTORY = @history WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="history" ColumnName="HISTORY" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(250)(250)" DbType="String" Direction="Input" ParameterName="@history" Precision="0" ProviderType="VarChar" Scale="0" Size="250" SourceColumn="HISTORY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSample" Modifier="Public" Name="UpdateSample" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateSample">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET SAMPLE = @sample WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="sample" ColumnName="SAMPLE" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@sample" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="SAMPLE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateShared" Modifier="Public" Name="UpdateShared" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateShared">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET SHARED = @sharedflag WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="sharedflag" ColumnName="SHARED" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="tinyint(1)" DbType="Object" Direction="Input" ParameterName="@sharedflag" Precision="0" ProviderType="Byte" Scale="0" Size="1024" SourceColumn="SHARED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTest" Modifier="Public" Name="UpdateTest" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateTest">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET TEST= @test WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="test" ColumnName="TEST" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@test" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateUserID" Modifier="Public" Name="UpdateUserID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateUserID">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET USERID = @userid WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="userid" ColumnName="USERID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateWell" Modifier="Public" Name="UpdateWell" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateWell">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE fluidinfo SET WELL= @welltext WHERE (ID = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="welltext" ColumnName="WELL" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@welltext" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="WELL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="userdbTableAdapter" GeneratorDataComponentClassName="userdbTableAdapter" Name="userdb" UserDataComponentName="userdbTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `userdb` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `USERNAME` IS NULL) OR (`USERNAME` = @p3)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, USERNAME
+FROM     userdb</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `userdb` SET `ID` = @p1, `USERNAME` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `USERNAME` IS NULL) OR (`USERNAME` = @p5)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getUserID" Modifier="Public" Name="getUserID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getUserID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID FROM userdb WHERE (USERNAME = @username)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME" DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -369,10 +518,28 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="userdb" msprop:Generator_TableClassName="userdbDataTable" msprop:Generator_TableVarName="tableuserdb" msprop:Generator_TablePropName="userdb" msprop:Generator_RowDeletingName="userdbRowDeleting" msprop:Generator_RowChangingName="userdbRowChanging" msprop:Generator_RowEvHandlerName="userdbRowChangeEventHandler" msprop:Generator_RowDeletedName="userdbRowDeleted" msprop:Generator_UserTableName="userdb" msprop:Generator_RowChangedName="userdbRowChanged" msprop:Generator_RowEvArgName="userdbRowChangeEvent" msprop:Generator_RowClassName="userdbRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:fluidinfo" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="userdb_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:userdb" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>
