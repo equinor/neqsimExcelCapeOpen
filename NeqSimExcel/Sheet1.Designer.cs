@@ -297,7 +297,8 @@ namespace NeqSimExcel {
                         "PR-EOS",
                         "CPAs-SRK-EOS-statoil",
                         "UMR-PRU-EoS",
-                        "SRK-TwuCoon-Param-EOS"});
+                        "SRK-TwuCoon-Param-EOS",
+                        "SRK-TwuCoon-Statoil-EOS"});
             this.EoScombobox.Name = "EoScombobox";
             this.EoScombobox.Text = "Automatic";
             // 
