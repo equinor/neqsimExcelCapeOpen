@@ -52,15 +52,17 @@ namespace NeqSimNET
                 thermoSystem = (SystemInterface) new SystemSrkCPAstatoil(298, 10);
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
+                thermoSystem.setMixingRule(10);
             }
             
-            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+           
    
             thermoSystem.init(0);
             thermoSystem.useVolumeCorrection(true);
             thermoSystem.init(1);
             thermoSystem.setNumberOfPhases(1);
             thermoSystem.setMaxNumberOfPhases(3);
+            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
         }
 
         public SystemInterface getThermoSystem()
