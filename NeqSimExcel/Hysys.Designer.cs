@@ -24,7 +24,11 @@ namespace NeqSimExcel {
         
         internal Microsoft.Office.Tools.Excel.Controls.Button button1;
         
+<<<<<<< HEAD
         internal Microsoft.Office.Tools.Excel.Controls.Button button2;
+=======
+        internal Microsoft.Office.Tools.Excel.Controls.CheckBox sharedCheckbox;
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -137,7 +141,11 @@ namespace NeqSimExcel {
         private void InitializeControls() {
             this.fluidListNameComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "33305FF99385AA345543A7693D4A13F145DD43", "33305FF99385AA345543A7693D4A13F145DD43", this, "fluidListNameComboBox");
             this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "4C0DC5E324872344D014B8804DE43BB805D3F4", "4C0DC5E324872344D014B8804DE43BB805D3F4", this, "button1");
+<<<<<<< HEAD
             this.button2 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "6FAB9A4E0600ED6418269FA068BF9A4C00EA46", "6FAB9A4E0600ED6418269FA068BF9A4C00EA46", this, "button2");
+=======
+            this.sharedCheckbox = new Microsoft.Office.Tools.Excel.Controls.CheckBox(Globals.Factory, this.ItemProvider, this.HostContext, "518D37C2A557B0549895A2A050387EBD18C305", "518D37C2A557B0549895A2A050387EBD18C305", this, "sharedCheckbox");
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
         }
         
         /// 
@@ -145,9 +153,33 @@ namespace NeqSimExcel {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeComponents() {
+<<<<<<< HEAD
             this.fluidListNameComboBox.BindingContext = this.BindingContext;
             this.button1.BindingContext = this.BindingContext;
             this.button2.BindingContext = this.BindingContext;
+=======
+            // 
+            // fluidListNameComboBox
+            // 
+            this.fluidListNameComboBox.Name = "fluidListNameComboBox";
+            // 
+            // button1
+            // 
+            this.button1.Name = "button1";
+            this.button1.Text = "Ok";
+            // 
+            // sharedCheckbox
+            // 
+            this.sharedCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.sharedCheckbox.Name = "sharedCheckbox";
+            this.sharedCheckbox.Text = "Shared";
+            // 
+            // Sheet6
+            // 
+            this.fluidListNameComboBox.BindingContext = this.BindingContext;
+            this.button1.BindingContext = this.BindingContext;
+            this.sharedCheckbox.BindingContext = this.BindingContext;
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
         }
         
         /// 

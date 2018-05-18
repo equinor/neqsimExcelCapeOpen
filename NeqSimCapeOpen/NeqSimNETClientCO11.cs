@@ -132,6 +132,7 @@ namespace CapeOpenThermo
                 neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
                 neqsimService.init(phaseLabel, initNumb);
             }
+<<<<<<< HEAD
             /*  if (!neqsimService.PhaseExist)
               {
                   throw new PhaseDoesNotExcistExeption("phase noes not exsist");
@@ -152,6 +153,8 @@ namespace CapeOpenThermo
                     lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
                     break;
 =======
+=======
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             try
             {
                 if (!neqsimService.PhaseExist)
@@ -161,6 +164,9 @@ namespace CapeOpenThermo
             } catch(PhaseDoesNotExcistExeption e)
             {
                 // do something (here or elsewhere)
+<<<<<<< HEAD
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
+=======
 >>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             }
             

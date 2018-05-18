@@ -81,7 +81,11 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
+<<<<<<< HEAD
             //sharedCheckbox.Visible = true; // hide if another fluid is chosen!
+=======
+            sharedCheckbox.Visible = true; // hide if another fluid is chosen!
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
 
         }
 
@@ -115,14 +119,21 @@ namespace NeqSimExcel
 
             string textVar1 = "B9";
             this.Range[textVar1].Value2 = "saving fluid...";
+<<<<<<< HEAD
 
+=======
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             int a2;
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter tab = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.userdbTableAdapter usertab = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.userdbTableAdapter();
 
             if (fluidListNameComboBox.SelectedItem.ToString().Equals("New fluid")){
 
+<<<<<<< HEAD
             //    sharedCheckbox.Visible = true;
+=======
+                sharedCheckbox.Visible = true;
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
                 a2 = Convert.ToInt32((object)tab.InsertNewFluidRow());
                 string userName = WindowsIdentity.GetCurrent().Name;
                 userName = userName.Replace("STATOIL-NET\\", "");
@@ -135,7 +146,11 @@ namespace NeqSimExcel
                 tab.UpdateTest("", a2);
                 tab.UpdateSample("", a2);
                 tab.UpdateHistory("", a2);
+<<<<<<< HEAD
              //   if (sharedCheckbox.Checked == true)
+=======
+                if (sharedCheckbox.Checked == true)
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
                 {
                     tab.UpdateShared(1, a2);
                 }
@@ -209,7 +224,11 @@ namespace NeqSimExcel
         {
         
             fluidListNameComboBox.Items.Clear();
+<<<<<<< HEAD
          //   sharedCheckbox.Visible = true;
+=======
+            sharedCheckbox.Visible = true;
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
 
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
 //            NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();

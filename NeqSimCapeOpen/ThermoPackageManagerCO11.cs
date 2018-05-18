@@ -75,7 +75,13 @@ namespace CapeOpenThermo
                
             }
             test.Dispose();
+<<<<<<< HEAD
             
+=======
+
+  
+
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             return names.ToArray();
         }
 

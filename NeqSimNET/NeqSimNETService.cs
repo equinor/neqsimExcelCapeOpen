@@ -48,6 +48,7 @@ namespace NeqSimNET
             thermoSystem.init(1);
             thermoSystem.setNumberOfPhases(1);
             thermoSystem.setMaxNumberOfPhases(3);
+            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
         }
 
         public void readFluidFromGQIT(string ID)
@@ -181,10 +182,13 @@ namespace NeqSimNET
             {
                 PhaseExist = false;
             }
+<<<<<<< HEAD
 
             */
             // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
 
+=======
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             
             //    thermoSystem.setPhaseIndex(0, phaseindex);
             //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
@@ -1121,6 +1125,17 @@ namespace NeqSimNET
                 return this.phaseExist;
             }
 
+<<<<<<< HEAD
+=======
+        private bool phaseExist;
+        public bool PhaseExist
+        {
+            get
+            {
+                return this.phaseExist;
+            }
+
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             set
             {
                 this.phaseExist = value;
