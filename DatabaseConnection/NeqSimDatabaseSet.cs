@@ -4,6 +4,9 @@
 
     public partial class NeqSimDatabaseSet
     {
+        partial class fluidinfoDataTable
+        {
+        }
     }
 }
 

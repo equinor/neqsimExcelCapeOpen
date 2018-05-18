@@ -151,6 +151,17 @@ namespace CapeOpenThermo
                 case 8:
                     lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
                     break;
+=======
+            try
+            {
+                if (!neqsimService.PhaseExist)
+                {
+                    throw new PhaseDoesNotExcistExeption("phase noes not exsist");   // this exception needs to be handled
+                }
+            } catch(PhaseDoesNotExcistExeption e)
+            {
+                // do something (here or elsewhere)
+>>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             }
             
             return;

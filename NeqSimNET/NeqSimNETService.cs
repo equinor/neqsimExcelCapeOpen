@@ -37,9 +37,10 @@ namespace NeqSimNET
                 thermoSystem = (SystemInterface) new SystemSrkCPAstatoil(298, 10);
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
+                thermoSystem.setMixingRule(10);
             }
             
-            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+           
    
             thermoSystem.init(0);
             thermoSystem.setMultiPhaseCheck(true);
@@ -71,6 +72,7 @@ namespace NeqSimNET
             thermoSystem.init(1);
             thermoSystem.setNumberOfPhases(1);
             thermoSystem.setMaxNumberOfPhases(3);
+            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
         }
 
         public SystemInterface getThermoSystem()
@@ -179,8 +181,11 @@ namespace NeqSimNET
             {
                 PhaseExist = false;
             }
+
             */
             // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
+
+            
             //    thermoSystem.setPhaseIndex(0, phaseindex);
             //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
             //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
@@ -1103,9 +1108,23 @@ namespace NeqSimNET
             }
 
         }
-
+        
         public string[] CapeOpenProperties { get => capeOpenProperties; set => capeOpenProperties = value; }
 
         // public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
+
+        private bool phaseExist;
+        public bool PhaseExist
+        {
+            get
+            {
+                return this.phaseExist;
+            }
+
+            set
+            {
+                this.phaseExist = value;
+            }
+        }
     }
 }

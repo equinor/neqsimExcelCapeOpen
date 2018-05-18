@@ -235,7 +235,7 @@ namespace NeqSimExcel {
             this.addComponentButoon.BackColor = System.Drawing.SystemColors.Control;
             this.addComponentButoon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.addComponentButoon.Name = "addComponentButoon";
-            this.addComponentButoon.Text = "Add Comps";
+            this.addComponentButoon.Text = "Show More Comps";
             this.addComponentButoon.UseVisualStyleBackColor = false;
             // 
             // molToWtButton
@@ -296,7 +296,9 @@ namespace NeqSimExcel {
                         "SRK-EOS",
                         "PR-EOS",
                         "CPAs-SRK-EOS-statoil",
-                        "UMR-PRU-EoS"});
+                        "UMR-PRU-EoS",
+                        "SRK-TwuCoon-Param-EOS",
+                        "SRK-TwuCoon-Statoil-EOS"});
             this.EoScombobox.Name = "EoScombobox";
             this.EoScombobox.Text = "Automatic";
             // 

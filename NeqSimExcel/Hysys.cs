@@ -44,7 +44,10 @@ namespace NeqSimExcel
                 DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
        
                 List<string> names = new List<string>();
-                names.Add("local");
+                names.Add("New fluid");
+                fluidListNameComboBox.Items.Add("New fluid");
+                //names.Add("CPApackage");
+
                 //names.Add(WindowsIdentity.GetCurrent().Name);
                 foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
                 {
@@ -67,7 +70,9 @@ namespace NeqSimExcel
                     fluidListNameComboBox.Items.Add(row.ID.ToString() + " " + tempString);
 
                 }
-              
+
+         
+
                 //   packageNames = names.ToArray();
                 //   fluidListNameComboBox.Items.Add(names.ToList());
                 fluidListNameComboBox.SelectedIndex = 0;
@@ -76,7 +81,8 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
-          
+            //sharedCheckbox.Visible = true; // hide if another fluid is chosen!
+
         }
 
         private void Sheet6_Shutdown(object sender, System.EventArgs e)
@@ -110,6 +116,44 @@ namespace NeqSimExcel
             string textVar1 = "B9";
             this.Range[textVar1].Value2 = "saving fluid...";
 
+            int a2;
+            DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter tab = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
+            DatabaseConnection.NeqSimDatabaseSetTableAdapters.userdbTableAdapter usertab = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.userdbTableAdapter();
+
+            if (fluidListNameComboBox.SelectedItem.ToString().Equals("New fluid")){
+
+            //    sharedCheckbox.Visible = true;
+                a2 = Convert.ToInt32((object)tab.InsertNewFluidRow());
+                string userName = WindowsIdentity.GetCurrent().Name;
+                userName = userName.Replace("STATOIL-NET\\", "");
+                userName = userName.Replace("WIN-NTNU-NO\\", "");
+                userName = userName.ToLower();
+                int userid = Convert.ToInt32((object)usertab.getUserID(userName));
+                tab.UpdateUserID(userid, a2);
+                tab.UpdateField("new field", a2);
+                tab.UpdateWell("new well", a2);
+                tab.UpdateTest("", a2);
+                tab.UpdateSample("", a2);
+                tab.UpdateHistory("", a2);
+             //   if (sharedCheckbox.Checked == true)
+                {
+                    tab.UpdateShared(1, a2);
+                }
+
+                // update shared part
+            }
+            else{
+                a2 = Convert.ToInt32((String)fluidListNameComboBox.SelectedItem.ToString().Split(' ')[0]);
+            }
+
+            // Adding a description of the fluid
+            if (this.Range["D3"].Value2 != null)
+            { 
+                string description = this.Range["D3"].Value2;
+             //   DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter tab = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
+                tab.UpdateDescription(description, a2);
+            }
+ 
             SystemInterface thermoSystem = NeqSimThermoSystem.getThermoSystem();
 
             if (fluidListNameComboBox.SelectedItem.ToString().Equals("local"))
@@ -119,7 +163,7 @@ namespace NeqSimExcel
             }
 
 
-            int a2 = Convert.ToInt32((String)fluidListNameComboBox.SelectedItem.ToString().Split(' ')[0]);
+       //     int a2 = Convert.ToInt32((String)fluidListNameComboBox.SelectedItem.ToString().Split(' ')[0]);
 
             thermoSystem.saveFluid(a2);
            
@@ -140,8 +184,8 @@ namespace NeqSimExcel
                      int columns = table[1].Length;
                      writeEndCell = writeStartCell + rows;
 
-                     var startCell = Cells[writeStartCell, 5];
-                     var endCell = Cells[writeEndCell - 1, columns + 4];
+                     var startCell = Cells[writeStartCell, 6];
+                     var endCell = Cells[writeEndCell - 1, columns + 5];
                      var writeRange = this.Range[startCell, endCell];
 
                      writeStartCell += rows + 3;
@@ -163,9 +207,10 @@ namespace NeqSimExcel
 
         private void fluidListNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            
+        
             fluidListNameComboBox.Items.Clear();
+         //   sharedCheckbox.Visible = true;
+
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
 //            NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
            
@@ -176,6 +221,8 @@ namespace NeqSimExcel
             DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
            // NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
             List<string> names = new List<string>();
+            names.Add("New fluid");
+            fluidListNameComboBox.Items.Add("New fluid");
             //names.Add("CPApackage");
             //names.Add(WindowsIdentity.GetCurrent().Name);
             foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)

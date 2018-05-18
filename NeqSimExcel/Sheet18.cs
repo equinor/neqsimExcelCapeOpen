@@ -49,42 +49,92 @@ namespace NeqSimExcel
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeInterfacialTension("gas", "oil");
+            changeInterfacialTensionGasOil();
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeInterfacialTension("gas", "aqueous");
-        }
-
-        public void changeInterfacialTension(string phase1, string phase2)
-        {
-            if (comboBox3.SelectedItem.ToString().Equals("Linear Gradient Theory"))
-            {
-                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel(phase1, phase2, "Linear Gradient Theory");
-            }
-            else if (comboBox3.SelectedItem.ToString().Equals("Parachor"))
-            {
-                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel(phase1, phase2, "Parachor");
-            }
-            else if (comboBox3.SelectedItem.ToString().Equals("Firozabadi Ramley"))
-            {
-                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel(phase1, phase2, "Firozabadi Ramley");
-            }
-            else if (comboBox3.SelectedItem.ToString().Equals("Full Gradient Theory"))
-            {
-                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel(phase1, phase2, "Full Gradient Theory");
-            }
-            else if (comboBox3.SelectedItem.ToString().Equals("Simple Gradient Theory"))
-            {
-                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel(phase1, phase2, "Simple Gradient Theory");
-            }
+            changeInterfacialTensionGasAqueous();
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            changeInterfacialTension("oil", "aqueous");
+            changeInterfacialTensionOilAqueous();
         }
+
+        public void changeInterfacialTensionGasOil()
+        {
+            if (comboBox3.SelectedItem.ToString().Equals("Linear Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "oil", "Linear Gradient Theory");
+            }
+            else if (comboBox3.SelectedItem.ToString().Equals("Parachor"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "oil", "Parachor");
+            }
+            else if (comboBox3.SelectedItem.ToString().Equals("Firozabadi Ramley"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "oil", "Firozabadi Ramley");
+            }
+            else if (comboBox3.SelectedItem.ToString().Equals("Full Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "oil", "Full Gradient Theory");
+            }
+            else if (comboBox3.SelectedItem.ToString().Equals("Simple Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "oil", "Simple Gradient Theory");
+            }
+        }
+
+        public void changeInterfacialTensionGasAqueous()
+        {
+            if (comboBox4.SelectedItem.ToString().Equals("Linear Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "aqueous", "Linear Gradient Theory");
+            }
+            else if (comboBox4.SelectedItem.ToString().Equals("Parachor"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "aqueous", "Parachor");
+            }
+            else if (comboBox4.SelectedItem.ToString().Equals("Firozabadi Ramley"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "aqueous", "Firozabadi Ramley");
+            }
+            else if (comboBox4.SelectedItem.ToString().Equals("Full Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "aqueous", "Full Gradient Theory");
+            }
+            else if (comboBox4.SelectedItem.ToString().Equals("Simple Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("gas", "aqueous", "Simple Gradient Theory");
+            }
+        }
+
+        public void changeInterfacialTensionOilAqueous()
+        {
+            if (comboBox5.SelectedItem.ToString().Equals("Linear Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("oil", "aqueous", "Linear Gradient Theory");
+            }
+            else if (comboBox5.SelectedItem.ToString().Equals("Parachor"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("oil", "aqueous", "Parachor");
+            }
+            else if (comboBox5.SelectedItem.ToString().Equals("Firozabadi Ramley"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("oil", "aqueous", "Firozabadi Ramley");
+            }
+            else if (comboBox5.SelectedItem.ToString().Equals("Full Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("oil", "aqueous", "Full Gradient Theory");
+            }
+            else if (comboBox5.SelectedItem.ToString().Equals("Simple Gradient Theory"))
+            {
+                NeqSimThermoSystem.getThermoSystem().getInterphaseProperties().setInterfacialTensionModel("oil", "aqueous", "Simple Gradient Theory");
+            }
+        }
+
+
 
         private void EoScombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
