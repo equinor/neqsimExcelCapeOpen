@@ -39,6 +39,7 @@ namespace NeqSimExcel
             this.oilCOnductivityComboBox.SelectedIndexChanged += new System.EventHandler(this.oilCOnductivityComboBox_SelectedIndexChanged);
             this.gasCondutivityComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             this.aqueousConduvtivityComboBox.SelectedIndexChanged += new System.EventHandler(this.aqueousConduvtivityComboBox_SelectedIndexChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.Startup += new System.EventHandler(this.Sheet18_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet18_Shutdown);
 
@@ -130,6 +131,16 @@ namespace NeqSimExcel
         private void aqueousConduvtivityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeConductivityModel("aqueous", aqueousConduvtivityComboBox.SelectedItem.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog openFileDIalog = new FolderBrowserDialog();
+            openFileDIalog.ShowDialog();
+            string localFileName = openFileDIalog.SelectedPath;
+            this.Range["B23"].Value2 = localFileName;
+            NeqSimThermoSystem.LocalFilePath = localFileName;
+
         }
     }
 }

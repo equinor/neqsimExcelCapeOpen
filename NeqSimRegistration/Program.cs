@@ -15,6 +15,7 @@ namespace NeqSimRegistration
             Type t = null;
             CapeOpenThermo.ThermoPackageManagerCO11.RegisterFunction(t);
             CapeOpenThermo.ThermoPackageManagerCO10.RegisterFunction(t);
+            CapeOpenThermo.ThermoPackageManagerCO11local.RegisterFunction(t);
             System.Console.WriteLine("finished registering NeqSim CapeOpen2....");
             //CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
             //   CapeOpenUnitOperations.WaterDewPointUnitOperation.RegisterFunction(t);

@@ -46,7 +46,7 @@ namespace NeqSimExcel
             SystemInterface thermoSystem = (SystemInterface)NeqSimThermoSystem.getThermoSystem();//.clone();
 
 
-            Excel.Range rangeClear = this.Range["E2", "L100"];
+            Excel.Range rangeClear = this.Range["E:L"];
             rangeClear.Clear();
             Excel.Range range = this.Range["A2", "A100"];
             int number = 1;

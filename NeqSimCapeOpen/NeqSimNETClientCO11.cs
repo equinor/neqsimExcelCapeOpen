@@ -1,26 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NeqSimNET;
-using CAPEOPEN110;
 
 namespace CapeOpenThermo
 {
     public class NeqSimNETClientCO11 : NeqSimBasePackage
     {
 
-        public NeqSimNETService neqsimService = null;
         int initNumb = 0, oldInitNumb = 0;
-
 
         public NeqSimNETClientCO11()
         {
         }
 
 
-        public NeqSimNETClientCO11(String package)
+        public NeqSimNETClientCO11(String packageDesc)
         {
+
+            string[] package = packageDesc.Split(' ');
+
             neqsimService = new NeqSimNETService();
             neqsimService.readFluidFromGQIT(Convert.ToInt32(package));
             neqsimService.setPackageID(Convert.ToInt32(package));
@@ -32,11 +29,30 @@ namespace CapeOpenThermo
             nNumComp = neqsimService.getNumberOfComponents();
             twoProp = new string[] { "surfaceTension" };// null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
             oilFractionIDs = neqsimService.getOilFractionIDs();
-            ComponentName = "NeqSim thermo package";
-            ComponentDescription = "NeqSim thermo package";
+            ComponentName = packageDesc.ToString();
+            ComponentDescription = packageDesc.ToString(); //"NeqSim thermo package";
             constPropList = new String[] { "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure", "criticalTemperature", "criticalVolume" };
 
         }
+        public NeqSimNETClientCO11(String package, String packageName)
+        {
+            neqsimService = new NeqSimNETService();
+            neqsimService.readFluidFromGQIT(package);
+           // neqsimService.setPackageID(Convert.ToInt32(package));
+
+            neqsimService.addCapeOpenProperty("viscosity");
+            neqsimService.addCapeOpenProperty("thermalConductivity");
+            properties = neqsimService.readCapeOpenProperties11();
+
+            nNumComp = neqsimService.getNumberOfComponents();
+            twoProp = new string[] { "surfaceTension" };// null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
+            oilFractionIDs = neqsimService.getOilFractionIDs();
+            ComponentName = packageName;
+            ComponentDescription = packageName;
+            constPropList = new String[] { "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure", "criticalTemperature", "criticalVolume" };
+
+        }
+
 
         public override void GetCompoundList(ref object compIds, ref object formulae, ref object names, ref object boilTemps, ref object molwts, ref object casnos)
         {
@@ -92,38 +108,51 @@ namespace CapeOpenThermo
 
         public override void CalcAndGetLnPhi(string phaseLabel, double temperature, double pressure, object moleNumbers, int fFlags, ref object lnPhi, ref object lnPhiDT, ref object lnPhiDP, ref object lnPhiDn)
         {
-            if (fFlags == 0) return;
-            
-           
-            if (fFlags >= 8)
+            switch (fFlags)
             {
+                case 0:
+                    return;
+                case 1:
+                    initNumb = 1;
+                    break;
+                case 2:
+                    initNumb = 2;
+                    break;
+                case 4:
+                    initNumb = 2;
+                    break;
+                case 8:
+                    initNumb = 3;
+                    break;
+            }
 
-                initNumb = 3;
-            }
-            else if (fFlags >= 2)
-            {
-                initNumb = 2;
-            }
-            else
-            {
-                initNumb = 1;
-            }
             if (initNumb > oldInitNumb || (neqsimService.checkIfInitNeed(temperature, pressure / 1.0e5, (double[])moleNumbers, phaseLabel)))
             {
                 oldInitNumb = initNumb;
                 neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
                 neqsimService.init(phaseLabel, initNumb);
             }
-            if (!neqsimService.PhaseExist)
+            /*  if (!neqsimService.PhaseExist)
+              {
+                  throw new PhaseDoesNotExcistExeption("phase noes not exsist");
+              }
+              */
+            switch (fFlags)
             {
-                throw new PhaseDoesNotExcistExeption("phase noes not exsist");
+                case 1:
+                    lnPhi = neqsimService.getLogFugacityCoefficients(phaseLabel, false);
+                    break;
+                case 2:
+                    lnPhiDT = neqsimService.getlogFugacityCoefficientsDtemperature(phaseLabel, false);
+                    break;
+                case 4:
+                    lnPhiDP = neqsimService.getlogFugacityCoefficientsDpressure(phaseLabel, false);
+                    break;
+                case 8:
+                    lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
+                    break;
             }
-
-            if (fFlags >= 8) lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
-                if (fFlags >= 4) lnPhiDP = neqsimService.getlogFugacityCoefficientsDpressure(phaseLabel, false);
-                if (fFlags >= 2) lnPhiDT = neqsimService.getlogFugacityCoefficientsDtemperature(phaseLabel, false);
-                if (fFlags >= 1) lnPhi = neqsimService.getLogFugacityCoefficients(phaseLabel, false);
-
+            
             return;
         }
 
@@ -221,7 +250,6 @@ namespace CapeOpenThermo
                     else if (tempString[i].Equals("logFugacityCoefficient.Dtemperature"))
                     {
                         double[] fugCoefsdT = neqsimService.getlogFugacityCoefficientsDtemperature(phaseLabel, doInit);
-
                         material.SetSinglePhaseProp(tempString[i], phaseLabel, "", fugCoefsdT);
                         continue;
                     }
@@ -453,7 +481,7 @@ namespace CapeOpenThermo
 
                 if (spec1[0].Equals("enthalpy") || spec1[0].Equals("entropy"))
                 {
-                    CalcEquilibrium(spec2, spec1, name);
+                  //  CalcEquilibrium(spec2, spec1, name);
                 }
                
 

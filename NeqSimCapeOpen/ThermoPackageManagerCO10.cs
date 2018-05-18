@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Runtime.InteropServices;
 using CAPEOPEN100;
 //using CAPEOPEN110;
 using Microsoft.Win32;
 using System.Reflection;
-using System.Data;
-using System.Collections;
 using System.Security.Principal;
-using DatabaseConnection;
 
 namespace CapeOpenThermo
 {
@@ -21,7 +16,6 @@ namespace CapeOpenThermo
 
     public class ThermoPackageManagerCO10 : ICapeIdentification, ICapeThermoSystem
     {
-        object test;
 
         public object GetPropertyPackages()
         {
@@ -51,10 +45,7 @@ namespace CapeOpenThermo
 
         public object ResolvePropertyPackage(String package)
         {
-                // test = new TestCPApackage();
-            // test = new GQITpackages(package);
-            test = new NeqSimNETClientCO10(package);
-            return test;
+           return new NeqSimNETClientCO10(package); ;
         }
 
  
@@ -81,7 +72,6 @@ namespace CapeOpenThermo
                 CapeDescription.SetValue("CapeVersion", "1.0");
                 CapeDescription.SetValue("ComponentVersion", "1.0-0");
                 CapeDescription.SetValue("Name", "NeqSim Thermo 10");
-                CapeDescription.SetValue("Description", "NeqSim Thermo");
                 CapeDescription.SetValue("HelpUrl", "http://143.97.83.56:8080/NeqSimWiki/en/NeqSim_Wiki");
                 CapeDescription.SetValue("VendorUrl", "NeqSim Thermo");
                 CapeDescription.SetValue("Description", "NeqSim is a process simulation and design tool used in oil and gas production. NeqSim thermodynamic and unit operaions can by used in 3rd part simulation tools supporting the Cape Open interface.");

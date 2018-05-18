@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Runtime.InteropServices;
 using CAPEOPEN110;
 using Microsoft.Win32;
 using System.Reflection;
-using System.Data;
-using System.Collections;
 using System.Security.Principal;
-using DatabaseConnection;
+using System.Configuration;
+using System.IO;
 
 namespace CapeOpenThermo
 {
@@ -20,8 +17,30 @@ namespace CapeOpenThermo
 
     public class ThermoPackageManagerCO11 : ICapeIdentification, ICapeThermoPropertyPackageManager
     {
-        object test;
+        public object GetPropertyPackageList2()
+        {
 
+            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(
+                ConfigurationUserLevel.None);
+
+            List<string> names = new List<string>();
+            names.Add("test");
+            
+
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
+
+            DirectoryInfo d = new DirectoryInfo(@fullPath);
+            FileInfo[] Files = d.GetFiles("*.neqsim");
+            string str = "";
+            foreach (FileInfo file in Files)
+            {
+                str = str + ", " + file.Name;
+                names.Add(file.Name.Replace(".neqsim", ""));
+            }
+
+            return names.ToArray();
+        }
         public object GetPropertyPackageList()
         {
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
@@ -32,10 +51,10 @@ namespace CapeOpenThermo
             DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
            
             String nametext = WindowsIdentity.GetCurrent().Name;
-            // test
 
             List<string> names = new List<string>();
-        foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
+
+            foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
             {
                 string tempString = "";
                 try
@@ -57,16 +76,12 @@ namespace CapeOpenThermo
             }
             test.Dispose();
 
-        // testing GIT
-
             return names.ToArray();
         }
 
         public object GetPropertyPackage(String package)
         {
-            string[] words = package.Split(' ');
-            test = new NeqSimNETClientCO11(words[0]);
-            return test;
+            return new NeqSimNETClientCO11(package);
         }
 
         # region COM Registration
@@ -92,7 +107,6 @@ namespace CapeOpenThermo
                 CapeDescription.SetValue("CapeVersion", "1.1");
                 CapeDescription.SetValue("ComponentVersion", "1.0-0");
                 CapeDescription.SetValue("Name", "NeqSim Thermo");
-                CapeDescription.SetValue("Description", "NeqSim Thermo");
                 CapeDescription.SetValue("HelpUrl", "http://143.97.83.56:8080/NeqSimWiki/en/NeqSim_Wiki");
                 CapeDescription.SetValue("VendorUrl", "NeqSim Thermo");
                 CapeDescription.SetValue("Description", "NeqSim is a process simulation and design tool used in oil and gas production. NeqSim thermodynamic and unit operaions can by used in 3rd part simulation tools supporting the Cape Open interface.");

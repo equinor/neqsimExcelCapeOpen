@@ -44,7 +44,7 @@ namespace NeqSimExcel
                 DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
        
                 List<string> names = new List<string>();
-                //names.Add("CPApackage");
+                names.Add("local");
                 //names.Add(WindowsIdentity.GetCurrent().Name);
                 foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
                 {
@@ -94,6 +94,7 @@ namespace NeqSimExcel
             this.fluidListNameComboBox.SelectedIndexChanged += new System.EventHandler(this.fluidListNameComboBox_SelectedIndexChanged_1);
             this.fluidListNameComboBox.Click += new System.EventHandler(this.fluidListNameComboBox_SelectedIndexChanged);
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.Startup += new System.EventHandler(this.Sheet6_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet6_Shutdown);
 
@@ -108,9 +109,20 @@ namespace NeqSimExcel
 
             string textVar1 = "B9";
             this.Range[textVar1].Value2 = "saving fluid...";
-            int a2 = Convert.ToInt32((String)fluidListNameComboBox.SelectedItem.ToString().Split(' ')[0]);
+
             SystemInterface thermoSystem = NeqSimThermoSystem.getThermoSystem();
+
+            if (fluidListNameComboBox.SelectedItem.ToString().Equals("local"))
+            {
+                string fluidDescription = "B9";
+               // thermoSystem.saveFluidLocal(fluidDescription);
+            }
+
+
+            int a2 = Convert.ToInt32((String)fluidListNameComboBox.SelectedItem.ToString().Split(' ')[0]);
+
             thermoSystem.saveFluid(a2);
+           
 
              this.Range[textVar1].Value2 = "finished saved fluidID " + a2.ToString();
             
@@ -201,6 +213,42 @@ namespace NeqSimExcel
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog openFileDIalog = new FolderBrowserDialog();
+            openFileDIalog.ShowDialog();
+            string localFileName = openFileDIalog.SelectedPath;
+            this.Range["B18"].Value2 = localFileName;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string path = this.Range["B18"].Value2;
+
+            string filePath = null;
+
+            if (NeqSimThermoSystem.LocalFilePath == null)
+            {
+                filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                filePath = filePath + "/AppData/Roaming/neqsim/fluids/";
+            }
+            else
+            {
+                filePath = NeqSimThermoSystem.LocalFilePath;
+            }
+
+
+            string fluidName = this.Range["B20"].Value2 + ".neqsim";
+
+           // string fullname = path + "/"+fluidName;
+            string fullname = filePath + "/" + fluidName;
+
+            SystemInterface thermoSystem = NeqSimThermoSystem.getThermoSystem();
+            thermoSystem.saveObjectToFile(fullname,"");
+
+            this.Range["B25"].Value2 = "Saved fluid.."+ this.Range["B20"].Value2;
         }
     }
 }

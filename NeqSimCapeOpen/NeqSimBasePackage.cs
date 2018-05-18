@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using CAPEOPEN110;
-using CapeOpenThermo;
+using NeqSimNET;
 
 
 namespace CapeOpenThermo
 {
     public class NeqSimBasePackage : ICapeIdentification, ICapeThermoCompounds, ICapeThermoPhases, ICapeThermoMaterialContext, ICapeThermoEquilibriumRoutine, ICapeThermoPropertyRoutine//, ICapeThermoPetroFractions
     {
-       public string[] constPropList = { "normalBoilingPoint", "liquidDensityAt25C", "molecularWeight" };
+
+        public NeqSimNETService neqsimService = null;
+        public string[] constPropList = { "normalBoilingPoint", "liquidDensityAt25C", "molecularWeight" };
         string[] compNames = { "methane", "propane" };
         string[] formulae = { "CH4", "C2H6" };
         string[] compIds = { "13", "14" };
@@ -195,12 +194,12 @@ namespace CapeOpenThermo
 
         public Boolean CheckSinglePhasePropSpec(string property, string phaseLabel)
         {
-            if(property.Equals("kvalue") && phaseLabel.Equals("Vapor")) return true;
-             if(property.Equals("kvalue") && phaseLabel.Equals("Liquid")) return true;
+           // char[] charsToTrim = {'\''};
+           // string NewString = property.TrimEnd(charsToTrim);
+           // if (neqsimService.CapeOpenProperties.Contains(property)) return true;
+           // else return true;
+          return true;
 
-             if (property.Equals("fugacityCoefficient") && phaseLabel.Equals("Vapor")) return true;
-             if (property.Equals("fugacityCoefficient") && phaseLabel.Equals("Liquid")) return true;
-            else return true;
         }
 
         public Boolean CheckTwoPhasePropSpec(string property, object phaseLabel)

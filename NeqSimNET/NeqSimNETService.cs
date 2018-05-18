@@ -16,22 +16,7 @@ namespace NeqSimNET
         double oldPressure = 1.00112;
         int oldPhaseType = 2;
         public static int packageID = 0;
-        
-
-
-        public void test()
-        {
-
-            thermoSystem = thermoSystem.readObject(672);
-
-            ThermodynamicOperations ops = new ThermodynamicOperations(thermoSystem);
-            ops.TPflash();
-            thermoSystem.display();
-
-            thermoSystem.setTemperature(330);
-            ops.TPflash();
-            thermoSystem.display();
-        }
+        string[] capeOpenProperties = null;
 
         public void setPackageID(int id)
         {
@@ -57,6 +42,31 @@ namespace NeqSimNET
             oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
    
             thermoSystem.init(0);
+            thermoSystem.setMultiPhaseCheck(true);
+            thermoSystem.useVolumeCorrection(true);
+            thermoSystem.init(1);
+            thermoSystem.setNumberOfPhases(1);
+            thermoSystem.setMaxNumberOfPhases(3);
+        }
+
+        public void readFluidFromGQIT(string ID)
+        {
+            try
+            {
+                thermoSystem = thermoSystem.readObjectFromFile(ID,ID);
+            }
+            catch (System.NullReferenceException e)
+            {
+                oldMoleFraction = new double[1];
+                thermoSystem = (SystemInterface)new SystemSrkCPAstatoil(298, 10);
+                thermoSystem.addComponent("methane", 1.0);
+                thermoSystem.createDatabase(true);
+            }
+
+            oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
+
+            thermoSystem.init(0);
+            thermoSystem.setMultiPhaseCheck(true);
             thermoSystem.useVolumeCorrection(true);
             thermoSystem.init(1);
             thermoSystem.setNumberOfPhases(1);
@@ -125,18 +135,16 @@ namespace NeqSimNET
 
         public void initFlashCalc()
         {
-            thermoSystem.setMultiPhaseCheck(true);
-            //  thermoSystem.setMaxNumberOfPhases(3);
-            //thermoSystem.init(0);
+           // thermoSystem.setMultiPhaseCheck(true);
         }
 
         public void setTPFractionFlash(double T, double P, double[] x)
         {
+            setCurrentProps(T, P, x,0);
             thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
-            //thermoSystem.init(0);
         }
 
         public void endFlashCalc()
@@ -147,7 +155,7 @@ namespace NeqSimNET
         public void init(string phase, int initType)
         {
             int phasetype = 0;
-            PhaseExist = true;
+          //  PhaseExist = true;
 
             if (phase.Equals("Vapor"))
             {
@@ -162,7 +170,7 @@ namespace NeqSimNET
                 phasetype = 1; // stop here - to check for errors
                 string nonHandeledPhase = phase;
             }
-
+            /*
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
             {
                 PhaseExist = false;
@@ -171,7 +179,7 @@ namespace NeqSimNET
             {
                 PhaseExist = false;
             }
-            
+            */
             // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
             //    thermoSystem.setPhaseIndex(0, phaseindex);
             //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
@@ -732,7 +740,7 @@ namespace NeqSimNET
                 thermoSystem.init(1);
             }
             thermoSystem.getPhase(0).initPhysicalProperties("density");
-            //  thermoSystem.useVolumeCorrection(true);
+           //   thermoSystem.useVolumeCorrection(false);
             return thermoSystem.getPhase(0).getPhysicalProperties().getDensity() / thermoSystem.getPhase(0).getMolarMass();
         }
 
@@ -902,11 +910,13 @@ namespace NeqSimNET
 
         public string[] readCapeOpenProperties10()
         {
+            CapeOpenProperties = thermoSystem.getCapeOpenProperties10();
             return thermoSystem.getCapeOpenProperties10();
         }
 
         public string[] readCapeOpenProperties11()
         {
+            CapeOpenProperties = thermoSystem.getCapeOpenProperties11();
             return thermoSystem.getCapeOpenProperties11();
         }
 
@@ -1094,6 +1104,8 @@ namespace NeqSimNET
 
         }
 
-        public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
+        public string[] CapeOpenProperties { get => capeOpenProperties; set => capeOpenProperties = value; }
+
+        // public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
     }
 }
