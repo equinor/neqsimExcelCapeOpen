@@ -5,17 +5,12 @@ using NeqSimNET;
 
 namespace CapeOpenThermo
 {
-    public class NeqSimBasePackage : ICapeIdentification, ICapeThermoCompounds, ICapeThermoPhases, ICapeThermoMaterialContext, ICapeThermoEquilibriumRoutine, ICapeThermoPropertyRoutine//, ICapeThermoPetroFractions
+    public class NeqSimBasePackage : ICapeIdentification, ICapeThermoCompounds, ICapeThermoPhases, ICapeThermoMaterialContext, ICapeThermoEquilibriumRoutine, ICapeThermoPropertyRoutine
     {
 
         public NeqSimNETService neqsimService = null;
-        public string[] constPropList = { "normalBoilingPoint", "liquidDensityAt25C", "molecularWeight" };
-        string[] compNames = { "methane", "propane" };
-        string[] formulae = { "CH4", "C2H6" };
-        string[] compIds = { "13", "14" };
-        string[] CAS = { "74-82-8", "74-84-0" };
-        double[] boilT = { 111.0, 145.0 };
-        double[] molw = { 16.04, 32.0 };
+        public string[] constPropList, compNames, formulae, compIds, CAS ;
+        double[] boilT = null, molw = null;
 
         string[] phaseL = { "Vapor", "Liquid", "Liquid2" };
         string[] stateOfA = { "Vapor", "Liquid", "Liquid" };
@@ -25,15 +20,13 @@ namespace CapeOpenThermo
         public string[] excludedIDs = { "", "Water", "" };
 
         public int[] oilFractionIDs = null;
-
         public ICapeThermoMaterial material = null;
         
-        public string[] properties = { "fugacityCoefficient", "logFugacityCoefficient", "logFugacityCoefficient.Dtemperature", "logFugacityCoefficient.Dpressure", "logFugacityCoefficient.Dmoles", "enthalpy", "entropy" };//, "enthalpy", "entropy" };
-        public string[] twoProp = { "kvalue", "surfaceTension" };
+        public string[] properties = null;
+        public string[] twoProp = null;
         public int nNumComp = 2;
         public int numPhases = 3;
-        string componentName = "comp1";
-        string componentDescription = "desc1";
+        public string componentDescription, componentName;
 
         public NeqSimBasePackage(){
         }

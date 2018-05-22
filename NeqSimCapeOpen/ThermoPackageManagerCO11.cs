@@ -17,30 +17,6 @@ namespace CapeOpenThermo
 
     public class ThermoPackageManagerCO11 : ICapeIdentification, ICapeThermoPropertyPackageManager
     {
-        public object GetPropertyPackageList2()
-        {
-
-            System.Configuration.Configuration config = ConfigurationManager.OpenExeConfiguration(
-                ConfigurationUserLevel.None);
-
-            List<string> names = new List<string>();
-            names.Add("test");
-            
-
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            string fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
-
-            DirectoryInfo d = new DirectoryInfo(@fullPath);
-            FileInfo[] Files = d.GetFiles("*.neqsim");
-            string str = "";
-            foreach (FileInfo file in Files)
-            {
-                str = str + ", " + file.Name;
-                names.Add(file.Name.Replace(".neqsim", ""));
-            }
-
-            return names.ToArray();
-        }
         public object GetPropertyPackageList()
         {
             DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
@@ -75,13 +51,7 @@ namespace CapeOpenThermo
                
             }
             test.Dispose();
-<<<<<<< HEAD
-            
-=======
 
-  
-
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             return names.ToArray();
         }
 

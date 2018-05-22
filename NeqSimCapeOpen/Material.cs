@@ -24,7 +24,7 @@ namespace CapeOpenThermo
 
         public void CopyFromMaterial(ref object matIn)
         {
-            //mat.
+            mat = (Material) matIn;
 
         }
 

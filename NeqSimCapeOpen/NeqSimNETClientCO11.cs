@@ -16,7 +16,8 @@ namespace CapeOpenThermo
         public NeqSimNETClientCO11(String packageDesc)
         {
 
-            string[] package = packageDesc.Split(' ');
+            string[] packages = packageDesc.Split(' ');
+            string package = packages[0];
 
             neqsimService = new NeqSimNETService();
             neqsimService.readFluidFromGQIT(Convert.ToInt32(package));
@@ -132,7 +133,6 @@ namespace CapeOpenThermo
                 neqsimService.setTPFraction(temperature, pressure / 1.0e5, (double[])moleNumbers);
                 neqsimService.init(phaseLabel, initNumb);
             }
-<<<<<<< HEAD
             /*  if (!neqsimService.PhaseExist)
               {
                   throw new PhaseDoesNotExcistExeption("phase noes not exsist");
@@ -152,24 +152,8 @@ namespace CapeOpenThermo
                 case 8:
                     lnPhiDn = neqsimService.getlogFugacityCoefficientsDmoles(phaseLabel, false);
                     break;
-=======
-=======
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
-            try
-            {
-                if (!neqsimService.PhaseExist)
-                {
-                    throw new PhaseDoesNotExcistExeption("phase noes not exsist");   // this exception needs to be handled
-                }
-            } catch(PhaseDoesNotExcistExeption e)
-            {
-                // do something (here or elsewhere)
-<<<<<<< HEAD
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
-=======
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             }
-            
+
             return;
         }
 

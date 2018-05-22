@@ -110,12 +110,10 @@ namespace CapeOpenUnitOperations
 
         public override void Edit()
         {
-            double pressure = 0;
         }
 
         public void Terminate()
         {
-            double pressure = 0;
         }
 
         public override Object simulationContext

@@ -7,28 +7,26 @@ namespace CapeOpenThermo
     public class NeqSimNETClientCO10 : ICapeIdentification, ICapeThermoPropertyPackage
 
     {
-
         public NeqSimNETService neqsimService = null;
-        int initNumb = 0, oldInitNumb = 0;
-        public string[] constPropList = { "normalBoilingPoint", "liquidDensityAt25C", "molecularWeight" };
-        string[] compNames = { "methane", "propane" };
-        string[] formulae = { "CH4", "C2H6" };
-        string[] compIds = { "13", "14" };
-        string[] CAS = { "74-82-8", "74-84-0" };
-        double[] boilT = { 111.0, 145.0 };
-        double[] molw = { 16.04, 32.0 };
+        public string[] constPropList, compNames, formulae, compIds, CAS;
+        double[] boilT = null, molw = null;
 
-        string[] phaseL = { "Vapor", "Liquid"};
+        string[] phaseL = { "Vapor", "Liquid", "Liquid2" };
         string[] stateOfA = { "Vapor", "Liquid", "Liquid" };
-        string[] keyCompID = { "", "", "" };
+        string[] keyCompID = { "", "", "Water" };
+
+        string[] densityDescr = { "", "Light", "Heavy" };
+        public string[] excludedIDs = { "", "Water", "" };
 
         public int[] oilFractionIDs = null;
 
-        public string[] properties = { "fugacityCoefficient", "logFugacityCoefficient", "logFugacityCoefficient.Dtemperature", "logFugacityCoefficient.Dpressure", "logFugacityCoefficient.Dmoles", "enthalpy", "entropy" };//, "enthalpy", "entropy" };
-        public string[] twoProp = { "kvalue", "surfaceTension" };
+        public string[] properties = null;
+        public string[] twoProp = null;
         public int nNumComp = 2;
         public int numPhases = 3;
+        public string componentDescription, componentName;
 
+        int initNumb = 0, oldInitNumb = 0;
         public NeqSimNETClientCO10()
         {
         }

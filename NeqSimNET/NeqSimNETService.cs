@@ -173,7 +173,7 @@ namespace NeqSimNET
                 phasetype = 1; // stop here - to check for errors
                 string nonHandeledPhase = phase;
             }
-            /*
+            
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
             {
                 PhaseExist = false;
@@ -182,14 +182,6 @@ namespace NeqSimNET
             {
                 PhaseExist = false;
             }
-<<<<<<< HEAD
-
-            */
-            // thermoSystem.init(0); // Quickfix for bug - find another solution because this will slow things down!
-
-=======
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
-            
             //    thermoSystem.setPhaseIndex(0, phaseindex);
             //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
             //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
@@ -1124,18 +1116,6 @@ namespace NeqSimNET
             {
                 return this.phaseExist;
             }
-
-<<<<<<< HEAD
-=======
-        private bool phaseExist;
-        public bool PhaseExist
-        {
-            get
-            {
-                return this.phaseExist;
-            }
-
->>>>>>> f53dd0924a6d663addd8765c1b314b40e0401501
             set
             {
                 this.phaseExist = value;
