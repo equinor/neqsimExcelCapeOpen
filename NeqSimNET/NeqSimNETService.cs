@@ -34,10 +34,10 @@ namespace NeqSimNET
                 thermoSystem = thermoSystem.readObject(ID);
              } catch(System.NullReferenceException e) {
                 oldMoleFraction = new double[1];
-                thermoSystem = (SystemInterface) new SystemSrkCPAstatoil(298, 10);
+                thermoSystem = (SystemInterface) new SystemSrkEos(298, 10);
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
-                thermoSystem.setMixingRule(10);
+                thermoSystem.setMixingRule(2);
             }
             
            
@@ -60,9 +60,10 @@ namespace NeqSimNET
             catch (System.NullReferenceException e)
             {
                 oldMoleFraction = new double[1];
-                thermoSystem = (SystemInterface)new SystemSrkCPAstatoil(298, 10);
+                thermoSystem = (SystemInterface)new SystemSrkEos(298, 10);
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
+                thermoSystem.setMixingRule(2);
             }
 
             oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
@@ -170,10 +171,16 @@ namespace NeqSimNET
             }
             else
             {
-                phasetype = 1; // stop here - to check for errors
+                phasetype = 0; // stop here - to check for errors
                 string nonHandeledPhase = phase;
             }
-            
+           
+            //    thermoSystem.setPhaseIndex(0, phaseindex);
+            //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
+            //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
+            thermoSystem.setPhaseType(0, phasetype);
+            thermoSystem.init(initType, 0);
+
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
             {
                 PhaseExist = false;
@@ -182,11 +189,7 @@ namespace NeqSimNET
             {
                 PhaseExist = false;
             }
-            //    thermoSystem.setPhaseIndex(0, phaseindex);
-            //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
-            //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
-            thermoSystem.setPhaseType(0, phasetype);
-            thermoSystem.init(initType, 0);
+
         }
 
         public double[] getFugacityCoefficients(string phase, Boolean doInit = true)
