@@ -40,6 +40,7 @@ namespace NeqSimExcel
             Globals.Sheet26.Visible = Excel.XlSheetVisibility.xlSheetHidden;
             Globals.Sheet27.Visible = Excel.XlSheetVisibility.xlSheetHidden;
             Globals.Sheet28.Visible = Excel.XlSheetVisibility.xlSheetHidden;
+            Globals.Sheet29.Visible = Excel.XlSheetVisibility.xlSheetHidden;
 
         }
 
@@ -81,6 +82,8 @@ namespace NeqSimExcel
                 Globals.Sheet14.Visible = Excel.XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet2.Visible = Excel.XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet11.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+                Globals.Sheet29.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+
             }
             else
             {
@@ -90,6 +93,7 @@ namespace NeqSimExcel
                 Globals.Sheet14.Visible = Excel.XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet2.Visible = Excel.XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet11.Visible = Excel.XlSheetVisibility.xlSheetHidden;
+                Globals.Sheet29.Visible = Excel.XlSheetVisibility.xlSheetHidden;
             }
         }
 
