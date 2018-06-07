@@ -80,7 +80,7 @@ namespace CapeOpenThermo
 
         public virtual void GetCompoundList(ref object compIds, ref object formulae, ref object names, ref object boilTemps, ref object molwts, ref object casnos)
         {
-            names = this.compNames;
+            names = compNames;
             formulae = this.formulae;
             compIds = this.compIds;
             boilTemps = this.boilT;

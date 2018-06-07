@@ -43,12 +43,8 @@ namespace CapeOpenThermo
             return names.ToArray();
         }
 
-        public object ResolvePropertyPackage(String package)
-        {
-           return new NeqSimNETClientCO10(package); ;
-        }
+        public object ResolvePropertyPackage(String package) => new NeqSimNETClientCO10(package);
 
- 
 
         # region COM Registration
         [ComRegisterFunction]

@@ -9,7 +9,6 @@ namespace CapeOpenThermo
     {
         public NeqSimNETService neqsimService = null;
         public string[] constPropList, compNames, formulae, compIds, CAS;
-        double[] boilT = null, molw = null;
 
         string[] phaseL = { "Vapor", "Liquid", "Liquid2" };
         string[] stateOfA = { "Vapor", "Liquid", "Liquid" };
