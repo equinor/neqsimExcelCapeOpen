@@ -1,18 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="NeqSimDatabaseSet" targetNamespace="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns:mstns="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+
+<xs:schema id="NeqSimDatabaseSet" targetNamespace="http://tempuri.org/NeqSimDatabaseSet.xsd"
+           xmlns:mstns="http://tempuri.org/NeqSimDatabaseSet.xsd" xmlns="http://tempuri.org/NeqSimDatabaseSet.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+           xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified"
+           elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter"
+                  Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema"
+                  xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionNTNU" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionNTNU (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionNTNU" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionStatoil (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="neqsimdatabaseConnectionStatoil2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil2" Provider="MySql.Data.MySqlClient" />
-          <Connection ConnectionStringObject="server=tr-w33;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase" IsAppSettingsProperty="false" Modifier="Assembly" Name="tr-w33(neqsimdatabase)" ParameterPrefix="@" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionNTNU"
+                      ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly"
+                      Name="neqsimdatabaseConnectionNTNU (Settings)" ParameterPrefix="@"
+                      PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionNTNU"
+                      Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil"
+                      IsAppSettingsProperty="true" Modifier="Assembly"
+                      Name="neqsimdatabaseConnectionStatoil (Settings)" ParameterPrefix="@"
+                      PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil"
+                      Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="neqsimdatabaseConnectionStatoil2"
+                      ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly"
+                      Name="neqsimdatabaseConnectionStatoil2 (Settings)" ParameterPrefix="@"
+                      PropertyReference="ApplicationSettings.DatabaseConnection.Properties.Settings.GlobalReference.Default.neqsimdatabaseConnectionStatoil2"
+                      Provider="MySql.Data.MySqlClient" />
+          <Connection
+            ConnectionStringObject="server=tr-w33;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase"
+            IsAppSettingsProperty="false" Modifier="Assembly" Name="tr-w33(neqsimdatabase)" ParameterPrefix="@"
+            Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fluidinfoTableAdapter" GeneratorDataComponentClassName="fluidinfoTableAdapter" Name="fluidinfo" UserDataComponentName="fluidinfoTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component"
+                        DataAccessorModifier="AutoLayout, AnsiClass, Class, Public"
+                        DataAccessorName="fluidinfoTableAdapter"
+                        GeneratorDataComponentClassName="fluidinfoTableAdapter" Name="fluidinfo"
+                        UserDataComponentName="fluidinfoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="neqsimdatabase.fluidinfo" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)"
+                        DbObjectName="neqsimdatabase.fluidinfo" DbObjectType="Table" GenerateMethods="Get"
+                        GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public"
+                        GetMethodName="GetData" QueryType="Rowset"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `ID`, `USERID`, `FIELD`, `WELL`, `TEST`, `SAMPLE`, `TEXT`, `HISTORY`, `METHANE`, `ETHANE`, `PROPANE`, `CO2`, `H2S`, `NITROGEN`, `IBUTANE`, `NBUTANE`, `PENTANE`, `NHEXANE`, `CYCPENTANE`, `CYCHEXANE`, `NHEPTANE`, `NOCTANE`, `NNONANE`, `NDECANE`, `BENZENE`, `TOLUENE`, `MXYLENE`, `PXYLENE`, `OXYLENE`, `WATER`, `METHANOL`, `MEG`, `TEG`, `DEG`, `MDEA`, `PIPERAZINE`, `ACETICACID`, `PROPIONICACID`, `NAPLUS`, `FEPLUS`, `CAPLUS`, `H3OPLUS`, `OHMINUS`, `CO3MINUS`, `CLMINUS`, `C6`, `C6MOLARMASS`, `C6DENSITY`, `C7`, `C7MOLARMASS`, `C7DENSITY`, `C8`, `C8MOLARMASS`, `C8DENSITY`, `C9`, `C9MOLARMASS`, `C9DENSITY`, `C10`, `C10MOLARMASS`, `C10DENSITY`, `C11`, `C11MOLARMASS`, `C11DENSITY`, `C12`, `C12MOLARMASS`, `C12DENSITY`, `C13`, `C13MOLARMASS`, `C13DENSITY`, `CPLUS`, `CPLUSMOLARMASS`, `CPLUSDENSITY`, `SHARED`, `iPENTANE`, `SO4MINUS`, `C14`, `C15`, `C16`, `C17`, `C18`, `C19`, `C20`, `C14MOLARMASS`, `C15MOLARMASS`, `C16MOLARMASS`, `C17MOLARMASS`, `C18MOLARMASS`, `C19MOLARMASS`, `C20MOLARMASS`, `C14DENSITY`, `C15DENSITY`, `C16DENSITY`, `C17DENSITY`, `C18DENSITY`, `C19DENSITY`, `C20DENSITY`, `HASPLUSFRACTION`, `DATE`, `ETHANOL`, `cpropane`, `i22dimC3`, `cbutane`, `i22dimC4`, `i23dimC4`, `i2mC5`, `i3mC5`, `mcpentane`, `cheptane`, `mcheptane`, `coctane`, `nc11`, `nc12`, `nc13`, `nc14`, `nc15`, `nc16`, `nc17`, `nc18`, `nc19`, `nc20`, `oxygen`, `argon`, `mercury`, `hydrogen`, `C21`, `C22`, `C23`, `C24`, `C25`, `C21MOLARMASS`, `C22MOLARMASS`, `C23MOLARMASS`, `C24MOLARMASS`, `C25MOLARMASS`, `C21DENSITY`, `C22DENSITY`, `C23DENSITY`, `C24DENSITY`, `C25DENSITY` FROM `fluidinfo`</CommandText>
@@ -163,132 +194,253 @@
               <Mapping SourceColumn="C25DENSITY" DataSetColumn="C25DENSITY" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="neqsimdatabase.fluidinfo" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetDataBy">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)"
+                        DbObjectName="neqsimdatabase.fluidinfo" DbObjectType="Table" GenerateMethods="Get"
+                        GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy"
+                        GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetDataBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT fluidinfo.ACETICACID, fluidinfo.BENZENE, fluidinfo.C10, fluidinfo.C10DENSITY, fluidinfo.C10MOLARMASS, fluidinfo.C11, fluidinfo.C11DENSITY, fluidinfo.C11MOLARMASS, fluidinfo.C12, fluidinfo.C12DENSITY, fluidinfo.C12MOLARMASS, fluidinfo.C13, fluidinfo.C13DENSITY, fluidinfo.C13MOLARMASS, fluidinfo.C14, fluidinfo.C14DENSITY, fluidinfo.C14MOLARMASS, fluidinfo.C15, fluidinfo.C15DENSITY, fluidinfo.C15MOLARMASS, fluidinfo.C16, fluidinfo.C16DENSITY, fluidinfo.C16MOLARMASS, fluidinfo.C17, fluidinfo.C17DENSITY, fluidinfo.C17MOLARMASS, fluidinfo.C18, fluidinfo.C18DENSITY, fluidinfo.C18MOLARMASS, fluidinfo.C19, fluidinfo.C19DENSITY, fluidinfo.C19MOLARMASS, fluidinfo.C20, fluidinfo.C20DENSITY, fluidinfo.C20MOLARMASS, fluidinfo.C21, fluidinfo.C21DENSITY, fluidinfo.C21MOLARMASS, fluidinfo.C22, fluidinfo.C22DENSITY, fluidinfo.C22MOLARMASS, fluidinfo.C23, fluidinfo.C23DENSITY, fluidinfo.C23MOLARMASS, fluidinfo.C24, fluidinfo.C24DENSITY, fluidinfo.C24MOLARMASS, fluidinfo.C25, fluidinfo.C25DENSITY, fluidinfo.C25MOLARMASS, fluidinfo.C6, fluidinfo.C6DENSITY, fluidinfo.C6MOLARMASS, fluidinfo.C7, fluidinfo.C7DENSITY, fluidinfo.C7MOLARMASS, fluidinfo.C8, fluidinfo.C8DENSITY, fluidinfo.C8MOLARMASS, fluidinfo.C9, fluidinfo.C9DENSITY, fluidinfo.C9MOLARMASS, fluidinfo.CAPLUS, fluidinfo.CLMINUS, fluidinfo.CO2, fluidinfo.CO3MINUS, fluidinfo.CPLUS, fluidinfo.CPLUSDENSITY, fluidinfo.CPLUSMOLARMASS, fluidinfo.CYCHEXANE, fluidinfo.CYCPENTANE, fluidinfo.`DATE`, fluidinfo.DEG, fluidinfo.ETHANE, fluidinfo.ETHANOL, fluidinfo.FEPLUS, fluidinfo.FIELD, fluidinfo.H2S, fluidinfo.H3OPLUS, fluidinfo.HASPLUSFRACTION, fluidinfo.HISTORY, fluidinfo.IBUTANE, fluidinfo.ID, fluidinfo.MDEA, fluidinfo.MEG, fluidinfo.METHANE, fluidinfo.METHANOL, fluidinfo.MXYLENE, fluidinfo.NAPLUS, fluidinfo.NBUTANE, fluidinfo.NDECANE, fluidinfo.NHEPTANE, fluidinfo.NHEXANE, fluidinfo.NITROGEN, fluidinfo.NNONANE, fluidinfo.NOCTANE, fluidinfo.OHMINUS, fluidinfo.OXYLENE, fluidinfo.PENTANE, fluidinfo.PIPERAZINE, fluidinfo.PROPANE, fluidinfo.PROPIONICACID, fluidinfo.PXYLENE, fluidinfo.SAMPLE, fluidinfo.SHARED, fluidinfo.SO4MINUS, fluidinfo.TEG, fluidinfo.TEST, fluidinfo.TEXT, fluidinfo.TOLUENE, fluidinfo.USERID, fluidinfo.WATER, fluidinfo.WELL, fluidinfo.argon, fluidinfo.cbutane, fluidinfo.cheptane, fluidinfo.coctane, fluidinfo.cpropane, fluidinfo.hydrogen, fluidinfo.i22dimC3, fluidinfo.i22dimC4, fluidinfo.i23dimC4, fluidinfo.i2mC5, fluidinfo.i3mC5, fluidinfo.iPENTANE, fluidinfo.mcheptane, fluidinfo.mcpentane, fluidinfo.mercury, fluidinfo.nc11, fluidinfo.nc12, fluidinfo.nc13, fluidinfo.nc14, fluidinfo.nc15, fluidinfo.nc16, fluidinfo.nc17, fluidinfo.nc18, fluidinfo.nc19, fluidinfo.nc20, fluidinfo.oxygen FROM fluidinfo INNER JOIN userdb ON fluidinfo.USERID = userdb.ID WHERE (fluidinfo.SHARED = '1') OR (userdb.USERNAME = @username) ORDER BY fluidinfo.ID</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME" DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME"
+                                 DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)"
+                                 DbType="String" Direction="Input" ParameterName="@username" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewFluidRow" Modifier="Public" Name="InsertNewFluidRow" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertNewFluidRow">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewFluidRow"
+                        Modifier="Public" Name="InsertNewFluidRow" QueryType="Scalar"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2"
+                        UserSourceName="InsertNewFluidRow">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID();
-</CommandText>
+                    <CommandText>
+                      INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID();
+                    </CommandText>
                     <Parameters />
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDescription" Modifier="Public" Name="UpdateDescription" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateDescription">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDescription"
+                        Modifier="Public" Name="UpdateDescription" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1"
+                        UserSourceName="UpdateDescription">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo set TEXT = ? WHERE (ID = ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="TEXT" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEXT" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@Param2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="TEXT"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)"
+                                 DbType="String" Direction="Input" ParameterName="@Param1" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEXT"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@Param2" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateField" Modifier="Public" Name="UpdateField" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateField">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateField"
+                        Modifier="Public" Name="UpdateField" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateField">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET FIELD= @fieldtext WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="fieldtext" ColumnName="FIELD" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@fieldtext" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="FIELD" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="fieldtext" ColumnName="FIELD"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(50)(50)"
+                                 DbType="String" Direction="Input" ParameterName="@fieldtext" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="50" SourceColumn="FIELD"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateHistory" Modifier="Public" Name="UpdateHistory" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateHistory">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateHistory"
+                        Modifier="Public" Name="UpdateHistory" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateHistory">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET HISTORY = @history WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="history" ColumnName="HISTORY" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(250)(250)" DbType="String" Direction="Input" ParameterName="@history" Precision="0" ProviderType="VarChar" Scale="0" Size="250" SourceColumn="HISTORY" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="history" ColumnName="HISTORY"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(250)(250)"
+                                 DbType="String" Direction="Input" ParameterName="@history" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="250" SourceColumn="HISTORY"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSample" Modifier="Public" Name="UpdateSample" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateSample">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSample"
+                        Modifier="Public" Name="UpdateSample" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateSample">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET SAMPLE = @sample WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="sample" ColumnName="SAMPLE" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@sample" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="SAMPLE" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="sample" ColumnName="SAMPLE"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)"
+                                 DbType="String" Direction="Input" ParameterName="@sample" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="100" SourceColumn="SAMPLE"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateShared" Modifier="Public" Name="UpdateShared" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateShared">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateShared"
+                        Modifier="Public" Name="UpdateShared" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateShared">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET SHARED = @sharedflag WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="sharedflag" ColumnName="SHARED" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="tinyint(1)" DbType="Object" Direction="Input" ParameterName="@sharedflag" Precision="0" ProviderType="Byte" Scale="0" Size="1024" SourceColumn="SHARED" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="sharedflag" ColumnName="SHARED"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="tinyint(1)" DbType="Object"
+                                 Direction="Input" ParameterName="@sharedflag" Precision="0" ProviderType="Byte"
+                                 Scale="0" Size="1024" SourceColumn="SHARED" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTest" Modifier="Public" Name="UpdateTest" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateTest">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTest"
+                        Modifier="Public" Name="UpdateTest" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateTest">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET TEST= @test WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="test" ColumnName="TEST" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@test" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEST" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="test" ColumnName="TEST"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)"
+                                 DbType="String" Direction="Input" ParameterName="@test" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="100" SourceColumn="TEST"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateUserID" Modifier="Public" Name="UpdateUserID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateUserID">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateUserID"
+                        Modifier="Public" Name="UpdateUserID" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateUserID">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET USERID = @userid WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="userid" ColumnName="USERID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@userid" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="userid" ColumnName="USERID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@userid" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="USERID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateWell" Modifier="Public" Name="UpdateWell" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateWell">
+              <DbSource ConnectionRef="neqsimdatabaseConnectionStatoil2 (Settings)" DbObjectName=""
+                        DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateWell"
+                        Modifier="Public" Name="UpdateWell" QueryType="NoData"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateWell">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE fluidinfo SET WELL= @welltext WHERE (ID = @id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="welltext" ColumnName="WELL" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@welltext" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="WELL" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID" DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="welltext" ColumnName="WELL"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="varchar(100)(100)"
+                                 DbType="String" Direction="Input" ParameterName="@welltext" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="100" SourceColumn="WELL"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="ID"
+                                 DataSourceName="neqsimdatabase.fluidinfo" DataTypeServer="int(10)" DbType="Int32"
+                                 Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="userdbTableAdapter" GeneratorDataComponentClassName="userdbTableAdapter" Name="userdb" UserDataComponentName="userdbTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component"
+                        DataAccessorModifier="AutoLayout, AnsiClass, Class, Public"
+                        DataAccessorName="userdbTableAdapter" GeneratorDataComponentClassName="userdbTableAdapter"
+                        Name="userdb" UserDataComponentName="userdbTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb"
+                        DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both"
+                        GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill"
+                        GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset"
+                        ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `userdb` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `USERNAME` IS NULL) OR (`USERNAME` = @p3)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0"
+                                 Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false"
+                                 SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ID, USERNAME
-FROM     userdb</CommandText>
+                    <CommandText>
+                      SELECT ID, USERNAME
+                      FROM     userdb
+                    </CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -296,11 +448,24 @@ FROM     userdb</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE `userdb` SET `ID` = @p1, `USERNAME` = @p2 WHERE ((`ID` = @p3) AND ((@p4 = 1 AND `USERNAME` IS NULL) OR (`USERNAME` = @p5)))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0"
+                                 Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false"
+                                 SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32"
+                                 Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0"
+                                 Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="true"
+                                 SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String"
+                                 Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0"
+                                 Size="0" SourceColumn="USERNAME" SourceColumnNullMapping="false"
+                                 SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -311,12 +476,20 @@ FROM     userdb</CommandText>
               <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getUserID" Modifier="Public" Name="getUserID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getUserID">
+              <DbSource ConnectionRef="tr-w33(neqsimdatabase)" DbObjectName="neqsimdatabase.userdb"
+                        DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getUserID"
+                        Modifier="Public" Name="getUserID" QueryType="Scalar"
+                        ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+                        UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getUserID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT ID FROM userdb WHERE (USERNAME = @username)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME" DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="username" ColumnName="USERNAME"
+                                 DataSourceName="neqsimdatabase.userdb" DataTypeServer="varchar(50)(50)"
+                                 DbType="String" Direction="Input" ParameterName="@username" Precision="0"
+                                 ProviderType="VarChar" Scale="0" Size="50" SourceColumn="USERNAME"
+                                 SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -328,201 +501,615 @@ FROM     userdb</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="NeqSimDatabaseSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NeqSimDatabaseSet" msprop:Generator_UserDSName="NeqSimDatabaseSet">
+  <xs:element name="NeqSimDatabaseSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"
+              msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NeqSimDatabaseSet"
+              msprop:Generator_UserDSName="NeqSimDatabaseSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="fluidinfo" msprop:Generator_TableClassName="fluidinfoDataTable" msprop:Generator_TableVarName="tablefluidinfo" msprop:Generator_TablePropName="fluidinfo" msprop:Generator_RowDeletingName="fluidinfoRowDeleting" msprop:Generator_RowChangingName="fluidinfoRowChanging" msprop:Generator_RowEvHandlerName="fluidinfoRowChangeEventHandler" msprop:Generator_RowDeletedName="fluidinfoRowDeleted" msprop:Generator_UserTableName="fluidinfo" msprop:Generator_RowChangedName="fluidinfoRowChanged" msprop:Generator_RowEvArgName="fluidinfoRowChangeEvent" msprop:Generator_RowClassName="fluidinfoRow">
+        <xs:element name="fluidinfo" msprop:Generator_TableClassName="fluidinfoDataTable"
+                    msprop:Generator_TableVarName="tablefluidinfo" msprop:Generator_TablePropName="fluidinfo"
+                    msprop:Generator_RowDeletingName="fluidinfoRowDeleting"
+                    msprop:Generator_RowChangingName="fluidinfoRowChanging"
+                    msprop:Generator_RowEvHandlerName="fluidinfoRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="fluidinfoRowDeleted" msprop:Generator_UserTableName="fluidinfo"
+                    msprop:Generator_RowChangedName="fluidinfoRowChanged"
+                    msprop:Generator_RowEvArgName="fluidinfoRowChangeEvent"
+                    msprop:Generator_RowClassName="fluidinfoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="USERID" msprop:Generator_ColumnVarNameInTable="columnUSERID" msprop:Generator_ColumnPropNameInRow="USERID" msprop:Generator_ColumnPropNameInTable="USERIDColumn" msprop:Generator_UserColumnName="USERID" type="xs:int" minOccurs="0" />
-              <xs:element name="FIELD" msprop:Generator_ColumnVarNameInTable="columnFIELD" msprop:Generator_ColumnPropNameInRow="FIELD" msprop:Generator_ColumnPropNameInTable="FIELDColumn" msprop:Generator_UserColumnName="FIELD" minOccurs="0">
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1"
+                          msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID"
+                          msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn"
+                          msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="USERID" msprop:Generator_ColumnVarNameInTable="columnUSERID"
+                          msprop:Generator_ColumnPropNameInRow="USERID"
+                          msprop:Generator_ColumnPropNameInTable="USERIDColumn"
+                          msprop:Generator_UserColumnName="USERID" type="xs:int" minOccurs="0" />
+              <xs:element name="FIELD" msprop:Generator_ColumnVarNameInTable="columnFIELD"
+                          msprop:Generator_ColumnPropNameInRow="FIELD"
+                          msprop:Generator_ColumnPropNameInTable="FIELDColumn" msprop:Generator_UserColumnName="FIELD"
+                          minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="WELL" msprop:Generator_ColumnVarNameInTable="columnWELL" msprop:Generator_ColumnPropNameInRow="WELL" msprop:Generator_ColumnPropNameInTable="WELLColumn" msprop:Generator_UserColumnName="WELL" minOccurs="0">
+              <xs:element name="WELL" msprop:Generator_ColumnVarNameInTable="columnWELL"
+                          msprop:Generator_ColumnPropNameInRow="WELL"
+                          msprop:Generator_ColumnPropNameInTable="WELLColumn" msprop:Generator_UserColumnName="WELL"
+                          minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEST" msprop:Generator_ColumnVarNameInTable="columnTEST" msprop:Generator_ColumnPropNameInRow="TEST" msprop:Generator_ColumnPropNameInTable="TESTColumn" msprop:Generator_UserColumnName="TEST" minOccurs="0">
+              <xs:element name="TEST" msprop:Generator_ColumnVarNameInTable="columnTEST"
+                          msprop:Generator_ColumnPropNameInRow="TEST"
+                          msprop:Generator_ColumnPropNameInTable="TESTColumn" msprop:Generator_UserColumnName="TEST"
+                          minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SAMPLE" msprop:Generator_ColumnVarNameInTable="columnSAMPLE" msprop:Generator_ColumnPropNameInRow="SAMPLE" msprop:Generator_ColumnPropNameInTable="SAMPLEColumn" msprop:Generator_UserColumnName="SAMPLE" minOccurs="0">
+              <xs:element name="SAMPLE" msprop:Generator_ColumnVarNameInTable="columnSAMPLE"
+                          msprop:Generator_ColumnPropNameInRow="SAMPLE"
+                          msprop:Generator_ColumnPropNameInTable="SAMPLEColumn"
+                          msprop:Generator_UserColumnName="SAMPLE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEXT" msprop:Generator_ColumnVarNameInTable="columnTEXT" msprop:Generator_ColumnPropNameInRow="TEXT" msprop:Generator_ColumnPropNameInTable="TEXTColumn" msprop:Generator_UserColumnName="TEXT" minOccurs="0">
+              <xs:element name="TEXT" msprop:Generator_ColumnVarNameInTable="columnTEXT"
+                          msprop:Generator_ColumnPropNameInRow="TEXT"
+                          msprop:Generator_ColumnPropNameInTable="TEXTColumn" msprop:Generator_UserColumnName="TEXT"
+                          minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HISTORY" msprop:Generator_ColumnVarNameInTable="columnHISTORY" msprop:Generator_ColumnPropNameInRow="HISTORY" msprop:Generator_ColumnPropNameInTable="HISTORYColumn" msprop:Generator_UserColumnName="HISTORY" minOccurs="0">
+              <xs:element name="HISTORY" msprop:Generator_ColumnVarNameInTable="columnHISTORY"
+                          msprop:Generator_ColumnPropNameInRow="HISTORY"
+                          msprop:Generator_ColumnPropNameInTable="HISTORYColumn"
+                          msprop:Generator_UserColumnName="HISTORY" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="METHANE" msprop:Generator_ColumnVarNameInTable="columnMETHANE" msprop:Generator_ColumnPropNameInRow="METHANE" msprop:Generator_ColumnPropNameInTable="METHANEColumn" msprop:Generator_UserColumnName="METHANE" type="xs:double" />
-              <xs:element name="ETHANE" msprop:Generator_ColumnVarNameInTable="columnETHANE" msprop:Generator_ColumnPropNameInRow="ETHANE" msprop:Generator_ColumnPropNameInTable="ETHANEColumn" msprop:Generator_UserColumnName="ETHANE" type="xs:double" />
-              <xs:element name="PROPANE" msprop:Generator_ColumnVarNameInTable="columnPROPANE" msprop:Generator_ColumnPropNameInRow="PROPANE" msprop:Generator_ColumnPropNameInTable="PROPANEColumn" msprop:Generator_UserColumnName="PROPANE" type="xs:double" />
-              <xs:element name="CO2" msprop:Generator_ColumnVarNameInTable="columnCO2" msprop:Generator_ColumnPropNameInRow="CO2" msprop:Generator_ColumnPropNameInTable="CO2Column" msprop:Generator_UserColumnName="CO2" type="xs:double" />
-              <xs:element name="H2S" msprop:Generator_ColumnVarNameInTable="columnH2S" msprop:Generator_ColumnPropNameInRow="H2S" msprop:Generator_ColumnPropNameInTable="H2SColumn" msprop:Generator_UserColumnName="H2S" type="xs:double" />
-              <xs:element name="NITROGEN" msprop:Generator_ColumnVarNameInTable="columnNITROGEN" msprop:Generator_ColumnPropNameInRow="NITROGEN" msprop:Generator_ColumnPropNameInTable="NITROGENColumn" msprop:Generator_UserColumnName="NITROGEN" type="xs:double" />
-              <xs:element name="IBUTANE" msprop:Generator_ColumnVarNameInTable="columnIBUTANE" msprop:Generator_ColumnPropNameInRow="IBUTANE" msprop:Generator_ColumnPropNameInTable="IBUTANEColumn" msprop:Generator_UserColumnName="IBUTANE" type="xs:double" />
-              <xs:element name="NBUTANE" msprop:Generator_ColumnVarNameInTable="columnNBUTANE" msprop:Generator_ColumnPropNameInRow="NBUTANE" msprop:Generator_ColumnPropNameInTable="NBUTANEColumn" msprop:Generator_UserColumnName="NBUTANE" type="xs:double" />
-              <xs:element name="PENTANE" msprop:Generator_ColumnVarNameInTable="columnPENTANE" msprop:Generator_ColumnPropNameInRow="PENTANE" msprop:Generator_ColumnPropNameInTable="PENTANEColumn" msprop:Generator_UserColumnName="PENTANE" type="xs:double" />
-              <xs:element name="NHEXANE" msprop:Generator_ColumnVarNameInTable="columnNHEXANE" msprop:Generator_ColumnPropNameInRow="NHEXANE" msprop:Generator_ColumnPropNameInTable="NHEXANEColumn" msprop:Generator_UserColumnName="NHEXANE" type="xs:double" />
-              <xs:element name="CYCPENTANE" msprop:Generator_ColumnVarNameInTable="columnCYCPENTANE" msprop:Generator_ColumnPropNameInRow="CYCPENTANE" msprop:Generator_ColumnPropNameInTable="CYCPENTANEColumn" msprop:Generator_UserColumnName="CYCPENTANE" type="xs:double" />
-              <xs:element name="CYCHEXANE" msprop:Generator_ColumnVarNameInTable="columnCYCHEXANE" msprop:Generator_ColumnPropNameInRow="CYCHEXANE" msprop:Generator_ColumnPropNameInTable="CYCHEXANEColumn" msprop:Generator_UserColumnName="CYCHEXANE" type="xs:double" />
-              <xs:element name="NHEPTANE" msprop:Generator_ColumnVarNameInTable="columnNHEPTANE" msprop:Generator_ColumnPropNameInRow="NHEPTANE" msprop:Generator_ColumnPropNameInTable="NHEPTANEColumn" msprop:Generator_UserColumnName="NHEPTANE" type="xs:double" />
-              <xs:element name="NOCTANE" msprop:Generator_ColumnVarNameInTable="columnNOCTANE" msprop:Generator_ColumnPropNameInRow="NOCTANE" msprop:Generator_ColumnPropNameInTable="NOCTANEColumn" msprop:Generator_UserColumnName="NOCTANE" type="xs:double" />
-              <xs:element name="NNONANE" msprop:Generator_ColumnVarNameInTable="columnNNONANE" msprop:Generator_ColumnPropNameInRow="NNONANE" msprop:Generator_ColumnPropNameInTable="NNONANEColumn" msprop:Generator_UserColumnName="NNONANE" type="xs:double" />
-              <xs:element name="NDECANE" msprop:Generator_ColumnVarNameInTable="columnNDECANE" msprop:Generator_ColumnPropNameInRow="NDECANE" msprop:Generator_ColumnPropNameInTable="NDECANEColumn" msprop:Generator_UserColumnName="NDECANE" type="xs:double" />
-              <xs:element name="BENZENE" msprop:Generator_ColumnVarNameInTable="columnBENZENE" msprop:Generator_ColumnPropNameInRow="BENZENE" msprop:Generator_ColumnPropNameInTable="BENZENEColumn" msprop:Generator_UserColumnName="BENZENE" type="xs:double" />
-              <xs:element name="TOLUENE" msprop:Generator_ColumnVarNameInTable="columnTOLUENE" msprop:Generator_ColumnPropNameInRow="TOLUENE" msprop:Generator_ColumnPropNameInTable="TOLUENEColumn" msprop:Generator_UserColumnName="TOLUENE" type="xs:double" />
-              <xs:element name="MXYLENE" msprop:Generator_ColumnVarNameInTable="columnMXYLENE" msprop:Generator_ColumnPropNameInRow="MXYLENE" msprop:Generator_ColumnPropNameInTable="MXYLENEColumn" msprop:Generator_UserColumnName="MXYLENE" type="xs:double" />
-              <xs:element name="PXYLENE" msprop:Generator_ColumnVarNameInTable="columnPXYLENE" msprop:Generator_ColumnPropNameInRow="PXYLENE" msprop:Generator_ColumnPropNameInTable="PXYLENEColumn" msprop:Generator_UserColumnName="PXYLENE" type="xs:double" />
-              <xs:element name="OXYLENE" msprop:Generator_ColumnVarNameInTable="columnOXYLENE" msprop:Generator_ColumnPropNameInRow="OXYLENE" msprop:Generator_ColumnPropNameInTable="OXYLENEColumn" msprop:Generator_UserColumnName="OXYLENE" type="xs:double" />
-              <xs:element name="WATER" msprop:Generator_ColumnVarNameInTable="columnWATER" msprop:Generator_ColumnPropNameInRow="WATER" msprop:Generator_ColumnPropNameInTable="WATERColumn" msprop:Generator_UserColumnName="WATER" type="xs:double" />
-              <xs:element name="METHANOL" msprop:Generator_ColumnVarNameInTable="columnMETHANOL" msprop:Generator_ColumnPropNameInRow="METHANOL" msprop:Generator_ColumnPropNameInTable="METHANOLColumn" msprop:Generator_UserColumnName="METHANOL" type="xs:double" />
-              <xs:element name="MEG" msprop:Generator_ColumnVarNameInTable="columnMEG" msprop:Generator_ColumnPropNameInRow="MEG" msprop:Generator_ColumnPropNameInTable="MEGColumn" msprop:Generator_UserColumnName="MEG" type="xs:double" />
-              <xs:element name="TEG" msprop:Generator_ColumnVarNameInTable="columnTEG" msprop:Generator_ColumnPropNameInRow="TEG" msprop:Generator_ColumnPropNameInTable="TEGColumn" msprop:Generator_UserColumnName="TEG" type="xs:double" />
-              <xs:element name="DEG" msprop:Generator_ColumnVarNameInTable="columnDEG" msprop:Generator_ColumnPropNameInRow="DEG" msprop:Generator_ColumnPropNameInTable="DEGColumn" msprop:Generator_UserColumnName="DEG" type="xs:double" />
-              <xs:element name="MDEA" msprop:Generator_ColumnVarNameInTable="columnMDEA" msprop:Generator_ColumnPropNameInRow="MDEA" msprop:Generator_ColumnPropNameInTable="MDEAColumn" msprop:Generator_UserColumnName="MDEA" type="xs:double" />
-              <xs:element name="PIPERAZINE" msprop:Generator_ColumnVarNameInTable="columnPIPERAZINE" msprop:Generator_ColumnPropNameInRow="PIPERAZINE" msprop:Generator_ColumnPropNameInTable="PIPERAZINEColumn" msprop:Generator_UserColumnName="PIPERAZINE" type="xs:double" />
-              <xs:element name="ACETICACID" msprop:Generator_ColumnVarNameInTable="columnACETICACID" msprop:Generator_ColumnPropNameInRow="ACETICACID" msprop:Generator_ColumnPropNameInTable="ACETICACIDColumn" msprop:Generator_UserColumnName="ACETICACID" type="xs:double" />
-              <xs:element name="PROPIONICACID" msprop:Generator_ColumnVarNameInTable="columnPROPIONICACID" msprop:Generator_ColumnPropNameInRow="PROPIONICACID" msprop:Generator_ColumnPropNameInTable="PROPIONICACIDColumn" msprop:Generator_UserColumnName="PROPIONICACID" type="xs:double" />
-              <xs:element name="NAPLUS" msprop:Generator_ColumnVarNameInTable="columnNAPLUS" msprop:Generator_ColumnPropNameInRow="NAPLUS" msprop:Generator_ColumnPropNameInTable="NAPLUSColumn" msprop:Generator_UserColumnName="NAPLUS" type="xs:double" />
-              <xs:element name="FEPLUS" msprop:Generator_ColumnVarNameInTable="columnFEPLUS" msprop:Generator_ColumnPropNameInRow="FEPLUS" msprop:Generator_ColumnPropNameInTable="FEPLUSColumn" msprop:Generator_UserColumnName="FEPLUS" type="xs:double" />
-              <xs:element name="CAPLUS" msprop:Generator_ColumnVarNameInTable="columnCAPLUS" msprop:Generator_ColumnPropNameInRow="CAPLUS" msprop:Generator_ColumnPropNameInTable="CAPLUSColumn" msprop:Generator_UserColumnName="CAPLUS" type="xs:double" />
-              <xs:element name="H3OPLUS" msprop:Generator_ColumnVarNameInTable="columnH3OPLUS" msprop:Generator_ColumnPropNameInRow="H3OPLUS" msprop:Generator_ColumnPropNameInTable="H3OPLUSColumn" msprop:Generator_UserColumnName="H3OPLUS" type="xs:double" />
-              <xs:element name="OHMINUS" msprop:Generator_ColumnVarNameInTable="columnOHMINUS" msprop:Generator_ColumnPropNameInRow="OHMINUS" msprop:Generator_ColumnPropNameInTable="OHMINUSColumn" msprop:Generator_UserColumnName="OHMINUS" type="xs:double" />
-              <xs:element name="CO3MINUS" msprop:Generator_ColumnVarNameInTable="columnCO3MINUS" msprop:Generator_ColumnPropNameInRow="CO3MINUS" msprop:Generator_ColumnPropNameInTable="CO3MINUSColumn" msprop:Generator_UserColumnName="CO3MINUS" type="xs:double" />
-              <xs:element name="CLMINUS" msprop:Generator_ColumnVarNameInTable="columnCLMINUS" msprop:Generator_ColumnPropNameInRow="CLMINUS" msprop:Generator_ColumnPropNameInTable="CLMINUSColumn" msprop:Generator_UserColumnName="CLMINUS" type="xs:double" />
-              <xs:element name="C6" msprop:Generator_ColumnVarNameInTable="columnC6" msprop:Generator_ColumnPropNameInRow="C6" msprop:Generator_ColumnPropNameInTable="C6Column" msprop:Generator_UserColumnName="C6" type="xs:double" />
-              <xs:element name="C6MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC6MOLARMASS" msprop:Generator_ColumnPropNameInRow="C6MOLARMASS" msprop:Generator_ColumnPropNameInTable="C6MOLARMASSColumn" msprop:Generator_UserColumnName="C6MOLARMASS" type="xs:double" />
-              <xs:element name="C6DENSITY" msprop:Generator_ColumnVarNameInTable="columnC6DENSITY" msprop:Generator_ColumnPropNameInRow="C6DENSITY" msprop:Generator_ColumnPropNameInTable="C6DENSITYColumn" msprop:Generator_UserColumnName="C6DENSITY" type="xs:double" />
-              <xs:element name="C7" msprop:Generator_ColumnVarNameInTable="columnC7" msprop:Generator_ColumnPropNameInRow="C7" msprop:Generator_ColumnPropNameInTable="C7Column" msprop:Generator_UserColumnName="C7" type="xs:double" />
-              <xs:element name="C7MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC7MOLARMASS" msprop:Generator_ColumnPropNameInRow="C7MOLARMASS" msprop:Generator_ColumnPropNameInTable="C7MOLARMASSColumn" msprop:Generator_UserColumnName="C7MOLARMASS" type="xs:double" />
-              <xs:element name="C7DENSITY" msprop:Generator_ColumnVarNameInTable="columnC7DENSITY" msprop:Generator_ColumnPropNameInRow="C7DENSITY" msprop:Generator_ColumnPropNameInTable="C7DENSITYColumn" msprop:Generator_UserColumnName="C7DENSITY" type="xs:double" />
-              <xs:element name="C8" msprop:Generator_ColumnVarNameInTable="columnC8" msprop:Generator_ColumnPropNameInRow="C8" msprop:Generator_ColumnPropNameInTable="C8Column" msprop:Generator_UserColumnName="C8" type="xs:double" />
-              <xs:element name="C8MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC8MOLARMASS" msprop:Generator_ColumnPropNameInRow="C8MOLARMASS" msprop:Generator_ColumnPropNameInTable="C8MOLARMASSColumn" msprop:Generator_UserColumnName="C8MOLARMASS" type="xs:double" />
-              <xs:element name="C8DENSITY" msprop:Generator_ColumnVarNameInTable="columnC8DENSITY" msprop:Generator_ColumnPropNameInRow="C8DENSITY" msprop:Generator_ColumnPropNameInTable="C8DENSITYColumn" msprop:Generator_UserColumnName="C8DENSITY" type="xs:double" />
-              <xs:element name="C9" msprop:Generator_ColumnVarNameInTable="columnC9" msprop:Generator_ColumnPropNameInRow="C9" msprop:Generator_ColumnPropNameInTable="C9Column" msprop:Generator_UserColumnName="C9" type="xs:double" />
-              <xs:element name="C9MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC9MOLARMASS" msprop:Generator_ColumnPropNameInRow="C9MOLARMASS" msprop:Generator_ColumnPropNameInTable="C9MOLARMASSColumn" msprop:Generator_UserColumnName="C9MOLARMASS" type="xs:double" />
-              <xs:element name="C9DENSITY" msprop:Generator_ColumnVarNameInTable="columnC9DENSITY" msprop:Generator_ColumnPropNameInRow="C9DENSITY" msprop:Generator_ColumnPropNameInTable="C9DENSITYColumn" msprop:Generator_UserColumnName="C9DENSITY" type="xs:double" />
-              <xs:element name="C10" msprop:Generator_ColumnVarNameInTable="columnC10" msprop:Generator_ColumnPropNameInRow="C10" msprop:Generator_ColumnPropNameInTable="C10Column" msprop:Generator_UserColumnName="C10" type="xs:double" />
-              <xs:element name="C10MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC10MOLARMASS" msprop:Generator_ColumnPropNameInRow="C10MOLARMASS" msprop:Generator_ColumnPropNameInTable="C10MOLARMASSColumn" msprop:Generator_UserColumnName="C10MOLARMASS" type="xs:double" />
-              <xs:element name="C10DENSITY" msprop:Generator_ColumnVarNameInTable="columnC10DENSITY" msprop:Generator_ColumnPropNameInRow="C10DENSITY" msprop:Generator_ColumnPropNameInTable="C10DENSITYColumn" msprop:Generator_UserColumnName="C10DENSITY" type="xs:double" />
-              <xs:element name="C11" msprop:Generator_ColumnVarNameInTable="columnC11" msprop:Generator_ColumnPropNameInRow="C11" msprop:Generator_ColumnPropNameInTable="C11Column" msprop:Generator_UserColumnName="C11" type="xs:double" />
-              <xs:element name="C11MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC11MOLARMASS" msprop:Generator_ColumnPropNameInRow="C11MOLARMASS" msprop:Generator_ColumnPropNameInTable="C11MOLARMASSColumn" msprop:Generator_UserColumnName="C11MOLARMASS" type="xs:double" />
-              <xs:element name="C11DENSITY" msprop:Generator_ColumnVarNameInTable="columnC11DENSITY" msprop:Generator_ColumnPropNameInRow="C11DENSITY" msprop:Generator_ColumnPropNameInTable="C11DENSITYColumn" msprop:Generator_UserColumnName="C11DENSITY" type="xs:double" />
-              <xs:element name="C12" msprop:Generator_ColumnVarNameInTable="columnC12" msprop:Generator_ColumnPropNameInRow="C12" msprop:Generator_ColumnPropNameInTable="C12Column" msprop:Generator_UserColumnName="C12" type="xs:double" />
-              <xs:element name="C12MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC12MOLARMASS" msprop:Generator_ColumnPropNameInRow="C12MOLARMASS" msprop:Generator_ColumnPropNameInTable="C12MOLARMASSColumn" msprop:Generator_UserColumnName="C12MOLARMASS" type="xs:double" />
-              <xs:element name="C12DENSITY" msprop:Generator_ColumnVarNameInTable="columnC12DENSITY" msprop:Generator_ColumnPropNameInRow="C12DENSITY" msprop:Generator_ColumnPropNameInTable="C12DENSITYColumn" msprop:Generator_UserColumnName="C12DENSITY" type="xs:double" />
-              <xs:element name="C13" msprop:Generator_ColumnVarNameInTable="columnC13" msprop:Generator_ColumnPropNameInRow="C13" msprop:Generator_ColumnPropNameInTable="C13Column" msprop:Generator_UserColumnName="C13" type="xs:double" />
-              <xs:element name="C13MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC13MOLARMASS" msprop:Generator_ColumnPropNameInRow="C13MOLARMASS" msprop:Generator_ColumnPropNameInTable="C13MOLARMASSColumn" msprop:Generator_UserColumnName="C13MOLARMASS" type="xs:double" />
-              <xs:element name="C13DENSITY" msprop:Generator_ColumnVarNameInTable="columnC13DENSITY" msprop:Generator_ColumnPropNameInRow="C13DENSITY" msprop:Generator_ColumnPropNameInTable="C13DENSITYColumn" msprop:Generator_UserColumnName="C13DENSITY" type="xs:double" />
-              <xs:element name="CPLUS" msprop:Generator_ColumnVarNameInTable="columnCPLUS" msprop:Generator_ColumnPropNameInRow="CPLUS" msprop:Generator_ColumnPropNameInTable="CPLUSColumn" msprop:Generator_UserColumnName="CPLUS" type="xs:double" />
-              <xs:element name="CPLUSMOLARMASS" msprop:Generator_ColumnVarNameInTable="columnCPLUSMOLARMASS" msprop:Generator_ColumnPropNameInRow="CPLUSMOLARMASS" msprop:Generator_ColumnPropNameInTable="CPLUSMOLARMASSColumn" msprop:Generator_UserColumnName="CPLUSMOLARMASS" type="xs:double" />
-              <xs:element name="CPLUSDENSITY" msprop:Generator_ColumnVarNameInTable="columnCPLUSDENSITY" msprop:Generator_ColumnPropNameInRow="CPLUSDENSITY" msprop:Generator_ColumnPropNameInTable="CPLUSDENSITYColumn" msprop:Generator_UserColumnName="CPLUSDENSITY" type="xs:double" />
-              <xs:element name="SHARED" msprop:Generator_ColumnVarNameInTable="columnSHARED" msprop:Generator_ColumnPropNameInRow="SHARED" msprop:Generator_ColumnPropNameInTable="SHAREDColumn" msprop:Generator_UserColumnName="SHARED" type="xs:boolean" />
-              <xs:element name="iPENTANE" msprop:Generator_ColumnVarNameInTable="columniPENTANE" msprop:Generator_ColumnPropNameInRow="iPENTANE" msprop:Generator_ColumnPropNameInTable="iPENTANEColumn" msprop:Generator_UserColumnName="iPENTANE" type="xs:double" />
-              <xs:element name="SO4MINUS" msprop:Generator_ColumnVarNameInTable="columnSO4MINUS" msprop:Generator_ColumnPropNameInRow="SO4MINUS" msprop:Generator_ColumnPropNameInTable="SO4MINUSColumn" msprop:Generator_UserColumnName="SO4MINUS" type="xs:double" />
-              <xs:element name="C14" msprop:Generator_ColumnVarNameInTable="columnC14" msprop:Generator_ColumnPropNameInRow="C14" msprop:Generator_ColumnPropNameInTable="C14Column" msprop:Generator_UserColumnName="C14" type="xs:double" />
-              <xs:element name="C15" msprop:Generator_ColumnVarNameInTable="columnC15" msprop:Generator_ColumnPropNameInRow="C15" msprop:Generator_ColumnPropNameInTable="C15Column" msprop:Generator_UserColumnName="C15" type="xs:double" />
-              <xs:element name="C16" msprop:Generator_ColumnVarNameInTable="columnC16" msprop:Generator_ColumnPropNameInRow="C16" msprop:Generator_ColumnPropNameInTable="C16Column" msprop:Generator_UserColumnName="C16" type="xs:double" />
-              <xs:element name="C17" msprop:Generator_ColumnVarNameInTable="columnC17" msprop:Generator_ColumnPropNameInRow="C17" msprop:Generator_ColumnPropNameInTable="C17Column" msprop:Generator_UserColumnName="C17" type="xs:double" />
-              <xs:element name="C18" msprop:Generator_ColumnVarNameInTable="columnC18" msprop:Generator_ColumnPropNameInRow="C18" msprop:Generator_ColumnPropNameInTable="C18Column" msprop:Generator_UserColumnName="C18" type="xs:double" />
-              <xs:element name="C19" msprop:Generator_ColumnVarNameInTable="columnC19" msprop:Generator_ColumnPropNameInRow="C19" msprop:Generator_ColumnPropNameInTable="C19Column" msprop:Generator_UserColumnName="C19" type="xs:double" />
-              <xs:element name="C20" msprop:Generator_ColumnVarNameInTable="columnC20" msprop:Generator_ColumnPropNameInRow="C20" msprop:Generator_ColumnPropNameInTable="C20Column" msprop:Generator_UserColumnName="C20" type="xs:double" />
-              <xs:element name="C14MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC14MOLARMASS" msprop:Generator_ColumnPropNameInRow="C14MOLARMASS" msprop:Generator_ColumnPropNameInTable="C14MOLARMASSColumn" msprop:Generator_UserColumnName="C14MOLARMASS" type="xs:double" />
-              <xs:element name="C15MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC15MOLARMASS" msprop:Generator_ColumnPropNameInRow="C15MOLARMASS" msprop:Generator_ColumnPropNameInTable="C15MOLARMASSColumn" msprop:Generator_UserColumnName="C15MOLARMASS" type="xs:double" />
-              <xs:element name="C16MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC16MOLARMASS" msprop:Generator_ColumnPropNameInRow="C16MOLARMASS" msprop:Generator_ColumnPropNameInTable="C16MOLARMASSColumn" msprop:Generator_UserColumnName="C16MOLARMASS" type="xs:double" />
-              <xs:element name="C17MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC17MOLARMASS" msprop:Generator_ColumnPropNameInRow="C17MOLARMASS" msprop:Generator_ColumnPropNameInTable="C17MOLARMASSColumn" msprop:Generator_UserColumnName="C17MOLARMASS" type="xs:double" />
-              <xs:element name="C18MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC18MOLARMASS" msprop:Generator_ColumnPropNameInRow="C18MOLARMASS" msprop:Generator_ColumnPropNameInTable="C18MOLARMASSColumn" msprop:Generator_UserColumnName="C18MOLARMASS" type="xs:double" />
-              <xs:element name="C19MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC19MOLARMASS" msprop:Generator_ColumnPropNameInRow="C19MOLARMASS" msprop:Generator_ColumnPropNameInTable="C19MOLARMASSColumn" msprop:Generator_UserColumnName="C19MOLARMASS" type="xs:double" />
-              <xs:element name="C20MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC20MOLARMASS" msprop:Generator_ColumnPropNameInRow="C20MOLARMASS" msprop:Generator_ColumnPropNameInTable="C20MOLARMASSColumn" msprop:Generator_UserColumnName="C20MOLARMASS" type="xs:double" />
-              <xs:element name="C14DENSITY" msprop:Generator_ColumnVarNameInTable="columnC14DENSITY" msprop:Generator_ColumnPropNameInRow="C14DENSITY" msprop:Generator_ColumnPropNameInTable="C14DENSITYColumn" msprop:Generator_UserColumnName="C14DENSITY" type="xs:double" />
-              <xs:element name="C15DENSITY" msprop:Generator_ColumnVarNameInTable="columnC15DENSITY" msprop:Generator_ColumnPropNameInRow="C15DENSITY" msprop:Generator_ColumnPropNameInTable="C15DENSITYColumn" msprop:Generator_UserColumnName="C15DENSITY" type="xs:double" />
-              <xs:element name="C16DENSITY" msprop:Generator_ColumnVarNameInTable="columnC16DENSITY" msprop:Generator_ColumnPropNameInRow="C16DENSITY" msprop:Generator_ColumnPropNameInTable="C16DENSITYColumn" msprop:Generator_UserColumnName="C16DENSITY" type="xs:double" />
-              <xs:element name="C17DENSITY" msprop:Generator_ColumnVarNameInTable="columnC17DENSITY" msprop:Generator_ColumnPropNameInRow="C17DENSITY" msprop:Generator_ColumnPropNameInTable="C17DENSITYColumn" msprop:Generator_UserColumnName="C17DENSITY" type="xs:double" />
-              <xs:element name="C18DENSITY" msprop:Generator_ColumnVarNameInTable="columnC18DENSITY" msprop:Generator_ColumnPropNameInRow="C18DENSITY" msprop:Generator_ColumnPropNameInTable="C18DENSITYColumn" msprop:Generator_UserColumnName="C18DENSITY" type="xs:double" />
-              <xs:element name="C19DENSITY" msprop:Generator_ColumnVarNameInTable="columnC19DENSITY" msprop:Generator_ColumnPropNameInRow="C19DENSITY" msprop:Generator_ColumnPropNameInTable="C19DENSITYColumn" msprop:Generator_UserColumnName="C19DENSITY" type="xs:double" />
-              <xs:element name="C20DENSITY" msprop:Generator_ColumnVarNameInTable="columnC20DENSITY" msprop:Generator_ColumnPropNameInRow="C20DENSITY" msprop:Generator_ColumnPropNameInTable="C20DENSITYColumn" msprop:Generator_UserColumnName="C20DENSITY" type="xs:double" />
-              <xs:element name="HASPLUSFRACTION" msprop:Generator_ColumnVarNameInTable="columnHASPLUSFRACTION" msprop:Generator_ColumnPropNameInRow="HASPLUSFRACTION" msprop:Generator_ColumnPropNameInTable="HASPLUSFRACTIONColumn" msprop:Generator_UserColumnName="HASPLUSFRACTION" type="xs:byte" />
-              <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE" msprop:Generator_ColumnPropNameInRow="DATE" msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE" minOccurs="0">
+              <xs:element name="METHANE" msprop:Generator_ColumnVarNameInTable="columnMETHANE"
+                          msprop:Generator_ColumnPropNameInRow="METHANE"
+                          msprop:Generator_ColumnPropNameInTable="METHANEColumn"
+                          msprop:Generator_UserColumnName="METHANE" type="xs:double" />
+              <xs:element name="ETHANE" msprop:Generator_ColumnVarNameInTable="columnETHANE"
+                          msprop:Generator_ColumnPropNameInRow="ETHANE"
+                          msprop:Generator_ColumnPropNameInTable="ETHANEColumn"
+                          msprop:Generator_UserColumnName="ETHANE" type="xs:double" />
+              <xs:element name="PROPANE" msprop:Generator_ColumnVarNameInTable="columnPROPANE"
+                          msprop:Generator_ColumnPropNameInRow="PROPANE"
+                          msprop:Generator_ColumnPropNameInTable="PROPANEColumn"
+                          msprop:Generator_UserColumnName="PROPANE" type="xs:double" />
+              <xs:element name="CO2" msprop:Generator_ColumnVarNameInTable="columnCO2"
+                          msprop:Generator_ColumnPropNameInRow="CO2" msprop:Generator_ColumnPropNameInTable="CO2Column"
+                          msprop:Generator_UserColumnName="CO2" type="xs:double" />
+              <xs:element name="H2S" msprop:Generator_ColumnVarNameInTable="columnH2S"
+                          msprop:Generator_ColumnPropNameInRow="H2S" msprop:Generator_ColumnPropNameInTable="H2SColumn"
+                          msprop:Generator_UserColumnName="H2S" type="xs:double" />
+              <xs:element name="NITROGEN" msprop:Generator_ColumnVarNameInTable="columnNITROGEN"
+                          msprop:Generator_ColumnPropNameInRow="NITROGEN"
+                          msprop:Generator_ColumnPropNameInTable="NITROGENColumn"
+                          msprop:Generator_UserColumnName="NITROGEN" type="xs:double" />
+              <xs:element name="IBUTANE" msprop:Generator_ColumnVarNameInTable="columnIBUTANE"
+                          msprop:Generator_ColumnPropNameInRow="IBUTANE"
+                          msprop:Generator_ColumnPropNameInTable="IBUTANEColumn"
+                          msprop:Generator_UserColumnName="IBUTANE" type="xs:double" />
+              <xs:element name="NBUTANE" msprop:Generator_ColumnVarNameInTable="columnNBUTANE"
+                          msprop:Generator_ColumnPropNameInRow="NBUTANE"
+                          msprop:Generator_ColumnPropNameInTable="NBUTANEColumn"
+                          msprop:Generator_UserColumnName="NBUTANE" type="xs:double" />
+              <xs:element name="PENTANE" msprop:Generator_ColumnVarNameInTable="columnPENTANE"
+                          msprop:Generator_ColumnPropNameInRow="PENTANE"
+                          msprop:Generator_ColumnPropNameInTable="PENTANEColumn"
+                          msprop:Generator_UserColumnName="PENTANE" type="xs:double" />
+              <xs:element name="NHEXANE" msprop:Generator_ColumnVarNameInTable="columnNHEXANE"
+                          msprop:Generator_ColumnPropNameInRow="NHEXANE"
+                          msprop:Generator_ColumnPropNameInTable="NHEXANEColumn"
+                          msprop:Generator_UserColumnName="NHEXANE" type="xs:double" />
+              <xs:element name="CYCPENTANE" msprop:Generator_ColumnVarNameInTable="columnCYCPENTANE"
+                          msprop:Generator_ColumnPropNameInRow="CYCPENTANE"
+                          msprop:Generator_ColumnPropNameInTable="CYCPENTANEColumn"
+                          msprop:Generator_UserColumnName="CYCPENTANE" type="xs:double" />
+              <xs:element name="CYCHEXANE" msprop:Generator_ColumnVarNameInTable="columnCYCHEXANE"
+                          msprop:Generator_ColumnPropNameInRow="CYCHEXANE"
+                          msprop:Generator_ColumnPropNameInTable="CYCHEXANEColumn"
+                          msprop:Generator_UserColumnName="CYCHEXANE" type="xs:double" />
+              <xs:element name="NHEPTANE" msprop:Generator_ColumnVarNameInTable="columnNHEPTANE"
+                          msprop:Generator_ColumnPropNameInRow="NHEPTANE"
+                          msprop:Generator_ColumnPropNameInTable="NHEPTANEColumn"
+                          msprop:Generator_UserColumnName="NHEPTANE" type="xs:double" />
+              <xs:element name="NOCTANE" msprop:Generator_ColumnVarNameInTable="columnNOCTANE"
+                          msprop:Generator_ColumnPropNameInRow="NOCTANE"
+                          msprop:Generator_ColumnPropNameInTable="NOCTANEColumn"
+                          msprop:Generator_UserColumnName="NOCTANE" type="xs:double" />
+              <xs:element name="NNONANE" msprop:Generator_ColumnVarNameInTable="columnNNONANE"
+                          msprop:Generator_ColumnPropNameInRow="NNONANE"
+                          msprop:Generator_ColumnPropNameInTable="NNONANEColumn"
+                          msprop:Generator_UserColumnName="NNONANE" type="xs:double" />
+              <xs:element name="NDECANE" msprop:Generator_ColumnVarNameInTable="columnNDECANE"
+                          msprop:Generator_ColumnPropNameInRow="NDECANE"
+                          msprop:Generator_ColumnPropNameInTable="NDECANEColumn"
+                          msprop:Generator_UserColumnName="NDECANE" type="xs:double" />
+              <xs:element name="BENZENE" msprop:Generator_ColumnVarNameInTable="columnBENZENE"
+                          msprop:Generator_ColumnPropNameInRow="BENZENE"
+                          msprop:Generator_ColumnPropNameInTable="BENZENEColumn"
+                          msprop:Generator_UserColumnName="BENZENE" type="xs:double" />
+              <xs:element name="TOLUENE" msprop:Generator_ColumnVarNameInTable="columnTOLUENE"
+                          msprop:Generator_ColumnPropNameInRow="TOLUENE"
+                          msprop:Generator_ColumnPropNameInTable="TOLUENEColumn"
+                          msprop:Generator_UserColumnName="TOLUENE" type="xs:double" />
+              <xs:element name="MXYLENE" msprop:Generator_ColumnVarNameInTable="columnMXYLENE"
+                          msprop:Generator_ColumnPropNameInRow="MXYLENE"
+                          msprop:Generator_ColumnPropNameInTable="MXYLENEColumn"
+                          msprop:Generator_UserColumnName="MXYLENE" type="xs:double" />
+              <xs:element name="PXYLENE" msprop:Generator_ColumnVarNameInTable="columnPXYLENE"
+                          msprop:Generator_ColumnPropNameInRow="PXYLENE"
+                          msprop:Generator_ColumnPropNameInTable="PXYLENEColumn"
+                          msprop:Generator_UserColumnName="PXYLENE" type="xs:double" />
+              <xs:element name="OXYLENE" msprop:Generator_ColumnVarNameInTable="columnOXYLENE"
+                          msprop:Generator_ColumnPropNameInRow="OXYLENE"
+                          msprop:Generator_ColumnPropNameInTable="OXYLENEColumn"
+                          msprop:Generator_UserColumnName="OXYLENE" type="xs:double" />
+              <xs:element name="WATER" msprop:Generator_ColumnVarNameInTable="columnWATER"
+                          msprop:Generator_ColumnPropNameInRow="WATER"
+                          msprop:Generator_ColumnPropNameInTable="WATERColumn" msprop:Generator_UserColumnName="WATER"
+                          type="xs:double" />
+              <xs:element name="METHANOL" msprop:Generator_ColumnVarNameInTable="columnMETHANOL"
+                          msprop:Generator_ColumnPropNameInRow="METHANOL"
+                          msprop:Generator_ColumnPropNameInTable="METHANOLColumn"
+                          msprop:Generator_UserColumnName="METHANOL" type="xs:double" />
+              <xs:element name="MEG" msprop:Generator_ColumnVarNameInTable="columnMEG"
+                          msprop:Generator_ColumnPropNameInRow="MEG" msprop:Generator_ColumnPropNameInTable="MEGColumn"
+                          msprop:Generator_UserColumnName="MEG" type="xs:double" />
+              <xs:element name="TEG" msprop:Generator_ColumnVarNameInTable="columnTEG"
+                          msprop:Generator_ColumnPropNameInRow="TEG" msprop:Generator_ColumnPropNameInTable="TEGColumn"
+                          msprop:Generator_UserColumnName="TEG" type="xs:double" />
+              <xs:element name="DEG" msprop:Generator_ColumnVarNameInTable="columnDEG"
+                          msprop:Generator_ColumnPropNameInRow="DEG" msprop:Generator_ColumnPropNameInTable="DEGColumn"
+                          msprop:Generator_UserColumnName="DEG" type="xs:double" />
+              <xs:element name="MDEA" msprop:Generator_ColumnVarNameInTable="columnMDEA"
+                          msprop:Generator_ColumnPropNameInRow="MDEA"
+                          msprop:Generator_ColumnPropNameInTable="MDEAColumn" msprop:Generator_UserColumnName="MDEA"
+                          type="xs:double" />
+              <xs:element name="PIPERAZINE" msprop:Generator_ColumnVarNameInTable="columnPIPERAZINE"
+                          msprop:Generator_ColumnPropNameInRow="PIPERAZINE"
+                          msprop:Generator_ColumnPropNameInTable="PIPERAZINEColumn"
+                          msprop:Generator_UserColumnName="PIPERAZINE" type="xs:double" />
+              <xs:element name="ACETICACID" msprop:Generator_ColumnVarNameInTable="columnACETICACID"
+                          msprop:Generator_ColumnPropNameInRow="ACETICACID"
+                          msprop:Generator_ColumnPropNameInTable="ACETICACIDColumn"
+                          msprop:Generator_UserColumnName="ACETICACID" type="xs:double" />
+              <xs:element name="PROPIONICACID" msprop:Generator_ColumnVarNameInTable="columnPROPIONICACID"
+                          msprop:Generator_ColumnPropNameInRow="PROPIONICACID"
+                          msprop:Generator_ColumnPropNameInTable="PROPIONICACIDColumn"
+                          msprop:Generator_UserColumnName="PROPIONICACID" type="xs:double" />
+              <xs:element name="NAPLUS" msprop:Generator_ColumnVarNameInTable="columnNAPLUS"
+                          msprop:Generator_ColumnPropNameInRow="NAPLUS"
+                          msprop:Generator_ColumnPropNameInTable="NAPLUSColumn"
+                          msprop:Generator_UserColumnName="NAPLUS" type="xs:double" />
+              <xs:element name="FEPLUS" msprop:Generator_ColumnVarNameInTable="columnFEPLUS"
+                          msprop:Generator_ColumnPropNameInRow="FEPLUS"
+                          msprop:Generator_ColumnPropNameInTable="FEPLUSColumn"
+                          msprop:Generator_UserColumnName="FEPLUS" type="xs:double" />
+              <xs:element name="CAPLUS" msprop:Generator_ColumnVarNameInTable="columnCAPLUS"
+                          msprop:Generator_ColumnPropNameInRow="CAPLUS"
+                          msprop:Generator_ColumnPropNameInTable="CAPLUSColumn"
+                          msprop:Generator_UserColumnName="CAPLUS" type="xs:double" />
+              <xs:element name="H3OPLUS" msprop:Generator_ColumnVarNameInTable="columnH3OPLUS"
+                          msprop:Generator_ColumnPropNameInRow="H3OPLUS"
+                          msprop:Generator_ColumnPropNameInTable="H3OPLUSColumn"
+                          msprop:Generator_UserColumnName="H3OPLUS" type="xs:double" />
+              <xs:element name="OHMINUS" msprop:Generator_ColumnVarNameInTable="columnOHMINUS"
+                          msprop:Generator_ColumnPropNameInRow="OHMINUS"
+                          msprop:Generator_ColumnPropNameInTable="OHMINUSColumn"
+                          msprop:Generator_UserColumnName="OHMINUS" type="xs:double" />
+              <xs:element name="CO3MINUS" msprop:Generator_ColumnVarNameInTable="columnCO3MINUS"
+                          msprop:Generator_ColumnPropNameInRow="CO3MINUS"
+                          msprop:Generator_ColumnPropNameInTable="CO3MINUSColumn"
+                          msprop:Generator_UserColumnName="CO3MINUS" type="xs:double" />
+              <xs:element name="CLMINUS" msprop:Generator_ColumnVarNameInTable="columnCLMINUS"
+                          msprop:Generator_ColumnPropNameInRow="CLMINUS"
+                          msprop:Generator_ColumnPropNameInTable="CLMINUSColumn"
+                          msprop:Generator_UserColumnName="CLMINUS" type="xs:double" />
+              <xs:element name="C6" msprop:Generator_ColumnVarNameInTable="columnC6"
+                          msprop:Generator_ColumnPropNameInRow="C6" msprop:Generator_ColumnPropNameInTable="C6Column"
+                          msprop:Generator_UserColumnName="C6" type="xs:double" />
+              <xs:element name="C6MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC6MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C6MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C6MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C6MOLARMASS" type="xs:double" />
+              <xs:element name="C6DENSITY" msprop:Generator_ColumnVarNameInTable="columnC6DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C6DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C6DENSITYColumn"
+                          msprop:Generator_UserColumnName="C6DENSITY" type="xs:double" />
+              <xs:element name="C7" msprop:Generator_ColumnVarNameInTable="columnC7"
+                          msprop:Generator_ColumnPropNameInRow="C7" msprop:Generator_ColumnPropNameInTable="C7Column"
+                          msprop:Generator_UserColumnName="C7" type="xs:double" />
+              <xs:element name="C7MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC7MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C7MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C7MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C7MOLARMASS" type="xs:double" />
+              <xs:element name="C7DENSITY" msprop:Generator_ColumnVarNameInTable="columnC7DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C7DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C7DENSITYColumn"
+                          msprop:Generator_UserColumnName="C7DENSITY" type="xs:double" />
+              <xs:element name="C8" msprop:Generator_ColumnVarNameInTable="columnC8"
+                          msprop:Generator_ColumnPropNameInRow="C8" msprop:Generator_ColumnPropNameInTable="C8Column"
+                          msprop:Generator_UserColumnName="C8" type="xs:double" />
+              <xs:element name="C8MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC8MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C8MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C8MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C8MOLARMASS" type="xs:double" />
+              <xs:element name="C8DENSITY" msprop:Generator_ColumnVarNameInTable="columnC8DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C8DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C8DENSITYColumn"
+                          msprop:Generator_UserColumnName="C8DENSITY" type="xs:double" />
+              <xs:element name="C9" msprop:Generator_ColumnVarNameInTable="columnC9"
+                          msprop:Generator_ColumnPropNameInRow="C9" msprop:Generator_ColumnPropNameInTable="C9Column"
+                          msprop:Generator_UserColumnName="C9" type="xs:double" />
+              <xs:element name="C9MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC9MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C9MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C9MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C9MOLARMASS" type="xs:double" />
+              <xs:element name="C9DENSITY" msprop:Generator_ColumnVarNameInTable="columnC9DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C9DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C9DENSITYColumn"
+                          msprop:Generator_UserColumnName="C9DENSITY" type="xs:double" />
+              <xs:element name="C10" msprop:Generator_ColumnVarNameInTable="columnC10"
+                          msprop:Generator_ColumnPropNameInRow="C10" msprop:Generator_ColumnPropNameInTable="C10Column"
+                          msprop:Generator_UserColumnName="C10" type="xs:double" />
+              <xs:element name="C10MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC10MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C10MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C10MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C10MOLARMASS" type="xs:double" />
+              <xs:element name="C10DENSITY" msprop:Generator_ColumnVarNameInTable="columnC10DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C10DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C10DENSITYColumn"
+                          msprop:Generator_UserColumnName="C10DENSITY" type="xs:double" />
+              <xs:element name="C11" msprop:Generator_ColumnVarNameInTable="columnC11"
+                          msprop:Generator_ColumnPropNameInRow="C11" msprop:Generator_ColumnPropNameInTable="C11Column"
+                          msprop:Generator_UserColumnName="C11" type="xs:double" />
+              <xs:element name="C11MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC11MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C11MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C11MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C11MOLARMASS" type="xs:double" />
+              <xs:element name="C11DENSITY" msprop:Generator_ColumnVarNameInTable="columnC11DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C11DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C11DENSITYColumn"
+                          msprop:Generator_UserColumnName="C11DENSITY" type="xs:double" />
+              <xs:element name="C12" msprop:Generator_ColumnVarNameInTable="columnC12"
+                          msprop:Generator_ColumnPropNameInRow="C12" msprop:Generator_ColumnPropNameInTable="C12Column"
+                          msprop:Generator_UserColumnName="C12" type="xs:double" />
+              <xs:element name="C12MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC12MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C12MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C12MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C12MOLARMASS" type="xs:double" />
+              <xs:element name="C12DENSITY" msprop:Generator_ColumnVarNameInTable="columnC12DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C12DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C12DENSITYColumn"
+                          msprop:Generator_UserColumnName="C12DENSITY" type="xs:double" />
+              <xs:element name="C13" msprop:Generator_ColumnVarNameInTable="columnC13"
+                          msprop:Generator_ColumnPropNameInRow="C13" msprop:Generator_ColumnPropNameInTable="C13Column"
+                          msprop:Generator_UserColumnName="C13" type="xs:double" />
+              <xs:element name="C13MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC13MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C13MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C13MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C13MOLARMASS" type="xs:double" />
+              <xs:element name="C13DENSITY" msprop:Generator_ColumnVarNameInTable="columnC13DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C13DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C13DENSITYColumn"
+                          msprop:Generator_UserColumnName="C13DENSITY" type="xs:double" />
+              <xs:element name="CPLUS" msprop:Generator_ColumnVarNameInTable="columnCPLUS"
+                          msprop:Generator_ColumnPropNameInRow="CPLUS"
+                          msprop:Generator_ColumnPropNameInTable="CPLUSColumn" msprop:Generator_UserColumnName="CPLUS"
+                          type="xs:double" />
+              <xs:element name="CPLUSMOLARMASS" msprop:Generator_ColumnVarNameInTable="columnCPLUSMOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="CPLUSMOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="CPLUSMOLARMASSColumn"
+                          msprop:Generator_UserColumnName="CPLUSMOLARMASS" type="xs:double" />
+              <xs:element name="CPLUSDENSITY" msprop:Generator_ColumnVarNameInTable="columnCPLUSDENSITY"
+                          msprop:Generator_ColumnPropNameInRow="CPLUSDENSITY"
+                          msprop:Generator_ColumnPropNameInTable="CPLUSDENSITYColumn"
+                          msprop:Generator_UserColumnName="CPLUSDENSITY" type="xs:double" />
+              <xs:element name="SHARED" msprop:Generator_ColumnVarNameInTable="columnSHARED"
+                          msprop:Generator_ColumnPropNameInRow="SHARED"
+                          msprop:Generator_ColumnPropNameInTable="SHAREDColumn"
+                          msprop:Generator_UserColumnName="SHARED" type="xs:boolean" />
+              <xs:element name="iPENTANE" msprop:Generator_ColumnVarNameInTable="columniPENTANE"
+                          msprop:Generator_ColumnPropNameInRow="iPENTANE"
+                          msprop:Generator_ColumnPropNameInTable="iPENTANEColumn"
+                          msprop:Generator_UserColumnName="iPENTANE" type="xs:double" />
+              <xs:element name="SO4MINUS" msprop:Generator_ColumnVarNameInTable="columnSO4MINUS"
+                          msprop:Generator_ColumnPropNameInRow="SO4MINUS"
+                          msprop:Generator_ColumnPropNameInTable="SO4MINUSColumn"
+                          msprop:Generator_UserColumnName="SO4MINUS" type="xs:double" />
+              <xs:element name="C14" msprop:Generator_ColumnVarNameInTable="columnC14"
+                          msprop:Generator_ColumnPropNameInRow="C14" msprop:Generator_ColumnPropNameInTable="C14Column"
+                          msprop:Generator_UserColumnName="C14" type="xs:double" />
+              <xs:element name="C15" msprop:Generator_ColumnVarNameInTable="columnC15"
+                          msprop:Generator_ColumnPropNameInRow="C15" msprop:Generator_ColumnPropNameInTable="C15Column"
+                          msprop:Generator_UserColumnName="C15" type="xs:double" />
+              <xs:element name="C16" msprop:Generator_ColumnVarNameInTable="columnC16"
+                          msprop:Generator_ColumnPropNameInRow="C16" msprop:Generator_ColumnPropNameInTable="C16Column"
+                          msprop:Generator_UserColumnName="C16" type="xs:double" />
+              <xs:element name="C17" msprop:Generator_ColumnVarNameInTable="columnC17"
+                          msprop:Generator_ColumnPropNameInRow="C17" msprop:Generator_ColumnPropNameInTable="C17Column"
+                          msprop:Generator_UserColumnName="C17" type="xs:double" />
+              <xs:element name="C18" msprop:Generator_ColumnVarNameInTable="columnC18"
+                          msprop:Generator_ColumnPropNameInRow="C18" msprop:Generator_ColumnPropNameInTable="C18Column"
+                          msprop:Generator_UserColumnName="C18" type="xs:double" />
+              <xs:element name="C19" msprop:Generator_ColumnVarNameInTable="columnC19"
+                          msprop:Generator_ColumnPropNameInRow="C19" msprop:Generator_ColumnPropNameInTable="C19Column"
+                          msprop:Generator_UserColumnName="C19" type="xs:double" />
+              <xs:element name="C20" msprop:Generator_ColumnVarNameInTable="columnC20"
+                          msprop:Generator_ColumnPropNameInRow="C20" msprop:Generator_ColumnPropNameInTable="C20Column"
+                          msprop:Generator_UserColumnName="C20" type="xs:double" />
+              <xs:element name="C14MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC14MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C14MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C14MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C14MOLARMASS" type="xs:double" />
+              <xs:element name="C15MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC15MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C15MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C15MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C15MOLARMASS" type="xs:double" />
+              <xs:element name="C16MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC16MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C16MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C16MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C16MOLARMASS" type="xs:double" />
+              <xs:element name="C17MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC17MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C17MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C17MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C17MOLARMASS" type="xs:double" />
+              <xs:element name="C18MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC18MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C18MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C18MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C18MOLARMASS" type="xs:double" />
+              <xs:element name="C19MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC19MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C19MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C19MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C19MOLARMASS" type="xs:double" />
+              <xs:element name="C20MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC20MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C20MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C20MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C20MOLARMASS" type="xs:double" />
+              <xs:element name="C14DENSITY" msprop:Generator_ColumnVarNameInTable="columnC14DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C14DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C14DENSITYColumn"
+                          msprop:Generator_UserColumnName="C14DENSITY" type="xs:double" />
+              <xs:element name="C15DENSITY" msprop:Generator_ColumnVarNameInTable="columnC15DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C15DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C15DENSITYColumn"
+                          msprop:Generator_UserColumnName="C15DENSITY" type="xs:double" />
+              <xs:element name="C16DENSITY" msprop:Generator_ColumnVarNameInTable="columnC16DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C16DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C16DENSITYColumn"
+                          msprop:Generator_UserColumnName="C16DENSITY" type="xs:double" />
+              <xs:element name="C17DENSITY" msprop:Generator_ColumnVarNameInTable="columnC17DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C17DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C17DENSITYColumn"
+                          msprop:Generator_UserColumnName="C17DENSITY" type="xs:double" />
+              <xs:element name="C18DENSITY" msprop:Generator_ColumnVarNameInTable="columnC18DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C18DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C18DENSITYColumn"
+                          msprop:Generator_UserColumnName="C18DENSITY" type="xs:double" />
+              <xs:element name="C19DENSITY" msprop:Generator_ColumnVarNameInTable="columnC19DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C19DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C19DENSITYColumn"
+                          msprop:Generator_UserColumnName="C19DENSITY" type="xs:double" />
+              <xs:element name="C20DENSITY" msprop:Generator_ColumnVarNameInTable="columnC20DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C20DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C20DENSITYColumn"
+                          msprop:Generator_UserColumnName="C20DENSITY" type="xs:double" />
+              <xs:element name="HASPLUSFRACTION" msprop:Generator_ColumnVarNameInTable="columnHASPLUSFRACTION"
+                          msprop:Generator_ColumnPropNameInRow="HASPLUSFRACTION"
+                          msprop:Generator_ColumnPropNameInTable="HASPLUSFRACTIONColumn"
+                          msprop:Generator_UserColumnName="HASPLUSFRACTION" type="xs:byte" />
+              <xs:element name="DATE" msprop:Generator_ColumnVarNameInTable="columnDATE"
+                          msprop:Generator_ColumnPropNameInRow="DATE"
+                          msprop:Generator_ColumnPropNameInTable="DATEColumn" msprop:Generator_UserColumnName="DATE"
+                          minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ETHANOL" msprop:Generator_ColumnVarNameInTable="columnETHANOL" msprop:Generator_ColumnPropNameInRow="ETHANOL" msprop:Generator_ColumnPropNameInTable="ETHANOLColumn" msprop:Generator_UserColumnName="ETHANOL" type="xs:double" />
-              <xs:element name="cpropane" msprop:Generator_ColumnVarNameInTable="columncpropane" msprop:Generator_ColumnPropNameInRow="cpropane" msprop:Generator_ColumnPropNameInTable="cpropaneColumn" msprop:Generator_UserColumnName="cpropane" type="xs:double" />
-              <xs:element name="i22dimC3" msprop:Generator_ColumnVarNameInTable="columni22dimC3" msprop:Generator_ColumnPropNameInRow="i22dimC3" msprop:Generator_ColumnPropNameInTable="i22dimC3Column" msprop:Generator_UserColumnName="i22dimC3" type="xs:double" />
-              <xs:element name="cbutane" msprop:Generator_ColumnVarNameInTable="columncbutane" msprop:Generator_ColumnPropNameInRow="cbutane" msprop:Generator_ColumnPropNameInTable="cbutaneColumn" msprop:Generator_UserColumnName="cbutane" type="xs:double" />
-              <xs:element name="i22dimC4" msprop:Generator_ColumnVarNameInTable="columni22dimC4" msprop:Generator_ColumnPropNameInRow="i22dimC4" msprop:Generator_ColumnPropNameInTable="i22dimC4Column" msprop:Generator_UserColumnName="i22dimC4" type="xs:double" />
-              <xs:element name="i23dimC4" msprop:Generator_ColumnVarNameInTable="columni23dimC4" msprop:Generator_ColumnPropNameInRow="i23dimC4" msprop:Generator_ColumnPropNameInTable="i23dimC4Column" msprop:Generator_UserColumnName="i23dimC4" type="xs:double" />
-              <xs:element name="i2mC5" msprop:Generator_ColumnVarNameInTable="columni2mC5" msprop:Generator_ColumnPropNameInRow="i2mC5" msprop:Generator_ColumnPropNameInTable="i2mC5Column" msprop:Generator_UserColumnName="i2mC5" type="xs:double" />
-              <xs:element name="i3mC5" msprop:Generator_ColumnVarNameInTable="columni3mC5" msprop:Generator_ColumnPropNameInRow="i3mC5" msprop:Generator_ColumnPropNameInTable="i3mC5Column" msprop:Generator_UserColumnName="i3mC5" type="xs:double" />
-              <xs:element name="mcpentane" msprop:Generator_ColumnVarNameInTable="columnmcpentane" msprop:Generator_ColumnPropNameInRow="mcpentane" msprop:Generator_ColumnPropNameInTable="mcpentaneColumn" msprop:Generator_UserColumnName="mcpentane" type="xs:double" />
-              <xs:element name="cheptane" msprop:Generator_ColumnVarNameInTable="columncheptane" msprop:Generator_ColumnPropNameInRow="cheptane" msprop:Generator_ColumnPropNameInTable="cheptaneColumn" msprop:Generator_UserColumnName="cheptane" type="xs:double" />
-              <xs:element name="mcheptane" msprop:Generator_ColumnVarNameInTable="columnmcheptane" msprop:Generator_ColumnPropNameInRow="mcheptane" msprop:Generator_ColumnPropNameInTable="mcheptaneColumn" msprop:Generator_UserColumnName="mcheptane" type="xs:double" />
-              <xs:element name="coctane" msprop:Generator_ColumnVarNameInTable="columncoctane" msprop:Generator_ColumnPropNameInRow="coctane" msprop:Generator_ColumnPropNameInTable="coctaneColumn" msprop:Generator_UserColumnName="coctane" type="xs:double" />
-              <xs:element name="nc11" msprop:Generator_ColumnVarNameInTable="columnnc11" msprop:Generator_ColumnPropNameInRow="nc11" msprop:Generator_ColumnPropNameInTable="nc11Column" msprop:Generator_UserColumnName="nc11" type="xs:double" />
-              <xs:element name="nc12" msprop:Generator_ColumnVarNameInTable="columnnc12" msprop:Generator_ColumnPropNameInRow="nc12" msprop:Generator_ColumnPropNameInTable="nc12Column" msprop:Generator_UserColumnName="nc12" type="xs:double" />
-              <xs:element name="nc13" msprop:Generator_ColumnVarNameInTable="columnnc13" msprop:Generator_ColumnPropNameInRow="nc13" msprop:Generator_ColumnPropNameInTable="nc13Column" msprop:Generator_UserColumnName="nc13" type="xs:double" />
-              <xs:element name="nc14" msprop:Generator_ColumnVarNameInTable="columnnc14" msprop:Generator_ColumnPropNameInRow="nc14" msprop:Generator_ColumnPropNameInTable="nc14Column" msprop:Generator_UserColumnName="nc14" type="xs:double" />
-              <xs:element name="nc15" msprop:Generator_ColumnVarNameInTable="columnnc15" msprop:Generator_ColumnPropNameInRow="nc15" msprop:Generator_ColumnPropNameInTable="nc15Column" msprop:Generator_UserColumnName="nc15" type="xs:double" />
-              <xs:element name="nc16" msprop:Generator_ColumnVarNameInTable="columnnc16" msprop:Generator_ColumnPropNameInRow="nc16" msprop:Generator_ColumnPropNameInTable="nc16Column" msprop:Generator_UserColumnName="nc16" type="xs:double" />
-              <xs:element name="nc17" msprop:Generator_ColumnVarNameInTable="columnnc17" msprop:Generator_ColumnPropNameInRow="nc17" msprop:Generator_ColumnPropNameInTable="nc17Column" msprop:Generator_UserColumnName="nc17" type="xs:double" />
-              <xs:element name="nc18" msprop:Generator_ColumnVarNameInTable="columnnc18" msprop:Generator_ColumnPropNameInRow="nc18" msprop:Generator_ColumnPropNameInTable="nc18Column" msprop:Generator_UserColumnName="nc18" type="xs:double" />
-              <xs:element name="nc19" msprop:Generator_ColumnVarNameInTable="columnnc19" msprop:Generator_ColumnPropNameInRow="nc19" msprop:Generator_ColumnPropNameInTable="nc19Column" msprop:Generator_UserColumnName="nc19" type="xs:double" />
-              <xs:element name="nc20" msprop:Generator_ColumnVarNameInTable="columnnc20" msprop:Generator_ColumnPropNameInRow="nc20" msprop:Generator_ColumnPropNameInTable="nc20Column" msprop:Generator_UserColumnName="nc20" type="xs:double" />
-              <xs:element name="oxygen" msprop:Generator_ColumnVarNameInTable="columnoxygen" msprop:Generator_ColumnPropNameInRow="oxygen" msprop:Generator_ColumnPropNameInTable="oxygenColumn" msprop:Generator_UserColumnName="oxygen" type="xs:double" />
-              <xs:element name="argon" msprop:Generator_ColumnVarNameInTable="columnargon" msprop:Generator_ColumnPropNameInRow="argon" msprop:Generator_ColumnPropNameInTable="argonColumn" msprop:Generator_UserColumnName="argon" type="xs:double" />
-              <xs:element name="mercury" msprop:Generator_ColumnVarNameInTable="columnmercury" msprop:Generator_ColumnPropNameInRow="mercury" msprop:Generator_ColumnPropNameInTable="mercuryColumn" msprop:Generator_UserColumnName="mercury" type="xs:double" />
-              <xs:element name="hydrogen" msprop:Generator_ColumnVarNameInTable="columnhydrogen" msprop:Generator_ColumnPropNameInRow="hydrogen" msprop:Generator_ColumnPropNameInTable="hydrogenColumn" msprop:Generator_UserColumnName="hydrogen" type="xs:double" />
-              <xs:element name="C21" msprop:Generator_ColumnVarNameInTable="columnC21" msprop:Generator_ColumnPropNameInRow="C21" msprop:Generator_ColumnPropNameInTable="C21Column" msprop:Generator_UserColumnName="C21" type="xs:double" />
-              <xs:element name="C22" msprop:Generator_ColumnVarNameInTable="columnC22" msprop:Generator_ColumnPropNameInRow="C22" msprop:Generator_ColumnPropNameInTable="C22Column" msprop:Generator_UserColumnName="C22" type="xs:double" />
-              <xs:element name="C23" msprop:Generator_ColumnVarNameInTable="columnC23" msprop:Generator_ColumnPropNameInRow="C23" msprop:Generator_ColumnPropNameInTable="C23Column" msprop:Generator_UserColumnName="C23" type="xs:double" />
-              <xs:element name="C24" msprop:Generator_ColumnVarNameInTable="columnC24" msprop:Generator_ColumnPropNameInRow="C24" msprop:Generator_ColumnPropNameInTable="C24Column" msprop:Generator_UserColumnName="C24" type="xs:double" />
-              <xs:element name="C25" msprop:Generator_ColumnVarNameInTable="columnC25" msprop:Generator_ColumnPropNameInRow="C25" msprop:Generator_ColumnPropNameInTable="C25Column" msprop:Generator_UserColumnName="C25" type="xs:double" />
-              <xs:element name="C21MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC21MOLARMASS" msprop:Generator_ColumnPropNameInRow="C21MOLARMASS" msprop:Generator_ColumnPropNameInTable="C21MOLARMASSColumn" msprop:Generator_UserColumnName="C21MOLARMASS" type="xs:double" />
-              <xs:element name="C22MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC22MOLARMASS" msprop:Generator_ColumnPropNameInRow="C22MOLARMASS" msprop:Generator_ColumnPropNameInTable="C22MOLARMASSColumn" msprop:Generator_UserColumnName="C22MOLARMASS" type="xs:double" />
-              <xs:element name="C23MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC23MOLARMASS" msprop:Generator_ColumnPropNameInRow="C23MOLARMASS" msprop:Generator_ColumnPropNameInTable="C23MOLARMASSColumn" msprop:Generator_UserColumnName="C23MOLARMASS" type="xs:double" />
-              <xs:element name="C24MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC24MOLARMASS" msprop:Generator_ColumnPropNameInRow="C24MOLARMASS" msprop:Generator_ColumnPropNameInTable="C24MOLARMASSColumn" msprop:Generator_UserColumnName="C24MOLARMASS" type="xs:double" />
-              <xs:element name="C25MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC25MOLARMASS" msprop:Generator_ColumnPropNameInRow="C25MOLARMASS" msprop:Generator_ColumnPropNameInTable="C25MOLARMASSColumn" msprop:Generator_UserColumnName="C25MOLARMASS" type="xs:double" />
-              <xs:element name="C21DENSITY" msprop:Generator_ColumnVarNameInTable="columnC21DENSITY" msprop:Generator_ColumnPropNameInRow="C21DENSITY" msprop:Generator_ColumnPropNameInTable="C21DENSITYColumn" msprop:Generator_UserColumnName="C21DENSITY" type="xs:double" />
-              <xs:element name="C22DENSITY" msprop:Generator_ColumnVarNameInTable="columnC22DENSITY" msprop:Generator_ColumnPropNameInRow="C22DENSITY" msprop:Generator_ColumnPropNameInTable="C22DENSITYColumn" msprop:Generator_UserColumnName="C22DENSITY" type="xs:double" />
-              <xs:element name="C23DENSITY" msprop:Generator_ColumnVarNameInTable="columnC23DENSITY" msprop:Generator_ColumnPropNameInRow="C23DENSITY" msprop:Generator_ColumnPropNameInTable="C23DENSITYColumn" msprop:Generator_UserColumnName="C23DENSITY" type="xs:double" />
-              <xs:element name="C24DENSITY" msprop:Generator_ColumnVarNameInTable="columnC24DENSITY" msprop:Generator_ColumnPropNameInRow="C24DENSITY" msprop:Generator_ColumnPropNameInTable="C24DENSITYColumn" msprop:Generator_UserColumnName="C24DENSITY" type="xs:double" />
-              <xs:element name="C25DENSITY" msprop:Generator_ColumnVarNameInTable="columnC25DENSITY" msprop:Generator_ColumnPropNameInRow="C25DENSITY" msprop:Generator_ColumnPropNameInTable="C25DENSITYColumn" msprop:Generator_UserColumnName="C25DENSITY" type="xs:double" />
+              <xs:element name="ETHANOL" msprop:Generator_ColumnVarNameInTable="columnETHANOL"
+                          msprop:Generator_ColumnPropNameInRow="ETHANOL"
+                          msprop:Generator_ColumnPropNameInTable="ETHANOLColumn"
+                          msprop:Generator_UserColumnName="ETHANOL" type="xs:double" />
+              <xs:element name="cpropane" msprop:Generator_ColumnVarNameInTable="columncpropane"
+                          msprop:Generator_ColumnPropNameInRow="cpropane"
+                          msprop:Generator_ColumnPropNameInTable="cpropaneColumn"
+                          msprop:Generator_UserColumnName="cpropane" type="xs:double" />
+              <xs:element name="i22dimC3" msprop:Generator_ColumnVarNameInTable="columni22dimC3"
+                          msprop:Generator_ColumnPropNameInRow="i22dimC3"
+                          msprop:Generator_ColumnPropNameInTable="i22dimC3Column"
+                          msprop:Generator_UserColumnName="i22dimC3" type="xs:double" />
+              <xs:element name="cbutane" msprop:Generator_ColumnVarNameInTable="columncbutane"
+                          msprop:Generator_ColumnPropNameInRow="cbutane"
+                          msprop:Generator_ColumnPropNameInTable="cbutaneColumn"
+                          msprop:Generator_UserColumnName="cbutane" type="xs:double" />
+              <xs:element name="i22dimC4" msprop:Generator_ColumnVarNameInTable="columni22dimC4"
+                          msprop:Generator_ColumnPropNameInRow="i22dimC4"
+                          msprop:Generator_ColumnPropNameInTable="i22dimC4Column"
+                          msprop:Generator_UserColumnName="i22dimC4" type="xs:double" />
+              <xs:element name="i23dimC4" msprop:Generator_ColumnVarNameInTable="columni23dimC4"
+                          msprop:Generator_ColumnPropNameInRow="i23dimC4"
+                          msprop:Generator_ColumnPropNameInTable="i23dimC4Column"
+                          msprop:Generator_UserColumnName="i23dimC4" type="xs:double" />
+              <xs:element name="i2mC5" msprop:Generator_ColumnVarNameInTable="columni2mC5"
+                          msprop:Generator_ColumnPropNameInRow="i2mC5"
+                          msprop:Generator_ColumnPropNameInTable="i2mC5Column" msprop:Generator_UserColumnName="i2mC5"
+                          type="xs:double" />
+              <xs:element name="i3mC5" msprop:Generator_ColumnVarNameInTable="columni3mC5"
+                          msprop:Generator_ColumnPropNameInRow="i3mC5"
+                          msprop:Generator_ColumnPropNameInTable="i3mC5Column" msprop:Generator_UserColumnName="i3mC5"
+                          type="xs:double" />
+              <xs:element name="mcpentane" msprop:Generator_ColumnVarNameInTable="columnmcpentane"
+                          msprop:Generator_ColumnPropNameInRow="mcpentane"
+                          msprop:Generator_ColumnPropNameInTable="mcpentaneColumn"
+                          msprop:Generator_UserColumnName="mcpentane" type="xs:double" />
+              <xs:element name="cheptane" msprop:Generator_ColumnVarNameInTable="columncheptane"
+                          msprop:Generator_ColumnPropNameInRow="cheptane"
+                          msprop:Generator_ColumnPropNameInTable="cheptaneColumn"
+                          msprop:Generator_UserColumnName="cheptane" type="xs:double" />
+              <xs:element name="mcheptane" msprop:Generator_ColumnVarNameInTable="columnmcheptane"
+                          msprop:Generator_ColumnPropNameInRow="mcheptane"
+                          msprop:Generator_ColumnPropNameInTable="mcheptaneColumn"
+                          msprop:Generator_UserColumnName="mcheptane" type="xs:double" />
+              <xs:element name="coctane" msprop:Generator_ColumnVarNameInTable="columncoctane"
+                          msprop:Generator_ColumnPropNameInRow="coctane"
+                          msprop:Generator_ColumnPropNameInTable="coctaneColumn"
+                          msprop:Generator_UserColumnName="coctane" type="xs:double" />
+              <xs:element name="nc11" msprop:Generator_ColumnVarNameInTable="columnnc11"
+                          msprop:Generator_ColumnPropNameInRow="nc11"
+                          msprop:Generator_ColumnPropNameInTable="nc11Column" msprop:Generator_UserColumnName="nc11"
+                          type="xs:double" />
+              <xs:element name="nc12" msprop:Generator_ColumnVarNameInTable="columnnc12"
+                          msprop:Generator_ColumnPropNameInRow="nc12"
+                          msprop:Generator_ColumnPropNameInTable="nc12Column" msprop:Generator_UserColumnName="nc12"
+                          type="xs:double" />
+              <xs:element name="nc13" msprop:Generator_ColumnVarNameInTable="columnnc13"
+                          msprop:Generator_ColumnPropNameInRow="nc13"
+                          msprop:Generator_ColumnPropNameInTable="nc13Column" msprop:Generator_UserColumnName="nc13"
+                          type="xs:double" />
+              <xs:element name="nc14" msprop:Generator_ColumnVarNameInTable="columnnc14"
+                          msprop:Generator_ColumnPropNameInRow="nc14"
+                          msprop:Generator_ColumnPropNameInTable="nc14Column" msprop:Generator_UserColumnName="nc14"
+                          type="xs:double" />
+              <xs:element name="nc15" msprop:Generator_ColumnVarNameInTable="columnnc15"
+                          msprop:Generator_ColumnPropNameInRow="nc15"
+                          msprop:Generator_ColumnPropNameInTable="nc15Column" msprop:Generator_UserColumnName="nc15"
+                          type="xs:double" />
+              <xs:element name="nc16" msprop:Generator_ColumnVarNameInTable="columnnc16"
+                          msprop:Generator_ColumnPropNameInRow="nc16"
+                          msprop:Generator_ColumnPropNameInTable="nc16Column" msprop:Generator_UserColumnName="nc16"
+                          type="xs:double" />
+              <xs:element name="nc17" msprop:Generator_ColumnVarNameInTable="columnnc17"
+                          msprop:Generator_ColumnPropNameInRow="nc17"
+                          msprop:Generator_ColumnPropNameInTable="nc17Column" msprop:Generator_UserColumnName="nc17"
+                          type="xs:double" />
+              <xs:element name="nc18" msprop:Generator_ColumnVarNameInTable="columnnc18"
+                          msprop:Generator_ColumnPropNameInRow="nc18"
+                          msprop:Generator_ColumnPropNameInTable="nc18Column" msprop:Generator_UserColumnName="nc18"
+                          type="xs:double" />
+              <xs:element name="nc19" msprop:Generator_ColumnVarNameInTable="columnnc19"
+                          msprop:Generator_ColumnPropNameInRow="nc19"
+                          msprop:Generator_ColumnPropNameInTable="nc19Column" msprop:Generator_UserColumnName="nc19"
+                          type="xs:double" />
+              <xs:element name="nc20" msprop:Generator_ColumnVarNameInTable="columnnc20"
+                          msprop:Generator_ColumnPropNameInRow="nc20"
+                          msprop:Generator_ColumnPropNameInTable="nc20Column" msprop:Generator_UserColumnName="nc20"
+                          type="xs:double" />
+              <xs:element name="oxygen" msprop:Generator_ColumnVarNameInTable="columnoxygen"
+                          msprop:Generator_ColumnPropNameInRow="oxygen"
+                          msprop:Generator_ColumnPropNameInTable="oxygenColumn"
+                          msprop:Generator_UserColumnName="oxygen" type="xs:double" />
+              <xs:element name="argon" msprop:Generator_ColumnVarNameInTable="columnargon"
+                          msprop:Generator_ColumnPropNameInRow="argon"
+                          msprop:Generator_ColumnPropNameInTable="argonColumn" msprop:Generator_UserColumnName="argon"
+                          type="xs:double" />
+              <xs:element name="mercury" msprop:Generator_ColumnVarNameInTable="columnmercury"
+                          msprop:Generator_ColumnPropNameInRow="mercury"
+                          msprop:Generator_ColumnPropNameInTable="mercuryColumn"
+                          msprop:Generator_UserColumnName="mercury" type="xs:double" />
+              <xs:element name="hydrogen" msprop:Generator_ColumnVarNameInTable="columnhydrogen"
+                          msprop:Generator_ColumnPropNameInRow="hydrogen"
+                          msprop:Generator_ColumnPropNameInTable="hydrogenColumn"
+                          msprop:Generator_UserColumnName="hydrogen" type="xs:double" />
+              <xs:element name="C21" msprop:Generator_ColumnVarNameInTable="columnC21"
+                          msprop:Generator_ColumnPropNameInRow="C21" msprop:Generator_ColumnPropNameInTable="C21Column"
+                          msprop:Generator_UserColumnName="C21" type="xs:double" />
+              <xs:element name="C22" msprop:Generator_ColumnVarNameInTable="columnC22"
+                          msprop:Generator_ColumnPropNameInRow="C22" msprop:Generator_ColumnPropNameInTable="C22Column"
+                          msprop:Generator_UserColumnName="C22" type="xs:double" />
+              <xs:element name="C23" msprop:Generator_ColumnVarNameInTable="columnC23"
+                          msprop:Generator_ColumnPropNameInRow="C23" msprop:Generator_ColumnPropNameInTable="C23Column"
+                          msprop:Generator_UserColumnName="C23" type="xs:double" />
+              <xs:element name="C24" msprop:Generator_ColumnVarNameInTable="columnC24"
+                          msprop:Generator_ColumnPropNameInRow="C24" msprop:Generator_ColumnPropNameInTable="C24Column"
+                          msprop:Generator_UserColumnName="C24" type="xs:double" />
+              <xs:element name="C25" msprop:Generator_ColumnVarNameInTable="columnC25"
+                          msprop:Generator_ColumnPropNameInRow="C25" msprop:Generator_ColumnPropNameInTable="C25Column"
+                          msprop:Generator_UserColumnName="C25" type="xs:double" />
+              <xs:element name="C21MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC21MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C21MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C21MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C21MOLARMASS" type="xs:double" />
+              <xs:element name="C22MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC22MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C22MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C22MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C22MOLARMASS" type="xs:double" />
+              <xs:element name="C23MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC23MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C23MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C23MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C23MOLARMASS" type="xs:double" />
+              <xs:element name="C24MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC24MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C24MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C24MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C24MOLARMASS" type="xs:double" />
+              <xs:element name="C25MOLARMASS" msprop:Generator_ColumnVarNameInTable="columnC25MOLARMASS"
+                          msprop:Generator_ColumnPropNameInRow="C25MOLARMASS"
+                          msprop:Generator_ColumnPropNameInTable="C25MOLARMASSColumn"
+                          msprop:Generator_UserColumnName="C25MOLARMASS" type="xs:double" />
+              <xs:element name="C21DENSITY" msprop:Generator_ColumnVarNameInTable="columnC21DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C21DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C21DENSITYColumn"
+                          msprop:Generator_UserColumnName="C21DENSITY" type="xs:double" />
+              <xs:element name="C22DENSITY" msprop:Generator_ColumnVarNameInTable="columnC22DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C22DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C22DENSITYColumn"
+                          msprop:Generator_UserColumnName="C22DENSITY" type="xs:double" />
+              <xs:element name="C23DENSITY" msprop:Generator_ColumnVarNameInTable="columnC23DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C23DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C23DENSITYColumn"
+                          msprop:Generator_UserColumnName="C23DENSITY" type="xs:double" />
+              <xs:element name="C24DENSITY" msprop:Generator_ColumnVarNameInTable="columnC24DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C24DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C24DENSITYColumn"
+                          msprop:Generator_UserColumnName="C24DENSITY" type="xs:double" />
+              <xs:element name="C25DENSITY" msprop:Generator_ColumnVarNameInTable="columnC25DENSITY"
+                          msprop:Generator_ColumnPropNameInRow="C25DENSITY"
+                          msprop:Generator_ColumnPropNameInTable="C25DENSITYColumn"
+                          msprop:Generator_UserColumnName="C25DENSITY" type="xs:double" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="userdb" msprop:Generator_TableClassName="userdbDataTable" msprop:Generator_TableVarName="tableuserdb" msprop:Generator_TablePropName="userdb" msprop:Generator_RowDeletingName="userdbRowDeleting" msprop:Generator_RowChangingName="userdbRowChanging" msprop:Generator_RowEvHandlerName="userdbRowChangeEventHandler" msprop:Generator_RowDeletedName="userdbRowDeleted" msprop:Generator_UserTableName="userdb" msprop:Generator_RowChangedName="userdbRowChanged" msprop:Generator_RowEvArgName="userdbRowChangeEvent" msprop:Generator_RowClassName="userdbRow">
+        <xs:element name="userdb" msprop:Generator_TableClassName="userdbDataTable"
+                    msprop:Generator_TableVarName="tableuserdb" msprop:Generator_TablePropName="userdb"
+                    msprop:Generator_RowDeletingName="userdbRowDeleting"
+                    msprop:Generator_RowChangingName="userdbRowChanging"
+                    msprop:Generator_RowEvHandlerName="userdbRowChangeEventHandler"
+                    msprop:Generator_RowDeletedName="userdbRowDeleted" msprop:Generator_UserTableName="userdb"
+                    msprop:Generator_RowChangedName="userdbRowChanged"
+                    msprop:Generator_RowEvArgName="userdbRowChangeEvent" msprop:Generator_RowClassName="userdbRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
-              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID"
+                          msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn"
+                          msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME"
+                          msprop:Generator_ColumnPropNameInRow="USERNAME"
+                          msprop:Generator_ColumnPropNameInTable="USERNAMEColumn"
+                          msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

@@ -5,10 +5,11 @@
     </summary>
     <remarks>
       <para>
-        The <B>MySQLDataAdapter</B>, serves as a bridge between a <see cref="System.Data.DataSet"/>
+        The <B>MySQLDataAdapter</B>, serves as a bridge between a <see cref="System.Data.DataSet" />
         and MySQL for retrieving and saving data. The <B>MySQLDataAdapter</B> provides this
-        bridge by mapping <see cref="DbDataAdapter.Fill(DataSet)"/>, which changes the data in the
-        <B>DataSet</B> to match the data in the data source, and <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/>,
+        bridge by mapping <see cref="DbDataAdapter.Fill(DataSet)" />, which changes the data in the
+        <B>DataSet</B> to match the data in the data source, and
+        <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />,
         which changes the data in the data source to match the data in the <B>DataSet</B>,
         using the appropriate SQL statements against the data source.
       </para>
@@ -16,18 +17,20 @@
         When the <B>MySQLDataAdapter</B> fills a <B>DataSet</B>, it will create the necessary
         tables and columns for the returned data if they do not already exist. However, primary
         key information will not be included in the implicitly created schema unless the
-        <see cref="System.Data.MissingSchemaAction"/> property is set to <see cref="System.Data.MissingSchemaAction.AddWithKey"/>.
+        <see cref="System.Data.MissingSchemaAction" /> property is set to
+        <see cref="System.Data.MissingSchemaAction.AddWithKey" />.
         You may also have the <B>MySQLDataAdapter</B> create the schema of the <B>DataSet</B>,
-        including primary key information, before filling it with data using <see cref="System.Data.Common.DbDataAdapter.FillSchema(DataTable, SchemaType)"/>.
+        including primary key information, before filling it with data using
+        <see cref="System.Data.Common.DbDataAdapter.FillSchema(DataTable, SchemaType)" />.
       </para>
       <para>
-        <B>MySQLDataAdapter</B> is used in conjunction with <see cref="MySqlConnection"/>
-        and <see cref="MySqlCommand"/> to increase performance when connecting to a MySQL database.
+        <B>MySQLDataAdapter</B> is used in conjunction with <see cref="MySqlConnection" />
+        and <see cref="MySqlCommand" /> to increase performance when connecting to a MySQL database.
       </para>
       <para>
-        The <B>MySQLDataAdapter</B> also includes the <see cref="MySqlDataAdapter.SelectCommand"/>,
-        <see cref="MySqlDataAdapter.InsertCommand"/>, <see cref="MySqlDataAdapter.DeleteCommand"/>,
-        <see cref="MySqlDataAdapter.UpdateCommand"/>, and <see cref="DataAdapter.TableMappings"/>
+        The <B>MySQLDataAdapter</B> also includes the <see cref="MySqlDataAdapter.SelectCommand" />,
+        <see cref="MySqlDataAdapter.InsertCommand" />, <see cref="MySqlDataAdapter.DeleteCommand" />,
+        <see cref="MySqlDataAdapter.UpdateCommand" />, and <see cref="DataAdapter.TableMappings" />
         properties to facilitate the loading and updating of data.
       </para>
       <para>
@@ -36,7 +39,7 @@
         constructor.
       </para>
       <note>
-        Please be aware that the <see cref="DataColumn"/> class allows only
+        Please be aware that the <see cref="DataColumn" /> class allows only
         Int16, Int32, and Int64 to have the AutoIncrement property set.
         If you plan to use autoincremement columns with MySQL, you should consider
         using signed integer columns.
@@ -44,9 +47,9 @@
     </remarks>
 
     <example>
-      The following example creates a <see cref="MySqlCommand"/> and a <see cref="MySqlConnection"/>.
-      The <B>MySqlConnection</B> is opened and set as the <see cref="MySqlCommand.Connection"/> for the
-      <B>MySqlCommand</B>. The example then calls <see cref="MySqlCommand.ExecuteNonQuery"/>, and closes
+      The following example creates a <see cref="MySqlCommand" /> and a <see cref="MySqlConnection" />.
+      The <B>MySqlConnection</B> is opened and set as the <see cref="MySqlCommand.Connection" /> for the
+      <B>MySqlCommand</B>. The example then calls <see cref="MySqlCommand.ExecuteNonQuery" />, and closes
       the connection. To accomplish this, the <B>ExecuteNonQuery</B> is
       passed a connection string and a query string that is a SQL INSERT
       statement.
@@ -79,7 +82,7 @@
     </summary>
     <remarks>
       <para>
-        When an instance of <see cref="MySqlDataAdapter"/> is created,
+        When an instance of <see cref="MySqlDataAdapter" /> is created,
         the following read/write properties are set to the following initial
         values.
       </para>
@@ -90,7 +93,7 @@
         </listheader>
         <item>
           <term>
-            <see cref="MissingMappingAction"/>
+            <see cref="MissingMappingAction" />
           </term>
           <term>
             <B>MissingMappingAction.Passthrough</B>
@@ -98,7 +101,7 @@
         </item>
         <item>
           <term>
-            <see cref="MissingSchemaAction"/>
+            <see cref="MissingSchemaAction" />
           </term>
           <term>
             <B>MissingSchemaAction.Add</B>
@@ -111,7 +114,7 @@
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets some of
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets some of
       its properties.
       <code lang="vbnet">
         Public Sub CreateSqlDataAdapter()
@@ -166,17 +169,17 @@
 
   <Ctor1>
     <summary>
-      Initializes a new instance of the <see cref="MySqlDataAdapter"/> class with
-      the specified <see cref="MySqlCommand"/> as the <see cref="SelectCommand"/>
+      Initializes a new instance of the <see cref="MySqlDataAdapter" /> class with
+      the specified <see cref="MySqlCommand" /> as the <see cref="SelectCommand" />
       property.
     </summary>
     <param name="selectCommand">
-      <see cref="MySqlCommand"/> that is a SQL SELECT statement or stored procedure and is set
-      as the <see cref="SelectCommand"/> property of the <see cref="MySqlDataAdapter"/>.
+      <see cref="MySqlCommand" /> that is a SQL SELECT statement or stored procedure and is set
+      as the <see cref="SelectCommand" /> property of the <see cref="MySqlDataAdapter" />.
     </param>
     <remarks>
       <para>
-        When an instance of <see cref="MySqlDataAdapter"/> is created,
+        When an instance of <see cref="MySqlDataAdapter" /> is created,
         the following read/write properties are set to the following initial
         values.
       </para>
@@ -187,7 +190,7 @@
         </listheader>
         <item>
           <term>
-            <see cref="MissingMappingAction"/>
+            <see cref="MissingMappingAction" />
           </term>
           <term>
             <B>MissingMappingAction.Passthrough</B>
@@ -195,7 +198,7 @@
         </item>
         <item>
           <term>
-            <see cref="MissingSchemaAction"/>
+            <see cref="MissingSchemaAction" />
           </term>
           <term>
             <B>MissingSchemaAction.Add</B>
@@ -208,13 +211,13 @@
       </para>
       <para>
         When <B>SelectCommand</B> (or any of the other command properties) is assigned
-        to a previously created <see cref="MySqlCommand"/>, the <B>MySqlCommand</B> is not cloned.
+        to a previously created <see cref="MySqlCommand" />, the <B>MySqlCommand</B> is not cloned.
         The <B>SelectCommand</B> maintains a reference to the previously created <B>MySqlCommand</B>
         object.
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets some of
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets some of
       its properties.
       <code lang="vbnet">
         Public Sub CreateSqlDataAdapter()
@@ -269,26 +272,26 @@
 
   <Ctor2>
     <summary>
-      Initializes a new instance of the <see cref="MySqlDataAdapter"/> class with
-      a <see cref="SelectCommand"/> and a <see cref="MySqlConnection"/> object.
+      Initializes a new instance of the <see cref="MySqlDataAdapter" /> class with
+      a <see cref="SelectCommand" /> and a <see cref="MySqlConnection" /> object.
     </summary>
     <param name="selectCommandText">
       A <b>String</b> that is a SQL SELECT statement or stored procedure to be used by
-      the <see cref="SelectCommand"/> property of the <see cref="MySqlDataAdapter"/>.
+      the <see cref="SelectCommand" /> property of the <see cref="MySqlDataAdapter" />.
     </param>
     <param name="connection">
-      A <see cref="MySqlConnection"/> that represents the connection.
+      A <see cref="MySqlConnection" /> that represents the connection.
     </param>
     <remarks>
       <para>
-        This implementation of the <see cref="MySqlDataAdapter"/> opens and closes a <see cref="MySqlConnection"/>
+        This implementation of the <see cref="MySqlDataAdapter" /> opens and closes a <see cref="MySqlConnection" />
         if it is not already open. This can be useful in a an application that must call the
-        <see cref="DbDataAdapter.Fill(DataSet)"/> method for two or more <B>MySqlDataAdapter</B> objects.
+        <see cref="DbDataAdapter.Fill(DataSet)" /> method for two or more <B>MySqlDataAdapter</B> objects.
         If the <B>MySqlConnection</B> is already open, you must explicitly call
-        <see cref="MySqlConnection.Close"/> or <see cref="MySqlConnection.Dispose()"/> to close it.
+        <see cref="MySqlConnection.Close" /> or <see cref="MySqlConnection.Dispose()" /> to close it.
       </para>
       <para>
-        When an instance of <see cref="MySqlDataAdapter"/> is created,
+        When an instance of <see cref="MySqlDataAdapter" /> is created,
         the following read/write properties are set to the following initial
         values.
       </para>
@@ -299,7 +302,7 @@
         </listheader>
         <item>
           <term>
-            <see cref="MissingMappingAction"/>
+            <see cref="MissingMappingAction" />
           </term>
           <term>
             <B>MissingMappingAction.Passthrough</B>
@@ -307,7 +310,7 @@
         </item>
         <item>
           <term>
-            <see cref="MissingSchemaAction"/>
+            <see cref="MissingSchemaAction" />
           </term>
           <term>
             <B>MissingSchemaAction.Add</B>
@@ -320,7 +323,7 @@
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets some of
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets some of
       its properties.
       <code lang="vbnet">
         Public Sub CreateSqlDataAdapter()
@@ -373,17 +376,17 @@
 
   <Ctor3>
     <summary>
-      Initializes a new instance of the <see cref="MySqlDataAdapter"/> class with
-      a <see cref="SelectCommand"/> and a connection string.
+      Initializes a new instance of the <see cref="MySqlDataAdapter" /> class with
+      a <see cref="SelectCommand" /> and a connection string.
     </summary>
     <param name="selectCommandText">
-      A <see cref="string"/> that is a SQL SELECT statement or stored procedure to
-      be used by the <see cref="SelectCommand"/> property of the <see cref="MySqlDataAdapter"/>.
+      A <see cref="string" /> that is a SQL SELECT statement or stored procedure to
+      be used by the <see cref="SelectCommand" /> property of the <see cref="MySqlDataAdapter" />.
     </param>
     <param name="selectConnString">The connection string</param>
     <remarks>
       <para>
-        When an instance of <see cref="MySqlDataAdapter"/> is created,
+        When an instance of <see cref="MySqlDataAdapter" /> is created,
         the following read/write properties are set to the following initial
         values.
       </para>
@@ -394,7 +397,7 @@
         </listheader>
         <item>
           <term>
-            <see cref="MissingMappingAction"/>
+            <see cref="MissingMappingAction" />
           </term>
           <term>
             <B>MissingMappingAction.Passthrough</B>
@@ -402,7 +405,7 @@
         </item>
         <item>
           <term>
-            <see cref="MissingSchemaAction"/>
+            <see cref="MissingSchemaAction" />
           </term>
           <term>
             <B>MissingSchemaAction.Add</B>
@@ -415,7 +418,7 @@
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets some of
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets some of
       its properties.
       <code lang="vbnet">
         Public Sub CreateSqlDataAdapter()
@@ -470,28 +473,29 @@
       Gets or sets a SQL statement or stored procedure used to delete records from the data set.
     </summary>
     <value>
-      A <see cref="MySqlCommand"/> used during <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/> to delete records in the
-      database that correspond to deleted rows in the <see cref="DataSet"/>.
+      A <see cref="MySqlCommand" /> used during
+      <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> to delete records in the
+      database that correspond to deleted rows in the <see cref="DataSet" />.
     </value>
     <remarks>
       <para>
-        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/>, if this property is not set and primary key information
-        is present in the <see cref="DataSet"/>, the <B>DeleteCommand</B> can be generated
-        automatically if you set the <see cref="SelectCommand"/> property and use the
-        <see cref="MySqlCommandBuilder"/>.  Then, any additional commands that you do not set are
+        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />, if this property is not set and primary key information
+        is present in the <see cref="DataSet" />, the <B>DeleteCommand</B> can be generated
+        automatically if you set the <see cref="SelectCommand" /> property and use the
+        <see cref="MySqlCommandBuilder" />.  Then, any additional commands that you do not set are
         generated by the <B>MySqlCommandBuilder</B>. This generation logic requires key column
         information to be present in the <B>DataSet</B>.
       </para>
       <para>
-        When <B>DeleteCommand</B> is assigned to a previously created <see cref="MySqlCommand"/>,
+        When <B>DeleteCommand</B> is assigned to a previously created <see cref="MySqlCommand" />,
         the <B>MySqlCommand</B> is not cloned. The <B>DeleteCommand</B> maintains a reference
         to the previously created <B>MySqlCommand</B> object.
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets the
-      <see cref="SelectCommand"/> and <B>DeleteCommand</B> properties. It assumes you have already
-      created a <see cref="MySqlConnection"/> object.
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets the
+      <see cref="SelectCommand" /> and <B>DeleteCommand</B> properties. It assumes you have already
+      created a <see cref="MySqlConnection" /> object.
       <code lang="vbnet">
         Public Shared Function CreateCustomerAdapter(conn As MySqlConnection) As MySqlDataAdapter
 
@@ -552,32 +556,34 @@
       Gets or sets a SQL statement or stored procedure used to insert records into the data set.
     </summary>
     <value>
-      A <see cref="MySqlCommand"/> used during <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/> to insert records into the
-      database that correspond to new rows in the <see cref="DataSet"/>.
+      A <see cref="MySqlCommand" /> used during
+      <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> to insert records into the
+      database that correspond to new rows in the <see cref="DataSet" />.
     </value>
     <remarks>
       <para>
-        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/>, if this property is not set and primary key information
-        is present in the <see cref="DataSet"/>, the <B>InsertCommand</B> can be generated
-        automatically if you set the <see cref="SelectCommand"/> property and use the
-        <see cref="MySqlCommandBuilder"/>.  Then, any additional commands that you do not set are
+        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />, if this property is not set and primary key information
+        is present in the <see cref="DataSet" />, the <B>InsertCommand</B> can be generated
+        automatically if you set the <see cref="SelectCommand" /> property and use the
+        <see cref="MySqlCommandBuilder" />.  Then, any additional commands that you do not set are
         generated by the <B>MySqlCommandBuilder</B>. This generation logic requires key column
         information to be present in the <B>DataSet</B>.
       </para>
       <para>
-        When <B>InsertCommand</B> is assigned to a previously created <see cref="MySqlCommand"/>,
+        When <B>InsertCommand</B> is assigned to a previously created <see cref="MySqlCommand" />,
         the <B>MySqlCommand</B> is not cloned. The <B>InsertCommand</B> maintains a reference
         to the previously created <B>MySqlCommand</B> object.
       </para>
       <note>
         If execution of this command returns rows, these rows may be added to the <B>DataSet</B>
-        depending on how you set the <see cref="MySqlCommand.UpdatedRowSource"/> property of the <B>MySqlCommand</B> object.
+        depending on how you set the <see cref="MySqlCommand.UpdatedRowSource" /> property of the <B>MySqlCommand</B>
+        object.
       </note>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets the
-      <see cref="SelectCommand"/> and <B>InsertCommand</B> properties. It assumes you have already
-      created a <see cref="MySqlConnection"/> object.
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets the
+      <see cref="SelectCommand" /> and <B>InsertCommand</B> properties. It assumes you have already
+      created a <see cref="MySqlConnection" /> object.
       <code lang="vbnet">
         Public Shared Function CreateCustomerAdapter(conn As MySqlConnection) As MySqlDataAdapter
 
@@ -636,32 +642,34 @@
       Gets or sets a SQL statement or stored procedure used to updated records in the data source.
     </summary>
     <value>
-      A <see cref="MySqlCommand"/> used during <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/> to update records in the
-      database with data from the <see cref="DataSet"/>.
+      A <see cref="MySqlCommand" /> used during
+      <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" /> to update records in the
+      database with data from the <see cref="DataSet" />.
     </value>
     <remarks>
       <para>
-        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)"/>, if this property is not set and primary key information
-        is present in the <see cref="DataSet"/>, the <B>UpdateCommand</B> can be generated
-        automatically if you set the <see cref="SelectCommand"/> property and use the
-        <see cref="MySqlCommandBuilder"/>.  Then, any additional commands that you do not set are
+        During <see cref="System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />, if this property is not set and primary key information
+        is present in the <see cref="DataSet" />, the <B>UpdateCommand</B> can be generated
+        automatically if you set the <see cref="SelectCommand" /> property and use the
+        <see cref="MySqlCommandBuilder" />.  Then, any additional commands that you do not set are
         generated by the <B>MySqlCommandBuilder</B>. This generation logic requires key column
         information to be present in the <B>DataSet</B>.
       </para>
       <para>
-        When <B>UpdateCommand</B> is assigned to a previously created <see cref="MySqlCommand"/>,
+        When <B>UpdateCommand</B> is assigned to a previously created <see cref="MySqlCommand" />,
         the <B>MySqlCommand</B> is not cloned. The <B>UpdateCommand</B> maintains a reference
         to the previously created <B>MySqlCommand</B> object.
       </para>
       <note>
         If execution of this command returns rows, these rows may be merged with the DataSet
-        depending on how you set the <see cref="MySqlCommand.UpdatedRowSource"/> property of the <B>MySqlCommand</B> object.
+        depending on how you set the <see cref="MySqlCommand.UpdatedRowSource" /> property of the <B>MySqlCommand</B>
+        object.
       </note>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets the
-      <see cref="SelectCommand"/> and <B>UpdateCommand</B> properties. It assumes you have already
-      created a <see cref="MySqlConnection"/> object.
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets the
+      <see cref="SelectCommand" /> and <B>UpdateCommand</B> properties. It assumes you have already
+      created a <see cref="MySqlConnection" /> object.
       <code lang="vbnet">
         Public Shared Function CreateCustomerAdapter(conn As MySqlConnection) As MySqlDataAdapter
 
@@ -727,24 +735,24 @@
       Gets or sets a SQL statement or stored procedure used to select records in the data source.
     </summary>
     <value>
-      A <see cref="MySqlCommand"/> used during <see cref="System.Data.Common.DbDataAdapter.Fill(DataSet)"/> to select records from the
-      database for placement in the <see cref="DataSet"/>.
+      A <see cref="MySqlCommand" /> used during <see cref="System.Data.Common.DbDataAdapter.Fill(DataSet)" /> to select records from the
+      database for placement in the <see cref="DataSet" />.
     </value>
     <remarks>
       <para>
-        When <B>SelectCommand</B> is assigned to a previously created <see cref="MySqlCommand"/>,
+        When <B>SelectCommand</B> is assigned to a previously created <see cref="MySqlCommand" />,
         the <B>MySqlCommand</B> is not cloned. The <B>SelectCommand</B> maintains a reference to the
         previously created <B>MySqlCommand</B> object.
       </para>
       <para>
         If the <B>SelectCommand</B> does not return any rows, no tables are added to the
-        <see cref="DataSet"/>, and no exception is raised.
+        <see cref="DataSet" />, and no exception is raised.
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlDataAdapter"/> and sets the
-      <see cref="SelectCommand"/> and <B>InsertCommand</B> properties. It assumes you have already
-      created a <see cref="MySqlConnection"/> object.
+      The following example creates a <see cref="MySqlDataAdapter" /> and sets the
+      <see cref="SelectCommand" /> and <B>InsertCommand</B> properties. It assumes you have already
+      created a <see cref="MySqlConnection" /> object.
       <code lang="vbnet">
         Public Shared Function CreateCustomerAdapter(conn As MySqlConnection) As MySqlDataAdapter
 

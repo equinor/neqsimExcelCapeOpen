@@ -1,28 +1,36 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DatabaseConnection.Properties" GeneratedClassName="Settings">
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
+              GeneratedClassNamespace="DatabaseConnection.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="neqsimdatabaseConnectionStatoil2" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=tr-w33;user id=remote;password=remote;database=neqsimdatabase&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <DesignTimeValue Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;ConnectionString&gt;server=tr-w33;user id=remote;password=remote;database=neqsimdatabase&lt;/ConnectionString&gt;
+        &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+        &lt;/SerializableConnectionString&gt;
+      </DesignTimeValue>
       <Value Profile="(Default)">server=tr-w33;user id=remote;password=remote;database=neqsimdatabase</Value>
     </Setting>
     <Setting Name="neqsimdatabaseConnectionNTNU2" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=129.241.62.72;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase&lt;/ConnectionString&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <DesignTimeValue Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;ConnectionString&gt;server=129.241.62.72;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase&lt;/ConnectionString&gt;
+        &lt;/SerializableConnectionString&gt;
+      </DesignTimeValue>
       <Value Profile="(Default)">server=129.241.62.72;user id=remote;password=remote;persistsecurityinfo=True;database=neqsimdatabase</Value>
     </Setting>
     <Setting Name="neqsimdatabaseConnectionNTNU" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=129.241.62.72;user id=remote;password=remote;database=neqsimdatabase&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <DesignTimeValue Profile="(Default)">
+        &lt;?xml version="1.0" encoding="utf-16"?&gt;
+        &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+        &lt;ConnectionString&gt;server=129.241.62.72;user id=remote;password=remote;database=neqsimdatabase&lt;/ConnectionString&gt;
+        &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+        &lt;/SerializableConnectionString&gt;
+      </DesignTimeValue>
       <Value Profile="(Default)">server=129.241.62.72;user id=remote;password=remote;database=neqsimdatabase</Value>
     </Setting>
   </Settings>

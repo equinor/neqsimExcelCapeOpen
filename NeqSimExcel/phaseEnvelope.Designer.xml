@@ -1,8 +1,27 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet5" hostitem:identifier="Sheet5" hostitem:primaryCookie="Sheet5" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="11" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="19683156C1FE8B14D2D1A5A11BCC31A74119F1" hostitem:extenderCookie="19683156C1FE8B14D2D1A5A11BCC31A74119F1" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="hydrocarboncheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="201595F032C9E1246142AA9926B9A0F8314D62" hostitem:extenderCookie="201595F032C9E1246142AA9926B9A0F8314D62" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="aqueousCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="314817F8E3E88634747381F033271250FE3AE3" hostitem:extenderCookie="314817F8E3E88634747381F033271250FE3AE3" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="hydrateCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="4E6539469408FF44F5948BFE493D2EB5B2C1B4" hostitem:extenderCookie="4E6539469408FF44F5948BFE493D2EB5B2C1B4" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet5" hostitem:identifier="Sheet5" hostitem:primaryCookie="Sheet5"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="11"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="19683156C1FE8B14D2D1A5A11BCC31A74119F1"
+                                    hostitem:extenderCookie="19683156C1FE8B14D2D1A5A11BCC31A74119F1"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="hydrocarboncheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="201595F032C9E1246142AA9926B9A0F8314D62"
+                                    hostitem:extenderCookie="201595F032C9E1246142AA9926B9A0F8314D62"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="aqueousCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="314817F8E3E88634747381F033271250FE3AE3"
+                                    hostitem:extenderCookie="314817F8E3E88634747381F033271250FE3AE3"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="hydrateCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="4E6539469408FF44F5948BFE493D2EB5B2C1B4"
+                                    hostitem:extenderCookie="4E6539469408FF44F5948BFE493D2EB5B2C1B4"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

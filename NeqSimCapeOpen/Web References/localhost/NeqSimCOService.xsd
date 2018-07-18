@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://neqsim/" xmlns:ns1="http://jaxb.dev.java.net/array" targetNamespace="http://neqsim/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8080/NeqSimCOService/NeqSimCOService?xsd=2" namespace="http://jaxb.dev.java.net/array" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://neqsim/" xmlns:ns1="http://jaxb.dev.java.net/array" targetNamespace="http://neqsim/"
+           version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/NeqSimCOService/NeqSimCOService?xsd=2"
+             namespace="http://jaxb.dev.java.net/array" />
   <xs:element name="getBoilingPointTemps" type="tns:getBoilingPointTemps" />
   <xs:element name="getBoilingPointTempsResponse" type="tns:getBoilingPointTempsResponse" />
   <xs:element name="getCASnumbers" type="tns:getCASnumbers" />
@@ -36,7 +39,8 @@
   <xs:element name="getlogFugacityCoefficientsDpressure" type="tns:getlogFugacityCoefficientsDpressure" />
   <xs:element name="getlogFugacityCoefficientsDpressureResponse" type="tns:getlogFugacityCoefficientsDpressureResponse" />
   <xs:element name="getlogFugacityCoefficientsDtemperature" type="tns:getlogFugacityCoefficientsDtemperature" />
-  <xs:element name="getlogFugacityCoefficientsDtemperatureResponse" type="tns:getlogFugacityCoefficientsDtemperatureResponse" />
+  <xs:element name="getlogFugacityCoefficientsDtemperatureResponse"
+              type="tns:getlogFugacityCoefficientsDtemperatureResponse" />
   <xs:element name="hello" type="tns:hello" />
   <xs:element name="helloResponse" type="tns:helloResponse" />
   <xs:element name="readFluidFromGQIT" type="tns:readFluidFromGQIT" />

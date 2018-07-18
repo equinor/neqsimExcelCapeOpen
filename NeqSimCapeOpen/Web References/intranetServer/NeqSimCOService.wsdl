@@ -1,11 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://neqsim/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="NeqSimCOService" targetNamespace="http://neqsim/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:tns="http://neqsim/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             name="NeqSimCOService" targetNamespace="http://neqsim/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema>
-      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=1" namespace="http://neqsim/" />
+      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=1"
+                  namespace="http://neqsim/" />
     </xsd:schema>
     <xsd:schema>
-      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=2" namespace="http://jaxb.dev.java.net/array" />
+      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=2"
+                  namespace="http://jaxb.dev.java.net/array" />
     </xsd:schema>
   </types>
   <message name="getEntropy">
@@ -134,8 +141,10 @@
       <output wsam:Action="http://neqsim/NeqSimCOService/getEntropyResponse" message="tns:getEntropyResponse" />
     </operation>
     <operation name="getlogFugacityCoefficientsDtemperature">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureRequest" message="tns:getlogFugacityCoefficientsDtemperature" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureResponse" message="tns:getlogFugacityCoefficientsDtemperatureResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureRequest"
+             message="tns:getlogFugacityCoefficientsDtemperature" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureResponse"
+              message="tns:getlogFugacityCoefficientsDtemperatureResponse" />
     </operation>
     <operation name="getDensity">
       <input wsam:Action="http://neqsim/NeqSimCOService/getDensityRequest" message="tns:getDensity" />
@@ -151,11 +160,14 @@
     </operation>
     <operation name="getComponentNames">
       <input wsam:Action="http://neqsim/NeqSimCOService/getComponentNamesRequest" message="tns:getComponentNames" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getComponentNamesResponse" message="tns:getComponentNamesResponse" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getComponentNamesResponse"
+              message="tns:getComponentNamesResponse" />
     </operation>
     <operation name="getNumberOfComponents">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsRequest" message="tns:getNumberOfComponents" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsResponse" message="tns:getNumberOfComponentsResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsRequest"
+             message="tns:getNumberOfComponents" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsResponse"
+              message="tns:getNumberOfComponentsResponse" />
     </operation>
     <operation name="hello">
       <input wsam:Action="http://neqsim/NeqSimCOService/helloRequest" message="tns:hello" />
@@ -167,7 +179,8 @@
     </operation>
     <operation name="getMolecularWeights">
       <input wsam:Action="http://neqsim/NeqSimCOService/getMolecularWeightsRequest" message="tns:getMolecularWeights" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getMolecularWeightsResponse" message="tns:getMolecularWeightsResponse" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getMolecularWeightsResponse"
+              message="tns:getMolecularWeightsResponse" />
     </operation>
     <operation name="getFormulaes">
       <input wsam:Action="http://neqsim/NeqSimCOService/getFormulaesRequest" message="tns:getFormulaes" />
@@ -179,37 +192,48 @@
     </operation>
     <operation name="getBoilingPointTemps">
       <input wsam:Action="http://neqsim/NeqSimCOService/getBoilingPointTempsRequest" message="tns:getBoilingPointTemps" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getBoilingPointTempsResponse" message="tns:getBoilingPointTempsResponse" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getBoilingPointTempsResponse"
+              message="tns:getBoilingPointTempsResponse" />
     </operation>
     <operation name="getFugacityCoefficients">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsRequest" message="tns:getFugacityCoefficients" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsResponse" message="tns:getFugacityCoefficientsResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsRequest"
+             message="tns:getFugacityCoefficients" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsResponse"
+              message="tns:getFugacityCoefficientsResponse" />
     </operation>
     <operation name="setTPFraction">
       <input wsam:Action="http://neqsim/NeqSimCOService/setTPFraction" message="tns:setTPFraction" />
     </operation>
     <operation name="getHeatCapacityCp">
       <input wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCpRequest" message="tns:getHeatCapacityCp" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCpResponse" message="tns:getHeatCapacityCpResponse" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCpResponse"
+              message="tns:getHeatCapacityCpResponse" />
     </operation>
     <operation name="getHeatCapacityCv">
       <input wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCvRequest" message="tns:getHeatCapacityCv" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCvResponse" message="tns:getHeatCapacityCvResponse" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCvResponse"
+              message="tns:getHeatCapacityCvResponse" />
     </operation>
     <operation name="getlogFugacityCoefficientsDpressure">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureRequest" message="tns:getlogFugacityCoefficientsDpressure" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureResponse" message="tns:getlogFugacityCoefficientsDpressureResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureRequest"
+             message="tns:getlogFugacityCoefficientsDpressure" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureResponse"
+              message="tns:getlogFugacityCoefficientsDpressureResponse" />
     </operation>
     <operation name="readFluidFromGQIT">
       <input wsam:Action="http://neqsim/NeqSimCOService/readFluidFromGQIT" message="tns:readFluidFromGQIT" />
     </operation>
     <operation name="getlogFugacityCoefficientsDmoles">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesRequest" message="tns:getlogFugacityCoefficientsDmoles" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesResponse" message="tns:getlogFugacityCoefficientsDmolesResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesRequest"
+             message="tns:getlogFugacityCoefficientsDmoles" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesResponse"
+              message="tns:getlogFugacityCoefficientsDmolesResponse" />
     </operation>
     <operation name="getNormalBoilingpointTemperatures">
-      <input wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesRequest" message="tns:getNormalBoilingpointTemperatures" />
-      <output wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesResponse" message="tns:getNormalBoilingpointTemperaturesResponse" />
+      <input wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesRequest"
+             message="tns:getNormalBoilingpointTemperatures" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesResponse"
+              message="tns:getNormalBoilingpointTemperaturesResponse" />
     </operation>
   </portType>
   <binding name="NeqSimCOServicePortBinding" type="tns:NeqSimCOService">

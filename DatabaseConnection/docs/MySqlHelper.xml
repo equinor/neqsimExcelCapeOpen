@@ -7,14 +7,13 @@
       <para>
         Any open connections are not automatically closed when an exception is thrown.  If
         the client application determines that the exception is fatal, it should close any open
-        <see cref="MySqlDataReader"/> objects or <see cref="MySqlConnection"/> objects.
+        <see cref="MySqlDataReader" /> objects or <see cref="MySqlConnection" /> objects.
       </para>
     </remarks>
 
     <example>
       The following example generates a <B>MySqlException</B> due to a missing server,
       and then displays the exception.
-
       <code lang="vbnet">
         Public Sub ShowException()
         Dim mySelectQuery As String = "SELECT column1 FROM table1"

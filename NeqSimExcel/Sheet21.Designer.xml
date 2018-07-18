@@ -1,5 +1,12 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet21" hostitem:identifier="valveSheet" hostitem:primaryCookie="Sheet21" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="22" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="1635649DA19FEC1490C1A42116A727DCD2D4A1" hostitem:extenderCookie="1635649DA19FEC1490C1A42116A727DCD2D4A1" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet21" hostitem:identifier="valveSheet" hostitem:primaryCookie="Sheet21"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="23"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="1635649DA19FEC1490C1A42116A727DCD2D4A1"
+                                    hostitem:extenderCookie="1635649DA19FEC1490C1A42116A727DCD2D4A1"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

@@ -1,228 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CAPEOPEN110;
+﻿using CAPEOPEN110;
 
 namespace CapeOpenUnitOperations
 {
     public class ParameterBaseSpec : ICapeRealParameterSpec, ICapeParameterSpec
     {
-        double defaultVal = 1.0;
-        double upperBoundVal = 10.0;
-        double lowerBoundVal = 0.0;
-        CapeParamType paramType = CapeParamType.CAPE_REAL;
-        object paramDimensionality = new double[3];
-        public Double DefaultValue
-        {
-            get
-            {
-                return defaultVal;
-            }
-        }
+        public CapeParamType Type { get; set; } = CapeParamType.CAPE_REAL;
 
-        public CapeParamType Type
-        {
-            get
-            {
-                return paramType;
-            }
-             set
-            {
-                paramType = value;
-            }
-        }
+        public object Dimensionality { get; set; } = new double[3];
 
-        public object Dimensionality
-        {
-            get
-            {
-                return paramDimensionality;
-            }
-              set
-            {
-                paramDimensionality = value;
-            }
-        }
+        public double DefaultValue { get; } = 1.0;
 
 
+        public double UpperBound { get; set; } = 10.0;
 
-        public double UpperBound
-        {
-            get
-            {
-                return upperBoundVal;
-            }
-              set
-            {
-                upperBoundVal = value;
-            }
-        }
-
-        public double LowerBound
-        {
-            get
-            {
-                return lowerBoundVal;
-            }
-            set
-            {
-                lowerBoundVal = value;
-            }
-        }
+        public double LowerBound { get; set; } = 0.0;
 
         public bool Validate(double value, ref string input)
         {
             return true;
         }
-
     }
-
 
 
     public class ParameterIntSpec : ICapeIntegerParameterSpec, ICapeParameterSpec
     {
-        int defaultVal = 1;
-        int upperBoundVal = 1000;
-        int lowerBoundVal = 0;
-        object paramDimensionality = new double[3];
-        CapeParamType paramType = CapeParamType.CAPE_INT;
-
-         public int DefaultValue
-        {
-            get
-            {
-                return defaultVal;
-            }
-        }
-
-         public CapeParamType Type
-        {
-            get
-            {
-                return paramType;
-            }
-            set
-            {
-                paramType = value;
-            }
-        }
-
-         public object Dimensionality
-        {
-            get
-            {
-                return paramDimensionality;
-            }
-            set
-            {
-                paramDimensionality = value;
-            }
-        }
+        public int DefaultValue { get; } = 1;
 
 
+        public int UpperBound { get; set; } = 1000;
 
-         public int UpperBound
-        {
-            get
-            {
-                return upperBoundVal;
-            }
-            set
-            {
-                upperBoundVal = value;
-            }
-        }
+        public int LowerBound { get; set; } = 0;
 
-         public int LowerBound
-        {
-            get
-            {
-                return lowerBoundVal;
-            }
-            set
-            {
-                lowerBoundVal = value;
-            }
-        }
-
-         public bool Validate(int value, ref string input)
+        public bool Validate(int value, ref string input)
         {
             return true;
         }
 
+        public CapeParamType Type { get; set; } = CapeParamType.CAPE_INT;
+
+        public object Dimensionality { get; set; } = new double[3];
     }
 
     public class ParameterRealSpec : ICapeRealParameterSpec, ICapeParameterSpec
     {
-        double defaultVal = 1.0;
-        double upperBoundVal = 1000.0;
-        double lowerBoundVal = 0.0;
-        object paramDimensionality = new double[3];
-        CapeParamType paramType = CapeParamType.CAPE_REAL;
+        public CapeParamType Type { get; set; } = CapeParamType.CAPE_REAL;
 
-         public double DefaultValue
-        {
-            get
-            {
-                return defaultVal;
-            }
-        }
+        public object Dimensionality { get; set; } = new double[3];
 
-         public CapeParamType Type
-        {
-            get
-            {
-                return paramType;
-            }
-            set
-            {
-                paramType = value;
-            }
-        }
-
-         public object Dimensionality
-        {
-            get
-            {
-                return paramDimensionality;
-            }
-            set
-            {
-                paramDimensionality = value;
-            }
-        }
+        public double DefaultValue { get; } = 1.0;
 
 
+        public double UpperBound { get; set; } = 1000.0;
 
-         public double UpperBound
-        {
-            get
-            {
-                return upperBoundVal;
-            }
-            set
-            {
-                upperBoundVal = value;
-            }
-        }
+        public double LowerBound { get; set; } = 0.0;
 
-         public double LowerBound
-        {
-            get
-            {
-                return lowerBoundVal;
-            }
-            set
-            {
-                lowerBoundVal = value;
-            }
-        }
-
-         public bool Validate(double value, ref string input)
+        public bool Validate(double value, ref string input)
         {
             return true;
         }
-
     }
 }

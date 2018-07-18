@@ -1,8 +1,27 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet24" hostitem:identifier="Sheet24" hostitem:primaryCookie="Sheet24" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="26" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comp2ComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="1BD9DA6BF17560145B618E451B052818D43BF1" hostitem:extenderCookie="1BD9DA6BF17560145B618E451B052818D43BF1" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comp1ComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="2954B6DE02D8C324C5629F1E2D3DCBAB99B1C2" hostitem:extenderCookie="2954B6DE02D8C324C5629F1E2D3DCBAB99B1C2" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="calculationComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="4E96453F74631944EB14B41B4161216A52F4A4" hostitem:extenderCookie="4E96453F74631944EB14B41B4161216A52F4A4" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="5444E502D5E8AC544475A18758CA96B2F793D5" hostitem:extenderCookie="5444E502D5E8AC544475A18758CA96B2F793D5" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet24" hostitem:identifier="Sheet24" hostitem:primaryCookie="Sheet24"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="27"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comp2ComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="1BD9DA6BF17560145B618E451B052818D43BF1"
+                                    hostitem:extenderCookie="1BD9DA6BF17560145B618E451B052818D43BF1"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comp1ComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="2954B6DE02D8C324C5629F1E2D3DCBAB99B1C2"
+                                    hostitem:extenderCookie="2954B6DE02D8C324C5629F1E2D3DCBAB99B1C2"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="calculationComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="4E96453F74631944EB14B41B4161216A52F4A4"
+                                    hostitem:extenderCookie="4E96453F74631944EB14B41B4161216A52F4A4"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="5444E502D5E8AC544475A18758CA96B2F793D5"
+                                    hostitem:extenderCookie="5444E502D5E8AC544475A18758CA96B2F793D5"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

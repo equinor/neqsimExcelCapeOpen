@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(23)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(24)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class compressorSheet : Microsoft.Office.Tools.Excel.WorksheetBase {
         

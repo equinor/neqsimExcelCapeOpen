@@ -1,70 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using Microsoft.Office.Tools.Excel;
-using Microsoft.VisualStudio.Tools.Applications.Runtime;
-using Excel = Microsoft.Office.Interop.Excel;
-using Office = Microsoft.Office.Core;
-using thermo.system;
-using thermodynamicOperations;
-using Microsoft.Win32;
-using System.Runtime.InteropServices;
-using System.Reflection;
-using System.Collections;
+using System.Drawing;
 using System.Security.Principal;
-using MySql.Data;
-using processSimulation.processEquipment.stream;
+using System.Windows.Forms;
+using DatabaseConnection;
+using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
+using Microsoft.Office.Interop.Excel;
+using processSimulation.processEquipment;
 using processSimulation.processEquipment.compressor;
 using processSimulation.processEquipment.heatExchanger;
+using processSimulation.processEquipment.stream;
+using processSimulation.processEquipment.util;
+using processSimulation.processSystem;
 using processSimulation.processSystem.processModules;
+using thermo.system;
+using thermodynamicOperations;
+using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel
 {
     public partial class SepProcessSheet
     {
-        SystemInterface feedThermoSystem;
-        Excel.Range statusRange = null;
-        processSimulation.processSystem.ProcessSystem operations;// = new processSimulation.processSystem.ProcessSystem();
+        private SystemInterface feedThermoSystem;
+        private ProcessSystem operations; // = new processSimulation.processSystem.ProcessSystem();
+        private Range statusRange;
 
 
-        private void Sheet23_Startup(object sender, System.EventArgs e)
+        private void Sheet23_Startup(object sender, EventArgs e)
         {
-            statusRange = this.Range["C24"];
+            statusRange = Range["C24"];
             try
             {
-                DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
+                var test = new fluidinfoTableAdapter();
                 // NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
 
-                string userName = WindowsIdentity.GetCurrent().Name;
+                var userName = WindowsIdentity.GetCurrent().Name;
                 userName = userName.Replace("STATOIL-NET\\", "");
                 userName = userName.Replace("WIN-NTNU-NO\\", "");
                 userName = userName.ToLower();
 
 
-                DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
-                List<string> names = new List<string>();
+                var tt = test.GetDataBy(userName);
+                var names = new List<string>();
                 //names.Add("CPApackage");
                 //names.Add(WindowsIdentity.GetCurrent().Name);
                 fluidsComboBox.Items.Add("Active fluid");
-                foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
+                foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
                 {
                     names.Add(row.ID.ToString());
                     fluidsComboBox.Items.Add(row.ID.ToString());
                 }
+
                 //   packageNames = names.ToArray();
                 //   fluidListNameComboBox.Items.Add(names.ToList());
                 fluidsComboBox.SelectedIndex = 0;
 
-                int feedNumb = Convert.ToInt32((String)fluidsComboBox.SelectedItem.ToString());
+                var feedNumb = Convert.ToInt32(fluidsComboBox.SelectedItem.ToString());
                 feedThermoSystem = NeqSimThermoSystem.getThermoSystem();
                 feedThermoSystem = feedThermoSystem.readObject(feedNumb);
-             
             }
             catch (Exception excet)
             {
@@ -72,110 +67,122 @@ namespace NeqSimExcel
             }
         }
 
-        private void Sheet23_Shutdown(object sender, System.EventArgs e)
+        private void Sheet23_Shutdown(object sender, EventArgs e)
         {
         }
 
         #region VSTO Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///     Required method for Designer support - do not modify
+        ///     the contents of this method with the code editor.
         /// </summary>
         private void InternalStartup()
         {
-            this.calcuateButton.Click += new System.EventHandler(this.calcuateButton_Click);
-            this.fluidsComboBox.SelectedIndexChanged += new System.EventHandler(this.fluidsComboBox_SelectedIndexChanged);
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
-            this.Startup += new System.EventHandler(this.Sheet23_Startup);
-            this.Shutdown += new System.EventHandler(this.Sheet23_Shutdown);
-
+            calcuateButton.Click += calcuateButton_Click;
+            fluidsComboBox.SelectedIndexChanged += fluidsComboBox_SelectedIndexChanged;
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            linkLabel3.LinkClicked += linkLabel3_LinkClicked;
+            Startup += Sheet23_Startup;
+            Shutdown += Sheet23_Shutdown;
         }
 
         #endregion
 
         private void fluidsComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void calcuateButton_Click(object sender, EventArgs e)
         {
-            Excel.Range rangeClear = this.Range["G1", "G100"];
+            var rangeClear = Range["G1", "G100"];
             rangeClear.Clear();
-            statusRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
-          
-            if(fluidsComboBox.SelectedItem.ToString().Equals("Active fluid")){
-                feedThermoSystem = (SystemInterface)NeqSimThermoSystem.getThermoSystem();
+            statusRange.Font.Color = ColorTranslator.ToOle(Color.Blue);
+
+            if (fluidsComboBox.SelectedItem.ToString().Equals("Active fluid"))
+            {
+                feedThermoSystem = NeqSimThermoSystem.getThermoSystem();
             }
-            else{
-            statusRange.Value2 = "reading fluids...";
-            int gasNumb = Convert.ToInt32((String)fluidsComboBox.SelectedItem.ToString());
-            feedThermoSystem = NeqSimThermoSystem.getThermoSystem();
-           feedThermoSystem = feedThermoSystem.readObject(gasNumb);
-           }
-            feedThermoSystem.setTemperature(this.Range["B7"].Value2 + 273.15);
-            feedThermoSystem.setPressure(this.Range["B6"].Value2);
+            else
+            {
+                statusRange.Value2 = "reading fluids...";
+                var gasNumb = Convert.ToInt32(fluidsComboBox.SelectedItem.ToString());
+                feedThermoSystem = NeqSimThermoSystem.getThermoSystem();
+                feedThermoSystem = feedThermoSystem.readObject(gasNumb);
+            }
+
+            feedThermoSystem.setTemperature(Range["B7"].Value2 + 273.15);
+            feedThermoSystem.setPressure(Range["B6"].Value2);
 
             statusRange.Value2 = "reading feed fluid...ok";
 
             statusRange.Value2 = "calculating.....";
-            operations = new processSimulation.processSystem.ProcessSystem();
-            Stream wellStream = new Stream("Well stream", feedThermoSystem);
+            operations = new ProcessSystem();
+            var wellStream = new Stream("Well stream", feedThermoSystem);
 
-            wellStream.getThermoSystem().setTotalFlowRate(this.Range["B5"].Value2, "MSm^3/day");
-            SeparationTrainModule separationModule = new SeparationTrainModule();
+            wellStream.getThermoSystem().setTotalFlowRate(Range["B5"].Value2, "MSm^3/day");
+            var separationModule = new SeparationTrainModule();
             separationModule.addInputStream("feed stream", wellStream);
-            separationModule.setSpecification("Second stage pressure", this.Range["B14"].Value2);
-            separationModule.setSpecification("heated oil temperature", 273.15 + this.Range["B13"].Value2);
-            separationModule.setSpecification("Third stage pressure", this.Range["B16"].Value2);
-            separationModule.setSpecification("Gas exit temperature", 273.15 + this.Range["B12"].Value2);
-            separationModule.setSpecification("First stage compressor after cooler temperature", 273.15 + this.Range["B17"].Value2);
-            separationModule.setSpecification("Export oil temperature", 273.15 + this.Range["B17"].Value2);
-            
+            separationModule.setSpecification("Second stage pressure", Range["B14"].Value2);
+            separationModule.setSpecification("heated oil temperature", 273.15 + Range["B13"].Value2);
+            separationModule.setSpecification("Third stage pressure", Range["B16"].Value2);
+            separationModule.setSpecification("Gas exit temperature", 273.15 + Range["B12"].Value2);
+            separationModule.setSpecification("First stage compressor after cooler temperature",
+                273.15 + Range["B17"].Value2);
+            separationModule.setSpecification("Export oil temperature", 273.15 + Range["B17"].Value2);
+
             operations.add(wellStream);
             operations.add(separationModule);
-            ((processSimulation.processEquipment.util.Recycle)operations.getUnit("Resycle")).setTolerance(this.Range["B19"].Value2);
-            ((Compressor)separationModule.getOperations().getUnit("2nd stage recompressor")).setIsentropicEfficiency(this.Range["B20"].Value2/100.0);
-            ((Compressor)separationModule.getOperations().getUnit("3rd stage recompressor")).setIsentropicEfficiency(this.Range["B20"].Value2/100.0);
-           
+            ((Recycle) operations.getUnit("Resycle")).setTolerance(Range["B19"].Value2);
+            ((Compressor) separationModule.getOperations().getUnit("2nd stage recompressor")).setIsentropicEfficiency(
+                Range["B20"].Value2 / 100.0);
+            ((Compressor) separationModule.getOperations().getUnit("3rd stage recompressor")).setIsentropicEfficiency(
+                Range["B20"].Value2 / 100.0);
+
             operations.run();
 
-            this.Range["G5"].Value2 = separationModule.getOutputStream("gas exit stream").getThermoSystem().getTotalNumberOfMoles() * 8.314 * (273.15 + 15.0) / 101325.0 * 3600.0 * 24 / 1.0e6;
-            this.Range["G6"].Value2 = separationModule.getOutputStream("oil exit stream").getThermoSystem().getTotalNumberOfMoles() * separationModule.getOutputStream("oil exit stream").getThermoSystem().getMolarMass() / separationModule.getOutputStream("oil exit stream").getThermoSystem().getPhase(0).getPhysicalProperties().getDensity() * 3600.0;
-            this.Range["G7"].Value2 = ((Compressor)separationModule.getOperations().getUnit("3rd stage recompressor")).getPower();
-            this.Range["G8"].Value2 = ((Compressor)separationModule.getOperations().getUnit("2nd stage recompressor")).getPower();
-            this.Range["G9"].Value2 = ((Cooler)separationModule.getOperations().getUnit("3rd stage cooler")).getEnergyInput();
-            this.Range["G10"].Value2 = ((Cooler)separationModule.getOperations().getUnit("HP gas cooler")).getEnergyInput();
-            this.Range["G11"].Value2 = ((Heater)separationModule.getOperations().getUnit("oil/water heater")).getEnergyInput();
-            this.Range["G12"].Value2 = ((Cooler)separationModule.getOperations().getUnit("export oil cooler")).getEnergyInput();
-                       
+            Range["G5"].Value2 =
+                separationModule.getOutputStream("gas exit stream").getThermoSystem().getTotalNumberOfMoles() * 8.314 *
+                (273.15 + 15.0) / 101325.0 * 3600.0 * 24 / 1.0e6;
+            Range["G6"].Value2 =
+                separationModule.getOutputStream("oil exit stream").getThermoSystem().getTotalNumberOfMoles() *
+                separationModule.getOutputStream("oil exit stream").getThermoSystem().getMolarMass() / separationModule
+                    .getOutputStream("oil exit stream").getThermoSystem().getPhase(0).getPhysicalProperties()
+                    .getDensity() * 3600.0;
+            Range["G7"].Value2 = ((Compressor) separationModule.getOperations().getUnit("3rd stage recompressor"))
+                .getPower();
+            Range["G8"].Value2 = ((Compressor) separationModule.getOperations().getUnit("2nd stage recompressor"))
+                .getPower();
+            Range["G9"].Value2 =
+                ((Cooler) separationModule.getOperations().getUnit("3rd stage cooler")).getEnergyInput();
+            Range["G10"].Value2 = ((Cooler) separationModule.getOperations().getUnit("HP gas cooler")).getEnergyInput();
+            Range["G11"].Value2 =
+                ((Heater) separationModule.getOperations().getUnit("oil/water heater")).getEnergyInput();
+            Range["G12"].Value2 =
+                ((Cooler) separationModule.getOperations().getUnit("export oil cooler")).getEnergyInput();
+
             unitOpsNamesCheckBox.Items.Clear();
-            foreach (String name in operations.getAllUnitNames())
-            {
-                unitOpsNamesCheckBox.Items.Add(name);
-            }
+            foreach (string name in operations.getAllUnitNames()) unitOpsNamesCheckBox.Items.Add(name);
             //   packageNames = names.ToArray();
             //   fluidListNameComboBox.Items.Add(names.ToList());
             unitOpsNamesCheckBox.SelectedIndex = 0;
 
             try
             {
-                ((processSimulation.mechanicalDesign.SystemMechanicalDesign)operations.getSystemMechanicalDesign()).runDesignCalculation();
-                this.Range["G15"].Value2 = ((processSimulation.mechanicalDesign.SystemMechanicalDesign)operations.getSystemMechanicalDesign()).getTotalNumberOfModules();
-                this.Range["G16"].Value2 = ((processSimulation.mechanicalDesign.SystemMechanicalDesign)operations.getSystemMechanicalDesign()).getTotalPlotSpace();
-                this.Range["G17"].Value2 = ((processSimulation.mechanicalDesign.SystemMechanicalDesign)operations.getSystemMechanicalDesign()).getTotalVolume();
-                this.Range["G18"].Value2= ((processSimulation.mechanicalDesign.SystemMechanicalDesign)operations.getSystemMechanicalDesign()).getTotalWeight();
-                this.Range["G19"].Value2 = ((processSimulation.costEstimation.CostEstimateBaseClass)operations.getCostEstimator()).getWeightBasedCAPEXEstimate();
+                operations.getSystemMechanicalDesign().runDesignCalculation();
+                Range["G15"].Value2 = operations.getSystemMechanicalDesign().getTotalNumberOfModules();
+                Range["G16"].Value2 = operations.getSystemMechanicalDesign().getTotalPlotSpace();
+                Range["G17"].Value2 = operations.getSystemMechanicalDesign().getTotalVolume();
+                Range["G18"].Value2 = operations.getSystemMechanicalDesign().getTotalWeight();
+                Range["G19"].Value2 = operations.getCostEstimator().getWeightBasedCAPEXEstimate();
             }
             catch (Exception ex)
             {
-                this.Range["G15"].Value2="Could not calculate dimensions";
+                Range["G15"].Value2 = "Could not calculate dimensions";
                 ex.StackTrace.ToString();
             }
-           
+
             statusRange.Value2 = "finished.....ok";
         }
 
@@ -185,31 +192,30 @@ namespace NeqSimExcel
             {
                 feedThermoSystem = NeqSimThermoSystem.getThermoSystem();
             }
-            else {
-                int gasNumb = Convert.ToInt32((String)fluidsComboBox.SelectedItem.ToString());
+            else
+            {
+                var gasNumb = Convert.ToInt32(fluidsComboBox.SelectedItem.ToString());
                 feedThermoSystem = feedThermoSystem.readObject(gasNumb);
             }
-            feedThermoSystem.setTemperature(this.Range["B7"].Value2 + 273.15);
-            feedThermoSystem.setPressure(this.Range["B6"].Value2);
-            ThermodynamicOperations testOps = new ThermodynamicOperations(feedThermoSystem);
+
+            feedThermoSystem.setTemperature(Range["B7"].Value2 + 273.15);
+            feedThermoSystem.setPressure(Range["B6"].Value2);
+            var testOps = new ThermodynamicOperations(feedThermoSystem);
             testOps.TPflash();
             feedThermoSystem.display();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            String name = (String)unitOpsNamesCheckBox.SelectedItem.ToString();
-            ((processSimulation.processEquipment.ProcessEquipmentBaseClass)operations.getUnit(name)).displayResult();
-            
+            var name = unitOpsNamesCheckBox.SelectedItem.ToString();
+            ((ProcessEquipmentBaseClass) operations.getUnit(name)).displayResult();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            String name = (String)unitOpsNamesCheckBox.SelectedItem.ToString();
-            ((processSimulation.processEquipment.ProcessEquipmentBaseClass)operations.getUnit(name)).getMechanicalDesign().calcDesign();
-            ((processSimulation.processEquipment.ProcessEquipmentBaseClass)operations.getUnit(name)).getMechanicalDesign().displayResults();
-          
+            var name = unitOpsNamesCheckBox.SelectedItem.ToString();
+            ((ProcessEquipmentBaseClass) operations.getUnit(name)).getMechanicalDesign().calcDesign();
+            ((ProcessEquipmentBaseClass) operations.getUnit(name)).getMechanicalDesign().displayResults();
         }
-
     }
 }

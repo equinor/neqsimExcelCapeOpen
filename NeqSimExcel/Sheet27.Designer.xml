@@ -1,6 +1,17 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet27" hostitem:identifier="Sheet27" hostitem:primaryCookie="Sheet27" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="27" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="selectFluidCombobox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61" hostitem:extenderCookie="1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calcButton" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="28C3B6D13208972429F293A32C2113DBFA4122" hostitem:extenderCookie="28C3B6D13208972429F293A32C2113DBFA4122" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet27" hostitem:identifier="Sheet27" hostitem:primaryCookie="Sheet27"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="28"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="selectFluidCombobox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61"
+                                    hostitem:extenderCookie="1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calcButton"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="28C3B6D13208972429F293A32C2113DBFA4122"
+                                    hostitem:extenderCookie="28C3B6D13208972429F293A32C2113DBFA4122"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

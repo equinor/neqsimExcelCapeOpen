@@ -1,13 +1,52 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet12" hostitem:identifier="Sheet12" hostitem:primaryCookie="Sheet12" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="1" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateOperationsCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="17591C4241EBBE142A818AAC121AF6D4896B41" hostitem:extenderCookie="17591C4241EBBE142A818AAC121AF6D4896B41" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activatePVTcheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="2B53EE6D22AEC9248F22BC5F26474D9931F682" hostitem:extenderCookie="2B53EE6D22AEC9248F22BC5F26474D9931F682" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="exportCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="39A3F493A352D5348B438D913B90F58B426BC3" hostitem:extenderCookie="39A3F493A352D5348B438D913B90F58B426BC3" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="RFOCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="4E5B9BBE8412A74438348D73466C7B25D11C64" hostitem:extenderCookie="4E5B9BBE8412A74438348D73466C7B25D11C64" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateFACheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="536869FBA5AFBC541C05ACE056E3A30047B075" hostitem:extenderCookie="536869FBA5AFBC541C05ACE056E3A30047B075" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="advancedCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="6B08B159D6E53F648BE6AB476A6A21F0393306" hostitem:extenderCookie="6B08B159D6E53F648BE6AB476A6A21F0393306" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateFluidOperationCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="706FBF5B478C737424A79DC37BF150F4394617" hostitem:extenderCookie="706FBF5B478C737424A79DC37BF150F4394617" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="unitOperationcheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="8A3FA4ADB8327F840398B9C58ACE605A52B4D8" hostitem:extenderCookie="8A3FA4ADB8327F840398B9C58ACE605A52B4D8" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="processCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="9557596019B87C9421C9861D9735F45E400699" hostitem:extenderCookie="9557596019B87C9421C9861D9735F45E400699" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet12" hostitem:identifier="Sheet12" hostitem:primaryCookie="Sheet12"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="1"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateOperationsCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="17591C4241EBBE142A818AAC121AF6D4896B41"
+                                    hostitem:extenderCookie="17591C4241EBBE142A818AAC121AF6D4896B41"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activatePVTcheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="2B53EE6D22AEC9248F22BC5F26474D9931F682"
+                                    hostitem:extenderCookie="2B53EE6D22AEC9248F22BC5F26474D9931F682"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="exportCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="39A3F493A352D5348B438D913B90F58B426BC3"
+                                    hostitem:extenderCookie="39A3F493A352D5348B438D913B90F58B426BC3"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="RFOCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="4E5B9BBE8412A74438348D73466C7B25D11C64"
+                                    hostitem:extenderCookie="4E5B9BBE8412A74438348D73466C7B25D11C64"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateFACheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="536869FBA5AFBC541C05ACE056E3A30047B075"
+                                    hostitem:extenderCookie="536869FBA5AFBC541C05ACE056E3A30047B075"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="advancedCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="6B08B159D6E53F648BE6AB476A6A21F0393306"
+                                    hostitem:extenderCookie="6B08B159D6E53F648BE6AB476A6A21F0393306"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="activateFluidOperationCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="706FBF5B478C737424A79DC37BF150F4394617"
+                                    hostitem:extenderCookie="706FBF5B478C737424A79DC37BF150F4394617"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="unitOperationcheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="8A3FA4ADB8327F840398B9C58ACE605A52B4D8"
+                                    hostitem:extenderCookie="8A3FA4ADB8327F840398B9C58ACE605A52B4D8"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="processCheckBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
+                                    hostitem:primaryCookie="9557596019B87C9421C9861D9735F45E400699"
+                                    hostitem:extenderCookie="9557596019B87C9421C9861D9735F45E400699"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

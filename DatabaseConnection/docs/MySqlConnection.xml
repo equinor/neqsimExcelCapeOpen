@@ -1,13 +1,13 @@
 <docs>
   <DefaultCtor>
     <summary>
-      Initializes a new instance of the <see cref="MySqlConnection"/> class.
+      Initializes a new instance of the <see cref="MySqlConnection" /> class.
     </summary>
     <remarks>
-      When a new instance of <see cref="MySqlConnection"/> is created, the read/write
+      When a new instance of <see cref="MySqlConnection" /> is created, the read/write
       properties are set to the following initial values unless they are specifically
-      set using their associated keywords in the <see cref="ConnectionString"/> property.
-      <para/>
+      set using their associated keywords in the <see cref="ConnectionString" /> property.
+      <para />
       <list type="table">
         <listheader>
           <term>Properties</term>
@@ -15,56 +15,56 @@
         </listheader>
         <item>
           <term>
-            <see cref="ConnectionString"/>
+            <see cref="ConnectionString" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="ConnectionTimeout"/>
+            <see cref="ConnectionTimeout" />
           </term>
           <term>15</term>
         </item>
         <item>
           <term>
-            <see cref="Database"/>
+            <see cref="Database" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="DataSource"/>
+            <see cref="DataSource" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="ServerVersion"/>
+            <see cref="ServerVersion" />
           </term>
           <term>empty string ("")</term>
         </item>
       </list>
-      <para/>
+      <para />
       You can change the value for these properties only by using the <B>ConnectionString</B> property.
     </remarks>
     <example>
     </example>
     <overloads>
       <summary>
-        Initializes a new instance of the <see cref="MySqlConnection"/> class.
+        Initializes a new instance of the <see cref="MySqlConnection" /> class.
       </summary>
     </overloads>
   </DefaultCtor>
 
   <Ctor1>
     <summary>
-      Initializes a new instance of the <see cref="MySqlConnection"/> class when given a string containing the connection string.
+      Initializes a new instance of the <see cref="MySqlConnection" /> class when given a string containing the connection string.
     </summary>
     <remarks>
-      When a new instance of <see cref="MySqlConnection"/> is created, the read/write
+      When a new instance of <see cref="MySqlConnection" /> is created, the read/write
       properties are set to the following initial values unless they are specifically
-      set using their associated keywords in the <see cref="ConnectionString"/> property.
-      <para/>
+      set using their associated keywords in the <see cref="ConnectionString" /> property.
+      <para />
       <list type="table">
         <listheader>
           <term>Properties</term>
@@ -72,36 +72,36 @@
         </listheader>
         <item>
           <term>
-            <see cref="ConnectionString"/>
+            <see cref="ConnectionString" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="ConnectionTimeout"/>
+            <see cref="ConnectionTimeout" />
           </term>
           <term>15</term>
         </item>
         <item>
           <term>
-            <see cref="Database"/>
+            <see cref="Database" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="DataSource"/>
+            <see cref="DataSource" />
           </term>
           <term>empty string ("")</term>
         </item>
         <item>
           <term>
-            <see cref="ServerVersion"/>
+            <see cref="ServerVersion" />
           </term>
           <term>empty string ("")</term>
         </item>
       </list>
-      <para/>
+      <para />
       You can change the value for these properties only by using the <B>ConnectionString</B> property.
     </remarks>
     <example>
@@ -115,14 +115,13 @@
     <exception cref="MySqlException">A connection-level error occurred while opening the connection.</exception>
     <remarks>
       <para>
-        The <see cref="MySqlConnection"/> draws an open connection from the connection pool if one is available.
+        The <see cref="MySqlConnection" /> draws an open connection from the connection pool if one is available.
         Otherwise, it establishes a new connection to an instance of MySQL.
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/>, opens it,
+      The following example creates a <see cref="MySqlConnection" />, opens it,
       displays some of its properties, then closes the connection.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -152,14 +151,13 @@
       <para>
         The <B>Database</B> property does not update dynamically.
         If you change the current database using a SQL statement, then this property
-        may reflect the wrong value.  If you change the current database using the <see cref="ChangeDatabase"/>
+        may reflect the wrong value.  If you change the current database using the <see cref="ChangeDatabase" />
         method, this property is updated to reflect the new database.
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and displays
+      The following example creates a <see cref="MySqlConnection" /> and displays
       some of its read-only properties.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection()
         Dim myConnString As String = _
@@ -196,7 +194,7 @@
   <State>
     <summary>Gets the current state of the connection.</summary>
     <returns>
-      A bitwise combination of the <see cref="System.Data.ConnectionState"/> values. The default is <B>Closed</B>.
+      A bitwise combination of the <see cref="System.Data.ConnectionState" /> values. The default is <B>Closed</B>.
     </returns>
     <remarks>
       The allowed state changes are:
@@ -210,9 +208,8 @@
       </list>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/>, opens it,
+      The following example creates a <see cref="MySqlConnection" />, opens it,
       displays some of its properties, then closes the connection.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -240,9 +237,8 @@
     <returns>The version of the instance of MySQL.</returns>
     <exception cref="InvalidOperationException">The connection is closed.</exception>
     <example>
-      The following example creates a <see cref="MySqlConnection"/>, opens it,
+      The following example creates a <see cref="MySqlConnection" />, opens it,
       displays some of its properties, then closes the connection.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -279,9 +275,8 @@
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/>, opens it,
+      The following example creates a <see cref="MySqlConnection" />, opens it,
       displays some of its properties, then closes the connection.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -306,10 +301,10 @@
 
   <CreateCommand>
     <summary>
-      Creates and returns a <see cref="MySqlCommand"/> object associated with the <see cref="MySqlConnection"/>.
+      Creates and returns a <see cref="MySqlCommand" /> object associated with the <see cref="MySqlConnection" />.
     </summary>
     <returns>
-      A <see cref="MySqlCommand"/> object.
+      A <see cref="MySqlCommand" /> object.
     </returns>
   </CreateCommand>
 
@@ -320,20 +315,21 @@
     <remarks>
       <para>This command is equivalent to the MySQL BEGIN TRANSACTION command.</para>
       <para>
-        You must explicitly commit or roll back the transaction using the <see cref="MySqlTransaction.Commit"/> or
-        <see cref="MySqlTransaction.Rollback"/> method.
+        You must explicitly commit or roll back the transaction using the <see cref="MySqlTransaction.Commit" /> or
+        <see cref="MySqlTransaction.Rollback" /> method.
         <note>
           If you do not specify an isolation level, the default isolation level is used. To specify an isolation
-          level with the <see cref="BeginTransaction()"/> method, use the overload that takes the <I>iso</I> parameter.  Also
+          level with the <see cref="BeginTransaction()" /> method, use the overload that takes the <I>iso</I>
+          parameter.  Also
           note that any attempt to begin a transaction while a transaction is in progress will throw an exception on MySQL 4.1 and higher.
           On MySQL 4.0, an exception will not be thrown because servers 4.0 and earlier did not report their transacation status.
         </note>
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and a
-      <see cref="MySqlTransaction"/>.  It also demonstrates how to use the <B>BeginTransaction</B>, a
-      <see cref="MySqlTransaction.Commit"/>, and <see cref="MySqlTransaction.Rollback"/> methods.
+      The following example creates a <see cref="MySqlConnection" /> and a
+      <see cref="MySqlTransaction" />.  It also demonstrates how to use the <B>BeginTransaction</B>, a
+      <see cref="MySqlTransaction.Commit" />, and <see cref="MySqlTransaction.Rollback" /> methods.
       <code lang="vbnet">
         Public Sub RunTransaction(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -435,20 +431,21 @@
     <remarks>
       <para>This command is equivalent to the MySQL BEGIN TRANSACTION command.</para>
       <para>
-        You must explicitly commit or roll back the transaction using the <see cref="MySqlTransaction.Commit"/> or
-        <see cref="MySqlTransaction.Rollback"/> method.
+        You must explicitly commit or roll back the transaction using the <see cref="MySqlTransaction.Commit" /> or
+        <see cref="MySqlTransaction.Rollback" /> method.
         <note>
           If you do not specify an isolation level, the default isolation level is used. To specify an isolation
-          level with the <see cref="BeginTransaction()"/> method, use the overload that takes the <I>iso</I> parameter.
+          level with the <see cref="BeginTransaction()" /> method, use the overload that takes the <I>iso</I>
+          parameter.
           Also note that any attempt to begin a transaction while a transaction is in progress will throw an exception on MySQL 4.1 and higher.
           On MySQL 4.0, an exception will not be thrown because servers 4.0 and earlier did not report their transacation status.
         </note>
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and a
-      <see cref="MySqlTransaction"/>.  It also demonstrates how to use the <B>BeginTransaction</B>, a
-      <see cref="MySqlTransaction.Commit"/>, and <see cref="MySqlTransaction.Rollback"/> methods.
+      The following example creates a <see cref="MySqlConnection" /> and a
+      <see cref="MySqlTransaction" />.  It also demonstrates how to use the <B>BeginTransaction</B>, a
+      <see cref="MySqlTransaction.Commit" />, and <see cref="MySqlTransaction.Rollback" /> methods.
       <code lang="vbnet">
         Public Sub RunTransaction(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -563,9 +560,8 @@
     <exception cref="InvalidOperationException">The connection is not open.</exception>
     <exception cref="MySqlException">Cannot change the database.</exception>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and displays
+      The following example creates a <see cref="MySqlConnection" /> and displays
       some of its read-only properties.
-
       <code lang="vbnet">
         Public Sub CreateMySqlConnection()
         Dim myConnString As String = _
@@ -603,15 +599,15 @@
     <summary>Occurs when the state of the connection changes.</summary>
     <remarks>
       <para>
-        The <B>StateChange</B> event fires whenever the <see cref="State"/> changes from
+        The <B>StateChange</B> event fires whenever the <see cref="State" /> changes from
         closed to opened, or from opened to closed. <B>StateChange</B> fires immediately
-        after the <see cref="MySqlConnection"/> transitions.
+        after the <see cref="MySqlConnection" /> transitions.
       </para>
 
       <para>
         If an event handler throws an exception from within the <B>StateChange</B>
-        event, the exception propagates to the caller of the <see cref="Open"/> or
-        <see cref="Close"/> method.
+        event, the exception propagates to the caller of the <see cref="Open" /> or
+        <see cref="Close" /> method.
       </para>
 
       <para>
@@ -623,7 +619,7 @@
       Raised.
       <data>
         <para>
-          The event handler receives an argument of type <see cref="System.Data.StateChangeEventArgs"/>
+          The event handler receives an argument of type <see cref="System.Data.StateChangeEventArgs" />
           containing data related to this event. The following <B>StateChangeEventArgs</B>
           properties provide information specific to this event.
         </para>
@@ -634,7 +630,7 @@
           </listheader>
           <item>
             <term>
-              <see cref="System.Data.StateChangeEventArgs.CurrentState"/>
+              <see cref="System.Data.StateChangeEventArgs.CurrentState" />
             </term>
             <description>
               Gets the new state of the connection. The connection object will
@@ -643,7 +639,7 @@
           </item>
           <item>
             <term>
-              <see cref="System.Data.StateChangeEventArgs.OriginalState"/>
+              <see cref="System.Data.StateChangeEventArgs.OriginalState" />
             </term>
             <description>Gets the original state of the connection.</description>
           </item>
@@ -672,16 +668,17 @@
 
       <para>
         If the <B>MySqlConnection</B> goes out of scope, it is not closed. Therefore,
-        you must explicitly close the connection by calling <see cref="MySqlConnection.Close"/>
-        or <see cref="MySqlConnection.Dispose()"/>.
+        you must explicitly close the connection by calling <see cref="MySqlConnection.Close" />
+        or <see cref="MySqlConnection.Dispose()" />.
       </para>
     </remarks>
 
     <example>
-      The following example creates a <see cref="MySqlCommand"/> and
+      The following example creates a <see cref="MySqlCommand" /> and
       a <B>MySqlConnection</B>. The <B>MySqlConnection</B> is opened and set as the
-      <see cref="MySqlCommand.Connection"/> for the <B>MySqlCommand</B>. The example then calls
-      <see cref="MySqlCommand.ExecuteNonQuery"/>, and closes the connection. To accomplish this, the <B>ExecuteNonQuery</B> is
+      <see cref="MySqlCommand.Connection" /> for the <B>MySqlCommand</B>. The example then calls
+      <see cref="MySqlCommand.ExecuteNonQuery" />, and closes the connection. To accomplish this, the
+      <B>ExecuteNonQuery</B> is
       passed a connection string and a query string that is a SQL INSERT
       statement.
       <code lang="vbnet">
@@ -730,7 +727,7 @@
     <exception cref="System.ArgumentException">The value set is less than 0.</exception>
     <remarks>
       A value of 0 indicates no limit, and should be avoided in a
-      <see cref="MySqlConnection.ConnectionString"/> because an attempt to connect
+      <see cref="MySqlConnection.ConnectionString" /> because an attempt to connect
       will wait indefinitely.
     </remarks>
     <example>
@@ -775,7 +772,7 @@
         closed. Many of the connection string values have corresponding read-only
         properties. When the connection string is set, all of these properties are
         updated, except when an error is detected. In this case, none of the properties
-        are updated. <see cref="MySqlConnection"/> properties return only those settings contained in the
+        are updated. <see cref="MySqlConnection" /> properties return only those settings contained in the
         <B>ConnectionString</B>.
       </para>
       <para>
@@ -787,11 +784,11 @@
         connection string values (and related properties) including the password. For
         example, if you set a connection string that includes "Database= MyDb", and
         then reset the connection string to "Data Source=myserver;User Id=myUser;Password=myPass",
-        the <see cref="MySqlConnection.Database"/> property is no longer set to MyDb.
+        the <see cref="MySqlConnection.Database" /> property is no longer set to MyDb.
       </para>
       <para>
         The connection string is parsed immediately after being set. If errors in
-        syntax are found when parsing, a runtime exception, such as <see cref="ArgumentException"/>,
+        syntax are found when parsing, a runtime exception, such as <see cref="ArgumentException" />,
         is generated. Other errors can be found only when an attempt is made to open the
         connection.
       </para>
@@ -875,7 +872,7 @@
             <td>Port</td>
             <td>3306</td>
             <td>
-              The port MySQL is using to listen for connections.  This value is ignored if the connection protocol 
+              The port MySQL is using to listen for connections.  This value is ignored if the connection protocol
               is anything but socket.
             </td>
           </tr>
@@ -884,9 +881,9 @@
             <td>socket</td>
             <td>
               Specifies the type of connection to make to the server.<para>Values can be:</para>
-              socket or tcp for a socket connection<br/>
-              pipe for a named pipe connection<br/>
-              unix for a Unix socket connection<br/>
+              socket or tcp for a socket connection<br />
+              pipe for a named pipe connection<br />
+              unix for a Unix socket connection<br />
               memory to use MySQL shared memory
             </td>
           </tr>
@@ -909,9 +906,10 @@
             <td>Allow Batch</td>
             <td>true</td>
             <td>
-              When true, multiple SQL statements can be sent with one command execution.<br/><br/>
-              -Note-<br/>
-              Starting with MySQL 4.1.1, batch statements should be separated by the server-defined seperator character.<br/>
+              When true, multiple SQL statements can be sent with one command execution.<br /><br />
+              -Note-<br />
+              Starting with MySQL 4.1.1, batch statements should be separated by the server-defined seperator character.
+              <br />
               Commands sent to earlier versions of MySQL should be seperated with ';'.
             </td>
           </tr>
@@ -984,7 +982,7 @@
             <td>mysql</td>
             <td>
               When set to the name of a named pipe, the <B>MySqlConnection</B> will attempt to connect to MySQL
-              on that named pipe.<br/><br/>This settings only applies to the Windows platform.
+              on that named pipe.<br /><br />This settings only applies to the Windows platform.
             </td>
           </tr>
           <tr>
@@ -1090,8 +1088,8 @@
             <td>Use Affected Rows</td>
             <td>false</td>
             <td>
-              Set this option to true to cause the affected rows reported to reflect only the 
-              rows that are actually changed.  By default, the number of rows that are matched 
+              Set this option to true to cause the affected rows reported to reflect only the
+              rows that are actually changed.  By default, the number of rows that are matched
               is returned.
             </td>
           </tr>
@@ -1184,7 +1182,7 @@
       </para>
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and sets some of its properties
+      The following example creates a <see cref="MySqlConnection" /> and sets some of its properties
       <code lang="vbnet">
         Public Sub CreateConnection()
         Dim myConnection As New MySqlConnection()
@@ -1202,7 +1200,7 @@
       </code>
     </example>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> in Unix environment with Mono installed. MySQL socket filename used in this example is "/var/lib/mysql/mysql.sock". The actual filename depends on your MySQL configuration.
+      The following example creates a <see cref="MySqlConnection" /> in Unix environment with Mono installed. MySQL socket filename used in this example is "/var/lib/mysql/mysql.sock". The actual filename depends on your MySQL configuration.
       <code lang="vbnet">
         Public Sub CreateConnection()
         Dim myConnection As New MySqlConnection()
@@ -1223,7 +1221,7 @@
   <ClearPool>
     <summary>Empties the connection pool associated with the specified connection.</summary>
     <param name="connection">
-      The <see cref="MySqlConnection"/> associated with the pool to be cleared.
+      The <see cref="MySqlConnection" /> associated with the pool to be cleared.
     </param>
     <remarks>
       <para>
@@ -1233,13 +1231,13 @@
         when Close is called on them.
       </para>
     </remarks>
-    </ClearPool>
+  </ClearPool>
 
   <ClearAllPools>
     <summary>Clears all connection pools.</summary>
     <remarks>
       <para>
-        ClearAllPools essentially performs a <see cref="ClearPool"/> on all current connection
+        ClearAllPools essentially performs a <see cref="ClearPool" /> on all current connection
         pools.
       </para>
     </remarks>

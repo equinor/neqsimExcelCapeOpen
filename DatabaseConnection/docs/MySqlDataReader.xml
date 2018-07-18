@@ -5,17 +5,17 @@
     </summary>
     <remarks>
       <para>
-        To create a <B>MySQLDataReader</B>, you must call the <see cref="MySqlCommand.ExecuteReader()"/>
-        method of the <see cref="MySqlCommand"/> object, rather than directly using a constructor.
+        To create a <B>MySQLDataReader</B>, you must call the <see cref="MySqlCommand.ExecuteReader()" />
+        method of the <see cref="MySqlCommand" /> object, rather than directly using a constructor.
       </para>
       <para>
-        While the <B>MySqlDataReader</B> is in use, the associated <see cref="MySqlConnection"/>
+        While the <B>MySqlDataReader</B> is in use, the associated <see cref="MySqlConnection" />
         is busy serving the <B>MySqlDataReader</B>, and no other operations can be performed
         on the <B>MySqlConnection</B> other than closing it. This is the case until the
-        <see cref="MySqlDataReader.Close"/> method of the <B>MySqlDataReader</B> is called.
+        <see cref="MySqlDataReader.Close" /> method of the <B>MySqlDataReader</B> is called.
       </para>
       <para>
-        <see cref="MySqlDataReader.IsClosed"/> and <see cref="MySqlDataReader.RecordsAffected"/>
+        <see cref="MySqlDataReader.IsClosed" /> and <see cref="MySqlDataReader.RecordsAffected" />
         are the only properties that you can call after the <B>MySqlDataReader</B> is
         closed. Though the <B>RecordsAffected</B> property may be accessed at any time
         while the <B>MySqlDataReader</B> exists, always call <B>Close</B> before returning
@@ -24,15 +24,15 @@
       <para>
         For optimal performance, <B>MySqlDataReader</B> avoids creating
         unnecessary objects or making unnecessary copies of data. As a result, multiple calls
-        to methods such as <see cref="MySqlDataReader.GetValue"/> return a reference to the
+        to methods such as <see cref="MySqlDataReader.GetValue" /> return a reference to the
         same object. Use caution if you are modifying the underlying value of the objects
         returned by methods such as <B>GetValue</B>.
       </para>
     </remarks>
 
     <example>
-      The following example creates a <see cref="MySqlConnection"/>,
-      a <see cref="MySqlCommand"/>, and a <B>MySqlDataReader</B>. The example reads through
+      The following example creates a <see cref="MySqlConnection" />,
+      a <see cref="MySqlCommand" />, and a <B>MySqlDataReader</B>. The example reads through
       the data, writing it out to the console. Finally, the example closes the <B>MySqlDataReader</B>, then the
       <B>MySqlConnection</B>.
       <code lang="vbnet">
@@ -81,9 +81,9 @@
         cases this is the exact length of the field. However, the number returned may be
         less than the true length of the field if <B>GetBytes</B> has already been used
         to obtain bytes from the field. This may be the case, for example, if the
-        <see cref="MySqlDataReader"/> is reading a large data structure into a buffer.
+        <see cref="MySqlDataReader" /> is reading a large data structure into a buffer.
         For more information, see the <B>SequentialAccess</B> setting for
-        <see cref="MySqlCommand.CommandBehavior"/>.
+        <see cref="MySqlCommand.CommandBehavior" />.
       </para>
       <para>
         If you pass a buffer that is a null reference (<B>Nothing</B> in Visual
@@ -97,9 +97,9 @@
   </GetBytes>
 
   <GetTimeSpan>
-    <overloads/>
+    <overloads />
     <summary>
-      Gets the value of the specified column as a <see cref="TimeSpan"/> object.
+      Gets the value of the specified column as a <see cref="TimeSpan" /> object.
     </summary>
     <remarks>
       <para>
@@ -115,7 +115,7 @@
 
   <GetDateTime>
     <summary>
-      Gets the value of the specified column as a <see cref="DateTime"/> object.
+      Gets the value of the specified column as a <see cref="DateTime" /> object.
     </summary>
     <remarks>
       <para>
@@ -129,12 +129,12 @@
           MySql allows date columns to contain the value '0000-00-00' and datetime
           columns to contain the value '0000-00-00 00:00:00'.  The DateTime structure cannot contain
           or represent these values.  To read a datetime value from a column that might
-          contain zero values, use <see cref="GetMySqlDateTime(int)"/>.
+          contain zero values, use <see cref="GetMySqlDateTime(int)" />.
         </para>
         <para>
           The behavior of reading a zero datetime column using this method is defined by the
           <i>ZeroDateTimeBehavior</i> connection string option.  For more information on this option,
-          please refer to <see cref="MySqlConnection.ConnectionString"/>.
+          please refer to <see cref="MySqlConnection.ConnectionString" />.
         </para>
       </note>
     </remarks>
@@ -144,7 +144,7 @@
 
   <GetDateTimeS>
     <summary>
-      Gets the value of the specified column as a <see cref="DateTime"/> object.
+      Gets the value of the specified column as a <see cref="DateTime" /> object.
     </summary>
     <remarks>
       <para>
@@ -158,12 +158,12 @@
           MySql allows date columns to contain the value '0000-00-00' and datetime
           columns to contain the value '0000-00-00 00:00:00'.  The DateTime structure cannot contain
           or represent these values.  To read a datetime value from a column that might
-          contain zero values, use <see cref="GetMySqlDateTime(int)"/>.
+          contain zero values, use <see cref="GetMySqlDateTime(int)" />.
         </para>
         <para>
           The behavior of reading a zero datetime column using this method is defined by the
           <i>ZeroDateTimeBehavior</i> connection string option.  For more information on this option,
-          please refer to <see cref="MySqlConnection.ConnectionString"/>.
+          please refer to <see cref="MySqlConnection.ConnectionString" />.
         </para>
       </note>
     </remarks>
@@ -173,7 +173,7 @@
 
   <GetMySqlDateTime>
     <summary>
-      Gets the value of the specified column as a <see cref="MySql.Data.Types.MySqlDateTime"/> object.
+      Gets the value of the specified column as a <see cref="MySql.Data.Types.MySqlDateTime" /> object.
     </summary>
     <remarks>
       <para>
@@ -189,7 +189,7 @@
 
   <GetString>
     <summary>
-      Gets the value of the specified column as a <see cref="String"/> object.
+      Gets the value of the specified column as a <see cref="String" /> object.
     </summary>
     <remarks>
       <para>
@@ -205,7 +205,7 @@
 
   <GetStringS>
     <summary>
-      Gets the value of the specified column as a <see cref="String"/> object.
+      Gets the value of the specified column as a <see cref="String" /> object.
     </summary>
     <remarks>
       <para>
@@ -221,7 +221,7 @@
 
   <GetDecimal>
     <summary>
-      Gets the value of the specified column as a <see cref="Decimal"/> object.
+      Gets the value of the specified column as a <see cref="Decimal" /> object.
     </summary>
     <remarks>
       <para>
@@ -237,7 +237,7 @@
 
   <GetDecimalS>
     <summary>
-      Gets the value of the specified column as a <see cref="Decimal"/> object.
+      Gets the value of the specified column as a <see cref="Decimal" /> object.
     </summary>
     <remarks>
       <para>
@@ -278,7 +278,7 @@
     <param name="column">The column name</param>
     <returns>The value of the specified column.</returns>
   </GetDoubleS>
-  
+
   <GetFloat>
     <summary>
       Gets the value of the specified column as a single-precision floating point number.
@@ -411,7 +411,8 @@
     <summary>Gets the value of the specified column as a 16-bit unsigned integer.</summary>
     <remarks>
       <para>
-        No conversions are performed; therefore, the data retrieved must already be a <b>16 bit unsigned integer</b> value.
+        No conversions are performed; therefore, the data retrieved must already be a <b>16 bit unsigned integer</b>
+        value.
       </para>
       <para>
         Call IsDBNull to check for null values before calling this method.
@@ -425,7 +426,8 @@
     <summary>Gets the value of the specified column as a 32-bit unsigned integer.</summary>
     <remarks>
       <para>
-        No conversions are performed; therefore, the data retrieved must already be a <b>32 bit unsigned integer</b> value.
+        No conversions are performed; therefore, the data retrieved must already be a <b>32 bit unsigned integer</b>
+        value.
       </para>
       <para>
         Call IsDBNull to check for null values before calling this method.
@@ -439,7 +441,8 @@
     <summary>Gets the value of the specified column as a 64-bit unsigned integer.</summary>
     <remarks>
       <para>
-        No conversions are performed; therefore, the data retrieved must already be a <b>64 bit unsigned integer</b> value.
+        No conversions are performed; therefore, the data retrieved must already be a <b>64 bit unsigned integer</b>
+        value.
       </para>
       <para>
         Call IsDBNull to check for null values before calling this method.

@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(15)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(16)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet6 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -159,7 +159,7 @@ namespace NeqSimExcel {
             // button1
             // 
             this.button1.Name = "button1";
-            this.button1.Text = "Ok";
+            this.button1.Text = "Save";
             // 
             // button3
             // 

@@ -1,14 +1,57 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet18" hostitem:identifier="Sheet18" hostitem:primaryCookie="Sheet18" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="19" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="gasViscosityCommboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="1CFED2BE119AE914D4C1BB4319AF98EDDC6301" hostitem:extenderCookie="1CFED2BE119AE914D4C1BB4319AF98EDDC6301" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="oilViscosityCmboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="39C16115E3ACE13464D3A99537BCE670F37923" hostitem:extenderCookie="39C16115E3ACE13464D3A99537BCE670F37923" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="aqueousViscositycomboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="430516B774B476446064AB84455C95B7BAC694" hostitem:extenderCookie="430516B774B476446064AB84455C95B7BAC694" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox3" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="5C510AE1455D9F542EA587FD5E4EC14F5269B5" hostitem:extenderCookie="5C510AE1455D9F542EA587FD5E4EC14F5269B5" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox4" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="67A6C00D6687E26475C6958E6D14CE9EE21C16" hostitem:extenderCookie="67A6C00D6687E26475C6958E6D14CE9EE21C16" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox5" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="72271141F7F304743D97A5F1778C4D0587F767" hostitem:extenderCookie="72271141F7F304743D97A5F1778C4D0587F767" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="oilCOnductivityComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="9E13BA6D292D4B946339B3CE90165787BA7C39" hostitem:extenderCookie="9E13BA6D292D4B946339B3CE90165787BA7C39" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="gasCondutivityComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="13E1C5BA71AC7C14A361AD7410D08BDB74F5C1" hostitem:extenderCookie="13E1C5BA71AC7C14A361AD7410D08BDB74F5C1" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="aqueousConduvtivityComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="16D4EADA81744B14F1A18BDE1B0C049C53E8A1" hostitem:extenderCookie="16D4EADA81744B14F1A18BDE1B0C049C53E8A1" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="1DBCC408B1A98414DB418B8514B308F95DA541" hostitem:extenderCookie="1DBCC408B1A98414DB418B8514B308F95DA541" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet18" hostitem:identifier="Sheet18" hostitem:primaryCookie="Sheet18"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="20"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="gasViscosityCommboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="1CFED2BE119AE914D4C1BB4319AF98EDDC6301"
+                                    hostitem:extenderCookie="1CFED2BE119AE914D4C1BB4319AF98EDDC6301"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="oilViscosityCmboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="39C16115E3ACE13464D3A99537BCE670F37923"
+                                    hostitem:extenderCookie="39C16115E3ACE13464D3A99537BCE670F37923"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="aqueousViscositycomboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="430516B774B476446064AB84455C95B7BAC694"
+                                    hostitem:extenderCookie="430516B774B476446064AB84455C95B7BAC694"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox3"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="5C510AE1455D9F542EA587FD5E4EC14F5269B5"
+                                    hostitem:extenderCookie="5C510AE1455D9F542EA587FD5E4EC14F5269B5"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox4"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="67A6C00D6687E26475C6958E6D14CE9EE21C16"
+                                    hostitem:extenderCookie="67A6C00D6687E26475C6958E6D14CE9EE21C16"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="comboBox5"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="72271141F7F304743D97A5F1778C4D0587F767"
+                                    hostitem:extenderCookie="72271141F7F304743D97A5F1778C4D0587F767"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="oilCOnductivityComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="9E13BA6D292D4B946339B3CE90165787BA7C39"
+                                    hostitem:extenderCookie="9E13BA6D292D4B946339B3CE90165787BA7C39"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="gasCondutivityComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="13E1C5BA71AC7C14A361AD7410D08BDB74F5C1"
+                                    hostitem:extenderCookie="13E1C5BA71AC7C14A361AD7410D08BDB74F5C1"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="aqueousConduvtivityComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="16D4EADA81744B14F1A18BDE1B0C049C53E8A1"
+                                    hostitem:extenderCookie="16D4EADA81744B14F1A18BDE1B0C049C53E8A1"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="1DBCC408B1A98414DB418B8514B308F95DA541"
+                                    hostitem:extenderCookie="1DBCC408B1A98414DB418B8514B308F95DA541"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>
 <a1:CodeTypeMemberCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
@@ -58,7 +101,7 @@
 </a1:CodeDirectiveCollection>
 <a4:ListDictionary id="ref-12" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
-<version>4</version>
+<version>6</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>

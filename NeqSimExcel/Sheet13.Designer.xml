@@ -1,7 +1,22 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet13" hostitem:identifier="Sheet13" hostitem:primaryCookie="Sheet13" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="14" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="propertyComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="1277BE43C1DAC91410B1BA171ABFF711188D21" hostitem:extenderCookie="1277BE43C1DAC91410B1BA171ABFF711188D21" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="phaseNameCombobox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="33BAA12D532CB9340CE3BA2A38D0B4F7140A73" hostitem:extenderCookie="33BAA12D532CB9340CE3BA2A38D0B4F7140A73" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="okbutton" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="4F45B05E942B1144CB74A9F6400897F07D4DE4" hostitem:extenderCookie="4F45B05E942B1144CB74A9F6400897F07D4DE4" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet13" hostitem:identifier="Sheet13" hostitem:primaryCookie="Sheet13"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="15"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="propertyComboBox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="1277BE43C1DAC91410B1BA171ABFF711188D21"
+                                    hostitem:extenderCookie="1277BE43C1DAC91410B1BA171ABFF711188D21"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="phaseNameCombobox"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
+                                    hostitem:primaryCookie="33BAA12D532CB9340CE3BA2A38D0B4F7140A73"
+                                    hostitem:extenderCookie="33BAA12D532CB9340CE3BA2A38D0B4F7140A73"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="okbutton"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="4F45B05E942B1144CB74A9F6400897F07D4DE4"
+                                    hostitem:extenderCookie="4F45B05E942B1144CB74A9F6400897F07D4DE4"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

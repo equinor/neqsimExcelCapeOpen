@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CAPEOPEN110;
+﻿using CAPEOPEN110;
 
 namespace CapeOpenThermo
 {
-
     // test
-    class Material : ICapeThermoMaterial
+    internal class Material : ICapeThermoMaterial
     {
-        Material mat;
-        
+        private Material mat;
+
         public void ClearAllProps()
         {
         }
@@ -25,10 +20,9 @@ namespace CapeOpenThermo
         public void CopyFromMaterial(ref object matIn)
         {
             mat = (Material) matIn;
-
         }
 
-        public void GetOverallProp(String property, String basis, ref object vals)
+        public void GetOverallProp(string property, string basis, ref object vals)
         {
         }
 
@@ -50,7 +44,8 @@ namespace CapeOpenThermo
         }
 
 
-        public void GetTPFraction(string phaseLabel, ref double temperature, ref double pressure, ref object composition)
+        public void GetTPFraction(string phaseLabel, ref double temperature, ref double pressure,
+            ref object composition)
         {
         }
 
@@ -69,14 +64,13 @@ namespace CapeOpenThermo
         {
         }
 
+        public void SetTwoPhaseProp(string property, object paseLabels, string basis, object results)
+        {
+        }
+
 
         public void SetSinglePhaseProp(string property, object paseLabels, string basis, ref object results)
         {
         }
-
-        public void SetTwoPhaseProp(string property, object paseLabels, string basis,  object results)
-        {
-        }
-        
     }
 }

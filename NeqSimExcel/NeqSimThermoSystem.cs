@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using thermo.system;
-using thermodynamicOperations;
+﻿using thermo.system;
 
 namespace NeqSimExcel
 {
     public static class NeqSimThermoSystem
     {
-        static SystemInterface thermoSystem = (SystemInterface) new SystemSrkEos(273, 1.0);
-        static string localFilePath = null;
+        private static SystemInterface thermoSystem = new SystemSrkEos(273, 1.0);
 
-        public static string LocalFilePath { get => localFilePath; set => localFilePath = value; }
+        public static string LocalFilePath { get; set; } = null;
 
         // static NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = null;
 

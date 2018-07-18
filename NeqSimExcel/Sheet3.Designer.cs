@@ -148,9 +148,6 @@ namespace NeqSimExcel {
             this.button1.Name = "button1";
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Sheet3
-            // 
             this.button1.BindingContext = this.BindingContext;
         }
         

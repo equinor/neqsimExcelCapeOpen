@@ -1,30 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CapeOpenThermo;
 
 namespace NeqSimRegistration
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //ThermoPackages tempVar = new ThermoPackages();
             //Object test = tempVar.GetPropertyPackageList();
             Type t = null;
-            CapeOpenThermo.ThermoPackageManagerCO11.RegisterFunction(t);
-            CapeOpenThermo.ThermoPackageManagerCO10.RegisterFunction(t);
-            CapeOpenThermo.ThermoPackageManagerCO11local.RegisterFunction(t);
-            System.Console.WriteLine("finished registering NeqSim CapeOpen2....");
-            //CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
-            //   CapeOpenUnitOperations.WaterDewPointUnitOperation.RegisterFunction(t);
+            ThermoPackageManagerCO11.RegisterFunction(t);
+            ThermoPackageManagerCO10.RegisterFunction(t);
+            ThermoPackageManagerCO11local.RegisterFunction(t);
+            Console.WriteLine("finished registering NeqSim CapeOpen2....");
+            CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
+            //CapeOpenUnitOperations.WaterDewPointUnitOperation.RegisterFunction(t);
             //  CapeOpenUnitOperations.FreezingUnitOperation.RegisterFunction(t);
             //  CapeOpenUnitOperations.ProCapMixerUnitOperation.RegisterFunction(t);
             //  CapeOpenUnitOperations.UnitOperationBaseClass.RegisterFunction(t);
 
-            System.Console.WriteLine("finished registering NeqSim CapeOpen....");
-            System.Console.ReadLine();
+            Console.WriteLine("finished registering NeqSim CapeOpen....");
+           // Console.ReadLine();
             // testing..
             //testing2
             //testing3

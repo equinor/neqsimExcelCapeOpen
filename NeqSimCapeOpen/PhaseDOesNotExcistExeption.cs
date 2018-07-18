@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using CAPEOPEN110;
 
 namespace CapeOpenThermo
 {
-    class PhaseDoesNotExcistExeption : Exception, ECapeThrmPropertyNotAvailable
+    internal class PhaseDoesNotExcistExeption : Exception, ECapeThrmPropertyNotAvailable
     {
         public PhaseDoesNotExcistExeption()
         {

@@ -1,136 +1,121 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using Microsoft.Office.Tools.Excel;
-using Microsoft.VisualStudio.Tools.Applications.Runtime;
-using Excel = Microsoft.Office.Interop.Excel;
-using Office = Microsoft.Office.Core;
-
-using thermo.system;
-using thermodynamicOperations;
-using PVTsimulation.simulation;
-using Microsoft.Win32;
-using System.Runtime.InteropServices;
-using System.Reflection;
-using System.Collections;
 using System.Security.Principal;
-using MySql.Data;
+using DatabaseConnection;
+using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
+using Microsoft.Office.Interop.Excel;
+using PVTsimulation.simulation;
+using thermo.system;
+using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel
 {
     public partial class PVTSheet
     {
-        private void Sheet8_Startup(object sender, System.EventArgs e)
+        private void Sheet8_Startup(object sender, EventArgs e)
         {
-          // selectFluidCombobox.Hide();
+            // selectFluidCombobox.Hide();
 
-            
-           try
-           {
-               DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter test = new DatabaseConnection.NeqSimDatabaseSetTableAdapters.fluidinfoTableAdapter();
+
+            try
+            {
+                var test = new fluidinfoTableAdapter();
 //               NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
-               //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
-               //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
+                //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
+                //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
 
-               string userName = WindowsIdentity.GetCurrent().Name;
-               userName = userName.Replace("STATOIL-NET\\", "");
-               userName = userName.Replace("WIN-NTNU-NO\\", "");
-               userName = userName.ToLower();
+                var userName = WindowsIdentity.GetCurrent().Name;
+                userName = userName.Replace("STATOIL-NET\\", "");
+                userName = userName.Replace("WIN-NTNU-NO\\", "");
+                userName = userName.ToLower();
 
-               DatabaseConnection.NeqSimDatabaseSet.fluidinfoDataTable tt = test.GetDataBy(userName);
+                var tt = test.GetDataBy(userName);
 //               NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
-               List<string> names = new List<string>();
-               //names.Add("CPApackage");
-               //names.Add(WindowsIdentity.GetCurrent().Name);
-               foreach (DatabaseConnection.NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
-               {
-                   names.Add(row.ID.ToString());
-                   selectFluidCombobox.Items.Add(row.ID.ToString());
-               }
-               //   packageNames = names.ToArray();
-               //   fluidListNameComboBox.Items.Add(names.ToList());
-               //selectFluidCombobox.SelectedIndex = 0;
-           }
-           catch (Exception excet)
-           {
-               Console.WriteLine("Error " + excet.Message);
-           }
-            
+                var names = new List<string>();
+                //names.Add("CPApackage");
+                //names.Add(WindowsIdentity.GetCurrent().Name);
+                foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
+                {
+                    names.Add(row.ID.ToString());
+                    selectFluidCombobox.Items.Add(row.ID.ToString());
+                }
+
+                //   packageNames = names.ToArray();
+                //   fluidListNameComboBox.Items.Add(names.ToList());
+                //selectFluidCombobox.SelectedIndex = 0;
+            }
+            catch (Exception excet)
+            {
+                Console.WriteLine("Error " + excet.Message);
+            }
         }
 
-        private void Sheet8_Shutdown(object sender, System.EventArgs e)
+        private void Sheet8_Shutdown(object sender, EventArgs e)
         {
         }
 
         #region VSTO Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///     Required method for Designer support - do not modify
+        ///     the contents of this method with the code editor.
         /// </summary>
         private void InternalStartup()
         {
-            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
-            this.PVTcalcCombobox.SelectedIndexChanged += new System.EventHandler(this.PVTcalcCombobox_SelectedIndexChanged);
-            this.Startup += new System.EventHandler(this.Sheet8_Startup);
-            this.Shutdown += new System.EventHandler(this.Sheet8_Shutdown);
-
+            calcButton.Click += calcButton_Click;
+            PVTcalcCombobox.SelectedIndexChanged += PVTcalcCombobox_SelectedIndexChanged;
+            Startup += Sheet8_Startup;
+            Shutdown += Sheet8_Shutdown;
         }
 
         #endregion
 
         private void calcButton_Click(object sender, EventArgs e)
         {
-            Excel.Range rangeClear = this.Range["D1", "L100"];
+            var rangeClear = Range["D1", "L100"];
             rangeClear.Clear();
 
-            SystemInterface thermoSystem = (SystemInterface) NeqSimThermoSystem.getThermoSystem().clone();
+            var thermoSystem = (SystemInterface) NeqSimThermoSystem.getThermoSystem().clone();
 
-            Excel.Range column1range = this.Range["A7", "A100"];
-            Excel.Range column2range = this.Range["B7", "B100"];
-            Excel.Range column3range = this.Range["C7", "C100"];
-            
-            Excel.Range calc1RowTitle = this.Range["C6"];
-            Excel.Range calc2RowTitle = this.Range["D6"];
-            Excel.Range calc3RowTitle = this.Range["E6"];
-            Excel.Range calc4RowTitle = this.Range["F6"];
-            Excel.Range calc5RowTitle = this.Range["G6"];
-             Excel.Range calc6RowTitle = this.Range["H6"];
-             Excel.Range calc7RowTitle = this.Range["I6"];
+            var column1range = Range["A7", "A100"];
+            var column2range = Range["B7", "B100"];
+            var column3range = Range["C7", "C100"];
 
-            int number = 0;
+            var calc1RowTitle = Range["C6"];
+            var calc2RowTitle = Range["D6"];
+            var calc3RowTitle = Range["E6"];
+            var calc4RowTitle = Range["F6"];
+            var calc5RowTitle = Range["G6"];
+            var calc6RowTitle = Range["H6"];
+            var calc7RowTitle = Range["I6"];
 
-            
-             foreach (Excel.Range r in column1range.Cells)
+            var number = 0;
+
+
+            foreach (Range r in column1range.Cells)
             {
-                string text = (string)r.Text;
-                if (!String.IsNullOrEmpty(text))
-                {
-                    number++;
-                }
-             }
-            
-            double[] temperatures = new double[number];
-            double[] pressures = new double[number];
+                var text = (string) r.Text;
+                if (!string.IsNullOrEmpty(text)) number++;
+            }
+
+            var temperatures = new double[number];
+            var pressures = new double[number];
 
             number = 0;
-            foreach (Excel.Range r in column1range.Cells)
+            foreach (Range r in column1range.Cells)
             {
-                string text = (string)r.Text;
-                if (!String.IsNullOrEmpty(text))
+                var text = (string) r.Text;
+                if (!string.IsNullOrEmpty(text))
                 {
-                    temperatures[number] = r.Value2+273.15;
-                    pressures[number] = this.Range["B" + (number + 7)].Value2;
+                    temperatures[number] = r.Value2 + 273.15;
+                    pressures[number] = Range["B" + (number + 7)].Value2;
                     number++;
                 }
-             }
+            }
 
 
-            if (PVTcalcCombobox.SelectedItem.ToString().Equals("GOR") || PVTcalcCombobox.SelectedItem.ToString().Equals("Separator test"))
+            if (PVTcalcCombobox.SelectedItem.ToString().Equals("GOR") ||
+                PVTcalcCombobox.SelectedItem.ToString().Equals("Separator test"))
             {
                 calc1RowTitle.Value2 = "GOR [Sm3/Sm3]";
                 calc2RowTitle.Value2 = "Bo-factor";
@@ -138,29 +123,28 @@ namespace NeqSimExcel
 
                 if (PVTcalcCombobox.SelectedItem.ToString().Equals("Separator test"))
                 {
-                    SeparatorTest sepSim = new SeparatorTest(thermoSystem);
+                    var sepSim = new SeparatorTest(thermoSystem);
                     sepSim.setSeparatorConditions(temperatures, pressures);
                     sepSim.runCalc();
-                    foreach (double val in sepSim.getGOR())
+                    foreach (var val in sepSim.getGOR())
                     {
-                        this.Range["C" + (number + 7)].Value2 = val;
-                        this.Range["D" + (number + 7)].Value2 = sepSim.getBofactor()[number];
+                        Range["C" + (number + 7)].Value2 = val;
+                        Range["D" + (number + 7)].Value2 = sepSim.getBofactor()[number];
                         number++;
                     }
                 }
                 else
                 {
-                    GOR sepSim = new GOR(thermoSystem);
+                    var sepSim = new GOR(thermoSystem);
                     sepSim.setTemperaturesAndPressures(temperatures, pressures);
                     sepSim.runCalc();
-                    foreach (double val in sepSim.getGOR())
+                    foreach (var val in sepSim.getGOR())
                     {
-                        this.Range["C" + (number + 7)].Value2 = val;
-                        this.Range["D" + (number + 7)].Value2 = sepSim.getBofactor()[number];
+                        Range["C" + (number + 7)].Value2 = val;
+                        Range["D" + (number + 7)].Value2 = sepSim.getBofactor()[number];
                         number++;
                     }
                 }
-    
             }
             else if (PVTcalcCombobox.SelectedItem == "CME")
             {
@@ -169,27 +153,30 @@ namespace NeqSimExcel
                 calc3RowTitle.Value2 = "Z-gas";
                 calc4RowTitle.Value2 = "Y-factor";
                 calc5RowTitle.Value2 = "IsoThermalCompressibility (1/bar)";
-                ConstantMassExpansion cmeSim = new ConstantMassExpansion(thermoSystem);
+                var cmeSim = new ConstantMassExpansion(thermoSystem);
                 cmeSim.setTemperature(temperatures[0]);
                 cmeSim.setPressures(pressures);
                 cmeSim.runCalc();
                 number = 0;
-                foreach (double val in cmeSim.getRelativeVolume())
+                foreach (var val in cmeSim.getRelativeVolume())
                 {
-                    this.Range["C" + (number + 7)].Value2 = val;
-                    if (cmeSim.getLiquidRelativeVolume()[number] > 1e-50) this.Range["D" + (number + 7)].Value2 = cmeSim.getLiquidRelativeVolume()[number];
-                    if (cmeSim.getZgas()[number] > 1e-20) this.Range["E" + (number + 7)].Value2 = cmeSim.getZgas()[number];
-                    if (cmeSim.getYfactor()[number] > 1e-20) this.Range["F" + (number + 7)].Value2 = cmeSim.getYfactor()[number];
-                    if (cmeSim.getIsoThermalCompressibility()[number] > 1e-20) this.Range["G" + (number + 7)].Value2 = cmeSim.getIsoThermalCompressibility()[number];
+                    Range["C" + (number + 7)].Value2 = val;
+                    if (cmeSim.getLiquidRelativeVolume()[number] > 1e-50)
+                        Range["D" + (number + 7)].Value2 = cmeSim.getLiquidRelativeVolume()[number];
+                    if (cmeSim.getZgas()[number] > 1e-20) Range["E" + (number + 7)].Value2 = cmeSim.getZgas()[number];
+                    if (cmeSim.getYfactor()[number] > 1e-20)
+                        Range["F" + (number + 7)].Value2 = cmeSim.getYfactor()[number];
+                    if (cmeSim.getIsoThermalCompressibility()[number] > 1e-20)
+                        Range["G" + (number + 7)].Value2 = cmeSim.getIsoThermalCompressibility()[number];
                     number++;
                 }
-                this.Range["A" + (number + 7)].Value2 = temperatures[0]-273.15;
-                this.Range["B" + (number + 7)].Value2 = cmeSim.getSaturationPressure();
-                this.Range["C" + (number + 7)].Value2 = 1.0;
-                this.Range["D" + (number + 7)].Value2 = "saturation point";
-                this.Range["E" + (number + 7)].Value2 = cmeSim.getZsaturation();
-                this.Range["G" + (number + 7)].Value2 = cmeSim.getSaturationIsoThermalCompressibility();
 
+                Range["A" + (number + 7)].Value2 = temperatures[0] - 273.15;
+                Range["B" + (number + 7)].Value2 = cmeSim.getSaturationPressure();
+                Range["C" + (number + 7)].Value2 = 1.0;
+                Range["D" + (number + 7)].Value2 = "saturation point";
+                Range["E" + (number + 7)].Value2 = cmeSim.getZsaturation();
+                Range["G" + (number + 7)].Value2 = cmeSim.getSaturationIsoThermalCompressibility();
             }
             else if (PVTcalcCombobox.SelectedItem == "CVD")
             {
@@ -199,50 +186,51 @@ namespace NeqSimExcel
                 calc4RowTitle.Value2 = "Z-mix";
                 calc5RowTitle.Value2 = "cummulative mole% depleted";
 
-                ConstantVolumeDepletion cmdSim = new ConstantVolumeDepletion(thermoSystem);
+                var cmdSim = new ConstantVolumeDepletion(thermoSystem);
                 cmdSim.setTemperature(temperatures[0]);
                 cmdSim.setPressures(pressures);
                 cmdSim.runCalc();
                 number = 0;
-                foreach (double val in cmdSim.getRelativeVolume())
+                foreach (var val in cmdSim.getRelativeVolume())
                 {
-                    this.Range["C" + (number + 7)].Value2 = val;
-                    this.Range["D" + (number + 7)].Value2 = cmdSim.getLiquidRelativeVolume()[number];
-                    this.Range["E" + (number + 7)].Value2 = cmdSim.getZgas()[number];
-                    this.Range["F" + (number + 7)].Value2 = cmdSim.getZmix()[number];
-                    this.Range["G" + (number + 7)].Value2 = cmdSim.getCummulativeMolePercDepleted()[number];
+                    Range["C" + (number + 7)].Value2 = val;
+                    Range["D" + (number + 7)].Value2 = cmdSim.getLiquidRelativeVolume()[number];
+                    Range["E" + (number + 7)].Value2 = cmdSim.getZgas()[number];
+                    Range["F" + (number + 7)].Value2 = cmdSim.getZmix()[number];
+                    Range["G" + (number + 7)].Value2 = cmdSim.getCummulativeMolePercDepleted()[number];
                     number++;
                 }
-                this.Range["A" + (number + 7)].Value2 = temperatures[0]-273.15;
-                this.Range["B" + (number + 7)].Value2 = cmdSim.getSaturationPressure();
-                this.Range["C" + (number + 7)].Value2 = 1.0;
-                this.Range["E" + (number + 7)].Value2 = cmdSim.getZsaturation();
-                this.Range["F" + (number + 7)].Value2 = cmdSim.getZsaturation();
-                this.Range["G" + (number + 7)].Value2 = "saturation point";
+
+                Range["A" + (number + 7)].Value2 = temperatures[0] - 273.15;
+                Range["B" + (number + 7)].Value2 = cmdSim.getSaturationPressure();
+                Range["C" + (number + 7)].Value2 = 1.0;
+                Range["E" + (number + 7)].Value2 = cmdSim.getZsaturation();
+                Range["F" + (number + 7)].Value2 = cmdSim.getZsaturation();
+                Range["G" + (number + 7)].Value2 = "saturation point";
             }
 
             else if (PVTcalcCombobox.SelectedItem == "Differential liberation")
             {
                 calc1RowTitle.Value2 = "Bo";
-                    calc2RowTitle.Value2 = "Bg";
-                     calc3RowTitle.Value2 = "Rs";
-                      calc4RowTitle.Value2 = "gas gravity";
-                       calc5RowTitle.Value2 = "Zgas";
-                     calc6RowTitle.Value2 = "gas standard volume";
+                calc2RowTitle.Value2 = "Bg";
+                calc3RowTitle.Value2 = "Rs";
+                calc4RowTitle.Value2 = "gas gravity";
+                calc5RowTitle.Value2 = "Zgas";
+                calc6RowTitle.Value2 = "gas standard volume";
 
-                DifferentialLiberation difLibSIm = new DifferentialLiberation(thermoSystem);
+                var difLibSIm = new DifferentialLiberation(thermoSystem);
                 difLibSIm.setTemperature(temperatures[0]);
                 difLibSIm.setPressures(pressures);
                 difLibSIm.runCalc();
                 number = 0;
-                foreach (double val in difLibSIm.getBo())
+                foreach (var val in difLibSIm.getBo())
                 {
-                    this.Range["C" + (number + 7)].Value2 = val;
-                    this.Range["D" + (number + 7)].Value2 = difLibSIm.getBg()[(number)];
-                    this.Range["E" + (number + 7)].Value2 = difLibSIm.getRs()[(number)];
-                    this.Range["F" + (number + 7)].Value2 = difLibSIm.getRelGasGravity()[(number)];
-                    this.Range["G" + (number + 7)].Value2 = difLibSIm.getZgas()[(number)];
-                    this.Range["H" + (number + 7)].Value2 = difLibSIm.getGasStandardVolume()[(number)];
+                    Range["C" + (number + 7)].Value2 = val;
+                    Range["D" + (number + 7)].Value2 = difLibSIm.getBg()[number];
+                    Range["E" + (number + 7)].Value2 = difLibSIm.getRs()[number];
+                    Range["F" + (number + 7)].Value2 = difLibSIm.getRelGasGravity()[number];
+                    Range["G" + (number + 7)].Value2 = difLibSIm.getZgas()[number];
+                    Range["H" + (number + 7)].Value2 = difLibSIm.getGasStandardVolume()[number];
                     number++;
                 }
             }
@@ -254,13 +242,13 @@ namespace NeqSimExcel
                 calc4RowTitle.Value2 = "";
                 calc5RowTitle.Value2 = "";
 
-                WaxFractionSim cmdSim = new WaxFractionSim(thermoSystem);
+                var cmdSim = new WaxFractionSim(thermoSystem);
                 cmdSim.setTemperaturesAndPressures(temperatures, pressures);
                 cmdSim.runCalc();
                 number = 0;
-                foreach (double val in cmdSim.getWaxFraction())
+                foreach (var val in cmdSim.getWaxFraction())
                 {
-                    this.Range["C" + (number + 7)].Value2 = val*100.0;
+                    Range["C" + (number + 7)].Value2 = val * 100.0;
                     number++;
                 }
             }
@@ -272,15 +260,15 @@ namespace NeqSimExcel
                 calc4RowTitle.Value2 = "";
                 calc5RowTitle.Value2 = "";
 
-                ViscositySim cmdSim = new ViscositySim(thermoSystem);
+                var cmdSim = new ViscositySim(thermoSystem);
                 cmdSim.setTemperaturesAndPressures(temperatures, pressures);
                 cmdSim.runCalc();
                 number = 0;
-                foreach (double val in cmdSim.getGasViscosity())
+                foreach (var val in cmdSim.getGasViscosity())
                 {
-                    this.Range["C" + (number + 7)].Value2 = val;
-                    this.Range["D" + (number + 7)].Value2 = cmdSim.getOilViscosity()[number];
-                    this.Range["E" + (number + 7)].Value2 = cmdSim.getAqueousViscosity()[number];
+                    Range["C" + (number + 7)].Value2 = val;
+                    Range["D" + (number + 7)].Value2 = cmdSim.getOilViscosity()[number];
+                    Range["E" + (number + 7)].Value2 = cmdSim.getAqueousViscosity()[number];
                     number++;
                 }
             }
@@ -294,84 +282,82 @@ namespace NeqSimExcel
                 calc6RowTitle.Value2 = "";
 
 
-                double[] shareRate = new double[number];
+                var shareRate = new double[number];
 
                 number = 0;
-                foreach (Excel.Range r in column3range.Cells)
+                foreach (Range r in column3range.Cells)
                 {
-                    string text = (string)r.Text;
-                if (!String.IsNullOrEmpty(text))
-                {
-                    shareRate[number] = r.Value2;
+                    var text = (string) r.Text;
+                    if (!string.IsNullOrEmpty(text))
+                    {
+                        shareRate[number] = r.Value2;
                         number++;
                     }
                 }
 
 
-
-                ViscosityWaxOilSim cmdSim = new ViscosityWaxOilSim(thermoSystem);
+                var cmdSim = new ViscosityWaxOilSim(thermoSystem);
                 cmdSim.setTemperaturesAndPressures(temperatures, pressures);
                 cmdSim.setShareRate(shareRate);
                 cmdSim.runCalc();
                 number = 0;
-                foreach (double val in cmdSim.getGasViscosity())
+                foreach (var val in cmdSim.getGasViscosity())
                 {
-                    this.Range["D" + (number + 7)].Value2 = cmdSim.getWaxFraction()[number]*100;
-                    this.Range["E" + (number + 7)].Value2 = cmdSim.getOilViscosity()[number];
-                    this.Range["F" + (number + 7)].Value2 = cmdSim.getOilwaxDispersionViscosity()[number];
+                    Range["D" + (number + 7)].Value2 = cmdSim.getWaxFraction()[number] * 100;
+                    Range["E" + (number + 7)].Value2 = cmdSim.getOilViscosity()[number];
+                    Range["F" + (number + 7)].Value2 = cmdSim.getOilwaxDispersionViscosity()[number];
                     number++;
                 }
             }
             else if (PVTcalcCombobox.SelectedItem == "Swelling test")
             {
                 calc2RowTitle.Value2 = "Relative volume";
-                int a2 = Convert.ToInt32((String)selectFluidCombobox.SelectedItem.ToString());
-                SystemInterface gasInjectionThermoSystem = NeqSimThermoSystem.getThermoSystem().readObject(a2);
+                var a2 = Convert.ToInt32(selectFluidCombobox.SelectedItem.ToString());
+                var gasInjectionThermoSystem = NeqSimThermoSystem.getThermoSystem().readObject(a2);
 
-                SwellingTest cmdSim = new SwellingTest((SystemInterface) thermoSystem.clone());
+                var cmdSim = new SwellingTest((SystemInterface) thermoSystem.clone());
                 cmdSim.setInjectionGas(gasInjectionThermoSystem);
                 cmdSim.setTemperature(temperatures[0]);
                 cmdSim.setCummulativeMolePercentGasInjected(pressures);
                 cmdSim.runCalc();
                 number = 0;
-                foreach (double val in cmdSim.getPressures())
+                foreach (var val in cmdSim.getPressures())
                 {
-                    this.Range["C" + (number + 7)].Value2 = cmdSim.getPressures()[number];
-                    this.Range["D" + (number + 7)].Value2 = cmdSim.getRelativeOilVolume()[number];
+                    Range["C" + (number + 7)].Value2 = cmdSim.getPressures()[number];
+                    Range["D" + (number + 7)].Value2 = cmdSim.getRelativeOilVolume()[number];
                     number++;
                 }
-
             }
+
             rangeClear.Columns.AutoFit();
         }
 
         private void PVTcalcCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Range["B6"].Value2 = "Pressure [bara]";
+            Range["B6"].Value2 = "Pressure [bara]";
             selectFluidCombobox.Visible = false;
-            Excel.Range rangeClear = this.Range["C6", "O100"];
+            var rangeClear = Range["C6", "O100"];
             rangeClear.Clear();
 
-            Excel.Range experimentalTitle = this.Range["C5"];
-            Excel.Range calc1RowTitle = this.Range["C6"];
-            Excel.Range calc2RowTitle = this.Range["D6"];
-            Excel.Range calc3RowTitle = this.Range["E6"];
-            Excel.Range calc4RowTitle = this.Range["F6"];
-            Excel.Range calc5RowTitle = this.Range["G6"];
-            Excel.Range calc6RowTitle = this.Range["H6"];
+            var experimentalTitle = Range["C5"];
+            var calc1RowTitle = Range["C6"];
+            var calc2RowTitle = Range["D6"];
+            var calc3RowTitle = Range["E6"];
+            var calc4RowTitle = Range["F6"];
+            var calc5RowTitle = Range["G6"];
+            var calc6RowTitle = Range["H6"];
 
-            Excel.Range calculatedTitle = this.Range["I5"];
-            Excel.Range calc7RowTitle = this.Range["I6"];
-            Excel.Range calc8RowTitle = this.Range["J6"];
-            Excel.Range calc9RowTitle = this.Range["K6"];
-            Excel.Range calc10RowTitle = this.Range["L6"];
-
+            var calculatedTitle = Range["I5"];
+            var calc7RowTitle = Range["I6"];
+            var calc8RowTitle = Range["J6"];
+            var calc9RowTitle = Range["K6"];
+            var calc10RowTitle = Range["L6"];
 
 
             // PVTcalcCombobox.
             if (PVTcalcCombobox.SelectedItem == "Wax content")
             {
-                this.Range["C6"].Value2 = "Wax content [wt%]";
+                Range["C6"].Value2 = "Wax content [wt%]";
             }
             else if (PVTcalcCombobox.SelectedItem == "CME")
             {
@@ -409,21 +395,19 @@ namespace NeqSimExcel
             }
             else if (PVTcalcCombobox.SelectedItem == "Swelling test")
             {
-                this.Range["B6"].Value2 = "GasInjected (fraction of oil)";
-                this.Range["C6"].Value2 = "Pressure [bara]";
+                Range["B6"].Value2 = "GasInjected (fraction of oil)";
+                Range["C6"].Value2 = "Pressure [bara]";
                 selectFluidCombobox.Visible = true;
-                this.Range["A4"].Value2 = "Injection gas";
+                Range["A4"].Value2 = "Injection gas";
                 calc2RowTitle.Value2 = "Relative volume";
             }
             else if (PVTcalcCombobox.SelectedItem == "Slim tube")
             {
                 selectFluidCombobox.Visible = true;
-                this.Range["A4"].Value2 = "Injection gas";
+                Range["A4"].Value2 = "Injection gas";
             }
 
             rangeClear.Columns.AutoFit();
-
         }
-
     }
 }

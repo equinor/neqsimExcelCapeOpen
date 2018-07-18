@@ -6,9 +6,9 @@
 
     <example>
       The following example creates multiple instances of <B>MySqlParameter</B> through the
-      <see cref="MySqlParameterCollection"/> collection within the <see cref="MySqlDataAdapter"/>.
+      <see cref="MySqlParameterCollection" /> collection within the <see cref="MySqlDataAdapter" />.
       These parameters are used to select data from the data source and place the data
-      in the <see cref="DataSet"/>. This example assumes that a <B>DataSet</B> and a
+      in the <see cref="DataSet" />. This example assumes that a <B>DataSet</B> and a
       <B>MySqlDataAdapter</B> have already been created with the appropriate schema, commands,
       and connection.
       <code lang="vbnet">
@@ -39,7 +39,6 @@
 
 
   </MyMembers>
-
 
 
 </MyDocs>

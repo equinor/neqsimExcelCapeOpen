@@ -5,16 +5,17 @@
     </summary>
 
     <remarks>
-      The application creates a <B>MySqlTransaction</B> object by calling <see cref="MySqlConnection.BeginTransaction()"/>
-      on the <see cref="MySqlConnection"/> object. All subsequent operations associated with the
+      The application creates a <B>MySqlTransaction</B> object by calling
+      <see cref="MySqlConnection.BeginTransaction()" />
+      on the <see cref="MySqlConnection" /> object. All subsequent operations associated with the
       transaction (for example, committing or aborting the transaction), are performed on the
       <B>MySqlTransaction</B> object.
     </remarks>
 
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and a <B>MySqlTransaction</B>.
-      It also demonstrates how to use the <see cref="MySqlConnection.BeginTransaction()"/>,
-      <see cref="MySqlTransaction.Commit"/>, and <see cref="MySqlTransaction.Rollback"/> methods.
+      The following example creates a <see cref="MySqlConnection" /> and a <B>MySqlTransaction</B>.
+      It also demonstrates how to use the <see cref="MySqlConnection.BeginTransaction()" />,
+      <see cref="MySqlTransaction.Commit" />, and <see cref="MySqlTransaction.Rollback" /> methods.
       <code lang="vbnet">
         Public Sub RunTransaction(myConnString As String)
         Dim myConnection As New MySqlConnection(myConnString)
@@ -121,9 +122,9 @@
       called).
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and a
-      <see cref="MySqlTransaction"/>. It also demonstrates how to use the
-      <see cref="MySqlConnection.BeginTransaction()"/>, <see cref="Commit"/>, and <B>Rollback</B>
+      The following example creates a <see cref="MySqlConnection" /> and a
+      <see cref="MySqlTransaction" />. It also demonstrates how to use the
+      <see cref="MySqlConnection.BeginTransaction()" />, <see cref="Commit" />, and <B>Rollback</B>
       methods.
       <code lang="vbnet">
         Public Sub RunSqlTransaction(myConnString As String)
@@ -228,9 +229,9 @@
       COMMIT.
     </remarks>
     <example>
-      The following example creates a <see cref="MySqlConnection"/> and a
-      <see cref="MySqlTransaction"/>. It also demonstrates how to use the
-      <see cref="MySqlConnection.BeginTransaction()"/>, <see cref="Commit"/>, and <B>Rollback</B>
+      The following example creates a <see cref="MySqlConnection" /> and a
+      <see cref="MySqlTransaction" />. It also demonstrates how to use the
+      <see cref="MySqlConnection.BeginTransaction()" />, <see cref="Commit" />, and <B>Rollback</B>
       methods.
       <code lang="vbnet">
         Public Sub RunSqlTransaction(myConnString As String)

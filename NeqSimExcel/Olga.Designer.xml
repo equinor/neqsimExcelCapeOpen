@@ -1,6 +1,17 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet7" hostitem:identifier="Olga" hostitem:primaryCookie="Sheet7" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="16" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="1E2B4D4F31ADEF143A11B5221A20D102090DD1" hostitem:extenderCookie="1E2B4D4F31ADEF143A11B5221A20D102090DD1" hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="pathLabel" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="2DE31B0B627102248E12810C21BF99F709A3D2" hostitem:extenderCookie="2DE31B0B627102248E12810C21BF99F709A3D2" hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
+                   hostitem:className="Sheet7" hostitem:identifier="Olga" hostitem:primaryCookie="Sheet7"
+                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="17"
+                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
+                                    hostitem:primaryCookie="1E2B4D4F31ADEF143A11B5221A20D102090DD1"
+                                    hostitem:extenderCookie="1E2B4D4F31ADEF143A11B5221A20D102090DD1"
+                                    hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="pathLabel"
+                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
+                                    hostitem:primaryCookie="2DE31B0B627102248E12810C21BF99F709A3D2"
+                                    hostitem:extenderCookie="2DE31B0B627102248E12810C21BF99F709A3D2"
+                                    hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>
 <a1:CodeTypeMemberCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
@@ -50,7 +61,7 @@
 </a1:CodeDirectiveCollection>
 <a4:ListDictionary id="ref-12" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
-<version>45</version>
+<version>47</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
