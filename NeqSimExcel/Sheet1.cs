@@ -9,12 +9,12 @@ using Microsoft.Office.Tools.Excel;
 using Microsoft.VisualStudio.Tools.Applications.Runtime;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
-using thermo.system;
-using thermodynamicOperations;
-using PVTsimulation.simulation;
-using PVTsimulation.util.parameterfitting;
-using statistics.parameterFitting;
-using statistics.parameterFitting.nonLinearParameterFitting;
+using neqsim.thermo.system;
+using neqsim.thermodynamicOperations;
+using neqsim.PVTsimulation.simulation;
+using neqsim.PVTsimulation.util.parameterfitting;
+using neqsim.statistics.parameterFitting;
+using neqsim.statistics.parameterFitting.nonLinearParameterFitting;
 
 namespace NeqSimExcel
 {

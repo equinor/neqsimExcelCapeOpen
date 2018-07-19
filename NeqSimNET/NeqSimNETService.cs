@@ -1,6 +1,6 @@
 ﻿using System;
-using thermo.system;
-using thermodynamicOperations;
+using neqsim.thermo.system;
+using neqsim.thermodynamicOperations;
 
 namespace NeqSimNET
 {

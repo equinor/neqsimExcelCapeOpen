@@ -6,16 +6,16 @@ using System.Windows.Forms;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Office.Interop.Excel;
-using processSimulation.processEquipment;
-using processSimulation.processEquipment.compressor;
-using processSimulation.processEquipment.heatExchanger;
-using processSimulation.processEquipment.pump;
-using processSimulation.processEquipment.stream;
-using processSimulation.processEquipment.util;
-using processSimulation.processSystem;
-using processSimulation.processSystem.processModules;
-using thermo.system;
-using thermodynamicOperations;
+using neqsim.processSimulation.processEquipment;
+using neqsim.processSimulation.processEquipment.compressor;
+using neqsim.processSimulation.processEquipment.heatExchanger;
+using neqsim.processSimulation.processEquipment.pump;
+using neqsim.processSimulation.processEquipment.stream;
+using neqsim.processSimulation.processEquipment.util;
+using neqsim.processSimulation.processSystem;
+using neqsim.processSimulation.processSystem.processModules;
+using neqsim.thermo.system;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 

@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
-using processSimulation.processEquipment.compressor;
-using processSimulation.processEquipment.stream;
-using thermodynamicOperations;
+using neqsim.processSimulation.processEquipment.compressor;
+using neqsim.processSimulation.processEquipment.stream;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

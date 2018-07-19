@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Office.Interop.Excel;
-using thermo.system;
-using thermodynamicOperations;
+using neqsim.thermo.system;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

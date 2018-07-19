@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-using thermodynamicOperations;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel
@@ -26,9 +26,8 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            button1.Click += button1_Click;
-            Startup += Sheet4_Startup;
-            Shutdown += Sheet4_Shutdown;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+
         }
 
         #endregion
@@ -125,6 +124,11 @@ namespace NeqSimExcel
                 Title: "Hydrate equilibrium temperatures",
                 CategoryTitle: "Temperature [C]",
                 ValueTitle: "Pressure [bara]");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

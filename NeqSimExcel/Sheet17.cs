@@ -6,8 +6,8 @@ using System.Windows.Forms;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Office.Interop.Excel;
-using thermo.system;
-using thermodynamicOperations;
+using neqsim.thermo.system;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

@@ -1,5 +1,5 @@
 ﻿using System;
-using thermo.system;
+using neqsim.thermo.system;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

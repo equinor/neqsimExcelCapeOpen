@@ -4,7 +4,7 @@ using System.Security.Principal;
 using System.Windows.Forms;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
-using thermodynamicOperations;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

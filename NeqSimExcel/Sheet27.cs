@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Principal;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
-using thermodynamicOperations;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

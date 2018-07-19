@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using Microsoft.Office.Interop.Excel;
-using thermo.phase;
+using neqsim.thermo.phase;
 using Office = Microsoft.Office.Core;
 
 

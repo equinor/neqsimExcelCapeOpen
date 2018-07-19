@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
-using thermodynamicOperations;
+using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel

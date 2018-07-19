@@ -4,8 +4,8 @@ using System.Security.Principal;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Office.Interop.Excel;
-using PVTsimulation.simulation;
-using thermo.system;
+using neqsim.PVTsimulation.simulation;
+using neqsim.thermo.system;
 using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel
