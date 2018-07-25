@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(8)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(16)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class hydrate : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -147,6 +147,9 @@ namespace NeqSimExcel {
             this.button1.Name = "button1";
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // hydrate
+            // 
             this.button1.BindingContext = this.BindingContext;
         }
         

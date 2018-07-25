@@ -76,13 +76,11 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            fluidListNameComboBoxGas.SelectedIndexChanged += fluidListNameComboBoxGas_SelectedIndexChanged;
-            calculateButton.Click += calculateButton_Click;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            linkLabel1.Click += linkLabel1_Click;
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
-            Startup += Sheet17_Startup;
-            Shutdown += Sheet17_Shutdown;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_Click);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.Startup += new System.EventHandler(this.Sheet17_Startup);
+
         }
 
         #endregion
@@ -208,8 +206,5 @@ namespace NeqSimExcel
             liqThermoSystem.display();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-        }
     }
 }

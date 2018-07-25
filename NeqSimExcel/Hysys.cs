@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Principal;
 using System.Windows.Forms;
 using DatabaseConnection;
@@ -70,7 +71,8 @@ namespace NeqSimExcel
             sharedCheckbox.Visible = true; // hide if another fluid is chosen!
         }
 
-        private void Sheet6_Shutdown(object sender, EventArgs e)
+
+    private void Sheet6_Shutdown(object sender, EventArgs e)
         {
         }
 
@@ -82,12 +84,12 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            fluidListNameComboBox.SelectedIndexChanged += fluidListNameComboBox_SelectedIndexChanged_1;
-            fluidListNameComboBox.Click += fluidListNameComboBox_SelectedIndexChanged;
-            button1.Click += button1_Click;
-            button3.Click += button3_Click_1;
-            Startup += Sheet6_Startup;
-            Shutdown += Sheet6_Shutdown;
+            this.fluidListNameComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fluidListNameComboBox_MouseClick);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.Startup += new System.EventHandler(this.Sheet6_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet6_Shutdown);
+
         }
 
         #endregion
@@ -170,11 +172,78 @@ namespace NeqSimExcel
 
         private void fluidListNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+
+        private void fluidListNameComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var openFileDIalog = new FolderBrowserDialog();
+            openFileDIalog.ShowDialog();
+            var localFileName = openFileDIalog.SelectedPath;
+            Range["B18"].Value2 = localFileName;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = Range["B18"].Value2;
+
+                string filePath = null;
+
+                var textVar1 = "B25";
+                Range[textVar1].Value2 = "saving fluid...";
+
+                if (NeqSimThermoSystem.LocalFilePath == null)
+                {
+                    filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                    filePath = filePath + "/AppData/Roaming/neqsim/fluids/";
+                }
+                else
+                {
+                    filePath = NeqSimThermoSystem.LocalFilePath;
+                }
+
+                if (!Directory.Exists(filePath))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(filePath);
+                }
+
+                string fluidName = Range["B20"].Value2 + ".neqsim";
+
+                // string fullname = path + "/"+fluidName;
+                var fullname = filePath + "/" + fluidName;
+
+                var thermoSystem = NeqSimThermoSystem.getThermoSystem();
+                thermoSystem.saveObjectToFile(fullname, "");
+
+                Range["B25"].Value2 = "Saved fluid.." + Range["B20"].Value2;
+            }
+            catch (Exception exept)
+            {
+                Console.WriteLine("The process failed: {0}", exept.ToString());
+            }
+            finally
+            {
+            }
+        }
+
+        private void fluidListNameComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
             fluidListNameComboBox.Items.Clear();
             sharedCheckbox.Visible = true;
 
             var test = new fluidinfoTableAdapter();
-//            NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
+            //            NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
 
             var userName = WindowsIdentity.GetCurrent().Name;
             userName = userName.Replace("STATOIL-NET\\", "");
@@ -207,56 +276,6 @@ namespace NeqSimExcel
                 fluidListNameComboBox.Items.Add(row.ID + " " + tempString);
             }
 
-            //   packageNames = names.ToArray();
-            //   fluidListNameComboBox.Items.Add(names.ToList());
-        }
-
-
-        private void fluidListNameComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var openFileDIalog = new FolderBrowserDialog();
-            openFileDIalog.ShowDialog();
-            var localFileName = openFileDIalog.SelectedPath;
-            Range["B18"].Value2 = localFileName;
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            string path = Range["B18"].Value2;
-
-            string filePath = null;
-
-            var textVar1 = "B25";
-            Range[textVar1].Value2 = "saving fluid...";
-
-            if (NeqSimThermoSystem.LocalFilePath == null)
-            {
-                filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-                filePath = filePath + "/AppData/Roaming/neqsim/fluids/";
-            }
-            else
-            {
-                filePath = NeqSimThermoSystem.LocalFilePath;
-            }
-
-
-            string fluidName = Range["B20"].Value2 + ".neqsim";
-
-            // string fullname = path + "/"+fluidName;
-            var fullname = filePath + "/" + fluidName;
-
-            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            thermoSystem.saveObjectToFile(fullname, "");
-
-            Range["B25"].Value2 = "Saved fluid.." + Range["B20"].Value2;
         }
     }
 }

@@ -24,11 +24,13 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            calcButton.Click += calcButton_Click;
-            PVTcalcCombobox.SelectedIndexChanged += PVTcalcCombobox_SelectedIndexChanged;
-            calcCompBUtton.Click += calcCompBUtton_Click;
-            Startup += Sheet15_Startup;
-            Shutdown += Sheet15_Shutdown;
+            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
+            this.PVTcalcCombobox.SelectedIndexChanged += new System.EventHandler(this.PVTcalcCombobox_SelectedIndexChanged);
+            this.calcCompBUtton.Click += new System.EventHandler(this.calcCompBUtton_Click);
+            this.selectFluidCombobox.SelectedIndexChanged += new System.EventHandler(this.PVTcalcCombobox_SelectedIndexChanged);
+            this.Startup += new System.EventHandler(this.Sheet15_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet15_Shutdown);
+
         }
 
         #endregion
@@ -209,7 +211,7 @@ namespace NeqSimExcel
             var rangeClear = Range["I1", "O100"];
             rangeClear.Clear();
 
-            var thermoSystem = (SystemInterface) NeqSimThermoSystem.getThermoSystem().clone();
+            var thermoSystem = (SystemInterface)NeqSimThermoSystem.getThermoSystem().clone();
 
             var column1range = Range["A7", "A100"];
             var column2range = Range["B7", "B100"];
@@ -234,7 +236,7 @@ namespace NeqSimExcel
 
             foreach (Range r in column1range.Cells)
             {
-                var text = (string) r.Text;
+                var text = (string)r.Text;
                 if (!string.IsNullOrEmpty(text)) number++;
             }
 
@@ -244,7 +246,7 @@ namespace NeqSimExcel
             number = 0;
             foreach (Range r in column1range.Cells)
             {
-                var text = (string) r.Text;
+                var text = (string)r.Text;
                 if (!string.IsNullOrEmpty(text))
                 {
                     temperatures[number] = r.Value2 + 273.15;
@@ -391,6 +393,7 @@ namespace NeqSimExcel
                     number++;
                 }
             }
+
         }
     }
 }

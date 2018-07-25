@@ -62,10 +62,11 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            calcButton.Click += calcButton_Click;
-            PVTcalcCombobox.SelectedIndexChanged += PVTcalcCombobox_SelectedIndexChanged;
-            Startup += Sheet8_Startup;
-            Shutdown += Sheet8_Shutdown;
+            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
+            this.PVTcalcCombobox.SelectedIndexChanged += new System.EventHandler(this.PVTcalcCombobox_SelectedIndexChanged);
+            this.Startup += new System.EventHandler(this.Sheet8_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet8_Shutdown);
+
         }
 
         #endregion

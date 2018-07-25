@@ -9,6 +9,11 @@ namespace NeqSimExcel
     {
         private void Sheet11_Startup(object sender, EventArgs e)
         {
+          
+        }
+
+        private void ActivateComponentCombobox()
+        {
             componentComboBox.Items.Clear();
 
             var thermoSystem = NeqSimThermoSystem.getThermoSystem();
@@ -22,6 +27,8 @@ namespace NeqSimExcel
             {
                 ex.ToString();
             }
+
+            componentComboBox.SelectedIndex = 0;
         }
 
         private void Sheet11_Shutdown(object sender, EventArgs e)
@@ -36,10 +43,11 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            button1.Click += button1_Click;
-            componentComboBox.Click += componentComboBox_SelectedIndexChanged;
-            Startup += Sheet11_Startup;
-            Shutdown += Sheet11_Shutdown;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.componentComboBox.SelectedIndexChanged += new System.EventHandler(this.componentComboBox_SelectedIndexChanged);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateComponentCombobox);
+            this.Shutdown += new System.EventHandler(this.Sheet11_Shutdown);
+
         }
 
         #endregion
@@ -95,23 +103,12 @@ namespace NeqSimExcel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            componentComboBox.Items.Clear();
 
-            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            try
-            {
-                var names = thermoSystem.getComponentNames();
-
-                foreach (var name in names) componentComboBox.Items.Add(name);
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
         }
 
         private void componentComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             componentComboBox.Items.Clear();
 
             var thermoSystem = NeqSimThermoSystem.getThermoSystem();
@@ -125,6 +122,9 @@ namespace NeqSimExcel
             {
                 ex.ToString();
             }
+
+            componentComboBox.SelectedIndex = 0;
+            */
         }
     }
 }

@@ -24,6 +24,8 @@ namespace NeqSimExcel
         private void InternalStartup()
         {
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Startup += new System.EventHandler(this.Sheet3_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet3_Shutdown);
 
         }
 
@@ -50,7 +52,7 @@ namespace NeqSimExcel
                     var textVar = "B" + number;
                     thermoSystem.init(0);
                     thermoSystem.setMultiPhaseCheck(true);
-                    if (thermoSystem.isChemicalSystem()) thermoSystem.setMultiPhaseCheck(false);
+                    //if (thermoSystem.isChemicalSystem()) thermoSystem.setMultiPhaseCheck(false);
                     thermoSystem.setTemperature(r.Value2 + 273.15);
                     thermoSystem.setPressure(Range[textVar].Value2);
                     var ops = new ThermodynamicOperations(thermoSystem);

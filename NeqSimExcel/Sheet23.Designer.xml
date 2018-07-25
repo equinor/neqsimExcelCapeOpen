@@ -1,37 +1,10 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
-                   hostitem:className="Sheet23" hostitem:identifier="SepProcessSheet" hostitem:primaryCookie="Sheet23"
-                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="25"
-                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calcuateButton"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
-                                    hostitem:primaryCookie="1633AAB911554C142501BF9817820FBE6FEDA1"
-                                    hostitem:extenderCookie="1633AAB911554C142501BF9817820FBE6FEDA1"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidsComboBox"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
-                                    hostitem:primaryCookie="236327E5329C47245D52A7AD2D6C7DD86F01C2"
-                                    hostitem:extenderCookie="236327E5329C47245D52A7AD2D6C7DD86F01C2"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel1"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
-                                    hostitem:primaryCookie="357B2A79332498347F03B20031F8F571CF0933"
-                                    hostitem:extenderCookie="357B2A79332498347F03B20031F8F571CF0933"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="unitOpsNamesCheckBox"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
-                                    hostitem:primaryCookie="4E43028E041544444F74A6C94396E211329D04"
-                                    hostitem:extenderCookie="4E43028E041544444F74A6C94396E211329D04"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel2"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
-                                    hostitem:primaryCookie="55503E7195534254BA65BF60556A460A274585"
-                                    hostitem:extenderCookie="55503E7195534254BA65BF60556A460A274585"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel3"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
-                                    hostitem:primaryCookie="6152E46166DF4B643BD68A046FDB6C8411D1B6"
-                                    hostitem:extenderCookie="6152E46166DF4B643BD68A046FDB6C8411D1B6"
-                                    hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet23" hostitem:identifier="SepProcessSheet" hostitem:primaryCookie="Sheet23" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="27" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calcuateButton" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="1633AAB911554C142501BF9817820FBE6FEDA1" hostitem:extenderCookie="1633AAB911554C142501BF9817820FBE6FEDA1" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidsComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="236327E5329C47245D52A7AD2D6C7DD86F01C2" hostitem:extenderCookie="236327E5329C47245D52A7AD2D6C7DD86F01C2" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="357B2A79332498347F03B20031F8F571CF0933" hostitem:extenderCookie="357B2A79332498347F03B20031F8F571CF0933" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="unitOpsNamesCheckBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="4E43028E041544444F74A6C94396E211329D04" hostitem:extenderCookie="4E43028E041544444F74A6C94396E211329D04" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel2" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="55503E7195534254BA65BF60556A460A274585" hostitem:extenderCookie="55503E7195534254BA65BF60556A460A274585" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel3" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="6152E46166DF4B643BD68A046FDB6C8411D1B6" hostitem:extenderCookie="6152E46166DF4B643BD68A046FDB6C8411D1B6" hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>

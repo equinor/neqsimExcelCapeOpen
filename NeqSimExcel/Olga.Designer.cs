@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(17)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(21)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Olga : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -154,17 +154,17 @@ namespace NeqSimExcel {
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // pathLabel
+            // 
+            this.pathLabel.Name = "pathLabel";
+            this.pathLabel.Text = "Set file path";
+            // 
             // fileOLGAdialog
             // 
             this.fileOLGAdialog.CheckFileExists = false;
             this.fileOLGAdialog.DefaultExt = "tab";
             this.fileOLGAdialog.FileName = "NeqSimfluidfile";
             this.fileOLGAdialog.Filter = "OLGA tab files (*.tab)|";
-            // 
-            // pathLabel
-            // 
-            this.pathLabel.Name = "pathLabel";
-            this.pathLabel.Text = "Set file path";
             // 
             // Olga
             // 

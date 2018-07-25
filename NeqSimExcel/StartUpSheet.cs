@@ -47,17 +47,18 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            activateOperationsCheckBox.CheckedChanged += activateOperationsCheckBox_CheckedChanged;
-            activatePVTcheckBox.CheckedChanged += activatePVTcheckBox_CheckedChanged;
-            exportCheckBox.CheckedChanged += exportCheckBox_CheckedChanged;
-            RFOCheckBox.CheckedChanged += RFOCheckBox_CheckedChanged;
-            activateFACheckBox.CheckedChanged += activateFACheckBox_CheckedChanged;
-            advancedCheckBox.CheckedChanged += advancedCheckBox_CheckedChanged;
-            activateFluidOperationCheckBox.CheckedChanged += activateFluidOperationCheckBox_CheckedChanged;
-            unitOperationcheckBox.CheckedChanged += unitOperationcheckBox_CheckedChanged;
-            processCheckBox.CheckedChanged += processCheckBox_CheckedChanged;
-            Startup += Sheet12_Startup;
-            Shutdown += Sheet12_Shutdown;
+            this.activateOperationsCheckBox.CheckedChanged += new System.EventHandler(this.activateOperationsCheckBox_CheckedChanged);
+            this.activatePVTcheckBox.CheckedChanged += new System.EventHandler(this.activatePVTcheckBox_CheckedChanged);
+            this.exportCheckBox.CheckedChanged += new System.EventHandler(this.exportCheckBox_CheckedChanged);
+            this.RFOCheckBox.CheckedChanged += new System.EventHandler(this.RFOCheckBox_CheckedChanged);
+            this.activateFACheckBox.CheckedChanged += new System.EventHandler(this.activateFACheckBox_CheckedChanged);
+            this.advancedCheckBox.CheckedChanged += new System.EventHandler(this.advancedCheckBox_CheckedChanged);
+            this.activateFluidOperationCheckBox.CheckedChanged += new System.EventHandler(this.activateFluidOperationCheckBox_CheckedChanged);
+            this.unitOperationcheckBox.CheckedChanged += new System.EventHandler(this.unitOperationcheckBox_CheckedChanged);
+            this.processCheckBox.CheckedChanged += new System.EventHandler(this.processCheckBox_CheckedChanged);
+            this.Startup += new System.EventHandler(this.Sheet12_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet12_Shutdown);
+
         }
 
         #endregion
@@ -84,6 +85,7 @@ namespace NeqSimExcel
                 Globals.Sheet11.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet29.Visible = XlSheetVisibility.xlSheetHidden;
             }
+
         }
 
         private void activatePVTcheckBox_CheckedChanged(object sender, EventArgs e)

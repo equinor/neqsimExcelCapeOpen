@@ -26,16 +26,30 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            button1.Click += button1_Click;
-            fileOLGAdialog.FileOk += openFileDialog1_FileOk;
-            pathLabel.LinkClicked += pathLabel_LinkClicked;
-            Startup += Sheet7_Startup;
-            Shutdown += Sheet7_Shutdown;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.pathLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.pathLabel_LinkClicked);
+            this.Startup += new System.EventHandler(this.Sheet7_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet7_Shutdown);
+
         }
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+        }
+
+        private void pathLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (fileOLGAdialog.ShowDialog() == DialogResult.OK) Range["B8"].Value2 = fileOLGAdialog.FileName;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             var rangeMessage = Range["B14"];
             rangeMessage.Font.Color = ColorTranslator.ToOle(Color.Blue);
@@ -66,19 +80,6 @@ namespace NeqSimExcel
                 ex.ToString();
                 rangeMessage.Value2 = "error creating file " + filename;
             }
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-        }
-
-        private void pathLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (fileOLGAdialog.ShowDialog() == DialogResult.OK) Range["B8"].Value2 = fileOLGAdialog.FileName;
         }
     }
 }

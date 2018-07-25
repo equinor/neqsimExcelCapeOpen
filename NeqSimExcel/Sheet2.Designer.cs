@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(13)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(7)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet2 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -147,9 +147,6 @@ namespace NeqSimExcel {
             this.button1.Name = "button1";
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Sheet2
-            // 
             this.button1.BindingContext = this.BindingContext;
         }
         

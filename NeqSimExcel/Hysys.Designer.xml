@@ -1,27 +1,8 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
-                   hostitem:className="Sheet6" hostitem:identifier="Sheet6" hostitem:primaryCookie="Sheet6"
-                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="16"
-                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBox"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
-                                    hostitem:primaryCookie="33305FF99385AA345543A7693D4A13F145DD43"
-                                    hostitem:extenderCookie="33305FF99385AA345543A7693D4A13F145DD43"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
-                                    hostitem:primaryCookie="4C0DC5E324872344D014B8804DE43BB805D3F4"
-                                    hostitem:extenderCookie="4C0DC5E324872344D014B8804DE43BB805D3F4"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button3"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
-                                    hostitem:primaryCookie="6FAB9A4E0600ED6418269FA068BF9A4C00EA46"
-                                    hostitem:extenderCookie="6FAB9A4E0600ED6418269FA068BF9A4C00EA46"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="sharedCheckbox"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox"
-                                    hostitem:primaryCookie="77F6236037F06174EFE78B3370EE0157C98377"
-                                    hostitem:extenderCookie="77F6236037F06174EFE78B3370EE0157C98377"
-                                    hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet6" hostitem:identifier="Sheet6" hostitem:primaryCookie="Sheet6" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="19" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="33305FF99385AA345543A7693D4A13F145DD43" hostitem:extenderCookie="33305FF99385AA345543A7693D4A13F145DD43" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="4C0DC5E324872344D014B8804DE43BB805D3F4" hostitem:extenderCookie="4C0DC5E324872344D014B8804DE43BB805D3F4" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="button3" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="6FAB9A4E0600ED6418269FA068BF9A4C00EA46" hostitem:extenderCookie="6FAB9A4E0600ED6418269FA068BF9A4C00EA46" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="checkBox1" hostitem:identifier="sharedCheckbox" hostitem:type="Microsoft.Office.Tools.Excel.Controls.CheckBox" hostitem:primaryCookie="77F6236037F06174EFE78B3370EE0157C98377" hostitem:extenderCookie="77F6236037F06174EFE78B3370EE0157C98377" hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>
 <a1:CodeTypeMemberCollection id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
@@ -71,7 +52,7 @@
 </a1:CodeDirectiveCollection>
 <a4:ListDictionary id="ref-12" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
-<version>21</version>
+<version>50</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>

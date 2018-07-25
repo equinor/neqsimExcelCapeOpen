@@ -8,7 +8,6 @@ using CAPEOPEN100;
 using DatabaseConnection;
 using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Win32;
-//using CAPEOPEN110;
 
 namespace CapeOpenThermo
 {
@@ -18,16 +17,21 @@ namespace CapeOpenThermo
     [ProgId("Statoil.CapeOpen10")]
     public class ThermoPackageManagerCO10 : ICapeIdentification, ICapeThermoSystem
     {
-        public string ComponentDescription
+        public string componentDescription = "NeqSim Thermo  Package 10 online";
+        public string componentName = "NeqSim Thermo Package  10 online";
+
+        public object SimulationContextLocal;
+
+        public virtual string ComponentDescription
         {
-            get => ComponentDescription;
-            set => ComponentDescription = value;
+            get => componentDescription;
+            set => componentDescription = value;
         }
 
-        public string ComponentName
+        public virtual string ComponentName
         {
-            get => ComponentName;
-            set => ComponentName = value;
+            get => componentName;
+            set => componentName = value;
         }
 
         public object GetPropertyPackages()

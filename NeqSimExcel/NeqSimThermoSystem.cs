@@ -19,5 +19,18 @@ namespace NeqSimExcel
         {
             thermoSystem = system;
         }
+
+        public static void setDatabasePath(string databaseType, string databasePath)
+        {
+            if (databaseType.Equals("MSAccess"))
+            {
+                neqsim.util.database.NeqSimDataBase.setDataBaseType("MSAccessUCanAccess");
+                neqsim.util.database.NeqSimDataBase.dataBasePathMSAccess = databasePath;
+            }
+            if (databaseType.Equals("mySQL"))
+            {
+                neqsim.util.database.NeqSimDataBase.setDataBaseType("mySQL");
+            }
+    }
     }
 }

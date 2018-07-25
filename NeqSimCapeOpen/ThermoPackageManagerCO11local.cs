@@ -16,18 +16,21 @@ namespace CapeOpenThermo
     public class ThermoPackageManagerCO11local : ICapeIdentification, ICapeThermoPropertyPackageManager, ICapeUtilities,
         IDisposable
     {
+        public string componentDescription = "NeqSim Thermo  Package local";
+        public string componentName = "NeqSim Thermo Package local";
+
         public object SimulationContextLocal;
 
-        public string ComponentDescription
+         public virtual string ComponentDescription
         {
-            get => ComponentDescription;
-            set => ComponentDescription = value;
+            get => componentDescription;
+            set => componentDescription = value;
         }
 
-        public string ComponentName
+        public virtual string ComponentName
         {
-            get => ComponentName;
-            set => ComponentName = value;
+            get => componentName;
+            set => componentName = value;
         }
 
         public object GetPropertyPackageList()

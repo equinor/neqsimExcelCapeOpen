@@ -55,12 +55,10 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            propertyComboBox.SelectedIndexChanged += propertyComboBox_SelectedIndexChanged;
-            propertyComboBox.Click += comboBox1_SelectedIndexChanged;
-            phaseNameCombobox.SelectedIndexChanged += phaseNameCombobox_SelectedIndexChanged;
-            okbutton.Click += okbutton_Click;
-            Startup += Sheet13_Startup;
-            Shutdown += Sheet13_Shutdown;
+            this.okbutton.Click += new System.EventHandler(this.okbutton_Click);
+            this.Startup += new System.EventHandler(this.Sheet13_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet13_Shutdown);
+
         }
 
         #endregion

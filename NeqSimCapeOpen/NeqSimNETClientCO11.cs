@@ -26,16 +26,17 @@ namespace CapeOpenThermo
             properties = neqsimService.readCapeOpenProperties11();
 
             nNumComp = neqsimService.getNumberOfComponents();
-            twoProp = new[]
-                {"surfaceTension"}; // null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
+            twoProp = null;//new[]
+               // {"surfaceTension"}; // null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
             oilFractionIDs = neqsimService.getOilFractionIDs();
-            ComponentName = packageDesc;
-            ComponentDescription = packageDesc; //"NeqSim thermo package";
-            constPropList = new[]
+           constPropList = new[]
             {
                 "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure",
                 "criticalTemperature", "criticalVolume"
             };
+            componentName = packageDesc;
+            componentDescription = packageDesc;
+
         }
 
         public NeqSimNETClientCO11(string package, string packageName)
@@ -49,11 +50,10 @@ namespace CapeOpenThermo
             properties = neqsimService.readCapeOpenProperties11();
 
             nNumComp = neqsimService.getNumberOfComponents();
-            twoProp = new[]
-                {"surfaceTension"}; // null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
+            twoProp = null;//new[] {"surfaceTension"}; // null; new string[] { "surfaceTension" };//, "kvalue", "logKvalue" }; =null;//
             oilFractionIDs = neqsimService.getOilFractionIDs();
-            ComponentName = packageName;
-            ComponentDescription = packageName;
+            componentName = packageName;
+            componentDescription = packageName;
             constPropList = new[]
             {
                 "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure",

@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(28)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(20)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet27 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -23,6 +23,10 @@ namespace NeqSimExcel {
         internal Microsoft.Office.Tools.Excel.Controls.ComboBox selectFluidCombobox;
         
         internal Microsoft.Office.Tools.Excel.Controls.Button calcButton;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button1;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.ComboBox selectLocalFLuidCOmboBox;
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -135,6 +139,8 @@ namespace NeqSimExcel {
         private void InitializeControls() {
             this.selectFluidCombobox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61", "1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61", this, "selectFluidCombobox");
             this.calcButton = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "28C3B6D13208972429F293A32C2113DBFA4122", "28C3B6D13208972429F293A32C2113DBFA4122", this, "calcButton");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "34C21F4CC35F0D345A83BF2434BCE6DF1104B3", "34C21F4CC35F0D345A83BF2434BCE6DF1104B3", this, "button1");
+            this.selectLocalFLuidCOmboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "45D33512E48096441A0497A34BF5576B3AED64", "45D33512E48096441A0497A34BF5576B3AED64", this, "selectLocalFLuidCOmboBox");
         }
         
         /// 
@@ -156,10 +162,25 @@ namespace NeqSimExcel {
             this.calcButton.Text = "Ok";
             this.calcButton.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Name = "button1";
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // selectLocalFLuidCOmboBox
+            // 
+            this.selectLocalFLuidCOmboBox.Name = "selectLocalFLuidCOmboBox";
+            this.selectLocalFLuidCOmboBox.Text = "Select fluid";
+            // 
             // Sheet27
             // 
             this.selectFluidCombobox.BindingContext = this.BindingContext;
             this.calcButton.BindingContext = this.BindingContext;
+            this.button1.BindingContext = this.BindingContext;
+            this.selectLocalFLuidCOmboBox.BindingContext = this.BindingContext;
         }
         
         /// 

@@ -82,6 +82,7 @@ namespace NeqSimExcel
             this.numberOfPseudoCompComboBox.SelectedIndexChanged += new System.EventHandler(this.numberOfPseudoCompComboBox_SelectedIndexChanged);
             this.inhibitorCalcTypecomboBox.SelectedIndexChanged += new System.EventHandler(this.inhibitorCalcTypecomboBox_SelectedIndexChanged);
             this.chemicalReactionsCheckBox.CheckedChanged += new System.EventHandler(this.chemicalReactionsCheckBox_CheckedChanged);
+            this.dataBaseCheckBox.CheckedChanged += new System.EventHandler(this.dataBase_CheckedChanged);
             this.Startup += new System.EventHandler(this.Sheet1_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet1_Shutdown);
 
@@ -91,6 +92,7 @@ namespace NeqSimExcel
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
             if (sumMolPrecentRange.Value2 < 1e-100)
             {
                 statusRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
@@ -412,6 +414,18 @@ namespace NeqSimExcel
         private void EoScombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataBase_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dataBaseCheckBox.Checked)
+            {
+               NeqSimThermoSystem.setDatabasePath("MSAccess", "C:\\Program Files (x86)\\Equinor\\NeqSim2018\\data\\NeqSimDatabase.mdb");
+            }
+            else
+            {
+                NeqSimThermoSystem.setDatabasePath("mySQL","");
+            }
         }
 
         private void noPlusClicked(object sender, EventArgs e)

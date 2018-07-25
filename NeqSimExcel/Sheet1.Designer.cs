@@ -66,6 +66,8 @@ namespace NeqSimExcel {
         
         internal Microsoft.Office.Tools.Excel.Controls.CheckBox chemicalReactionsCheckBox;
         
+        internal Microsoft.Office.Tools.Excel.Controls.CheckBox dataBaseCheckBox;
+        
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -198,6 +200,7 @@ namespace NeqSimExcel {
             this.numbPseudoLabel = new Microsoft.Office.Tools.Excel.Controls.Label(Globals.Factory, this.ItemProvider, this.HostContext, "277E7FC0E21783246212B58B2585CA2DA9FA62", "277E7FC0E21783246212B58B2585CA2DA9FA62", this, "numbPseudoLabel");
             this.inhibitorCalcTypecomboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "291D019922DD0C241822A1892E3343DA966B02", "291D019922DD0C241822A1892E3343DA966B02", this, "inhibitorCalcTypecomboBox");
             this.chemicalReactionsCheckBox = new Microsoft.Office.Tools.Excel.Controls.CheckBox(Globals.Factory, this.ItemProvider, this.HostContext, "204D97F042C4FD24B3E2904A251AE0D274D8F2", "204D97F042C4FD24B3E2904A251AE0D274D8F2", this, "chemicalReactionsCheckBox");
+            this.dataBaseCheckBox = new Microsoft.Office.Tools.Excel.Controls.CheckBox(Globals.Factory, this.ItemProvider, this.HostContext, "27955D7292120224D082AA572A778AF97E39E2", "27955D7292120224D082AA572A778AF97E39E2", this, "dataBaseCheckBox");
         }
         
         /// 
@@ -385,6 +388,12 @@ namespace NeqSimExcel {
             this.chemicalReactionsCheckBox.Name = "chemicalReactionsCheckBox";
             this.chemicalReactionsCheckBox.Text = "Add chemical reactions";
             // 
+            // dataBaseCheckBox
+            // 
+            this.dataBaseCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.dataBaseCheckBox.Name = "dataBaseCheckBox";
+            this.dataBaseCheckBox.Text = "Local database";
+            // 
             // Sheet1
             // 
             this.button1.BindingContext = this.BindingContext;
@@ -410,6 +419,7 @@ namespace NeqSimExcel {
             this.numbPseudoLabel.BindingContext = this.BindingContext;
             this.inhibitorCalcTypecomboBox.BindingContext = this.BindingContext;
             this.chemicalReactionsCheckBox.BindingContext = this.BindingContext;
+            this.dataBaseCheckBox.BindingContext = this.BindingContext;
         }
         
         /// 

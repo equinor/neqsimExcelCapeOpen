@@ -79,13 +79,12 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            calcuateButton.Click += calcuateButton_Click;
-            fluidsComboBox.SelectedIndexChanged += fluidsComboBox_SelectedIndexChanged;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
-            linkLabel3.LinkClicked += linkLabel3_LinkClicked;
-            Startup += Sheet23_Startup;
-            Shutdown += Sheet23_Shutdown;
+            this.calcuateButton.Click += new System.EventHandler(this.calcuateButton_Click);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.Startup += new System.EventHandler(this.Sheet23_Startup);
+
         }
 
         #endregion

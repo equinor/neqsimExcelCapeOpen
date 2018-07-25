@@ -1,32 +1,9 @@
-﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel"
-                   hostitem:className="Sheet17" hostitem:identifier="Sheet17" hostitem:primaryCookie="Sheet17"
-                   hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="18"
-                   xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBoxGas"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
-                                    hostitem:primaryCookie="17A43E074162A2147ED1B3F91ADBE24223ADC1"
-                                    hostitem:extenderCookie="17A43E074162A2147ED1B3F91ADBE24223ADC1"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBoxLiquid"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox"
-                                    hostitem:primaryCookie="203310F762F6B524A0B2B83621DE236AA6F882"
-                                    hostitem:extenderCookie="203310F762F6B524A0B2B83621DE236AA6F882"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calculateButton"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button"
-                                    hostitem:primaryCookie="3F098DB5437383341A839CDE34AC1F7DCFBFA3"
-                                    hostitem:extenderCookie="3F098DB5437383341A839CDE34AC1F7DCFBFA3"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel1"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
-                                    hostitem:primaryCookie="401F28DAB42B9544FFF4A9CC4B49A9EF053184"
-                                    hostitem:extenderCookie="401F28DAB42B9544FFF4A9CC4B49A9EF053184"
-                                    hostitem:modifier="Internal" />
-  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel2"
-                                    hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel"
-                                    hostitem:primaryCookie="550AA336554E21545B259DBA51805BC9CD7805"
-                                    hostitem:extenderCookie="550AA336554E21545B259DBA51805BC9CD7805"
-                                    hostitem:modifier="Internal" />
+﻿<hostitem:hostItem hostitem:baseType="Microsoft.Office.Tools.Excel.WorksheetBase" hostitem:namespace="NeqSimExcel" hostitem:className="Sheet17" hostitem:identifier="Sheet17" hostitem:primaryCookie="Sheet17" hostitem:factoryType="Microsoft.Office.Tools.Excel.Factory" hostitem:startupIndex="23" xmlns:hostitem="http://schemas.microsoft.com/2004/VisualStudio/Tools/Applications/HostItem.xsd">
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBoxGas" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="17A43E074162A2147ED1B3F91ADBE24223ADC1" hostitem:extenderCookie="17A43E074162A2147ED1B3F91ADBE24223ADC1" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="comboBox1" hostitem:identifier="fluidListNameComboBoxLiquid" hostitem:type="Microsoft.Office.Tools.Excel.Controls.ComboBox" hostitem:primaryCookie="203310F762F6B524A0B2B83621DE236AA6F882" hostitem:extenderCookie="203310F762F6B524A0B2B83621DE236AA6F882" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="button1" hostitem:identifier="calculateButton" hostitem:type="Microsoft.Office.Tools.Excel.Controls.Button" hostitem:primaryCookie="3F098DB5437383341A839CDE34AC1F7DCFBFA3" hostitem:extenderCookie="3F098DB5437383341A839CDE34AC1F7DCFBFA3" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel1" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="401F28DAB42B9544FFF4A9CC4B49A9EF053184" hostitem:extenderCookie="401F28DAB42B9544FFF4A9CC4B49A9EF053184" hostitem:modifier="Internal" />
+  <hostitem:windowsFormsHostControl hostitem:name="linkLabel1" hostitem:identifier="linkLabel2" hostitem:type="Microsoft.Office.Tools.Excel.Controls.LinkLabel" hostitem:primaryCookie="550AA336554E21545B259DBA51805BC9CD7805" hostitem:extenderCookie="550AA336554E21545B259DBA51805BC9CD7805" hostitem:modifier="Internal" />
   <hostitem:componentsDeclaration />
   <hostitem:componentsInitialization><![CDATA[<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
 <SOAP-ENV:Body>
@@ -1232,12 +1209,12 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeFieldReferenceExpression id="ref-252" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<targetObject href="#ref-298"/>
+<targetObject href="#ref-315"/>
 <fieldName href="#ref-245"/>
-<CodeObject_x002B_userData href="#ref-315"/>
+<CodeObject_x002B_userData href="#ref-316"/>
 </a1:CodeFieldReferenceExpression>
 <a1:CodeExpressionCollection id="ref-253" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-316"/>
+<CollectionBase_x002B_list href="#ref-317"/>
 </a1:CodeExpressionCollection>
 <a4:ListDictionary id="ref-254" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1262,7 +1239,7 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeExpressionCollection id="ref-259" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-317"/>
+<CollectionBase_x002B_list href="#ref-318"/>
 </a1:CodeExpressionCollection>
 <a4:ListDictionary id="ref-260" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1335,12 +1312,12 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeFieldReferenceExpression id="ref-275" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<targetObject href="#ref-298"/>
+<targetObject href="#ref-319"/>
 <fieldName href="#ref-268"/>
-<CodeObject_x002B_userData href="#ref-318"/>
+<CodeObject_x002B_userData href="#ref-320"/>
 </a1:CodeFieldReferenceExpression>
 <a1:CodeExpressionCollection id="ref-276" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-319"/>
+<CollectionBase_x002B_list href="#ref-321"/>
 </a1:CodeExpressionCollection>
 <a4:ListDictionary id="ref-277" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1365,7 +1342,7 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeExpressionCollection id="ref-281" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-320"/>
+<CollectionBase_x002B_list href="#ref-322"/>
 </a1:CodeExpressionCollection>
 <a4:ListDictionary id="ref-282" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1440,7 +1417,7 @@
 <SOAP-ENC:Array id="ref-297" SOAP-ENC:arrayType="xsd:anyType[0]">
 </SOAP-ENC:Array>
 <a1:CodeThisReferenceExpression id="ref-298" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CodeObject_x002B_userData href="#ref-321"/>
+<CodeObject_x002B_userData href="#ref-323"/>
 </a1:CodeThisReferenceExpression>
 <a4:ListDictionary id="ref-299" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1476,14 +1453,14 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeTypeReference id="ref-305" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<baseType id="ref-322">System.Drawing.SystemColors</baseType>
+<baseType id="ref-324">System.Drawing.SystemColors</baseType>
 <isInterface>false</isInterface>
 <arrayRank>0</arrayRank>
 <arrayElementType xsi:null="1"/>
-<typeArguments href="#ref-323"/>
+<typeArguments href="#ref-325"/>
 <referenceOptions>0</referenceOptions>
 <needsFixup>true</needsFixup>
-<CodeObject_x002B_userData href="#ref-324"/>
+<CodeObject_x002B_userData href="#ref-326"/>
 </a1:CodeTypeReference>
 <a4:ListDictionary id="ref-306" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1502,14 +1479,14 @@
 <_version>0</_version>
 </a2:ArrayList>
 <a1:CodeTypeReference id="ref-309" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<baseType id="ref-325">System.Drawing.SystemColors</baseType>
+<baseType id="ref-327">System.Drawing.SystemColors</baseType>
 <isInterface>false</isInterface>
 <arrayRank>0</arrayRank>
 <arrayElementType xsi:null="1"/>
-<typeArguments href="#ref-326"/>
+<typeArguments href="#ref-328"/>
 <referenceOptions>0</referenceOptions>
 <needsFixup>true</needsFixup>
-<CodeObject_x002B_userData href="#ref-327"/>
+<CodeObject_x002B_userData href="#ref-329"/>
 </a1:CodeTypeReference>
 <a4:ListDictionary id="ref-310" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
@@ -1537,68 +1514,86 @@
 <_size>0</_size>
 <_version>0</_version>
 </a2:ArrayList>
-<a4:ListDictionary id="ref-315" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<a1:CodeThisReferenceExpression id="ref-315" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<CodeObject_x002B_userData href="#ref-330"/>
+</a1:CodeThisReferenceExpression>
+<a4:ListDictionary id="ref-316" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
 <version>0</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
-<a2:ArrayList id="ref-316" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
-<_items href="#ref-297"/>
-<_size>0</_size>
-<_version>0</_version>
-</a2:ArrayList>
 <a2:ArrayList id="ref-317" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
 <_items href="#ref-297"/>
 <_size>0</_size>
 <_version>0</_version>
 </a2:ArrayList>
-<a4:ListDictionary id="ref-318" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<a2:ArrayList id="ref-318" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-297"/>
+<_size>0</_size>
+<_version>0</_version>
+</a2:ArrayList>
+<a1:CodeThisReferenceExpression id="ref-319" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<CodeObject_x002B_userData href="#ref-331"/>
+</a1:CodeThisReferenceExpression>
+<a4:ListDictionary id="ref-320" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
 <version>0</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
-<a2:ArrayList id="ref-319" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<a2:ArrayList id="ref-321" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
 <_items href="#ref-297"/>
 <_size>0</_size>
 <_version>0</_version>
 </a2:ArrayList>
-<a2:ArrayList id="ref-320" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<a2:ArrayList id="ref-322" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
 <_items href="#ref-297"/>
 <_size>0</_size>
 <_version>0</_version>
 </a2:ArrayList>
-<a4:ListDictionary id="ref-321" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<a4:ListDictionary id="ref-323" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
 <version>0</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
-<a1:CodeTypeReferenceCollection id="ref-323" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-328"/>
+<a1:CodeTypeReferenceCollection id="ref-325" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<CollectionBase_x002B_list href="#ref-332"/>
 </a1:CodeTypeReferenceCollection>
-<a4:ListDictionary id="ref-324" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<a4:ListDictionary id="ref-326" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
 <version>0</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
-<a1:CodeTypeReferenceCollection id="ref-326" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
-<CollectionBase_x002B_list href="#ref-329"/>
+<a1:CodeTypeReferenceCollection id="ref-328" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/System.CodeDom/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<CollectionBase_x002B_list href="#ref-333"/>
 </a1:CodeTypeReferenceCollection>
-<a4:ListDictionary id="ref-327" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<a4:ListDictionary id="ref-329" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
 <head xsi:null="1"/>
 <version>0</version>
 <count>0</count>
 <comparer xsi:null="1"/>
 </a4:ListDictionary>
-<a2:ArrayList id="ref-328" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<a4:ListDictionary id="ref-330" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<head xsi:null="1"/>
+<version>0</version>
+<count>0</count>
+<comparer xsi:null="1"/>
+</a4:ListDictionary>
+<a4:ListDictionary id="ref-331" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/System.Collections.Specialized/System%2C%20Version%3D4.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db77a5c561934e089">
+<head xsi:null="1"/>
+<version>0</version>
+<count>0</count>
+<comparer xsi:null="1"/>
+</a4:ListDictionary>
+<a2:ArrayList id="ref-332" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
 <_items href="#ref-297"/>
 <_size>0</_size>
 <_version>0</_version>
 </a2:ArrayList>
-<a2:ArrayList id="ref-329" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<a2:ArrayList id="ref-333" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
 <_items href="#ref-297"/>
 <_size>0</_size>
 <_version>0</_version>

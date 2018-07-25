@@ -31,8 +31,11 @@ namespace CapeOpenThermo
         {
         }
 
-        public NeqSimNETClientCO10(string package)
+        public NeqSimNETClientCO10(string packageDesc)
         {
+            var packages = packageDesc.Split(' ');
+            var package = packages[0];
+
             neqsimService = new NeqSimNETService();
             neqsimService.readFluidFromGQIT(Convert.ToInt32(package));
             neqsimService.setPackageID(Convert.ToInt32(package));
@@ -47,18 +50,21 @@ namespace CapeOpenThermo
                 "liquidDensityAt25C", "molecularWeight", "normalBoilingPoint", "acentricFactor", "criticalPressure",
                 "criticalTemperature", "criticalVolume"
             };
+            componentName = packageDesc;
+            componentDescription = packageDesc; //"NeqSim thermo package";
         }
 
-        public string ComponentName
+
+        public virtual string ComponentDescription
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => componentDescription;
+            set => componentDescription = value;
         }
 
-        public string ComponentDescription
+        public virtual string ComponentName
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => componentName;
+            set => componentName = value;
         }
 
 

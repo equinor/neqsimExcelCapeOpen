@@ -26,7 +26,8 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Startup += new System.EventHandler(this.Sheet4_Startup);
 
         }
 
@@ -124,11 +125,6 @@ namespace NeqSimExcel
                 Title: "Hydrate equilibrium temperatures",
                 CategoryTitle: "Temperature [C]",
                 ValueTitle: "Pressure [bara]");
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

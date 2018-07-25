@@ -23,10 +23,11 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            calcButton.Click += button1_Click;
-            ActivateEvent += activteSHeet;
-            Startup += Sheet28_Startup;
-            Shutdown += Sheet28_Shutdown;
+            this.calcButton.Click += new System.EventHandler(this.button1_Click);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.activteSHeet);
+            this.Startup += new System.EventHandler(this.Sheet28_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet28_Shutdown);
+
         }
 
         #endregion

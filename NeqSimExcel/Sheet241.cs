@@ -28,40 +28,31 @@ namespace NeqSimExcel
 
 
             calculationComboBox.SelectedIndex = 0;
+        }
+
+        private void activateSheet()
+        {
 
             comp1ComboBox.Items.Clear();
-
+            comp2ComboBox.Items.Clear();
 
             var thermoSystem = NeqSimThermoSystem.getThermoSystem();
             try
             {
                 var names = thermoSystem.getComponentNames();
 
-                foreach (var name in names) comp1ComboBox.Items.Add(name);
-                ;
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
-
-            comp2ComboBox.Items.Clear();
-
-
-            thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            try
-            {
-                var names = thermoSystem.getComponentNames();
-
                 foreach (var name in names)
-                    if (!comp1ComboBox.SelectedItem.Equals(name))
-                        comp2ComboBox.Items.Add(name);
-                ;
+                {
+                    comp1ComboBox.Items.Add(name);
+                    comp2ComboBox.Items.Add(name);
+                }
             }
             catch (Exception ex)
             {
                 ex.ToString();
             }
+            comp1ComboBox.SelectedIndex = 0;
+            comp2ComboBox.SelectedIndex = 0;
         }
 
         private void Sheet24_Shutdown(object sender, EventArgs e)
@@ -76,86 +67,29 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            comp2ComboBox.Click += comp2ComboBox_SelectedIndexChanged;
-            comp1ComboBox.Click += comp1ComboBox_SelectedIndexChanged;
-            calculationComboBox.Click += calculationComboBox_SelectedIndexChanged;
-            button1.Click += button1_Click;
-            Startup += Sheet24_Startup;
-            Shutdown += Sheet24_Shutdown;
+            this.calculationComboBox.SelectedIndexChanged += new System.EventHandler(this.calculationComboBox_SelectedIndexChanged);
+            this.calculationComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.calculationCombobCLicked);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.activateSheet);
+            this.Startup += new System.EventHandler(this.Sheet24_Startup);
+
         }
 
         #endregion
 
         private void calculationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            calculationComboBox.Items.Clear();
-
-
-            propertyNames.ForEach(delegate(string name) { calculationComboBox.Items.Add(name); });
-
-
-            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            try
-            {
-                var names = thermoSystem.getComponentNames();
-
-                foreach (var name in names)
-                    if (!calculationComboBox.Items.Contains("wt fraction " + name))
-                        calculationComboBox.Items.Add("wt fraction " + name);
-                ;
-                foreach (var name in names)
-                    if (!calculationComboBox.Items.Contains("activity coefficient " + name))
-                        calculationComboBox.Items.Add("activity coefficient " + name);
-                ;
-                foreach (var name in names)
-                    if (!calculationComboBox.Items.Contains("fugacity coefficient " + name))
-                        calculationComboBox.Items.Add("fugacity coefficient " + name);
-                ;
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
+           
         }
 
         private void comp1ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comp1ComboBox.Items.Clear();
 
-
-            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            try
-            {
-                var names = thermoSystem.getComponentNames();
-
-                foreach (var name in names) comp1ComboBox.Items.Add(name);
-                ;
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
         }
 
         private void comp2ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comp2ComboBox.Items.Clear();
 
-
-            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
-            try
-            {
-                var names = thermoSystem.getComponentNames();
-
-                foreach (var name in names)
-                    if (!comp1ComboBox.SelectedItem.Equals(name))
-                        comp2ComboBox.Items.Add(name);
-                ;
-            }
-            catch (Exception ex)
-            {
-                ex.ToString();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -274,6 +208,38 @@ namespace NeqSimExcel
 
                 thermoSystem.addComponent(comp1Numb, step);
                 thermoSystem.addComponent(comp2Numb, -step);
+            }
+        }
+
+        private void calculationCombobCLicked(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            calculationComboBox.Items.Clear();
+
+
+            propertyNames.ForEach(delegate (string name) { calculationComboBox.Items.Add(name); });
+
+
+            var thermoSystem = NeqSimThermoSystem.getThermoSystem();
+            try
+            {
+                var names = thermoSystem.getComponentNames();
+
+                foreach (var name in names)
+                    if (!calculationComboBox.Items.Contains("wt fraction " + name))
+                        calculationComboBox.Items.Add("wt fraction " + name);
+                ;
+                foreach (var name in names)
+                    if (!calculationComboBox.Items.Contains("activity coefficient " + name))
+                        calculationComboBox.Items.Add("activity coefficient " + name);
+                ;
+                foreach (var name in names)
+                    if (!calculationComboBox.Items.Contains("fugacity coefficient " + name))
+                        calculationComboBox.Items.Add("fugacity coefficient " + name);
+                ;
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
             }
         }
     }

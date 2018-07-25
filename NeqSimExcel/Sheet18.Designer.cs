@@ -13,7 +13,7 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(20)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(22)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet18 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
@@ -39,6 +39,8 @@ namespace NeqSimExcel {
         internal Microsoft.Office.Tools.Excel.Controls.ComboBox aqueousConduvtivityComboBox;
         
         internal Microsoft.Office.Tools.Excel.Controls.Button button1;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.Button button2;
         
         internal System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         
@@ -161,6 +163,7 @@ namespace NeqSimExcel {
             this.gasCondutivityComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "13E1C5BA71AC7C14A361AD7410D08BDB74F5C1", "13E1C5BA71AC7C14A361AD7410D08BDB74F5C1", this, "gasCondutivityComboBox");
             this.aqueousConduvtivityComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "16D4EADA81744B14F1A18BDE1B0C049C53E8A1", "16D4EADA81744B14F1A18BDE1B0C049C53E8A1", this, "aqueousConduvtivityComboBox");
             this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1DBCC408B1A98414DB418B8514B308F95DA541", "1DBCC408B1A98414DB418B8514B308F95DA541", this, "button1");
+            this.button2 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "181531CCA1CD421483118179141CC2BF4410A1", "181531CCA1CD421483118179141CC2BF4410A1", this, "button2");
         }
         
         /// 
@@ -277,6 +280,17 @@ namespace NeqSimExcel {
             this.button1.Text = "Set";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Name = "button2";
+            this.button2.Text = "Set";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // folderBrowserDialog1
+            // 
+            // 
             // Sheet18
             // 
             this.gasViscosityCommboBox.BindingContext = this.BindingContext;
@@ -289,6 +303,7 @@ namespace NeqSimExcel {
             this.gasCondutivityComboBox.BindingContext = this.BindingContext;
             this.aqueousConduvtivityComboBox.BindingContext = this.BindingContext;
             this.button1.BindingContext = this.BindingContext;
+            this.button2.BindingContext = this.BindingContext;
         }
         
         /// 

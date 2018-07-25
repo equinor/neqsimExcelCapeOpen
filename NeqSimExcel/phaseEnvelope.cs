@@ -27,9 +27,10 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            button1.Click += button1_Click;
-            Startup += Sheet5_Startup;
-            Shutdown += Sheet5_Shutdown;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Startup += new System.EventHandler(this.Sheet5_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet5_Shutdown);
+
         }
 
         #endregion

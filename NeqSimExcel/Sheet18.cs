@@ -22,18 +22,20 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            gasViscosityCommboBox.SelectedIndexChanged += EoScombobox_SelectedIndexChanged;
-            oilViscosityCmboBox.SelectedIndexChanged += oilViscosityCmboBox_SelectedIndexChanged;
-            aqueousViscositycomboBox.SelectedIndexChanged += aqueousViscositycomboBox_SelectedIndexChanged;
-            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
-            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
-            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
-            oilCOnductivityComboBox.SelectedIndexChanged += oilCOnductivityComboBox_SelectedIndexChanged;
-            gasCondutivityComboBox.SelectedIndexChanged += comboBox8_SelectedIndexChanged;
-            aqueousConduvtivityComboBox.SelectedIndexChanged += aqueousConduvtivityComboBox_SelectedIndexChanged;
-            button1.Click += button1_Click;
-            Startup += Sheet18_Startup;
-            Shutdown += Sheet18_Shutdown;
+            this.gasViscosityCommboBox.SelectedIndexChanged += new System.EventHandler(this.EoScombobox_SelectedIndexChanged);
+            this.oilViscosityCmboBox.SelectedIndexChanged += new System.EventHandler(this.oilViscosityCmboBox_SelectedIndexChanged);
+            this.aqueousViscositycomboBox.SelectedIndexChanged += new System.EventHandler(this.aqueousViscositycomboBox_SelectedIndexChanged);
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged_1);
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.oilCOnductivityComboBox.SelectedIndexChanged += new System.EventHandler(this.oilCOnductivityComboBox_SelectedIndexChanged);
+            this.gasCondutivityComboBox.SelectedIndexChanged += new System.EventHandler(this.gasCondutivityComboBox_SelectedIndexChanged);
+            this.aqueousConduvtivityComboBox.SelectedIndexChanged += new System.EventHandler(this.aqueousConduvtivityComboBox_SelectedIndexChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            this.Startup += new System.EventHandler(this.Sheet18_Startup);
+
         }
 
         #endregion
@@ -154,14 +156,39 @@ namespace NeqSimExcel
         {
             changeConductivityModel("aqueous", aqueousConduvtivityComboBox.SelectedItem.ToString());
         }
+        
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var openFileDIalog = new OpenFileDialog();
+            openFileDIalog.ShowDialog();
+            var localFileName = openFileDIalog.FileName;
+            Range["B26"].Value2 = localFileName;
+            NeqSimThermoSystem.setDatabasePath("MSAccess", localFileName);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             var openFileDIalog = new FolderBrowserDialog();
             openFileDIalog.ShowDialog();
             var localFileName = openFileDIalog.SelectedPath;
             Range["B23"].Value2 = localFileName;
             NeqSimThermoSystem.LocalFilePath = localFileName;
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gasCondutivityComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

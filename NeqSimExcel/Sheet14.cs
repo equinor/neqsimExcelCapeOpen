@@ -28,18 +28,21 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            unitComboBox.SelectedIndexChanged += unitComboBox_SelectedIndexChanged;
-            button1.Click += button1_Click;
-            calcpHButton.Click += calcpHButton_Click;
-            initWaterButton.Click += initWaterButton_Click;
-            Startup += Sheet14_Startup;
-            Shutdown += Sheet14_Shutdown;
+            this.unitComboBox.SelectedIndexChanged += new System.EventHandler(this.unitComboBox_SelectedIndexChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.calcpHButton.Click += new System.EventHandler(this.calcpHButton_Click);
+            this.initWaterButton.Click += new System.EventHandler(this.initWaterButton_Click);
+            this.Startup += new System.EventHandler(this.Sheet14_Startup);
+            this.Shutdown += new System.EventHandler(this.Sheet14_Shutdown);
+
         }
 
         #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var rangeClear = Range["E22", "Y200"];
+            rangeClear.Clear();
             initWaterButton_Click(sender, e);
             statusRange.Value2 = "converting to electrolyte model....please wait...";
             var thermoSystem = NeqSimThermoSystem.getThermoSystem();
@@ -162,7 +165,7 @@ namespace NeqSimExcel
 
         private void calcpHButton_Click(object sender, EventArgs e)
         {
-            var rangeClear = Range["E22", "L100"];
+            var rangeClear = Range["E22", "Y200"];
             rangeClear.Clear();
 
             initWaterButton_Click(sender, e);

@@ -17,22 +17,28 @@ namespace CapeOpenThermo
     [ProgId("Statoil.CapeOpen")]
     public class ThermoPackageManagerCO11 : ICapeIdentification, ICapeThermoPropertyPackageManager
     {
-        public string ComponentDescription
+        public string componentDescription = "NeqSim Thermo  Package online";
+        public string componentName = "NeqSim Thermo  Package online";
+
+        public object SimulationContextLocal;
+
+        public virtual string ComponentDescription
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => componentDescription;
+            set => componentDescription = value;
         }
 
-        public string ComponentName
+        public virtual string ComponentName
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => componentName;
+            set => componentName = value;
         }
 
         public object GetPropertyPackageList()
         {
             var test = new fluidinfoTableAdapter();
             var userName = WindowsIdentity.GetCurrent().Name;
+            userName = userName.Replace("EQUINOR-NET\\", "");
             userName = userName.Replace("STATOIL-NET\\", "");
             userName = userName.Replace("WIN-NTNU-NO\\", "");
             userName = userName.ToLower();
