@@ -148,13 +148,13 @@ namespace NeqSimExcel {
             // 
             // propertyComboBox
             // 
+            this.propertyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.propertyComboBox.Name = "propertyComboBox";
-            this.propertyComboBox.Text = "comboBox1";
             // 
             // phaseNameCombobox
             // 
+            this.phaseNameCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.phaseNameCombobox.Name = "phaseNameCombobox";
-            this.phaseNameCombobox.Text = "comboBox2";
             // 
             // okbutton
             // 

@@ -70,7 +70,7 @@ namespace NeqSimExcel
                 Globals.Sheet3.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet5.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet13.Visible = XlSheetVisibility.xlSheetVisible;
-                Globals.Sheet14.Visible = XlSheetVisibility.xlSheetVisible;
+                Globals.Sheet29.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet2.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet11.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet29.Visible = XlSheetVisibility.xlSheetVisible;
@@ -80,7 +80,7 @@ namespace NeqSimExcel
                 Globals.Sheet3.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet5.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet13.Visible = XlSheetVisibility.xlSheetHidden;
-                Globals.Sheet14.Visible = XlSheetVisibility.xlSheetHidden;
+                Globals.Sheet29.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet2.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet11.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet29.Visible = XlSheetVisibility.xlSheetHidden;

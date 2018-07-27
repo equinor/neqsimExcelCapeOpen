@@ -10,6 +10,9 @@ namespace NeqSimExcel
     {
         private void Sheet15_Startup(object sender, EventArgs e)
         {
+            PVTcalcCombobox.SelectedIndex = 0;
+            selectFluidCombobox.Visible = false;
+
         }
 
         private void Sheet15_Shutdown(object sender, EventArgs e)

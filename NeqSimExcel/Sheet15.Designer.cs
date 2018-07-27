@@ -159,6 +159,7 @@ namespace NeqSimExcel {
             // 
             // PVTcalcCombobox
             // 
+            this.PVTcalcCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PVTcalcCombobox.Items.AddRange(new object[] {
                         "GOR",
                         "CVD",
@@ -168,7 +169,6 @@ namespace NeqSimExcel {
                         "Wax content",
                         "Viscosity"});
             this.PVTcalcCombobox.Name = "PVTcalcCombobox";
-            this.PVTcalcCombobox.Text = "GOR";
             // 
             // calcCompBUtton
             // 
@@ -180,8 +180,8 @@ namespace NeqSimExcel {
             // 
             // selectFluidCombobox
             // 
+            this.selectFluidCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectFluidCombobox.Name = "selectFluidCombobox";
-            this.selectFluidCombobox.Text = "Select fluid";
             // 
             // Sheet15
             // 

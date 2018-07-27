@@ -154,10 +154,12 @@ namespace NeqSimExcel {
             // 
             // fluidListNameComboBoxGas
             // 
+            this.fluidListNameComboBoxGas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fluidListNameComboBoxGas.Name = "fluidListNameComboBoxGas";
             // 
             // fluidListNameComboBoxLiquid
             // 
+            this.fluidListNameComboBoxLiquid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fluidListNameComboBoxLiquid.Name = "fluidListNameComboBoxLiquid";
             // 
             // calculateButton

@@ -151,14 +151,17 @@ namespace NeqSimExcel {
             // 
             // comp2ComboBox
             // 
+            this.comp2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comp2ComboBox.Name = "comp2ComboBox";
             // 
             // comp1ComboBox
             // 
+            this.comp1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comp1ComboBox.Name = "comp1ComboBox";
             // 
             // calculationComboBox
             // 
+            this.calculationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.calculationComboBox.Name = "calculationComboBox";
             // 
             // button1

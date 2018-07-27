@@ -29,6 +29,16 @@ namespace NeqSimExcel
         private void Sheet23_Startup(object sender, EventArgs e)
         {
             statusRange = Range["C24"];
+            
+        }
+
+        private void Sheet23_Shutdown(object sender, EventArgs e)
+        {
+        }
+
+        private void ActivateWorksheet()
+        {
+            fluidsComboBox.Items.Clear();
             try
             {
                 var test = new fluidinfoTableAdapter();
@@ -67,22 +77,19 @@ namespace NeqSimExcel
             }
         }
 
-        private void Sheet23_Shutdown(object sender, EventArgs e)
-        {
-        }
-
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
             this.calcuateButton.Click += new System.EventHandler(this.calcuateButton_Click);
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorksheet);
             this.Startup += new System.EventHandler(this.Sheet23_Startup);
 
         }

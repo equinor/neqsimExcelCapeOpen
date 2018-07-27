@@ -16,8 +16,19 @@ namespace NeqSimExcel
 
         private void Sheet6_Startup(object sender, EventArgs e)
         {
+          
+        }
+
+
+    private void Sheet6_Shutdown(object sender, EventArgs e)
+        {
+        }
+
+        private void ActivateWorksheet()
+        {
             try
             {
+                fluidListNameComboBox.Items.Clear();
                 var test = new fluidinfoTableAdapter();
 
                 //NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
@@ -71,22 +82,17 @@ namespace NeqSimExcel
             sharedCheckbox.Visible = true; // hide if another fluid is chosen!
         }
 
-
-    private void Sheet6_Shutdown(object sender, EventArgs e)
-        {
-        }
-
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
-            this.fluidListNameComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fluidListNameComboBox_MouseClick);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorksheet);
             this.Startup += new System.EventHandler(this.Sheet6_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet6_Shutdown);
 
@@ -239,42 +245,6 @@ namespace NeqSimExcel
 
         private void fluidListNameComboBox_MouseClick(object sender, MouseEventArgs e)
         {
-            fluidListNameComboBox.Items.Clear();
-            sharedCheckbox.Visible = true;
-
-            var test = new fluidinfoTableAdapter();
-            //            NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
-
-            var userName = WindowsIdentity.GetCurrent().Name;
-            userName = userName.Replace("STATOIL-NET\\", "");
-            userName = userName.Replace("WIN-NTNU-NO\\", "");
-            userName = userName.ToLower();
-            var tt = test.GetDataBy(userName);
-            // NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
-            var names = new List<string>();
-            names.Add("New fluid");
-            fluidListNameComboBox.Items.Add("New fluid");
-            //names.Add("CPApackage");
-            //names.Add(WindowsIdentity.GetCurrent().Name);
-            foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
-            {
-                var tempString = "";
-                try
-                {
-                    tempString = row.TEXT;
-                }
-                catch (Exception exept)
-                {
-                    tempString = "";
-                    exept.ToString();
-                }
-                finally
-                {
-                }
-
-                names.Add(row.ID + " " + tempString);
-                fluidListNameComboBox.Items.Add(row.ID + " " + tempString);
-            }
 
         }
     }

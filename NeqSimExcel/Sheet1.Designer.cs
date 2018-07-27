@@ -294,6 +294,7 @@ namespace NeqSimExcel {
             // 
             // EoScombobox
             // 
+            this.EoScombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EoScombobox.Items.AddRange(new object[] {
                         "Automatic",
                         "SRK-EOS",
@@ -302,7 +303,6 @@ namespace NeqSimExcel {
                         "UMR-PRU-EoS",
                         "SRK-TwuCoon-EOS"});
             this.EoScombobox.Name = "EoScombobox";
-            this.EoScombobox.Text = "Automatic";
             // 
             // button2
             // 
@@ -315,13 +315,13 @@ namespace NeqSimExcel {
             // 
             // inhibitorComboBox
             // 
+            this.inhibitorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inhibitorComboBox.Items.AddRange(new object[] {
                         "methanol",
                         "ethanol",
                         "MEG",
                         "TEG"});
             this.inhibitorComboBox.Name = "inhibitorComboBox";
-            this.inhibitorComboBox.Text = "MEG";
             // 
             // waxcheckBox
             // 
@@ -367,7 +367,6 @@ namespace NeqSimExcel {
                         "19",
                         "20"});
             this.numberOfPseudoCompComboBox.Name = "numberOfPseudoCompComboBox";
-            this.numberOfPseudoCompComboBox.Text = "7";
             // 
             // numbPseudoLabel
             // 
@@ -376,11 +375,11 @@ namespace NeqSimExcel {
             // 
             // inhibitorCalcTypecomboBox
             // 
+            this.inhibitorCalcTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inhibitorCalcTypecomboBox.Items.AddRange(new object[] {
                         "estimate wt%",
                         "set wt%"});
             this.inhibitorCalcTypecomboBox.Name = "inhibitorCalcTypecomboBox";
-            this.inhibitorCalcTypecomboBox.Text = "estimate wt%";
             // 
             // chemicalReactionsCheckBox
             // 

@@ -24,7 +24,7 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.Startup += new System.EventHandler(this.Sheet29_Startup);
 
         }
@@ -70,11 +70,6 @@ namespace NeqSimExcel
                     Range[textVar3].Value2 = thermoSystem.getTemperature() - 273.15;
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -17,10 +17,19 @@ namespace NeqSimExcel
             // selectFluidCombobox.Hide();
 
 
+        }
+
+        private void Sheet8_Shutdown(object sender, EventArgs e)
+        {
+        }
+
+        private void ActivateWorkSheet()
+        {
+            selectFluidCombobox.Items.Clear();
             try
             {
                 var test = new fluidinfoTableAdapter();
-//               NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
+                //               NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
 
@@ -30,7 +39,7 @@ namespace NeqSimExcel
                 userName = userName.ToLower();
 
                 var tt = test.GetDataBy(userName);
-//               NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
+                //               NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
                 var names = new List<string>();
                 //names.Add("CPApackage");
                 //names.Add(WindowsIdentity.GetCurrent().Name);
@@ -48,22 +57,21 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
-        }
 
-        private void Sheet8_Shutdown(object sender, EventArgs e)
-        {
+            PVTcalcCombobox.SelectedIndex = 0;
         }
 
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
             this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
             this.PVTcalcCombobox.SelectedIndexChanged += new System.EventHandler(this.PVTcalcCombobox_SelectedIndexChanged);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorkSheet);
             this.Startup += new System.EventHandler(this.Sheet8_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet8_Shutdown);
 

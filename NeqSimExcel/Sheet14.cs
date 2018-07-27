@@ -14,6 +14,7 @@ namespace NeqSimExcel
         private void Sheet14_Startup(object sender, EventArgs e)
         {
             statusRange = Range["F20"];
+            unitComboBox.SelectedIndex = 0;
         }
 
         private void Sheet14_Shutdown(object sender, EventArgs e)

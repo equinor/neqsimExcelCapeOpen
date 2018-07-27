@@ -52,6 +52,10 @@ namespace NeqSimExcel
             ethanolPrecentRange = this.Range["B106"];
             methanolPrecentRange = this.Range["B105"];
             polarComPrecentRange = this.Range["B104", "B108"]; //???? check!
+            EoScombobox.SelectedIndex = 0;
+            inhibitorCalcTypecomboBox.SelectedIndex = 0;
+            inhibitorComboBox.SelectedIndex = 0;
+            numberOfPseudoCompComboBox.SelectedIndex = 0;
         }
 
         private void Sheet1_Shutdown(object sender, System.EventArgs e)

@@ -20,7 +20,18 @@ namespace NeqSimExcel
         private void Sheet17_Startup(object sender, EventArgs e)
         {
             statusRange = Range["D14"];
+          
 
+        }
+
+        private void Sheet17_Shutdown(object sender, EventArgs e)
+        {
+        }
+
+        private void ActivateWorksheet()
+        {
+            fluidListNameComboBoxGas.Items.Clear();
+            fluidListNameComboBoxLiquid.Items.Clear();
             try
             {
                 var test = new fluidinfoTableAdapter();
@@ -62,23 +73,22 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
-        }
-
-        private void Sheet17_Shutdown(object sender, EventArgs e)
-        {
+            fluidListNameComboBoxGas.SelectedIndex = 0;
+            fluidListNameComboBoxLiquid.SelectedIndex = 0;
         }
 
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_Click);
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorksheet);
             this.Startup += new System.EventHandler(this.Sheet17_Startup);
 
         }

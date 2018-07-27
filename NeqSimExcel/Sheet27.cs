@@ -17,7 +17,13 @@ namespace NeqSimExcel
     {
         private void Sheet27_Startup(object sender, EventArgs e)
         {
-            
+          
+        }
+
+        private void ActivateWorkSheet()
+        {
+            selectFluidCombobox.Items.Clear();
+            selectLocalFLuidCOmboBox.Items.Clear();
             try
             {
                 var names = new List<string>();
@@ -39,7 +45,7 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
-            
+
 
             try
             {
@@ -47,7 +53,7 @@ namespace NeqSimExcel
 
                 var userName = WindowsIdentity.GetCurrent().Name;
                 userName = userName.Replace("STATOIL-NET\\", "");
-                //userName = userName.Replace("WIN-NTNU-NO\\", "");
+                userName = userName.Replace("WIN-NTNU-NO\\", "");
                 userName = userName.ToLower();
 
                 var names = new List<string>();
@@ -82,10 +88,6 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
-
-         
-
-
         }
 
         private void Sheet27_Shutdown(object sender, EventArgs e)
@@ -100,10 +102,9 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            this.selectFluidCombobox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.selectFluidCombobox_MouseClick);
             this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.selectLocalFLuidCOmboBox.Click += new System.EventHandler(this.selectLocalCHanged);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorkSheet);
             this.Startup += new System.EventHandler(this.Sheet27_Startup);
 
         }
@@ -200,75 +201,11 @@ namespace NeqSimExcel
 
         private void selectLocalCHanged(object sender, EventArgs e)
         {
-            try
-            {
-                selectLocalFLuidCOmboBox.Items.Clear();
-                var names = new List<string>();
-                var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-                var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
-
-                var d = new DirectoryInfo(fullPath);
-                var Files = d.GetFiles("*.neqsim");
-                foreach (var file in Files)
-                {
-                    names.Add(file.Name.Replace(".neqsim", ""));
-                    selectLocalFLuidCOmboBox.Items.Add(file.Name.Replace(".neqsim", ""));
-                }
-                
-                selectLocalFLuidCOmboBox.SelectedIndex = 0;
-            }
-            catch (Exception excet)
-            {
-                Console.WriteLine("Error " + excet.Message);
-            }
 
         }
 
         private void selectFluidCombobox_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            try
-            {
-                selectFluidCombobox.Items.Clear();
-                var test = new fluidinfoTableAdapter();
-
-                var userName = WindowsIdentity.GetCurrent().Name;
-                userName = userName.Replace("STATOIL-NET\\", "");
-                userName = userName.Replace("WIN-NTNU-NO\\", "");
-                userName = userName.ToLower();
-
-                var names = new List<string>();
-                var tt = test.GetDataBy(userName);
-                //names.Add("CPApackage");
-                //names.Add(WindowsIdentity.GetCurrent().Name);
-                foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
-                {
-                    var tempString = "";
-                    try
-                    {
-                        tempString = row.TEXT;
-                    }
-                    catch (Exception exept)
-                    {
-                        tempString = "";
-                        exept.ToString();
-                    }
-                    finally
-                    {
-
-                        names.Add(row.ID + " " + tempString);
-                        selectFluidCombobox.Items.Add(row.ID + " " + tempString);
-                    }
-
-                }
-
-                //   packageNames = names.ToArray();
-                //   fluidListNameComboBox.Items.Add(names.ToList());
-                selectFluidCombobox.SelectedIndex = 0;
-            }
-            catch (Exception excet)
-            {
-                Console.WriteLine("Error " + excet.Message);
-            }
 
         }
     }

@@ -11,23 +11,29 @@ namespace NeqSimExcel
     {
         private void Sheet5_Startup(object sender, EventArgs e)
         {
-            var rangeClear = Range["D1", "N300"];
-            rangeClear.Clear();
+          
         }
 
         private void Sheet5_Shutdown(object sender, EventArgs e)
         {
         }
 
+        private void Activate()
+        {
+            var rangeClear = Range["D1", "N300"];
+            rangeClear.Clear();
+        }
+
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.Activate);
             this.Startup += new System.EventHandler(this.Sheet5_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet5_Shutdown);
 

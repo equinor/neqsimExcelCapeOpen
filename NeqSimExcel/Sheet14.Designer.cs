@@ -154,11 +154,11 @@ namespace NeqSimExcel {
             // 
             // unitComboBox
             // 
+            this.unitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitComboBox.Items.AddRange(new object[] {
                         "mmol/kgWater",
                         "mg/kgWater"});
             this.unitComboBox.Name = "unitComboBox";
-            this.unitComboBox.Text = "mmol/kgWater";
             // 
             // button1
             // 

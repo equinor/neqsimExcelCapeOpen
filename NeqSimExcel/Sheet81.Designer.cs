@@ -156,6 +156,7 @@ namespace NeqSimExcel {
             // 
             // PVTcalcCombobox
             // 
+            this.PVTcalcCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PVTcalcCombobox.Items.AddRange(new object[] {
                         "GOR",
                         "CVD",
@@ -168,7 +169,6 @@ namespace NeqSimExcel {
                         "Slim tube",
                         "Swelling test"});
             this.PVTcalcCombobox.Name = "PVTcalcCombobox";
-            this.PVTcalcCombobox.Text = "GOR";
             // 
             // selectFluidCombobox
             // 

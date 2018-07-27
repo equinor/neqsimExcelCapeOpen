@@ -30,6 +30,16 @@ namespace NeqSimExcel
         private void Sheet25_Startup(object sender, EventArgs e)
         {
             statusRange = Range["C28"];
+            
+        }
+
+        private void Sheet25_Shutdown(object sender, EventArgs e)
+        {
+        }
+
+        private void ActivateWorkSheet()
+        {
+            fluidsComboBox.Items.Clear();
             try
             {
                 var test = new fluidinfoTableAdapter();
@@ -68,17 +78,13 @@ namespace NeqSimExcel
             }
         }
 
-        private void Sheet25_Shutdown(object sender, EventArgs e)
-        {
-        }
-
         #region VSTO Designer generated code
 
-        /// <summary>
-        ///     Required method for Designer support - do not modify
-        ///     the contents of this method with the code editor.
-        /// </summary>
-        private void InternalStartup()
+            /// <summary>
+            ///     Required method for Designer support - do not modify
+            ///     the contents of this method with the code editor.
+            /// </summary>
+            private void InternalStartup()
         {
             this.calcuateButton.Click += new System.EventHandler(this.calcuateButton_Click);
             this.fluidsComboBox.SelectedIndexChanged += new System.EventHandler(this.fluidsComboBox_SelectedIndexChanged);
@@ -86,6 +92,7 @@ namespace NeqSimExcel
             this.unitOpsNamesCheckBox.SelectedIndexChanged += new System.EventHandler(this.unitOpsNamesCheckBox_SelectedIndexChanged);
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked_1);
             this.glycolTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.glycolTypeComboBox_SelectedIndexChanged);
+            this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorkSheet);
             this.Startup += new System.EventHandler(this.Sheet25_Startup);
 
         }

@@ -151,8 +151,8 @@ namespace NeqSimExcel {
             // 
             // selectFluidCombobox
             // 
+            this.selectFluidCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectFluidCombobox.Name = "selectFluidCombobox";
-            this.selectFluidCombobox.Text = "Select fluid";
             // 
             // calcButton
             // 
@@ -172,8 +172,8 @@ namespace NeqSimExcel {
             // 
             // selectLocalFLuidCOmboBox
             // 
+            this.selectLocalFLuidCOmboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectLocalFLuidCOmboBox.Name = "selectLocalFLuidCOmboBox";
-            this.selectLocalFLuidCOmboBox.Text = "Select fluid";
             // 
             // Sheet27
             // 

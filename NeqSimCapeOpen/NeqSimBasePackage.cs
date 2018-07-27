@@ -5,7 +5,7 @@ using NeqSimNET;
 namespace CapeOpenThermo
 {
     public class NeqSimBasePackage : ICapeIdentification, ICapeThermoCompounds, ICapeThermoPhases,
-        ICapeThermoMaterialContext, ICapeThermoEquilibriumRoutine, ICapeThermoPropertyRoutine
+        ICapeThermoMaterialContext, ICapeThermoEquilibriumRoutine, ICapeThermoPropertyRoutine, ICapeThermoUniversalConstant
     {
         private readonly double[] boilT = null;
         private readonly double[] molw = null;
@@ -62,6 +62,16 @@ namespace CapeOpenThermo
         }
 
         public object GetTDependentPropList()
+        {
+            return null;
+        }
+
+        public object GetUniversalConstantList()
+        {
+            return null;
+        }
+
+        public object GetUniversalConstant(string constName)
         {
             return null;
         }

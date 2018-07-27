@@ -154,6 +154,7 @@ namespace NeqSimExcel {
             // 
             // fluidListNameComboBox
             // 
+            this.fluidListNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fluidListNameComboBox.Name = "fluidListNameComboBox";
             // 
             // button1
