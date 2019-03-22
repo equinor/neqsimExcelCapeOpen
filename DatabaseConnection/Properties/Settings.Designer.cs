@@ -12,7 +12,7 @@ namespace DatabaseConnection.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,7 +26,7 @@ namespace DatabaseConnection.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=tr-w33;user id=remote;password=remote;database=neqsimdatabase")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=tr-w33;user id=remote;password=remote;database=neqsimthermodatabase")]
         public string neqsimdatabaseConnectionStatoil2 {
             get {
                 return ((string)(this["neqsimdatabaseConnectionStatoil2"]));
@@ -36,21 +36,22 @@ namespace DatabaseConnection.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=129.241.62.72;user id=remote;password=remote;persistsecurityinfo=True;data" +
-            "base=neqsimdatabase")]
-        public string neqsimdatabaseConnectionNTNU2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=129.241.62.72;user id=remote;password=remote;database=neqsimthermodatabase" +
+            "")]
+        public string neqsimthermodatabaseConnectionString {
             get {
-                return ((string)(this["neqsimdatabaseConnectionNTNU2"]));
+                return ((string)(this["neqsimthermodatabaseConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=129.241.62.72;user id=remote;password=remote;database=neqsimdatabase")]
-        public string neqsimdatabaseConnectionNTNU {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=tr-w33;user id=remote;password=remote;persistsecurityinfo=True;database=ne" +
+            "qsimdatabase")]
+        public string neqsimdatabaseConnectionString {
             get {
-                return ((string)(this["neqsimdatabaseConnectionNTNU"]));
+                return ((string)(this["neqsimdatabaseConnectionString"]));
             }
         }
     }

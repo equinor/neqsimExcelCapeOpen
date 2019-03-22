@@ -46,6 +46,7 @@ namespace NeqSimNET
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
                 thermoSystem.setMixingRule(2);
+                System.Diagnostics.Debug.WriteLine(e.Message);
             }
 
 
@@ -71,6 +72,7 @@ namespace NeqSimNET
                 thermoSystem.addComponent("methane", 1.0);
                 thermoSystem.createDatabase(true);
                 thermoSystem.setMixingRule(2);
+                System.Diagnostics.Debug.WriteLine(e.Message);
             }
 
             oldMoleFraction = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
@@ -114,7 +116,6 @@ namespace NeqSimNET
 
         public void setTPFraction(double T, double P, double[] x, int activePhaseIndex)
         {
-            thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
             //     thermoSystem.setPhaseIndex(0, activePhaseIndex);
             //     thermoSystem.init(0, activePhaseIndex); 
@@ -125,9 +126,8 @@ namespace NeqSimNET
 
         public void setTPFraction(double T, double P, double[] x)
         {
-            thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
-            thermoSystem.init(0, 0);
+            thermoSystem.init(0,0);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
         }
@@ -135,7 +135,7 @@ namespace NeqSimNET
 
         public void setTPFraction(double T, double P, double[] x1, double[] x2)
         {
-            thermoSystem.removeMoles();
+            //thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x1);
             thermoSystem.init(0);
             thermoSystem.getPhase(0).setMoleFractions(x1);
@@ -165,7 +165,7 @@ namespace NeqSimNET
 
         public void init(string phase, int initType)
         {
-            var phasetype = 0;
+            int phasetype = 0;
             //  PhaseExist = true;
 
             if (phase.Equals("Vapor"))
@@ -263,9 +263,9 @@ namespace NeqSimNET
 
         public void TPflash()
         {
-            var ops = new ThermodynamicOperations(thermoSystem);
+            ThermodynamicOperations ops = new ThermodynamicOperations(thermoSystem);
             ops.TPflash();
-            thermoSystem.init(3);
+            //thermoSystem.init(3);
         }
 
         public void phaseFractionFlash(string phase, double fraction)

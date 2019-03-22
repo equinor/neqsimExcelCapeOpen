@@ -159,7 +159,7 @@ namespace NeqSimExcel
             }
             catch (Exception ex)
             {
-                statusRange.Value2 = "error occured during calculations..";
+                statusRange.Value2 = "error occured during calculations.."+ ex.Message;
                 //   ex.Message();
             }
         }
@@ -253,8 +253,7 @@ namespace NeqSimExcel
             }
             catch (Exception ex)
             {
-                statusRange.Value2 = "error calculating flash...";
-                //   ex.Message();
+                statusRange.Value2 = "error calculating flash..." + ex.Message;
             }
         }
 

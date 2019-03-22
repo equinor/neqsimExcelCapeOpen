@@ -22,10 +22,12 @@ namespace NeqSimExcel
 
         public static void setDatabasePath(string databaseType, string databasePath)
         {
+
+
             if (databaseType.Equals("MSAccess"))
             {
                 neqsim.util.database.NeqSimDataBase.setDataBaseType("MSAccessUCanAccess");
-                neqsim.util.database.NeqSimDataBase.dataBasePathMSAccess = databasePath;
+                neqsim.util.database.NeqSimDataBase.dataBasePath = databasePath;
             }
             if (databaseType.Equals("mySQL"))
             {

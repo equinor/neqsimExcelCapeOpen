@@ -155,7 +155,7 @@ namespace NeqSimExcel
                     }
                 }
             }
-            else if (PVTcalcCombobox.SelectedItem == "CME")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("CME"))
             {
                 calc1RowTitle.Value2 = "relative volume (V/Vsat)";
                 calc2RowTitle.Value2 = "Liquid volume (% of Vsat)";
@@ -187,7 +187,7 @@ namespace NeqSimExcel
                 Range["E" + (number + 7)].Value2 = cmeSim.getZsaturation();
                 Range["G" + (number + 7)].Value2 = cmeSim.getSaturationIsoThermalCompressibility();
             }
-            else if (PVTcalcCombobox.SelectedItem == "CVD")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("CVD"))
             {
                 calc1RowTitle.Value2 = "relativeVolume";
                 calc2RowTitle.Value2 = "Liquid volume (% of Vsat)";
@@ -218,7 +218,7 @@ namespace NeqSimExcel
                 Range["G" + (number + 7)].Value2 = "saturation point";
             }
 
-            else if (PVTcalcCombobox.SelectedItem == "Differential liberation")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Differential liberation"))
             {
                 calc1RowTitle.Value2 = "Bo";
                 calc2RowTitle.Value2 = "Bg";
@@ -243,7 +243,7 @@ namespace NeqSimExcel
                     number++;
                 }
             }
-            else if (PVTcalcCombobox.SelectedItem == "Wax content")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Wax content"))
             {
                 calc1RowTitle.Value2 = "wt% wax";
                 calc2RowTitle.Value2 = "";
@@ -261,7 +261,7 @@ namespace NeqSimExcel
                     number++;
                 }
             }
-            else if (PVTcalcCombobox.SelectedItem == "Viscosity")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Viscosity"))
             {
                 calc1RowTitle.Value2 = "Gas viscosity [kg/m*sec]";
                 calc2RowTitle.Value2 = "Oil viscosity [kg/m*sec]";
@@ -281,7 +281,7 @@ namespace NeqSimExcel
                     number++;
                 }
             }
-            else if (PVTcalcCombobox.SelectedItem == "Viscosity oil/wax")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Viscosity oil/wax"))
             {
                 calc1RowTitle.Value2 = "share rate [1/sec]";
                 calc2RowTitle.Value2 = "wt% wax";
@@ -318,7 +318,7 @@ namespace NeqSimExcel
                     number++;
                 }
             }
-            else if (PVTcalcCombobox.SelectedItem == "Swelling test")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Swelling test"))
             {
                 calc2RowTitle.Value2 = "Relative volume";
                 var a2 = Convert.ToInt32(selectFluidCombobox.SelectedItem.ToString());
@@ -364,11 +364,11 @@ namespace NeqSimExcel
 
 
             // PVTcalcCombobox.
-            if (PVTcalcCombobox.SelectedItem == "Wax content")
+            if (PVTcalcCombobox.SelectedItem.ToString().Equals("Wax content"))
             {
                 Range["C6"].Value2 = "Wax content [wt%]";
             }
-            else if (PVTcalcCombobox.SelectedItem == "CME")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("CME"))
             {
                 calc1RowTitle.Value2 = "relative volume (V/Vsat)";
                 calc2RowTitle.Value2 = "Liquid volume (% of Vsat)";
@@ -376,12 +376,12 @@ namespace NeqSimExcel
                 calc4RowTitle.Value2 = "Y-factor";
                 calc5RowTitle.Value2 = "IsoThermalCompressibility (1/bar)";
             }
-            else if (PVTcalcCombobox.SelectedItem == "GOR" || PVTcalcCombobox.SelectedItem == "Separator test")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("GOR") || PVTcalcCombobox.SelectedItem.ToString().Equals("Separator test"))
             {
                 calc1RowTitle.Value2 = "GOR [Sm3/Sm3]";
                 calc2RowTitle.Value2 = "Bo-factor";
             }
-            else if (PVTcalcCombobox.SelectedItem == "CVD")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("CVD"))
             {
                 calc1RowTitle.Value2 = "relativeVolume";
                 calc2RowTitle.Value2 = "Liquid volume (% of Vsat)";
@@ -389,7 +389,7 @@ namespace NeqSimExcel
                 calc4RowTitle.Value2 = "Z-mix";
                 calc5RowTitle.Value2 = "cummulative mole% depleted";
             }
-            else if (PVTcalcCombobox.SelectedItem == "Differential liberation")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Differential liberation"))
             {
                 calc1RowTitle.Value2 = "Bo";
                 calc2RowTitle.Value2 = "Bg";
@@ -398,11 +398,11 @@ namespace NeqSimExcel
                 calc5RowTitle.Value2 = "Zgas";
                 calc6RowTitle.Value2 = "gas standard volume";
             }
-            else if (PVTcalcCombobox.SelectedItem == "Viscosity oil/wax")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Viscosity oil/wax"))
             {
                 calc1RowTitle.Value2 = "Share rate [1/sec]";
             }
-            else if (PVTcalcCombobox.SelectedItem == "Swelling test")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Swelling test"))
             {
                 Range["B6"].Value2 = "GasInjected (fraction of oil)";
                 Range["C6"].Value2 = "Pressure [bara]";
@@ -410,7 +410,7 @@ namespace NeqSimExcel
                 Range["A4"].Value2 = "Injection gas";
                 calc2RowTitle.Value2 = "Relative volume";
             }
-            else if (PVTcalcCombobox.SelectedItem == "Slim tube")
+            else if (PVTcalcCombobox.SelectedItem.ToString().Equals("Slim tube"))
             {
                 selectFluidCombobox.Visible = true;
                 Range["A4"].Value2 = "Injection gas";

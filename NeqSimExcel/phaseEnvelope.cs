@@ -18,7 +18,7 @@ namespace NeqSimExcel
         {
         }
 
-        private void Activate()
+         private new void Activate()
         {
             var rangeClear = Range["D1", "N300"];
             rangeClear.Clear();
@@ -132,7 +132,7 @@ namespace NeqSimExcel
                     }
                     catch (Exception er)
                     {
-                        statusRange.Value2 = "calculation error...";
+                        statusRange.Value2 = "calculation error..." + er.Message;
                         //er.StackTrace.ToString();
                         return;
                     }
@@ -242,6 +242,7 @@ namespace NeqSimExcel
             }
             catch (Exception er)
             {
+                statusRange.Value2 = "calculation error..." + er.Message;
                 //er.StackTrace.ToString();
             }
         }

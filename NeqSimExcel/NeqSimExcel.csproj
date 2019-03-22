@@ -26,7 +26,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\app\neqsimexcelpublish\</PublishUrl>
+    <PublishUrl>C:\Appl\neqsimexcelpublish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.7</ApplicationVersion>
@@ -527,6 +527,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="NeqSimExcel_1_TemporaryKey.pfx" />
+    <None Include="NeqSimExcel_2_TemporaryKey.pfx" />
     <None Include="NeqSimExcel_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="ThisWorkbook.Designer.xml">
@@ -711,10 +712,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>NeqSimExcel_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NeqSimExcel_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D070500FC3073BB8DA58D62123CF7A8DC4AF5ED6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CDF8CB2C824946D9B059637874A86CE2DADBF0AC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />

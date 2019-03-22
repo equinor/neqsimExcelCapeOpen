@@ -198,7 +198,7 @@ namespace NeqSimExcel
             {
                 thermoSystem = thermoSystem.setModel("CPAs-SRK-EOS-statoil");
             }
-            else if (EoScombobox.SelectedItem == "Automatic")
+            else if (EoScombobox.SelectedItem.ToString().Equals("Automatic"))
             {
                 thermoSystem = thermoSystem.autoSelectModel();
             }
@@ -233,11 +233,11 @@ namespace NeqSimExcel
                 thermoSystem.chemicalReactionInit();
             }
             thermoSystem.autoSelectMixingRule();
+            thermoSystem.setMultiPhaseCheck(true);
+            thermoSystem.useVolumeCorrection(true);
             thermoSystem.init(0);
             thermoSystem.init(1);
-            thermoSystem.setMultiPhaseCheck(true);
             thermoSystem.initPhysicalProperties();
-            thermoSystem.useVolumeCorrection(true);
             //  thermoSystem.autoSelectMixingRule();
             //  Excel.Range range = this.Range["A7"];
             //   range.Value2 = "4.0";
@@ -596,13 +596,13 @@ namespace NeqSimExcel
             }
 
             Excel.Range inhibitorRange = MEGPrecentRange;
-            if (inhibitorComboBox.SelectedItem == "MEG") inhibitorRange = MEGPrecentRange;
-            else if (inhibitorComboBox.SelectedItem == "TEG") inhibitorRange = TEGPrecentRange;
-            else if (inhibitorComboBox.SelectedItem == "methanol") inhibitorRange = methanolPrecentRange;
-            else if (inhibitorComboBox.SelectedItem == "ethanol") inhibitorRange = ethanolPrecentRange;
+            if (inhibitorComboBox.SelectedItem.ToString().Equals("MEG")) inhibitorRange = MEGPrecentRange;
+            else if (inhibitorComboBox.SelectedItem.ToString().Equals("TEG")) inhibitorRange = TEGPrecentRange;
+            else if (inhibitorComboBox.SelectedItem.ToString().Equals("methanol")) inhibitorRange = methanolPrecentRange;
+            else if (inhibitorComboBox.SelectedItem.ToString().Equals("ethanol")) inhibitorRange = ethanolPrecentRange;
 
 
-            if (inhibitorCalcTypecomboBox.SelectedItem == "estimate wt%")
+            if (inhibitorCalcTypecomboBox.SelectedItem.ToString().Equals("estimate wt%"))
             {
                
                 inhibitorRange.Value2 = waterPrecentRange.Value2 / 3.0;
@@ -685,7 +685,7 @@ namespace NeqSimExcel
         private void inhibitorCalcTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (inhibitorCalcTypecomboBox.SelectedItem == "estimate wt%")
+            if (inhibitorCalcTypecomboBox.SelectedItem.ToString().Equals("estimate wt%"))
             {
                 this.Range["K11"].Value2 = "Thyd [C]";
                 this.Range["K12"].Value2 = "Phyd [bara]";

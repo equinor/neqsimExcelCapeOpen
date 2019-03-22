@@ -5121,7 +5121,8 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::DatabaseConnection.Properties.Settings.Default.neqsimdatabaseConnectionStatoil2;
+            this._connection.ConnectionString = "server=tr-w33;user id=remote;password=remote;persistsecurityinfo=True;database=ne" +
+                "qsimdatabase";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5197,10 +5198,12 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "USERNAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID();\r\n";
+            this._commandCollection[2].CommandText = "\r\n                      INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID" +
+                "();\r\n                    ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -5213,6 +5216,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "TEXT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[3].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Param2";
@@ -5233,6 +5237,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "FIELD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[4].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5253,6 +5258,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 250;
             param.IsNullable = true;
             param.SourceColumn = "HISTORY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[5].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5273,6 +5279,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "SAMPLE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[6].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5293,6 +5300,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "SHARED";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[7].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5313,6 +5321,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "TEST";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[8].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5332,6 +5341,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "USERID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[9].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5352,6 +5362,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "WELL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[10].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@id";
@@ -5826,6 +5837,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -5833,6 +5845,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "USERNAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -5875,7 +5888,8 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, USERNAME\r\nFROM     userdb";
+            this._commandCollection[0].CommandText = "\r\n                      SELECT ID, USERNAME\r\n                      FROM     userd" +
+                "b\r\n                    ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5888,6 +5902,7 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "USERNAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[1].Parameters.Add(param);
         }
         

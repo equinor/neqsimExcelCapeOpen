@@ -34,8 +34,7 @@ namespace NeqSimExcel
             var thermoSystem = NeqSimThermoSystem.getThermoSystem(); //.clone();
             thermoSystem.init(0);
             thermoSystem.init(1);
-
-            var Cnumb = 5;
+            
             for (var i = 2; i <= 100; i++)
             {
                 string a = Range["A" + i].Value2;

@@ -50,8 +50,8 @@ namespace NeqSimExcel
                 {
                     number++;
                     var textVar = "B" + number;
-                    thermoSystem.init(0);
-                    thermoSystem.setMultiPhaseCheck(true);
+                   // thermoSystem.init(0);
+                   // thermoSystem.setMultiPhaseCheck(true);
                     //if (thermoSystem.isChemicalSystem()) thermoSystem.setMultiPhaseCheck(false);
                     thermoSystem.setTemperature(r.Value2 + 273.15);
                     thermoSystem.setPressure(Range[textVar].Value2);
