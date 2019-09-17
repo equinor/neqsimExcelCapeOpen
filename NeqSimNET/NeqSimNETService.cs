@@ -126,6 +126,11 @@ namespace NeqSimNET
 
         public void setTPFraction(double T, double P, double[] x)
         {
+            for(int i = 0; i < x.Length; i++) {
+                if (x[i] < 0) x[i] = 0.0;
+            }
+
+
             thermoSystem.setMolarComposition(x);
             thermoSystem.init(0,0);
             thermoSystem.setTemperature(T);
@@ -152,7 +157,6 @@ namespace NeqSimNET
         public void setTPFractionFlash(double T, double P, double[] x)
         {
             setCurrentProps(T, P, x, 0);
-            thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
@@ -191,7 +195,7 @@ namespace NeqSimNET
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
                 PhaseExist = false;
             else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") ||
-                      thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) &&
+                      thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) &&
                      phase.Equals("Vapor")) PhaseExist = false;
         }
 
@@ -278,13 +282,13 @@ namespace NeqSimNET
         public void PHflash(double enthalpySpec)
         {
             var ops = new ThermodynamicOperations(thermoSystem);
-            ops.PHflash(enthalpySpec, 0);
+            ops.PHflash(enthalpySpec, "J/mol");
         }
 
         public void PSflash(double entropySpec)
         {
             var ops = new ThermodynamicOperations(thermoSystem);
-            ops.PSflash(entropySpec);
+            ops.PSflash(entropySpec, "J/molK");
         }
 
         public double getTemperature()

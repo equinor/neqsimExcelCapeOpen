@@ -26,7 +26,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Appl\neqsimexcelpublish\</PublishUrl>
+    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.7</ApplicationVersion>
@@ -725,10 +725,10 @@
         <ProjectProperties HostName="NeqSimExcel.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]NeqSimExcel.xlsx&quot;" />
         <Host Name="Excel Document" Path=".\NeqSimExcel.xlsx" GeneratedCodeNamespace="NeqSimExcel" PublishedHash="7DC99B4D08FE3DB9B29507F8277E422A40F2F3D3">
           <HostItem Name="Sheet4" Code="hydrate.cs" CanonicalName="Sheet4" PublishedHash="15BD6629D5E4CB711C5BF7DEBD9B480DBAA8EAF3" DisplayName="Gas hydrate" Blueprint="hydrate.Designer.xml" GeneratedCode="hydrate.Designer.cs" />
-          <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="87206A264DCBF1F867384816514030A4CC0DD535" DisplayName="SaveExportFluid" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
+          <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="D4A212BC00563C37D04801F1DE2B1A0801E507A8" DisplayName="SaveExportFluid" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
           <HostItem Name="Sheet7" Code="Olga.cs" CanonicalName="Sheet7" PublishedHash="672F935EEC54106025477A8D3C8C3FE3827C261B" DisplayName="OLGA" Blueprint="Olga.Designer.xml" GeneratedCode="Olga.Designer.cs" />
           <HostItem Name="Sheet5" Code="phaseEnvelope.cs" CanonicalName="Sheet5" PublishedHash="68F0C8B6DA0ACB15D82030B471DD72073A462E91" DisplayName="phase envelope" Blueprint="phaseEnvelope.Designer.xml" GeneratedCode="phaseEnvelope.Designer.cs" />
-          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="8D2ED9DED99AA0B9E1436FE0D0F8846A6773A132" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="86909B412C62F08A30E607E5D6ED511DA24F1FD6" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
           <HostItem Name="Sheet10" Code="Sheet104.cs" CanonicalName="Sheet10" PublishedHash="F056709827FEB2E51A34AF3C5CD483E866638B37" DisplayName="waxT" Blueprint="Sheet104.Designer.xml" GeneratedCode="Sheet104.Designer.cs" />
           <HostItem Name="Sheet11" Code="Sheet111.cs" CanonicalName="Sheet11" PublishedHash="F16F268BBFCC78A39FA9D490790B92A362963EED" DisplayName="freezeT" Blueprint="Sheet111.Designer.xml" GeneratedCode="Sheet111.Designer.cs" />
           <HostItem Name="Sheet13" Code="Sheet13.cs" CanonicalName="Sheet13" PublishedHash="251BEE4C175E584326FC7F96407452847A25C76D" DisplayName="Property generator" Blueprint="Sheet13.Designer.xml" GeneratedCode="Sheet13.Designer.cs" />

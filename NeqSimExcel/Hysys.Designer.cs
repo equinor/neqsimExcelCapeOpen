@@ -28,6 +28,8 @@ namespace NeqSimExcel {
         
         internal Microsoft.Office.Tools.Excel.Controls.CheckBox sharedCheckbox;
         
+        internal Microsoft.Office.Tools.Excel.Controls.LinkLabel linkLabel1;
+        
         internal System.Windows.Forms.OpenFileDialog openFileDialog1;
         
         /// 
@@ -143,6 +145,7 @@ namespace NeqSimExcel {
             this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "4C0DC5E324872344D014B8804DE43BB805D3F4", "4C0DC5E324872344D014B8804DE43BB805D3F4", this, "button1");
             this.button3 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "6FAB9A4E0600ED6418269FA068BF9A4C00EA46", "6FAB9A4E0600ED6418269FA068BF9A4C00EA46", this, "button3");
             this.sharedCheckbox = new Microsoft.Office.Tools.Excel.Controls.CheckBox(Globals.Factory, this.ItemProvider, this.HostContext, "77F6236037F06174EFE78B3370EE0157C98377", "77F6236037F06174EFE78B3370EE0157C98377", this, "sharedCheckbox");
+            this.linkLabel1 = new Microsoft.Office.Tools.Excel.Controls.LinkLabel(Globals.Factory, this.ItemProvider, this.HostContext, "9A69B97EF9CE7194164988409DF9892D9BAF59", "9A69B97EF9CE7194164988409DF9892D9BAF59", this, "linkLabel1");
         }
         
         /// 
@@ -179,12 +182,18 @@ namespace NeqSimExcel {
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Text = "View fluids";
+            // 
             // Sheet6
             // 
             this.fluidListNameComboBox.BindingContext = this.BindingContext;
             this.button1.BindingContext = this.BindingContext;
             this.button3.BindingContext = this.BindingContext;
             this.sharedCheckbox.BindingContext = this.BindingContext;
+            this.linkLabel1.BindingContext = this.BindingContext;
         }
         
         /// 

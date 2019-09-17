@@ -8,6 +8,9 @@ using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using neqsim.thermodynamicOperations;
 using Office = Microsoft.Office.Core;
 
+using System.Diagnostics;
+using System.ComponentModel;
+
 namespace NeqSimExcel
 {
     public partial class Sheet6
@@ -92,6 +95,7 @@ namespace NeqSimExcel
         {
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.ActivateWorksheet);
             this.Startup += new System.EventHandler(this.Sheet6_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet6_Shutdown);
@@ -246,6 +250,19 @@ namespace NeqSimExcel
         private void fluidListNameComboBox_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
+
+            Process.Start("explorer.exe",fullPath);
         }
     }
 }
