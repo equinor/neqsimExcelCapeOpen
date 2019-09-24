@@ -127,7 +127,7 @@ namespace NeqSimExcel
                 {
                     try
                     {
-                        ops.calcPTphaseEnvelope(true);
+                        ops.calcPTphaseEnvelope();
                         var isFinished = ops.waitAndCheckForFinishedCalculation(15000);
                     }
                     catch (Exception er)
@@ -140,8 +140,32 @@ namespace NeqSimExcel
                     var dewTPoints = ops.get("dewT");
                     var dewPPoints = ops.get("dewP");
 
+                    var dewTPoints2 = new double[0];
+                    var dewPPoints2 = new double[0];
+                    try
+                    {
+                        dewTPoints2 = ops.get("dewT2");
+                        dewPPoints2 = ops.get("dewP2");
+                    }
+                    catch(Exception er)
+                    {
+
+                    }
+
                     var bubTPoints = ops.get("bubT");
                     var bubPPoints = ops.get("bubP");
+
+                    var bubTPoints2 = new double[0];
+                    var bubPPoints2 = new double[0];
+                    try
+                    {
+                        bubTPoints2 = ops.get("bubT2");
+                        bubPPoints2 = ops.get("bubP2");
+                    }
+                    catch(Exception err)
+                    {
+                        
+                    }
 
                     var criticalPoint = ops.get("criticalPoint1");
 
@@ -159,6 +183,17 @@ namespace NeqSimExcel
                         number++;
                     }
 
+                    int number2 = 1;
+                    foreach (var val in bubTPoints2)
+                    {
+                        var textVar = "D" + number;
+                        var textVar2 = "E" + number;
+                        Range[textVar].Value2 = val - 273.15;
+                        Range[textVar2].Value2 = bubPPoints2[number2 - 1];
+                        number++;
+                        number2++;
+                    }
+
                     number = 1;
                     foreach (var val in dewTPoints)
                     {
@@ -167,6 +202,17 @@ namespace NeqSimExcel
                         Range[textVar].Value2 = val - 273.15;
                         Range[textVar2].Value2 = dewPPoints[number - 1];
                         number++;
+                    }
+
+                    number2 = 1;
+                    foreach (var val in dewTPoints2)
+                    {
+                        var textVar = "F" + number;
+                        var textVar2 = "G" + number;
+                        Range[textVar].Value2 = val - 273.15;
+                        Range[textVar2].Value2 = dewPPoints2[number2 - 1];
+                        number++;
+                        number2++;
                     }
 
                     Range["H1"].Value2 = criticalPoint[0] - 273.15;

@@ -15,7 +15,7 @@ namespace NeqSimNET
 
         // public bool PhaseExist { get => PhaseExist; set => PhaseExist = value; }
 
-        private SystemInterface thermoSystem = new SystemSrkEos(298, 10);
+        private SystemInterface thermoSystem = new SystemSrkEos(298.0, 10.0);
 
         public double temperature => thermoSystem.getTemperature();
 
@@ -126,8 +126,13 @@ namespace NeqSimNET
 
         public void setTPFraction(double T, double P, double[] x)
         {
+            for (int i = 0; i < x.Length; i++) {
+                if (x[i] < 0) x[i] = 0.0;
+            }
+
+
             thermoSystem.setMolarComposition(x);
-            thermoSystem.init(0,0);
+            thermoSystem.init(0, 0);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
         }
@@ -152,7 +157,6 @@ namespace NeqSimNET
         public void setTPFractionFlash(double T, double P, double[] x)
         {
             setCurrentProps(T, P, x, 0);
-            thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
@@ -191,7 +195,7 @@ namespace NeqSimNET
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
                 PhaseExist = false;
             else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") ||
-                      thermoSystem.getPhase(0).getPhaseTypeName().Equals("liquid")) &&
+                      thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) &&
                      phase.Equals("Vapor")) PhaseExist = false;
         }
 
@@ -278,13 +282,13 @@ namespace NeqSimNET
         public void PHflash(double enthalpySpec)
         {
             var ops = new ThermodynamicOperations(thermoSystem);
-            ops.PHflash(enthalpySpec, 0);
+            ops.PHflash(enthalpySpec, "J/mol");
         }
 
         public void PSflash(double entropySpec)
         {
             var ops = new ThermodynamicOperations(thermoSystem);
-            ops.PSflash(entropySpec);
+            ops.PSflash(entropySpec, "J/molK");
         }
 
         public double getTemperature()
@@ -358,8 +362,8 @@ namespace NeqSimNET
             var fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents(),
                 thermoSystem.getPhase(0).getNumberOfComponents()];
             for (var i = 0; i < fugacityCoef.Length; i++)
-            for (var j = 0; j < fugacityCoef.Length; j++)
-                fugacityCoef[i, j] = thermoSystem.getPhase(0).getComponent(i).getdfugdn(j);
+                for (var j = 0; j < fugacityCoef.Length; j++)
+                    fugacityCoef[i, j] = thermoSystem.getPhase(0).getComponent(i).getdfugdn(j);
             return fugacityCoef;
         }
 
@@ -984,5 +988,25 @@ namespace NeqSimNET
         {
             return thermoSystem.getPhase(phaseNumber).getBeta();
         }
+
+        public void addComponent(string componentName, double numberOfMoles)
+        {
+            thermoSystem.addComponent(componentName, numberOfMoles);
+        }
+
+        public void setMixingRule(int i)
+        {
+            thermoSystem.setMixingRule(i);
+        }
+
+        public void initFluid(int i)
+        {
+            thermoSystem.init(i);
+        }
+
+        public void createFluid() {
+        thermoSystem = new SystemSrkEos(298.0, 10.0);
+    }
+
     }
 }

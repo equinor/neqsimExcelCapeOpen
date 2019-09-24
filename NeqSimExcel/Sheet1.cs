@@ -155,7 +155,7 @@ namespace NeqSimExcel
             if (this.Range["B22"].Value2 > 0 && !(this.Range["B22"].Value2 == null)) thermoSystem.addComponent("toluene", this.Range["B22"].Value2);
             if (this.Range["B23"].Value2 > 0 && !(this.Range["B23"].Value2 == null)) thermoSystem.addComponent("c-C7", this.Range["B23"].Value2);
             if (this.Range["B24"].Value2 > 0 && !(this.Range["B24"].Value2 == null)) thermoSystem.addComponent("n-octane", this.Range["B24"].Value2);
-            if (this.Range["B25"].Value2 > 0 && !(this.Range["B25"].Value2 == null)) thermoSystem.addComponent("m-xylene", this.Range["B25"].Value2);
+            if (this.Range["B25"].Value2 > 0 && !(this.Range["B25"].Value2 == null)) thermoSystem.addComponent("m-Xylene", this.Range["B25"].Value2);
             if (this.Range["B26"].Value2 > 0 && !(this.Range["B26"].Value2 == null)) thermoSystem.addComponent("c-C8", this.Range["B26"].Value2);
             if (this.Range["B27"].Value2 > 0 && !(this.Range["B27"].Value2 == null)) thermoSystem.addComponent("n-nonane", this.Range["B27"].Value2);
             if (this.Range["B28"].Value2 > 0 && !(this.Range["B28"].Value2 == null)) thermoSystem.addComponent("nC10", this.Range["B28"].Value2);
@@ -424,11 +424,14 @@ namespace NeqSimExcel
         {
             if (dataBaseCheckBox.Checked)
             {
-               NeqSimThermoSystem.setDatabasePath("MSAccess", "C:\\Program Files (x86)\\Equinor\\NeqSim2018\\data\\NeqSimDatabase.mdb");
-            }
+                neqsim.util.database.NeqSimDataBase.setDataBaseType("mySQL");
+                neqsim.util.database.NeqSimDataBase.setConnectionString("jdbc:mysql://neqsim.equinor.com:3307/neqsimthermodatabase");
+
+             }
             else
             {
-                NeqSimThermoSystem.setDatabasePath("mySQL","");
+                neqsim.util.database.NeqSimDataBase.setDataBaseType("Derby");
+                neqsim.util.database.NeqSimDataBase.setConnectionString("jdbc:derby:classpath:data/neqsimthermodatabase");
             }
         }
 

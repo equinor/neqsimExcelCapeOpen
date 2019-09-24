@@ -153,7 +153,7 @@ namespace NeqSimExcel
             var wellStream = new Stream("Well stream", feedThermoSystem);
 
             wellStream.getThermoSystem().setTotalFlowRate(Range["B5"].Value2, "MSm^3/day");
-            var separationModule = new G2PGasProcessingModule();
+            var separationModule = new MixerGasProcessingModule();
             separationModule.addInputStream("feed stream", wellStream);
             separationModule.addInputStream("glycol feed stream", glycolFeedStream);
             separationModule.setSpecification("inlet separation temperature", Range["B12"].Value2);

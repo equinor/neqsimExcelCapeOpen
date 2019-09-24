@@ -22,7 +22,7 @@ namespace CapeOpenThermo
             neqsimService.setPackageID(Convert.ToInt32(package));
 
             neqsimService.addCapeOpenProperty("viscosity");
-            neqsimService.addCapeOpenProperty("thermalConductivity");
+         //   neqsimService.addCapeOpenProperty("thermalConductivity");
             properties = neqsimService.readCapeOpenProperties11();
 
             nNumComp = neqsimService.getNumberOfComponents();
@@ -45,8 +45,8 @@ namespace CapeOpenThermo
             neqsimService.readFluidFromGQIT(package);
             // neqsimService.setPackageID(Convert.ToInt32(package));
 
-            neqsimService.addCapeOpenProperty("viscosity");
-            neqsimService.addCapeOpenProperty("thermalConductivity");
+            //neqsimService.addCapeOpenProperty("viscosity");
+            //neqsimService.addCapeOpenProperty("thermalConductivity");
             properties = neqsimService.readCapeOpenProperties11();
 
             nNumComp = neqsimService.getNumberOfComponents();
