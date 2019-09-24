@@ -122,6 +122,7 @@ namespace NeqSimExcel
                 var userName = WindowsIdentity.GetCurrent().Name;
                 userName = userName.Replace("STATOIL-NET\\", "");
                 userName = userName.Replace("WIN-NTNU-NO\\", "");
+                userName = userName.Replace("EQUINOR-NET\\", "");
                 userName = userName.ToLower();
                 var userid = Convert.ToInt32(usertab.getUserID(userName));
                 tab.UpdateUserID(userid, a2);
