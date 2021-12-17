@@ -25,18 +25,18 @@
     <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish\</PublishUrl>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2021\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.7</ApplicationVersion>
+    <ApplicationVersion>1.0.0.17</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>NeqSimExcel</ProductName>
     <PublisherName>Equinor</PublisherName>
-    <SupportUrl>https://wiki.statoil.no/wiki/index.php/NeqSim</SupportUrl>
+    <SupportUrl>https://wiki.equinor.com/wiki/index.php/NeqSim</SupportUrl>
     <FriendlyName>NeqSimExcel</FriendlyName>
     <OfficeApplicationDescription />
   </PropertyGroup>
@@ -44,6 +44,11 @@
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -87,73 +92,124 @@
   <PropertyGroup>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.AWT.WinForms.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Beans, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.AWT.WinForms, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Beans.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.AWT.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Charsets.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Beans.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Corba, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Corba.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Charsets.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Core.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Cldrdata.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Corba.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Localedata.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Management, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Management.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Jdbc.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Media, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Media.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Localedata.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Naming, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Naming.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Management.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Remoting.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Media.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Security, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Security.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Misc.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Naming.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Text.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Nashorn.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.Util.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Remoting.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.OpenJDK.XML.API.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Security.dll</HintPath>
     </Reference>
-    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\dllfiles\IKVM.Runtime.dll</HintPath>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.6.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ikvm-8.1.5717.0\bin\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
     <Reference Include="IPDMCTRL, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -526,8 +582,6 @@
     <None Include="NeqSimExcel.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NeqSimExcel_1_TemporaryKey.pfx" />
-    <None Include="NeqSimExcel_2_TemporaryKey.pfx" />
     <None Include="NeqSimExcel_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="ThisWorkbook.Designer.xml">
@@ -712,10 +766,32 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>NeqSimExcel_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NeqSimExcel_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CDF8CB2C824946D9B059637874A86CE2DADBF0AC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E5780EE5BECC4FE94DC28ADA30E7365F3EFF16B3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>VSTO40;DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>VSTO40;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -728,15 +804,15 @@
           <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="D4A212BC00563C37D04801F1DE2B1A0801E507A8" DisplayName="SaveExportFluid" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
           <HostItem Name="Sheet7" Code="Olga.cs" CanonicalName="Sheet7" PublishedHash="672F935EEC54106025477A8D3C8C3FE3827C261B" DisplayName="OLGA" Blueprint="Olga.Designer.xml" GeneratedCode="Olga.Designer.cs" />
           <HostItem Name="Sheet5" Code="phaseEnvelope.cs" CanonicalName="Sheet5" PublishedHash="68F0C8B6DA0ACB15D82030B471DD72073A462E91" DisplayName="phase envelope" Blueprint="phaseEnvelope.Designer.xml" GeneratedCode="phaseEnvelope.Designer.cs" />
-          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="86909B412C62F08A30E607E5D6ED511DA24F1FD6" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
+          <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="F9B1D2698B094966A5B1A5274832F3A7B4E951FA" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
           <HostItem Name="Sheet10" Code="Sheet104.cs" CanonicalName="Sheet10" PublishedHash="F056709827FEB2E51A34AF3C5CD483E866638B37" DisplayName="waxT" Blueprint="Sheet104.Designer.xml" GeneratedCode="Sheet104.Designer.cs" />
           <HostItem Name="Sheet11" Code="Sheet111.cs" CanonicalName="Sheet11" PublishedHash="F16F268BBFCC78A39FA9D490790B92A362963EED" DisplayName="freezeT" Blueprint="Sheet111.Designer.xml" GeneratedCode="Sheet111.Designer.cs" />
           <HostItem Name="Sheet13" Code="Sheet13.cs" CanonicalName="Sheet13" PublishedHash="251BEE4C175E584326FC7F96407452847A25C76D" DisplayName="Property generator" Blueprint="Sheet13.Designer.xml" GeneratedCode="Sheet13.Designer.cs" />
           <HostItem Name="Sheet14" Code="Sheet14.cs" CanonicalName="Sheet14" PublishedHash="61A581E0BC27170721AE1341EC1602AEABB1D948" DisplayName="Scale" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.cs" />
           <HostItem Name="Sheet15" Code="Sheet15.cs" CanonicalName="Sheet15" PublishedHash="A32DE0D687FD15091DDC1844FD98195895281824" DisplayName="PVTfit" Blueprint="Sheet15.Designer.xml" GeneratedCode="Sheet15.Designer.cs" />
-          <HostItem Name="Sheet16" Code="Sheet16.cs" CanonicalName="Sheet16" PublishedHash="9128B3C602968F0D869156D2678417E158538BC3" DisplayName="NeqSimWeb" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.cs" />
+          <HostItem Name="Sheet16" Code="Sheet16.cs" CanonicalName="Sheet16" PublishedHash="E09FC3A98CA8DA8B39E12DC5469CC7C011D1BB4F" DisplayName="NeqSimWeb" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.cs" />
           <HostItem Name="Sheet17" Code="Sheet17.cs" CanonicalName="Sheet17" PublishedHash="07D1E76C94CBE099C0661192FBF67DFF1DFF1A2E" DisplayName="RFOpipedehyd" Blueprint="Sheet17.Designer.xml" GeneratedCode="Sheet17.Designer.cs" />
-          <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="5CF0429260293F19028FFF09C19A476C6EA0F5FC" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
+          <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="425667BD5CD8F1708FD3E029ED411CD9B6B95D08" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
           <HostItem Name="Sheet19" Code="Sheet191.cs" CanonicalName="Sheet19" PublishedHash="0E327626D87D516FD1DB81C9F9642A5E066346EB" DisplayName="Recombine" Blueprint="Sheet191.Designer.xml" GeneratedCode="Sheet191.Designer.cs" />
           <HostItem Name="Sheet2" Code="Sheet2.cs" CanonicalName="Sheet2" PublishedHash="D868625CDE6A88E598881E9E48C8188CEFAB1074" DisplayName="HC dew point" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.cs" />
           <HostItem Name="Sheet20" Code="Sheet20.cs" CanonicalName="Sheet20" PublishedHash="71A4000ECFBC439CBA3BCA9A73A81C689724BB1B" DisplayName="Mix" Blueprint="Sheet20.Designer.xml" GeneratedCode="Sheet20.Designer.cs" />

@@ -13,7 +13,6 @@ namespace CapeOpenUnitOperations
     [ProgId("NeqSim.CapeOpen.Freezing")]
     public class FreezingUnitOperation : UnitOperationBaseClass
     {
-        private readonly string[] reportNames = new string[1];
 
 
         public FreezingUnitOperation()
@@ -121,7 +120,7 @@ namespace CapeOpenUnitOperations
         {
         }
 
-        public void Terminate()
+        public override void Terminate()
         {
         }
 
@@ -141,7 +140,7 @@ namespace CapeOpenUnitOperations
         # region COM Registration
 
         [ComRegisterFunction]
-        public static void RegisterFunction(Type t)
+        public new static void RegisterFunction(Type t)
         {
             const string ICapeOpenComponent0 = "{678C09A1-7D66-11D2-A67D-00105A42887F}";
             const string ICapeOpenComponent = "{678C09A5-7D66-11D2-A67D-00105A42887F}";
@@ -188,7 +187,7 @@ namespace CapeOpenUnitOperations
         }
 
         [ComUnregisterFunction]
-        public static void UnregisterFunction(Type t)
+        public new static void UnregisterFunction(Type t)
         {
             //CapeOpenRegistration.UnRegisterFunction(typeof(ThermoPackages));
         }

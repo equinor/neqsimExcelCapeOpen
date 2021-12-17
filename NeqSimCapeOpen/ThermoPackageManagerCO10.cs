@@ -12,9 +12,9 @@ using Microsoft.Win32;
 namespace CapeOpenThermo
 {
     [Serializable]
-    [Guid("A68E5F20-F6F9-40D6-975B-157507C77E7C")]
+    [Guid("DC9C41CC-EB43-48B2-B5E2-1BA018BF52F3")]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
-    [ProgId("Statoil.CapeOpen10")]
+    [ProgId("Equinor.CapeOpen10")]
     public class ThermoPackageManagerCO10 : ICapeIdentification, ICapeThermoSystem
     {
         public string componentDescription = "NeqSim Thermo  Package 10 online";
@@ -76,7 +76,7 @@ namespace CapeOpenThermo
                     RegistryRights.CreateSubKey);
                 if (CLSID == null)
                     throw new COMException(
-                        "Failed to access registry for NeqSim-Cape Open(CLSID). You have to have adminitration rights to do this!");
+                        "Failed to access registry for NeqSim-Cape Open(CLSID). You need to have administrator rights to do this!");
                 var attributes = inf.GetCustomAttributes(typeof(GuidAttribute), false);
                 var guid = "{" + ((GuidAttribute) attributes[0]).Value + "}";
                 var key = CLSID.OpenSubKey(guid, true);
@@ -89,18 +89,18 @@ namespace CapeOpenThermo
                         "Failed to access registry for NeqSim-Cape Open (CapeDescription). You have to have adminitration rights to do this!");
                 CapeDescription.SetValue("About", "NeqSim Thermo Cape Open Package");
                 CapeDescription.SetValue("CapeVersion", "1.0");
-                CapeDescription.SetValue("ComponentVersion", "1.0-0");
+                CapeDescription.SetValue("ComponentVersion", "1.0-1");
                 CapeDescription.SetValue("Name", "NeqSim Thermo 10");
-                CapeDescription.SetValue("HelpUrl", "http://143.97.83.56:8080/NeqSimWiki/en/NeqSim_Wiki");
+                CapeDescription.SetValue("HelpUrl", "https://equinor.github.io/neqsimhome/");
                 CapeDescription.SetValue("VendorUrl", "NeqSim Thermo");
                 CapeDescription.SetValue("Description",
-                    "NeqSim is a process simulation and design tool used in oil and gas production. NeqSim thermodynamic and unit operaions can by used in 3rd part simulation tools supporting the Cape Open interface.");
+                    "NeqSim is a process simulation and design tool used in oil and gas production. NeqSim thermodynamic and unit operations can by used in 3rd part simulation tools supporting the Cape Open interface.");
                 key.SetValue("", "Tet Obect -NET");
 
                 var ImplementedCategories = key.OpenSubKey("Implemented Categories", true);
                 if (ImplementedCategories == null)
                     throw new COMException(
-                        "Failed to access registry for NeqSim Cape Open(Implemented Categories). You have to have adminitration rights to do this!");
+                        "Failed to access registry for NeqSim Cape Open(Implemented Categories). You need to have administrator rights to do this!");
                 ImplementedCategories.CreateSubKey(ICapeOpenComponent3);
                 ImplementedCategories.CreateSubKey(ICapeOpenComponent);
 

@@ -183,12 +183,12 @@ namespace NeqSimExcel
 
         private void gasCondutivityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            changeConductivityModel("gas", gasCondutivityComboBox.SelectedItem.ToString());
         }
 
         private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            changeInterfacialTensionGasOil();
         }
     }
 }

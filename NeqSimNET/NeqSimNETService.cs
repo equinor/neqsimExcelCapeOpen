@@ -1,6 +1,8 @@
 ﻿using System;
 using neqsim.thermo.system;
 using neqsim.thermodynamicOperations;
+using org.apache.logging.log4j.core.appender;
+using org.apache.logging.log4j.core.layout;
 
 namespace NeqSimNET
 {
@@ -27,6 +29,7 @@ namespace NeqSimNET
         {
             packageID = id;
         }
+
 
         public int getPackageID()
         {
@@ -118,23 +121,24 @@ namespace NeqSimNET
         {
             thermoSystem.setMolarComposition(x);
             //     thermoSystem.setPhaseIndex(0, activePhaseIndex);
-            //     thermoSystem.init(0, activePhaseIndex); 
-            thermoSystem.init(0, 0);
+            //     thermoSystem.init(0, activePhaseIndex);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
         }
 
         public void setTPFraction(double T, double P, double[] x)
         {
+          
+            thermoSystem.init(0);
             for (int i = 0; i < x.Length; i++) {
                 if (x[i] < 0) x[i] = 0.0;
             }
 
-
+            
             thermoSystem.setMolarComposition(x);
-            thermoSystem.init(0, 0);
             thermoSystem.setTemperature(T);
             thermoSystem.setPressure(P);
+            thermoSystem.setNumberOfPhases(1);
         }
 
 
@@ -142,7 +146,6 @@ namespace NeqSimNET
         {
             //thermoSystem.removeMoles();
             thermoSystem.setMolarComposition(x1);
-            thermoSystem.init(0);
             thermoSystem.getPhase(0).setMoleFractions(x1);
             thermoSystem.getPhase(1).setMoleFractions(x2);
             thermoSystem.setTemperature(T);
@@ -169,27 +172,32 @@ namespace NeqSimNET
 
         public void init(string phase, int initType)
         {
-            int phasetype = 0;
+
+            var phasetype = 0;
+            var phaseIndex = 1;
+           
             //  PhaseExist = true;
 
             if (phase.Equals("Vapor"))
             {
                 phasetype = 1;
+                phaseIndex = 0;
             }
             else if (phase.Equals("Liquid"))
             {
                 phasetype = 0;
+                phaseIndex = 1;
             }
             else
             {
                 phasetype = 0; // stop here - to check for errors
+                phaseIndex = 0;
                 var nonHandeledPhase = phase;
             }
 
-            //    thermoSystem.setPhaseIndex(0, phaseindex);
-            //   thermoSystem.setPhaseType(phaseindex, phasetype); // makes the current phase the first one, need to work with 2 phases
-            //   thermoSystem.init(initType, phaseindex);  // init(type, 0)
+            thermoSystem.setPhaseIndex(0, phaseIndex);
             thermoSystem.setPhaseType(0, phasetype);
+
             thermoSystem.init(initType, 0);
 
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
@@ -206,7 +214,13 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -233,9 +247,15 @@ namespace NeqSimNET
             var factor = 1.0;
             if (doInit)
             {
-                thermoSystem.setNumberOfPhases(1);
+                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -354,7 +374,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(3);
             }
@@ -374,7 +401,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -394,7 +428,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -441,7 +482,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -460,7 +508,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -480,7 +535,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -500,8 +562,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
                 thermoSystem.setPhaseType(0, phasetype);
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.init(2);
             }
 
@@ -525,7 +593,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -539,7 +614,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -553,7 +635,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -567,7 +656,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -581,7 +677,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -595,7 +698,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -610,7 +720,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -624,7 +741,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -638,7 +762,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -652,7 +783,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -666,7 +804,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -683,7 +828,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -697,7 +849,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -711,7 +870,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(2);
             }
@@ -725,7 +891,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -740,7 +913,13 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -758,7 +937,13 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -938,7 +1123,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }
@@ -953,7 +1145,14 @@ namespace NeqSimNET
             {
                 thermoSystem.setNumberOfPhases(1);
                 var phasetype = 0;
-                if (phase.Equals("Vapor")) phasetype = 1;
+                var phaseIndex = 1;
+                if (phase.Equals("Vapor"))
+                {
+                    phasetype = 1;
+                    phaseIndex = 0;
+                }
+
+                thermoSystem.setPhaseIndex(0, phaseIndex);
                 thermoSystem.setPhaseType(0, phasetype);
                 thermoSystem.init(1);
             }

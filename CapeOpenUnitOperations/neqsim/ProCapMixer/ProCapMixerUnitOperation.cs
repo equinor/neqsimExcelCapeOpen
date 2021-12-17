@@ -13,7 +13,7 @@ namespace CapeOpenUnitOperations
     [ProgId("NeqSim.CapeOpen.Mixer")]
     public class ProCapMixerUnitOperation : UnitOperationBaseClass
     {
-        private readonly string[] reportNames = new string[1];
+     //   private readonly string[] reportNames = new string[1];
 
 
         public ProCapMixerUnitOperation()
@@ -124,12 +124,12 @@ namespace CapeOpenUnitOperations
 
         public override void Edit()
         {
-            double pressure = 0;
+          //  double pressure = 0;
         }
 
-        public void Terminate()
+        public override void Terminate()
         {
-            double pressure = 0;
+          //  double pressure = 0;
         }
 
 
@@ -149,7 +149,7 @@ namespace CapeOpenUnitOperations
         # region COM Registration
 
         [ComRegisterFunction]
-        public static void RegisterFunction(Type t)
+        public new static void RegisterFunction(Type t)
         {
             const string ICapeOpenComponent0 = "{678C09A1-7D66-11D2-A67D-00105A42887F}";
             const string ICapeOpenComponent = "{678C09A5-7D66-11D2-A67D-00105A42887F}";
@@ -196,7 +196,7 @@ namespace CapeOpenUnitOperations
         }
 
         [ComUnregisterFunction]
-        public static void UnregisterFunction(Type t)
+        public new static void UnregisterFunction(Type t)
         {
             //CapeOpenRegistration.UnRegisterFunction(typeof(ThermoPackages));
         }

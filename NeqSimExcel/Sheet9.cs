@@ -31,6 +31,7 @@ namespace NeqSimExcel
             this.ActivateEvent += new Microsoft.Office.Interop.Excel.DocEvents_ActivateEventHandler(this.activteSHeet);
             this.Startup += new System.EventHandler(this.Sheet9_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet9_Shutdown);
+           
 
         }
 
@@ -148,7 +149,7 @@ namespace NeqSimExcel
         private void activteSHeet()
         {
             var rangeClear = Range["A2", "H100"];
-            rangeClear.Clear();
+           //rangeClear.Clear();
             rangeClear.Font.Color = ColorTranslator.ToOle(Color.DarkGray);
 
             var rangeBLack = Range["B2", "B200"];
@@ -156,10 +157,11 @@ namespace NeqSimExcel
 
             var a = NeqSimThermoSystem.getThermoSystem().getPhase(0).getNumberOfComponents() + 1;
             var range = Range["B2", "B" + a];
+            var extrange = Range["B" + (a+1), "B200"];
             var i = 0;
             string number;
             foreach (Range r in range.Cells)
-                if (string.IsNullOrEmpty((string) r.Text))
+              //  if (string.IsNullOrEmpty((string) r.Text))
                 {
                     number = (i + 2).ToString();
                     Range["A" + number].Value2 = NeqSimThermoSystem.getThermoSystem().getPhase(0).getComponent(i)
@@ -179,9 +181,26 @@ namespace NeqSimExcel
                     i++;
                 }
 
-            number = (i + 3).ToString();
+            
+            int numb2 = i;
+            foreach (Range r in extrange.Cells)
+                if (!string.IsNullOrEmpty((string)r.Text))
+                {
+                    number = (i + 2).ToString();
+                    Range["A" + number].Value2 = "";
+                    Range["B" + number].Value2 = "";
+                    Range["C" + number].Value2 = "";
+                    Range["D" + number].Value2 = "";
+                    Range["E" + number].Value2 = "";
+                    Range["F" + number].Value2 = "";
+                    Range["G" + number].Value2 = "";
+                    i++;
+                }
+                else break;
+            
+            number = (numb2 + 3).ToString();
             Range["A" + number].Value2 = "Total %";
-            Range["B" + number].Value2 = "=sum(B2:B" + (i + 1) + ")";
+            Range["B" + number].Value2 = "=sum(B2:B" + (numb2 + 1) + ")";
         }
     }
 }

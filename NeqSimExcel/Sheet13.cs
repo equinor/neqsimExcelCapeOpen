@@ -55,6 +55,7 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
+            this.propertyComboBox.Click += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.okbutton.Click += new System.EventHandler(this.okbutton_Click);
             this.Startup += new System.EventHandler(this.Sheet13_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet13_Shutdown);
@@ -358,12 +359,5 @@ namespace NeqSimExcel
             // ops.TPflash();
         }
 
-        private void propertyComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void phaseNameCombobox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
     }
 }

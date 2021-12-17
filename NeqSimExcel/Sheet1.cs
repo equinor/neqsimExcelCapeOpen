@@ -31,20 +31,20 @@ namespace NeqSimExcel
         Excel.Range TBPCompRange;
         Excel.Range waterPrecentRange, MEGPrecentRange, TEGPrecentRange, ethanolPrecentRange, methanolPrecentRange;
         Excel.Range polarComPrecentRange;
-
+        Excel.Range NaplusPrecentRange, ClminusPrecentRange;
         private void Sheet1_Startup(object sender, System.EventArgs e)
         {
             statusRange = this.Range["I22"];
-            sumMolPrecentRange = this.Range["B116"];
-            molPrecentCompRange = this.Range["B2", "B115"];
-            allComponentRowsRange= this.Range["A1:A115"].EntireRow;
+            sumMolPrecentRange = this.Range["B118"];
+            molPrecentCompRange = this.Range["B2", "B117"];
+            allComponentRowsRange= this.Range["A1:A117"].EntireRow;
             extendedComponentRowsRange = this.Range["A44:A103"].EntireRow;
-            extendedComponentRowsRange2 = this.Range["A109:A115"].EntireRow;
+            extendedComponentRowsRange2 = this.Range["A109:A117"].EntireRow;
             extendedComponentRowsRange3 = this.Range["A10"].EntireRow;
             extendedComponentRowsRange4 = this.Range["A13:A17"].EntireRow;
             extendedComponentRowsRange5 = this.Range["A23"].EntireRow;
             extendedComponentRowsRange6 = this.Range["A26"].EntireRow;
-            averageMolWtRange = this.Range["C116"];
+            averageMolWtRange = this.Range["C118"];
             TBPCompRange = this.Range["B29", "B103"];
             waterPrecentRange = this.Range["B104"];
             MEGPrecentRange = this.Range["B107"];
@@ -52,6 +52,8 @@ namespace NeqSimExcel
             ethanolPrecentRange = this.Range["B106"];
             methanolPrecentRange = this.Range["B105"];
             polarComPrecentRange = this.Range["B104", "B108"]; //???? check!
+            NaplusPrecentRange = this.Range["B116"];
+            ClminusPrecentRange = this.Range["B117"];
             EoScombobox.SelectedIndex = 0;
             inhibitorCalcTypecomboBox.SelectedIndex = 0;
             inhibitorComboBox.SelectedIndex = 0;
@@ -174,7 +176,7 @@ namespace NeqSimExcel
                 bool testIfTBP = thermoSystem.setHeavyTBPfractionAsPlusFraction();
                 if (testIfTBP)
                 {
-                    thermoSystem.getCharacterization().getLumpingModel().setNumberOfLumpedComponents(Int16.Parse(numberOfPseudoCompComboBox.SelectedItem.ToString()));
+                    thermoSystem.getCharacterization().getLumpingModel().setNumberOfPseudoComponents(Int16.Parse(numberOfPseudoCompComboBox.SelectedItem.ToString()));
                     thermoSystem.getCharacterization().characterisePlusFraction();
                 }
             }
@@ -184,6 +186,8 @@ namespace NeqSimExcel
             if (ethanolPrecentRange.Value2 > 0 && !(ethanolPrecentRange.Value2 == null)) thermoSystem.addComponent("ethanol", ethanolPrecentRange.Value2);
             if (MEGPrecentRange.Value2 > 0 && !(MEGPrecentRange.Value2 == null)) thermoSystem.addComponent("MEG", MEGPrecentRange.Value2);
             if (TEGPrecentRange.Value2 > 0 && !(TEGPrecentRange.Value2 == null)) thermoSystem.addComponent("TEG", TEGPrecentRange.Value2);
+            if (NaplusPrecentRange.Value2 > 0 && !(NaplusPrecentRange.Value2 == null)) thermoSystem.addComponent("Na+", NaplusPrecentRange.Value2);
+            if (ClminusPrecentRange.Value2 > 0 && !(ClminusPrecentRange.Value2 == null)) thermoSystem.addComponent("Cl-", ClminusPrecentRange.Value2);
 
             if (chemicalReactionsCheckBox.Checked)
             {
@@ -425,13 +429,15 @@ namespace NeqSimExcel
             if (dataBaseCheckBox.Checked)
             {
                 neqsim.util.database.NeqSimDataBase.setDataBaseType("mySQL");
-                neqsim.util.database.NeqSimDataBase.setConnectionString("jdbc:mysql://neqsim.equinor.com:3307/neqsimthermodatabase");
+                neqsim.util.database.NeqSimDataBase.setConnectionString("jdbc:mysql://neqsim.equinor.com:3307/neqsimthermodatabase?useSSL=false");
+                neqsim.util.database.NeqSimDataBase.setCreateTemporaryTables(true);
 
              }
             else
             {
                 neqsim.util.database.NeqSimDataBase.setDataBaseType("Derby");
                 neqsim.util.database.NeqSimDataBase.setConnectionString("jdbc:derby:classpath:data/neqsimthermodatabase");
+                neqsim.util.database.NeqSimDataBase.setCreateTemporaryTables(false);
             }
         }
 

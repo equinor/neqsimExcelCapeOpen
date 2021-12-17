@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NeqSimRegistration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Statoil")]
+[assembly: AssemblyCompany("Equinor")]
 [assembly: AssemblyProduct("NeqSimRegistration")]
-[assembly: AssemblyCopyright("Copyright © Statoil 2018")]
+[assembly: AssemblyCopyright("Copyright © Equinor 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

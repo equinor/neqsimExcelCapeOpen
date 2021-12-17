@@ -17,7 +17,7 @@ namespace NeqSimExcel {
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet18 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
         
         internal Microsoft.Office.Tools.Excel.Controls.ComboBox gasViscosityCommboBox;
@@ -53,7 +53,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
@@ -67,7 +67,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void FinishInitialization() {
             this.InternalStartup();
@@ -76,7 +76,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void InitializeDataBindings() {
             this.BeginInitialization();
@@ -86,7 +86,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeCachedData() {
             if ((this.DataHost == null)) {
@@ -99,14 +99,14 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeData() {
         }
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void BindToData() {
         }
@@ -134,7 +134,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void BeginInitialization() {
             this.BeginInit();
@@ -142,7 +142,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void EndInitialization() {
             this.EndInit();
@@ -150,7 +150,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
             this.gasViscosityCommboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "1CFED2BE119AE914D4C1BB4319AF98EDDC6301", "1CFED2BE119AE914D4C1BB4319AF98EDDC6301", this, "gasViscosityCommboBox");
@@ -168,7 +168,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "16.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeComponents() {
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -180,7 +180,8 @@ namespace NeqSimExcel {
                         "polynom",
                         "friction theory",
                         "LBC",
-                        "PFCT"});
+                        "PFCT",
+                        "PFCT-Heavy-Oil"});
             this.gasViscosityCommboBox.Name = "gasViscosityCommboBox";
             this.gasViscosityCommboBox.Text = "Default";
             // 
@@ -191,7 +192,8 @@ namespace NeqSimExcel {
                         "polynom",
                         "friction theory",
                         "LBC",
-                        "PFCT"});
+                        "PFCT",
+                        "PFCT-Heavy-Oil"});
             this.oilViscosityCmboBox.Name = "oilViscosityCmboBox";
             this.oilViscosityCmboBox.Text = "Default";
             // 
@@ -202,7 +204,8 @@ namespace NeqSimExcel {
                         "polynom",
                         "friction theory",
                         "LBC",
-                        "PFCT"});
+                        "PFCT",
+                        "PFCT-Heavy-Oil"});
             this.aqueousViscositycomboBox.Name = "aqueousViscositycomboBox";
             this.aqueousViscositycomboBox.Text = "Default";
             // 
@@ -244,6 +247,10 @@ namespace NeqSimExcel {
             // 
             // oilCOnductivityComboBox
             // 
+            this.oilCOnductivityComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+                        "PFCT",
+                        "polynom",
+                        "Chung"});
             this.oilCOnductivityComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.oilCOnductivityComboBox.Items.AddRange(new object[] {
                         "PFCT",
@@ -254,6 +261,10 @@ namespace NeqSimExcel {
             // 
             // gasCondutivityComboBox
             // 
+            this.gasCondutivityComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+                        "PFCT",
+                        "polynom",
+                        "Chung"});
             this.gasCondutivityComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.gasCondutivityComboBox.Items.AddRange(new object[] {
                         "PFCT",
@@ -264,6 +275,10 @@ namespace NeqSimExcel {
             // 
             // aqueousConduvtivityComboBox
             // 
+            this.aqueousConduvtivityComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+                        "PFCT",
+                        "polynom",
+                        "Chung"});
             this.aqueousConduvtivityComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.aqueousConduvtivityComboBox.Items.AddRange(new object[] {
                         "PFCT",

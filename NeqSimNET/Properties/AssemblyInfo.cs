@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NeqSimNet")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Statoil")]
+[assembly: AssemblyCompany("Equinor")]
 [assembly: AssemblyProduct("ClassLibrary2")]
-[assembly: AssemblyCopyright("Copyright © Statoil 2012")]
+[assembly: AssemblyCopyright("Copyright © Equinor 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("81936f55-a9ed-4bbd-8790-e08232f4dc4f")]
+[assembly: Guid("B2660EF4-19D2-429C-BDDC-EF4768AF5D29")]
 
 // Version information for an assembly consists of the following four values:
 //

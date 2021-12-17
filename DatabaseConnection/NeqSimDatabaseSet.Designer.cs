@@ -5201,8 +5201,8 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "\n                      INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID(" +
-                ");\n                    ";
+            this._commandCollection[2].CommandText = "\r\n                      INSERT INTO fluidinfo () VALUES (); SELECT LAST_INSERT_ID" +
+                "();\r\n                    ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -5886,8 +5886,8 @@ namespace DatabaseConnection.NeqSimDatabaseSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "\n                      SELECT ID, USERNAME\n                      FROM     userdb\n" +
-                "                    ";
+            this._commandCollection[0].CommandText = "\r\n                      SELECT ID, USERNAME\r\n                      FROM     userd" +
+                "b\r\n                    ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;

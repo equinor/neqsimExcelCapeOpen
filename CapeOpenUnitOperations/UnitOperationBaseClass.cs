@@ -124,12 +124,12 @@ namespace CapeOpenUnitOperations
 
         public virtual void Edit()
         {
-            double pressure = 0;
+          //  double pressure = 0;
         }
 
         public virtual void Terminate()
         {
-            double pressure = 0;
+        //    double pressure = 0;
         }
 
         public virtual object simulationContext

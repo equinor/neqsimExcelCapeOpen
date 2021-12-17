@@ -8,8 +8,6 @@ namespace NeqSimRegistration
     {
         private static void Main(string[] args)
         {
-            //ThermoPackages tempVar = new ThermoPackages();
-            //Object test = tempVar.GetPropertyPackageList();
             try
             {
                 Type t = null;
@@ -17,7 +15,7 @@ namespace NeqSimRegistration
             ThermoPackageManagerCO11.RegisterFunction(t);
             ThermoPackageManagerCO10.RegisterFunction(t);
             ThermoPackageManagerCO11local.RegisterFunction(t);
-            CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
+           // CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
                 //CapeOpenUnitOperations.WaterDewPointUnitOperation.RegisterFunction(t);
                 //  CapeOpenUnitOperations.FreezingUnitOperation.RegisterFunction(t);
                 //  CapeOpenUnitOperations.ProCapMixerUnitOperation.RegisterFunction(t);
@@ -49,11 +47,6 @@ namespace NeqSimRegistration
                 Console.ReadLine();
             }
             finally { }
-            // Console.ReadLine();
-            // testing..
-            //testing2
-            //testing3
-            //testing4
         }
     }
 }

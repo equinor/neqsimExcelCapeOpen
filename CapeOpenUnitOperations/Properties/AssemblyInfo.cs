@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CapeOpenUnitOperations")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Statoil")]
+[assembly: AssemblyCompany("Equinor")]
 [assembly: AssemblyProduct("CapeOpenUnitOperations")]
-[assembly: AssemblyCopyright("Copyright © Statoil 2013")]
+[assembly: AssemblyCopyright("Copyright © Equinor 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

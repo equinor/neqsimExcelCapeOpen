@@ -36,7 +36,6 @@ namespace CapeOpenThermo
             };
             componentName = packageDesc;
             componentDescription = packageDesc;
-
         }
 
         public NeqSimNETClientCO11(string package, string packageName)
@@ -418,9 +417,9 @@ namespace CapeOpenThermo
                     }
                     else if (tempString[i].Equals("helmholtzEnergy"))
                     {
-                        var H = new double[1];
-                        H[0] = neqsimService.getHelmholtzEnergy(phaseLabel, doInit);
-                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", H);
+                        var helmlE = new double[1];
+                        helmlE[0] = neqsimService.getHelmholtzEnergy(phaseLabel, doInit);
+                        material.SetSinglePhaseProp(tempString[i], phaseLabel, "Mole", helmlE);
                     }
                     else if (tempString[i].Equals("jouleThomsonCoefficient"))
                     {

@@ -261,6 +261,7 @@ namespace NeqSimExcel
         {
             statusRange.Value2 = "initializing charge";
             if (unitComboBox.SelectedItem.Equals("mg/kgWater")) convertmgtommol();
+            if (unitComboBox.SelectedItem.Equals("mg/litre")) convertmglitretommol();
             double totalCHarge = Range["B15"].Value2;
             if (totalCHarge < 0) Range["B2"].Value2 = Range["B2"].Value2 - totalCHarge;
             if (totalCHarge > 0) Range["B9"].Value2 = Range["B9"].Value2 + totalCHarge;
@@ -280,6 +281,27 @@ namespace NeqSimExcel
             Range["B10"].Value2 = Range["B10"].Value2 * 79.9;
             Range["B11"].Value2 = Range["B11"].Value2 * 96.07;
             Range["B13"].Value2 = Range["B13"].Value2 * 17.001;
+        }
+        
+             private void convertmglitretommol()
+        {
+            //this method needs changes further work here
+
+            //double densitySolution = 1100.0;//needs calculation
+            
+            //double kgwaterperkgsolution = densitySolution-
+
+            Range["B2"].Value2 = Range["B2"].Value2 / 22.99;
+            Range["B3"].Value2 = Range["B3"].Value2 / 39.1;
+            Range["B4"].Value2 = Range["B4"].Value2 / 24.31;
+            Range["B5"].Value2 = Range["B5"].Value2 / 40.08;
+            Range["B6"].Value2 = Range["B6"].Value2 / 137.3;
+            Range["B7"].Value2 = Range["B7"].Value2 / 87.62;
+            Range["B8"].Value2 = Range["B8"].Value2 / 55.85;
+            Range["B9"].Value2 = Range["B9"].Value2 / 35.45;
+            Range["B10"].Value2 = Range["B10"].Value2 / 79.9;
+            Range["B11"].Value2 = Range["B11"].Value2 / 96.07;
+            Range["B13"].Value2 = Range["B13"].Value2 / 17.001;
         }
 
         private void convertmgtommol()

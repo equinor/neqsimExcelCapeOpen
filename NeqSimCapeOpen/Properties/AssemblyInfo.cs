@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ClassLibrary1")]
+[assembly: AssemblyTitle("CapeOpenThermo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Statoil")]
+[assembly: AssemblyCompany("Equinor")]
 [assembly: AssemblyProduct("ClassLibrary1")]
-[assembly: AssemblyCopyright("Copyright © Statoil 2012")]
+[assembly: AssemblyCopyright("Copyright © Equinor 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c747f0b-9235-45bb-94b5-3573011f8e88")]
+[assembly: Guid("7A379FDC-1639-4646-BC1B-19B0E75CC8DD")]
 
 // Version information for an assembly consists of the following four values:
 //
