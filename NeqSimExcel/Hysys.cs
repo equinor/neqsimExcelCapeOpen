@@ -77,6 +77,7 @@ namespace NeqSimExcel
                 string filePath = null;
 
                 var textVar1 = "B8";
+                var nameUrl = "B3";
                 Range[textVar1].Value2 = "saving fluid...";
 
                 if (NeqSimThermoSystem.LocalFilePath == null)
@@ -94,7 +95,7 @@ namespace NeqSimExcel
                     DirectoryInfo di = Directory.CreateDirectory(filePath);
                 }
 
-                string fluidName = Range["B20"].Value2 + ".neqsim";
+                string fluidName = Range[nameUrl].Value2 + ".neqsim";
 
                 // string fullname = path + "/"+fluidName;
                 var fullname = filePath + "/" + fluidName;
@@ -102,7 +103,7 @@ namespace NeqSimExcel
                 var thermoSystem = NeqSimThermoSystem.getThermoSystem();
                 thermoSystem.saveObjectToFile(fullname, "");
 
-                Range["B25"].Value2 = "Saved fluid.." + Range["B20"].Value2;
+                Range[textVar1].Value2 = "Saved fluid.." + Range[nameUrl].Value2;
             }
             catch (Exception exept)
             {

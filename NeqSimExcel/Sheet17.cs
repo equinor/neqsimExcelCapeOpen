@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Security.Principal;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
@@ -32,23 +33,19 @@ namespace NeqSimExcel
             fluidListNameComboBoxLiquid.Items.Clear();
             try
             {
-                // NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
-                //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
-                //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
-
-                var userName = WindowsIdentity.GetCurrent().Name;
-                userName = userName.Replace("STATOIL-NET\\", "");
-                userName = userName.Replace("WIN-NTNU-NO\\", "");
-                userName = userName.ToLower();
-
-
                 var names = new List<string>();
-                //names.Add("CPApackage");
-                //names.Add(WindowsIdentity.GetCurrent().Name);
-           
+                var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
 
-                //   packageNames = names.ToArray();
-                //   fluidListNameComboBox.Items.Add(names.ToList());
+                var d = new DirectoryInfo(fullPath);
+                var Files = d.GetFiles("*.neqsim");
+                foreach (var file in Files)
+                {
+                    names.Add(file.Name.Replace(".neqsim", ""));
+                    fluidListNameComboBoxGas.Items.Add(file.Name.Replace(".neqsim", ""));
+                    fluidListNameComboBoxLiquid.Items.Add(file.Name.Replace(".neqsim", ""));
+                }
+
                 fluidListNameComboBoxGas.SelectedIndex = 0;
                 fluidListNameComboBoxLiquid.SelectedIndex = 0;
 
@@ -64,6 +61,7 @@ namespace NeqSimExcel
             {
                 Console.WriteLine("Error " + excet.Message);
             }
+            
             fluidListNameComboBoxGas.SelectedIndex = 0;
             fluidListNameComboBoxLiquid.SelectedIndex = 0;
         }
@@ -96,9 +94,13 @@ namespace NeqSimExcel
             Range["F2", "H100"].Clear();
 
             statusRange.Value2 = "reading fluids...";
-            var gasNumb = Convert.ToInt32(fluidListNameComboBoxGas.SelectedItem.ToString());
+
+            string name = fluidListNameComboBoxGas.SelectedItem.ToString();
+            var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
+            var filename = fullPath + "\\" + name + ".neqsim";
             gasThermoSystem = NeqSimThermoSystem.getThermoSystem();
-            gasThermoSystem = gasThermoSystem.readObject(gasNumb);
+            gasThermoSystem = gasThermoSystem.readObjectFromFile(filename, filename);
             gasThermoSystem.setTemperature(Range["B6"].Value2 + 273.15);
             gasThermoSystem.setPressure(Range["B7"].Value2);
             var gasOps = new ThermodynamicOperations(gasThermoSystem);
@@ -112,9 +114,10 @@ namespace NeqSimExcel
 
             statusRange.Value2 = "reading gas...ok";
 
-            var liqNumb = Convert.ToInt32(fluidListNameComboBoxLiquid.SelectedItem.ToString());
+            name = fluidListNameComboBoxLiquid.SelectedItem.ToString();
+            filename = fullPath + "\\" + name + ".neqsim";
             liqThermoSystem = NeqSimThermoSystem.getThermoSystem();
-            liqThermoSystem = liqThermoSystem.readObject(liqNumb);
+            liqThermoSystem = liqThermoSystem.readObjectFromFile(filename, filename);
             liqThermoSystem.setTotalFlowRate(Range["B11"].Value2, "kg/sec");
             liqThermoSystem.init(0);
             liqThermoSystem.init(1);
@@ -185,9 +188,12 @@ namespace NeqSimExcel
 
         private void linkLabel1_Click(object sender, EventArgs e)
         {
-            var gasNumb = Convert.ToInt32(fluidListNameComboBoxGas.SelectedItem.ToString());
+            string name = fluidListNameComboBoxGas.SelectedItem.ToString();
+            var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
+            var filename = fullPath + "\\" + name + ".neqsim";
             gasThermoSystem = NeqSimThermoSystem.getThermoSystem();
-            gasThermoSystem = gasThermoSystem.readObject(gasNumb);
+            gasThermoSystem = gasThermoSystem.readObjectFromFile(filename, filename);
             gasThermoSystem.setTemperature(Range["B6"].Value2 + 273.15);
             gasThermoSystem.setPressure(Range["B7"].Value2);
             var testOps = new ThermodynamicOperations(gasThermoSystem);
@@ -197,9 +203,12 @@ namespace NeqSimExcel
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var liqNumb = Convert.ToInt32(fluidListNameComboBoxLiquid.SelectedItem.ToString());
+            string name = fluidListNameComboBoxLiquid.SelectedItem.ToString();
+            var filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            var fullPath = filePath + "\\AppData\\Roaming\\neqsim\\fluids";
+            var filename = fullPath + "\\" + name + ".neqsim";
             liqThermoSystem = NeqSimThermoSystem.getThermoSystem();
-            liqThermoSystem = liqThermoSystem.readObject(liqNumb);
+            liqThermoSystem = liqThermoSystem.readObjectFromFile(filename, filename);
             liqThermoSystem.setTemperature(Range["B6"].Value2 + 273.15);
             liqThermoSystem.setPressure(Range["B7"].Value2);
             var testOps = new ThermodynamicOperations(liqThermoSystem);

@@ -13,14 +13,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimExcel", "NeqSimExcel\NeqSimExcel.csproj", "{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{658BF43C-1523-4315-B58A-4E4F15D15818} = {658BF43C-1523-4315-B58A-4E4F15D15818}
-		{E95B7D43-F189-4B34-8B06-490CCB254A24} = {E95B7D43-F189-4B34-8B06-490CCB254A24}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenUnitOperations", "CapeOpenUnitOperations\CapeOpenUnitOperations.csproj", "{A0EBB07A-9564-4C3A-A7E5-72D6708D26E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimRegistration", "NeqSimRegistration\NeqSimRegistration.csproj", "{E95B7D43-F189-4B34-8B06-490CCB254A24}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSim2.0.7", "NeqSim2.0.6\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSim2.2", "NeqSim2.0.6\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
