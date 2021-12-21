@@ -128,26 +128,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="docs\MySqlCommand.xml" />
-    <Content Include="docs\MySqlCommandBuilder.xml" />
-    <Content Include="docs\MySqlConnection.xml" />
-    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
-    <Content Include="docs\MySqlDataAdapter.xml" />
-    <Content Include="docs\MySqlDataReader.xml" />
-    <Content Include="docs\MySqlException.xml" />
-    <Content Include="docs\MySqlHelper.xml" />
-    <Content Include="docs\MySqlParameter.xml" />
-    <Content Include="docs\MySqlParameterCollection.xml" />
-    <Content Include="docs\MySqlTransaction.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NeqSimNET\NeqSim.NET.csproj">
       <Project>{658bf43c-1523-4315-b58a-4e4f15d15818}</Project>
       <Name>NeqSim.NET</Name>

@@ -82,10 +82,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CapeOpenUnitOperations\CapeOpenUnitOperations.csproj">
       <Project>{a0ebb07a-9564-4c3a-a7e5-72d6708d26e6}</Project>
       <Name>CapeOpenUnitOperations</Name>
@@ -94,19 +90,6 @@
       <Project>{51856c94-2811-4175-9d84-b221ad786b2c}</Project>
       <Name>CapeOpenThermoLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="docs\MySqlCommand.xml" />
-    <Content Include="docs\MySqlCommandBuilder.xml" />
-    <Content Include="docs\MySqlConnection.xml" />
-    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
-    <Content Include="docs\MySqlDataAdapter.xml" />
-    <Content Include="docs\MySqlDataReader.xml" />
-    <Content Include="docs\MySqlException.xml" />
-    <Content Include="docs\MySqlHelper.xml" />
-    <Content Include="docs\MySqlParameter.xml" />
-    <Content Include="docs\MySqlParameterCollection.xml" />
-    <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

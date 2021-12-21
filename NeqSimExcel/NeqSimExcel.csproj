@@ -11,7 +11,7 @@
     <RootNamespace>NeqSimExcel</RootNamespace>
     <AssemblyName>NeqSimExcel</AssemblyName>
     <VSTO_HostDocumentName>NeqSimExcel.xlsx</VSTO_HostDocumentName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <DefineConstants>VSTO40</DefineConstants>
@@ -77,6 +77,8 @@
     <RegisterForComInterop>false</RegisterForComInterop>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -322,12 +324,6 @@
     <Compile Include="Sheet111.Designer.cs">
       <DependentUpon>Sheet111.Designer.xml</DependentUpon>
     </Compile>
-    <Compile Include="Sheet16.cs">
-      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
-    </Compile>
-    <Compile Include="Sheet16.Designer.cs">
-      <DependentUpon>Sheet16.Designer.xml</DependentUpon>
-    </Compile>
     <Compile Include="Sheet17.cs">
       <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
     </Compile>
@@ -515,9 +511,6 @@
     <EmbeddedResource Include="Sheet15.resx">
       <DependentUpon>Sheet15.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sheet16.resx">
-      <DependentUpon>Sheet16.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Sheet17.resx">
       <DependentUpon>Sheet17.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,15 +568,9 @@
     <EmbeddedResource Include="StartUpSheet.resx">
       <DependentUpon>StartUpSheet.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ClassDiagram1.cd" />
     <None Include="NeqSimExcel.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NeqSimExcel_TemporaryKey.pfx" />
-    <None Include="packages.config" />
     <None Include="ThisWorkbook.Designer.xml">
       <DependentUpon>ThisWorkbook.cs</DependentUpon>
     </None>
@@ -634,9 +621,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Sheet104.Designer.xml">
       <DependentUpon>Sheet104.cs</DependentUpon>
     </None>
@@ -664,11 +648,6 @@
   <ItemGroup>
     <None Include="StartUpSheet.Designer.xml">
       <DependentUpon>StartUpSheet.cs</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Sheet16.Designer.xml">
-      <DependentUpon>Sheet16.cs</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -732,17 +711,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="docs\MySqlCommand.xml" />
-    <Content Include="docs\MySqlCommandBuilder.xml" />
-    <Content Include="docs\MySqlConnection.xml" />
-    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
-    <Content Include="docs\MySqlDataAdapter.xml" />
-    <Content Include="docs\MySqlDataReader.xml" />
-    <Content Include="docs\MySqlException.xml" />
-    <Content Include="docs\MySqlHelper.xml" />
-    <Content Include="docs\MySqlParameter.xml" />
-    <Content Include="docs\MySqlParameterCollection.xml" />
-    <Content Include="docs\MySqlTransaction.xml" />
     <None Include="Sheet292.Designer.Designer.xml">
       <DependentUpon>Sheet292.cs</DependentUpon>
     </None>
@@ -804,7 +772,6 @@
           <HostItem Name="Sheet13" Code="Sheet13.cs" CanonicalName="Sheet13" PublishedHash="251BEE4C175E584326FC7F96407452847A25C76D" DisplayName="Property generator" Blueprint="Sheet13.Designer.xml" GeneratedCode="Sheet13.Designer.cs" />
           <HostItem Name="Sheet14" Code="Sheet14.cs" CanonicalName="Sheet14" PublishedHash="61A581E0BC27170721AE1341EC1602AEABB1D948" DisplayName="Scale" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.cs" />
           <HostItem Name="Sheet15" Code="Sheet15.cs" CanonicalName="Sheet15" PublishedHash="A32DE0D687FD15091DDC1844FD98195895281824" DisplayName="PVTfit" Blueprint="Sheet15.Designer.xml" GeneratedCode="Sheet15.Designer.cs" />
-          <HostItem Name="Sheet16" Code="Sheet16.cs" CanonicalName="Sheet16" PublishedHash="E09FC3A98CA8DA8B39E12DC5469CC7C011D1BB4F" DisplayName="NeqSimWeb" Blueprint="Sheet16.Designer.xml" GeneratedCode="Sheet16.Designer.cs" />
           <HostItem Name="Sheet17" Code="Sheet17.cs" CanonicalName="Sheet17" PublishedHash="07D1E76C94CBE099C0661192FBF67DFF1DFF1A2E" DisplayName="RFOpipedehyd" Blueprint="Sheet17.Designer.xml" GeneratedCode="Sheet17.Designer.cs" />
           <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="425667BD5CD8F1708FD3E029ED411CD9B6B95D08" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
           <HostItem Name="Sheet19" Code="Sheet191.cs" CanonicalName="Sheet19" PublishedHash="0E327626D87D516FD1DB81C9F9642A5E066346EB" DisplayName="Recombine" Blueprint="Sheet191.Designer.xml" GeneratedCode="Sheet191.Designer.cs" />
