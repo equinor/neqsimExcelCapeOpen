@@ -17,12 +17,8 @@ namespace NeqSimExcel {
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
     public sealed partial class Sheet27 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.ComboBox selectFluidCombobox;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.Button calcButton;
         
         internal Microsoft.Office.Tools.Excel.Controls.Button button1;
         
@@ -37,7 +33,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
@@ -51,7 +47,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void FinishInitialization() {
             this.InternalStartup();
@@ -60,7 +56,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void InitializeDataBindings() {
             this.BeginInitialization();
@@ -70,7 +66,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeCachedData() {
             if ((this.DataHost == null)) {
@@ -83,14 +79,14 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeData() {
         }
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void BindToData() {
         }
@@ -118,7 +114,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void BeginInitialization() {
             this.BeginInit();
@@ -126,7 +122,7 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void EndInitialization() {
             this.EndInit();
@@ -134,33 +130,18 @@ namespace NeqSimExcel {
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.selectFluidCombobox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61", "1A3BFE8641768C14A9C1B0B3101F1F9F2A1B61", this, "selectFluidCombobox");
-            this.calcButton = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "28C3B6D13208972429F293A32C2113DBFA4122", "28C3B6D13208972429F293A32C2113DBFA4122", this, "calcButton");
             this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "34C21F4CC35F0D345A83BF2434BCE6DF1104B3", "34C21F4CC35F0D345A83BF2434BCE6DF1104B3", this, "button1");
             this.selectLocalFLuidCOmboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "45D33512E48096441A0497A34BF5576B3AED64", "45D33512E48096441A0497A34BF5576B3AED64", this, "selectLocalFLuidCOmboBox");
         }
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "15.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeComponents() {
-            // 
-            // selectFluidCombobox
-            // 
-            this.selectFluidCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.selectFluidCombobox.Name = "selectFluidCombobox";
-            // 
-            // calcButton
-            // 
-            this.calcButton.BackColor = System.Drawing.SystemColors.Control;
-            this.calcButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.calcButton.Name = "calcButton";
-            this.calcButton.Text = "Ok";
-            this.calcButton.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -177,8 +158,6 @@ namespace NeqSimExcel {
             // 
             // Sheet27
             // 
-            this.selectFluidCombobox.BindingContext = this.BindingContext;
-            this.calcButton.BindingContext = this.BindingContext;
             this.button1.BindingContext = this.BindingContext;
             this.selectLocalFLuidCOmboBox.BindingContext = this.BindingContext;
         }

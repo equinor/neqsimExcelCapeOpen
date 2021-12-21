@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29201.188
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenThermoLib", "NeqSimCapeOpen\CapeOpenThermoLib.csproj", "{51856C94-2811-4175-9D84-B221AD786B2C}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,11 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenThermoLib", "NeqSim
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSim.NET", "NeqSimNET\NeqSim.NET.csproj", "{658BF43C-1523-4315-B58A-4E4F15D15818}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64} = {D9A74316-C0E1-4072-B258-8B832F4F2B64}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConnection", "DatabaseConnection\DatabaseConnection.csproj", "{D9A74316-C0E1-4072-B258-8B832F4F2B64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimExcel", "NeqSimExcel\NeqSimExcel.csproj", "{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -25,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenUnitOperations", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimRegistration", "NeqSimRegistration\NeqSimRegistration.csproj", "{E95B7D43-F189-4B34-8B06-490CCB254A24}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSim2.0.6", "NeqSim2.0.6\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSim2.0.7", "NeqSim2.0.6\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,14 +46,6 @@ Global
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|x86.ActiveCfg = Release|x86
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|x86.Build.0 = Release|x86
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Debug|x86.ActiveCfg = Debug|x86
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Debug|x86.Build.0 = Debug|x86
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Release|x86.ActiveCfg = Release|x86
-		{D9A74316-C0E1-4072-B258-8B832F4F2B64}.Release|x86.Build.0 = Release|x86
 		{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}.Debug|x86.ActiveCfg = Debug|x86

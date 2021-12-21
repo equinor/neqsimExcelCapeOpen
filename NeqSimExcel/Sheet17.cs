@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Security.Principal;
 using System.Windows.Forms;
-using DatabaseConnection;
-using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Office.Interop.Excel;
 using neqsim.thermo.system;
 using neqsim.thermodynamicOperations;
@@ -34,7 +32,6 @@ namespace NeqSimExcel
             fluidListNameComboBoxLiquid.Items.Clear();
             try
             {
-                var test = new fluidinfoTableAdapter();
                 // NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
@@ -45,16 +42,10 @@ namespace NeqSimExcel
                 userName = userName.ToLower();
 
 
-                var tt = test.GetDataBy(userName);
                 var names = new List<string>();
                 //names.Add("CPApackage");
                 //names.Add(WindowsIdentity.GetCurrent().Name);
-                foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
-                {
-                    names.Add(row.ID.ToString());
-                    fluidListNameComboBoxGas.Items.Add(row.ID.ToString());
-                    fluidListNameComboBoxLiquid.Items.Add(row.ID.ToString());
-                }
+           
 
                 //   packageNames = names.ToArray();
                 //   fluidListNameComboBox.Items.Add(names.ToList());

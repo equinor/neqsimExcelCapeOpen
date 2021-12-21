@@ -90,10 +90,6 @@
       <Project>{a0ebb07a-9564-4c3a-a7e5-72d6708d26e6}</Project>
       <Name>CapeOpenUnitOperations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DatabaseConnection\DatabaseConnection.csproj">
-      <Project>{d9a74316-c0e1-4072-b258-8b832f4f2b64}</Project>
-      <Name>DatabaseConnection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NeqSimCapeOpen\CapeOpenThermoLib.csproj">
       <Project>{51856c94-2811-4175-9d84-b221ad786b2c}</Project>
       <Name>CapeOpenThermoLib</Name>

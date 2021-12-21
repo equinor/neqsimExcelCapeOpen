@@ -5,8 +5,6 @@ using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Principal;
 using CAPEOPEN100;
-using DatabaseConnection;
-using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Win32;
 
 namespace CapeOpenThermo
@@ -36,22 +34,8 @@ namespace CapeOpenThermo
 
         public object GetPropertyPackages()
         {
-            var test = new fluidinfoTableAdapter();
-
-            var userName = WindowsIdentity.GetCurrent().Name;
-            userName = userName.Replace("STATOIL-NET\\", "");
-            userName = userName.Replace("WIN-NTNU-NO\\", "");
-            userName = userName.ToLower();
-            var tt = test.GetDataBy(userName);
-
-            var nametext = WindowsIdentity.GetCurrent().Name;
-
-
             var names = new List<string>();
-            foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows) names.Add(row.ID.ToString());
-
-
-            // String[] packages = { "CPApackage", "NeqSim CPA-EoS", "GERG-EoS", names.ToArray()};
+           
             return names.ToArray();
         }
 

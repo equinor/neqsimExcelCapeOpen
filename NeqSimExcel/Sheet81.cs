@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Principal;
-using DatabaseConnection;
-using DatabaseConnection.NeqSimDatabaseSetTableAdapters;
 using Microsoft.Office.Interop.Excel;
 using neqsim.PVTsimulation.simulation;
 using neqsim.thermo.system;
@@ -28,7 +26,6 @@ namespace NeqSimExcel
             selectFluidCombobox.Items.Clear();
             try
             {
-                var test = new fluidinfoTableAdapter();
                 //               NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter test = new NeqSimExcel.DataSet1TableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter test = new NeqSimExcelDataSetTableAdapters.fluidinfoTableAdapter();
                 //NeqSimExcelDataSetTableAdapters.fluidinfo1TableAdapter test = new neqsimdatabaseDataSetTableAdapters.fluidinfo1TableAdapter();
@@ -38,16 +35,12 @@ namespace NeqSimExcel
                 userName = userName.Replace("WIN-NTNU-NO\\", "");
                 userName = userName.ToLower();
 
-                var tt = test.GetDataBy(userName);
+               // var tt = test.GetDataBy(userName);
                 //               NeqSimExcel.DataSet1.fluidinfoDataTable tt = test.GetData(userName);
                 var names = new List<string>();
                 //names.Add("CPApackage");
                 //names.Add(WindowsIdentity.GetCurrent().Name);
-                foreach (NeqSimDatabaseSet.fluidinfoRow row in tt.Rows)
-                {
-                    names.Add(row.ID.ToString());
-                    selectFluidCombobox.Items.Add(row.ID.ToString());
-                }
+             
 
                 //   packageNames = names.ToArray();
                 //   fluidListNameComboBox.Items.Add(names.ToList());
