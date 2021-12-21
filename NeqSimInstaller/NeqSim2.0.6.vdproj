@@ -21,18 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0259F7C750DFA5C456AD099F36B64DBA"
-        "OwnerKey" = "8:_5FCFE512F1B64741BBA7DCD9D4FF5884"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0259F7C750DFA5C456AD099F36B64DBA"
-        "OwnerKey" = "8:_CED013E9786565FB659AA263AAF79112"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0282E68152C3FBDE76C1B25846E89644"
         "OwnerKey" = "8:_01458AA466A7400B874CE701EA83CAD1"
         "MsmSig" = "8:_UNDEFINED"
@@ -340,13 +328,13 @@
         "Entry"
         {
         "MsmKey" = "8:_130E3FC372C74C13A5894DD8B1A0A1F1"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_130E3FC372C74C13A5894DD8B1A0A1F1"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -825,24 +813,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_26E9F3CFA6A44CB5D884A3BDE0E5354F"
-        "OwnerKey" = "8:_B9E6EED20053D15E6D634D9B3CF6E517"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_26E9F3CFA6A44CB5D884A3BDE0E5354F"
-        "OwnerKey" = "8:_41F9D2D5491DC633839E03EA74C11322"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_26E9F3CFA6A44CB5D884A3BDE0E5354F"
-        "OwnerKey" = "8:_98442B39C9004D5097690ED51FB7C38B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_28A48A4CD4D469FAF342B05EB5ED2922"
         "OwnerKey" = "8:_D040D50937554BDDAE8794B0E5B8C1DA"
         "MsmSig" = "8:_UNDEFINED"
@@ -970,13 +940,13 @@
         "Entry"
         {
         "MsmKey" = "8:_3251B1279BC7F0313A83E110D2795A03"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_3251B1279BC7F0313A83E110D2795A03"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1623,18 +1593,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6CDD6DC4385DFB02EE0901C0909F33D9"
-        "OwnerKey" = "8:_01458AA466A7400B874CE701EA83CAD1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6CDD6DC4385DFB02EE0901C0909F33D9"
-        "OwnerKey" = "8:_C4DC11D3608AB093EF27CCC88B9DA2E7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6EBBC7DF0C590C605E1F86191D3B36B7"
         "OwnerKey" = "8:_D040D50937554BDDAE8794B0E5B8C1DA"
         "MsmSig" = "8:_UNDEFINED"
@@ -1762,25 +1720,25 @@
         "Entry"
         {
         "MsmKey" = "8:_795310B5C041E4A7AA281422C82466D1"
-        "OwnerKey" = "8:_2F726B514D287A00A08A383144C1B0C9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_795310B5C041E4A7AA281422C82466D1"
         "OwnerKey" = "8:_C1F1776234E1294A8739CD678CD9A4B5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_795310B5C041E4A7AA281422C82466D1"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_2F726B514D287A00A08A383144C1B0C9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_795310B5C041E4A7AA281422C82466D1"
         "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_795310B5C041E4A7AA281422C82466D1"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1972,13 +1930,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8281A15EC1715F0C4D50C41FD869A693"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8281A15EC1715F0C4D50C41FD869A693"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2062,13 +2020,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8938360709F1F3749DC199911E9AED40"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8938360709F1F3749DC199911E9AED40"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3112,13 +3070,13 @@
         "Entry"
         {
         "MsmKey" = "8:_D075D344DD1401165F38E94C0D7FF2B4"
-        "OwnerKey" = "8:_2F726B514D287A00A08A383144C1B0C9"
+        "OwnerKey" = "8:_C1F1776234E1294A8739CD678CD9A4B5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D075D344DD1401165F38E94C0D7FF2B4"
-        "OwnerKey" = "8:_C1F1776234E1294A8739CD678CD9A4B5"
+        "OwnerKey" = "8:_2F726B514D287A00A08A383144C1B0C9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3130,13 +3088,13 @@
         "Entry"
         {
         "MsmKey" = "8:_D075D344DD1401165F38E94C0D7FF2B4"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D075D344DD1401165F38E94C0D7FF2B4"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3364,13 +3322,13 @@
         "Entry"
         {
         "MsmKey" = "8:_DDEC987A9948424666B685FCEBF4CC01"
-        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
+        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_DDEC987A9948424666B685FCEBF4CC01"
-        "OwnerKey" = "8:_7B6BA7CFDF917F75CDA822EBE270795C"
+        "OwnerKey" = "8:_B82696A52B5E4B235A1C985E2B1065EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5487,7 +5445,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\NeqSim2.0.7.msi"
+        "OutputFilename" = "8:Debug\\NeqSim-2.2.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -5510,6 +5468,11 @@
                     {
                     "Name" = "8:Microsoft .NET Framework 4.6 (x86 and x64)"
                     "ProductCode" = "8:.NETFramework,Version=v4.6"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.VSTORuntime.4.0"
+                    {
+                    "Name" = "8:Microsoft Visual Studio 2010 Tools for Office Runtime (x86 and x64)"
+                    "ProductCode" = "8:Microsoft.VSTORuntime.4.0"
                     }
                 }
             }
@@ -5565,6 +5528,20 @@
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_E2510505D8D241898E1DFB799EE56F0D"
+            {
+            "Name" = "8:Primary output from NeqSimExcel (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_D040D50937554BDDAE8794B0E5B8C1DA"
+            "FileType" = "3:1"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:2"
+            "Identifier" = "8:_5D9FCF7D_14E0_4D1F_B650_2BD503796954"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -5588,26 +5565,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0259F7C750DFA5C456AD099F36B64DBA"
-            {
-            "SourcePath" = "8:CapeOpenUnitOperations.tlb"
-            "TargetName" = "8:CapeOpenUnitOperations.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_E908DC4B34A04D53A720AAC169F6DDBD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0282E68152C3FBDE76C1B25846E89644"
             {
             "AssemblyRegister" = "3:1"
@@ -6636,26 +6593,6 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_26E9F3CFA6A44CB5D884A3BDE0E5354F"
-            {
-            "SourcePath" = "8:NeqSim.NET.tlb"
-            "TargetName" = "8:NeqSim.NET.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_E908DC4B34A04D53A720AAC169F6DDBD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
@@ -8082,26 +8019,6 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CDD6DC4385DFB02EE0901C0909F33D9"
-            {
-            "SourcePath" = "8:CapeOpenThermo.tlb"
-            "TargetName" = "8:CapeOpenThermo.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_E908DC4B34A04D53A720AAC169F6DDBD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
@@ -12377,10 +12294,10 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:NeqSim"
+        "ProductName" = "8:NeqSim-2.2"
         "ProductCode" = "8:{C9F2B8C7-CC37-4BF3-8259-21FAD5DD1123}"
-        "PackageCode" = "8:{73B18313-7DCE-4A62-ADCE-8195AD20ABFA}"
-        "UpgradeCode" = "8:{6AB6F1B9-12F0-4686-A4CE-13710D7F5243}"
+        "PackageCode" = "8:{D5B8AC1B-A840-4BB5-BF1F-0D29E1DDC4E4}"
+        "UpgradeCode" = "8:{B7169B38-4B8D-4637-AF09-087C362971A4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

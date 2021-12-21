@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenUnitOperations", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimRegistration", "NeqSimRegistration\NeqSimRegistration.csproj", "{E95B7D43-F189-4B34-8B06-490CCB254A24}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSim2.2", "NeqSim2.0.6\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSimInstaller", "NeqSimInstaller\NeqSim2.0.6.vdproj", "{3BFABF32-0B84-45E6-9413-1DFFC11EAF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
