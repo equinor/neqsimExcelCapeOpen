@@ -3,6 +3,12 @@
 
 neqsim.NET is the Visual Studio project using the NeqSim library for development of a Excel interface and a Cape-Open interface. The Cape Open interface makes it possible to use NeqSim in Cape Open compatible simulation tools such as HYSYS, PROII and Unisim.
 
+## Installation
+An installation file for NeqSim (Excel and Cape Open) is available under releases: https://github.com/equinor/neqsim.NET/releases
+
+## Documentation
+NeqSim Excel [documentation](https://github.com/equinor/neqsim.NET/wiki/Getting-started-with-NeqSim-in-Excel).
+
 ## Folders
 
 * NeqSimExcel - is the Excel interface for NeqSim. A published NeqSim Excel tool is available under releases. You will need to install Visual Studio Tools for Office (VSTO) to work with this project in Visual Studio.
