@@ -9,6 +9,10 @@ An installation file for NeqSim (Excel and Cape Open) is available under [releas
 ## Documentation
 NeqSim Excel [documentation](https://github.com/equinor/neqsim.NET/wiki/Getting-started-with-NeqSim-in-Excel).
 
+## Discussion forum
+
+Questions related to neqsim can be posted in the [github discussion pages](https://github.com/equinor/neqsim/discussions).
+
 ## Folders
 
 * NeqSimExcel - is the Excel interface for NeqSim. A published NeqSim Excel tool is available under releases. You will need to install Visual Studio Tools for Office (VSTO) to work with this project in Visual Studio.
