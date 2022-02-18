@@ -15,7 +15,7 @@ namespace NeqSimRegistration
             ThermoPackageManagerCO11.RegisterFunction(t);
             ThermoPackageManagerCO10.RegisterFunction(t);
             ThermoPackageManagerCO11local.RegisterFunction(t);
-           // CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
+            CapeOpenUnitOperations.HydrateEquilibriumUnitOperation.RegisterFunction(t);
                 //CapeOpenUnitOperations.WaterDewPointUnitOperation.RegisterFunction(t);
                 //  CapeOpenUnitOperations.FreezingUnitOperation.RegisterFunction(t);
                 //  CapeOpenUnitOperations.ProCapMixerUnitOperation.RegisterFunction(t);

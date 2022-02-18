@@ -26,7 +26,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.2\</PublishUrl>
+    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.2.1\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.18</ApplicationVersion>
@@ -576,6 +576,7 @@
     <None Include="NeqSimExcel.xlsx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="NeqSimExcel_1_TemporaryKey.pfx" />
     <None Include="ThisWorkbook.Designer.xml">
       <DependentUpon>ThisWorkbook.cs</DependentUpon>
     </None>
@@ -733,10 +734,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>NeqSimExcel_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NeqSimExcel_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E5780EE5BECC4FE94DC28ADA30E7365F3EFF16B3</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B4D4AAF976C25D36BC4A941EEF40CA86AAD5F88D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>

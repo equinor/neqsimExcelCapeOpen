@@ -169,7 +169,7 @@ namespace NeqSimExcel
                 else if (calculationComboBox.SelectedItem.ToString().Contains("fugacity coefficient"))
                 {
                     var name = calculationComboBox.SelectedItem.ToString().Replace("fugacity coefficient ", "");
-                    value = thermoSystem.getPhase(0).getComponent(name).getFugasityCoefficient().ToString();
+                    value = thermoSystem.getPhase(0).getComponent(name).getFugacityCoefficient().ToString();
                 }
                 else if (calculationComboBox.SelectedItem.ToString().Contains("wt fraction"))
                 {
