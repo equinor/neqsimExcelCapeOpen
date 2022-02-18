@@ -235,9 +235,9 @@ namespace NeqSimNET
             for (var i = 0; i < fugacityCoef.Length; i++)
                 if (factor > 5.0)
                     fugacityCoef[i] =
-                        Math.Exp(1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient());
+                        Math.Exp(1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugacityCoefficient());
                 else
-                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getFugasityCoeffisient();
+                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getFugacityCoefficient();
 
             return fugacityCoef;
         }
@@ -269,9 +269,9 @@ namespace NeqSimNET
             var fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (var i = 0; i < fugacityCoef.Length; i++)
                 if (factor > 5.0)
-                    fugacityCoef[i] = 1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    fugacityCoef[i] = 1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugacityCoefficient();
                 else
-                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getLogFugasityCoeffisient();
+                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getLogFugacityCoefficient();
 
             return fugacityCoef;
         }

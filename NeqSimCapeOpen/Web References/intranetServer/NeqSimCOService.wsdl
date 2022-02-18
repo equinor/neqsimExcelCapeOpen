@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:tns="http://neqsim/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             name="NeqSimCOService" targetNamespace="http://neqsim/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=1"
+                  namespace="http://neqsim/" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pc-604459:8080/NeqSimCOService/NeqSimCOService?xsd=2"
+                  namespace="http://jaxb.dev.java.net/array" />
+    </xsd:schema>
+  </types>
+  <message name="getEntropy">
+    <part name="parameters" element="tns:getEntropy" />
+  </message>
+  <message name="getEntropyResponse">
+    <part name="parameters" element="tns:getEntropyResponse" />
+  </message>
+  <message name="getlogFugacityCoefficientsDtemperature">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDtemperature" />
+  </message>
+  <message name="getlogFugacityCoefficientsDtemperatureResponse">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDtemperatureResponse" />
+  </message>
+  <message name="getDensity">
+    <part name="parameters" element="tns:getDensity" />
+  </message>
+  <message name="getDensityResponse">
+    <part name="parameters" element="tns:getDensityResponse" />
+  </message>
+  <message name="getEnthalpy">
+    <part name="parameters" element="tns:getEnthalpy" />
+  </message>
+  <message name="getEnthalpyResponse">
+    <part name="parameters" element="tns:getEnthalpyResponse" />
+  </message>
+  <message name="getVolume">
+    <part name="parameters" element="tns:getVolume" />
+  </message>
+  <message name="getVolumeResponse">
+    <part name="parameters" element="tns:getVolumeResponse" />
+  </message>
+  <message name="getComponentNames">
+    <part name="parameters" element="tns:getComponentNames" />
+  </message>
+  <message name="getComponentNamesResponse">
+    <part name="parameters" element="tns:getComponentNamesResponse" />
+  </message>
+  <message name="getNumberOfComponents">
+    <part name="parameters" element="tns:getNumberOfComponents" />
+  </message>
+  <message name="getNumberOfComponentsResponse">
+    <part name="parameters" element="tns:getNumberOfComponentsResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="getCompIDs">
+    <part name="parameters" element="tns:getCompIDs" />
+  </message>
+  <message name="getCompIDsResponse">
+    <part name="parameters" element="tns:getCompIDsResponse" />
+  </message>
+  <message name="getMolecularWeights">
+    <part name="parameters" element="tns:getMolecularWeights" />
+  </message>
+  <message name="getMolecularWeightsResponse">
+    <part name="parameters" element="tns:getMolecularWeightsResponse" />
+  </message>
+  <message name="getFormulaes">
+    <part name="parameters" element="tns:getFormulaes" />
+  </message>
+  <message name="getFormulaesResponse">
+    <part name="parameters" element="tns:getFormulaesResponse" />
+  </message>
+  <message name="getCASnumbers">
+    <part name="parameters" element="tns:getCASnumbers" />
+  </message>
+  <message name="getCASnumbersResponse">
+    <part name="parameters" element="tns:getCASnumbersResponse" />
+  </message>
+  <message name="getBoilingPointTemps">
+    <part name="parameters" element="tns:getBoilingPointTemps" />
+  </message>
+  <message name="getBoilingPointTempsResponse">
+    <part name="parameters" element="tns:getBoilingPointTempsResponse" />
+  </message>
+  <message name="getFugacityCoefficients">
+    <part name="parameters" element="tns:getFugacityCoefficients" />
+  </message>
+  <message name="getFugacityCoefficientsResponse">
+    <part name="parameters" element="tns:getFugacityCoefficientsResponse" />
+  </message>
+  <message name="setTPFraction">
+    <part name="parameters" element="tns:setTPFraction" />
+  </message>
+  <message name="getHeatCapacityCp">
+    <part name="parameters" element="tns:getHeatCapacityCp" />
+  </message>
+  <message name="getHeatCapacityCpResponse">
+    <part name="parameters" element="tns:getHeatCapacityCpResponse" />
+  </message>
+  <message name="getHeatCapacityCv">
+    <part name="parameters" element="tns:getHeatCapacityCv" />
+  </message>
+  <message name="getHeatCapacityCvResponse">
+    <part name="parameters" element="tns:getHeatCapacityCvResponse" />
+  </message>
+  <message name="getlogFugacityCoefficientsDpressure">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDpressure" />
+  </message>
+  <message name="getlogFugacityCoefficientsDpressureResponse">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDpressureResponse" />
+  </message>
+  <message name="readFluidFromGQIT">
+    <part name="parameters" element="tns:readFluidFromGQIT" />
+  </message>
+  <message name="getlogFugacityCoefficientsDmoles">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDmoles" />
+  </message>
+  <message name="getlogFugacityCoefficientsDmolesResponse">
+    <part name="parameters" element="tns:getlogFugacityCoefficientsDmolesResponse" />
+  </message>
+  <message name="getNormalBoilingpointTemperatures">
+    <part name="parameters" element="tns:getNormalBoilingpointTemperatures" />
+  </message>
+  <message name="getNormalBoilingpointTemperaturesResponse">
+    <part name="parameters" element="tns:getNormalBoilingpointTemperaturesResponse" />
+  </message>
+  <portType name="NeqSimCOService">
+    <operation name="getEntropy">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getEntropyRequest" message="tns:getEntropy" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getEntropyResponse" message="tns:getEntropyResponse" />
+    </operation>
+    <operation name="getlogFugacityCoefficientsDtemperature">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureRequest"
+             message="tns:getlogFugacityCoefficientsDtemperature" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDtemperatureResponse"
+              message="tns:getlogFugacityCoefficientsDtemperatureResponse" />
+    </operation>
+    <operation name="getDensity">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getDensityRequest" message="tns:getDensity" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getDensityResponse" message="tns:getDensityResponse" />
+    </operation>
+    <operation name="getEnthalpy">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getEnthalpyRequest" message="tns:getEnthalpy" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getEnthalpyResponse" message="tns:getEnthalpyResponse" />
+    </operation>
+    <operation name="getVolume">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getVolumeRequest" message="tns:getVolume" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getVolumeResponse" message="tns:getVolumeResponse" />
+    </operation>
+    <operation name="getComponentNames">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getComponentNamesRequest" message="tns:getComponentNames" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getComponentNamesResponse"
+              message="tns:getComponentNamesResponse" />
+    </operation>
+    <operation name="getNumberOfComponents">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsRequest"
+             message="tns:getNumberOfComponents" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getNumberOfComponentsResponse"
+              message="tns:getNumberOfComponentsResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://neqsim/NeqSimCOService/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="getCompIDs">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getCompIDsRequest" message="tns:getCompIDs" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getCompIDsResponse" message="tns:getCompIDsResponse" />
+    </operation>
+    <operation name="getMolecularWeights">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getMolecularWeightsRequest" message="tns:getMolecularWeights" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getMolecularWeightsResponse"
+              message="tns:getMolecularWeightsResponse" />
+    </operation>
+    <operation name="getFormulaes">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getFormulaesRequest" message="tns:getFormulaes" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getFormulaesResponse" message="tns:getFormulaesResponse" />
+    </operation>
+    <operation name="getCASnumbers">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getCASnumbersRequest" message="tns:getCASnumbers" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getCASnumbersResponse" message="tns:getCASnumbersResponse" />
+    </operation>
+    <operation name="getBoilingPointTemps">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getBoilingPointTempsRequest" message="tns:getBoilingPointTemps" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getBoilingPointTempsResponse"
+              message="tns:getBoilingPointTempsResponse" />
+    </operation>
+    <operation name="getFugacityCoefficients">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsRequest"
+             message="tns:getFugacityCoefficients" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getFugacityCoefficientsResponse"
+              message="tns:getFugacityCoefficientsResponse" />
+    </operation>
+    <operation name="setTPFraction">
+      <input wsam:Action="http://neqsim/NeqSimCOService/setTPFraction" message="tns:setTPFraction" />
+    </operation>
+    <operation name="getHeatCapacityCp">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCpRequest" message="tns:getHeatCapacityCp" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCpResponse"
+              message="tns:getHeatCapacityCpResponse" />
+    </operation>
+    <operation name="getHeatCapacityCv">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCvRequest" message="tns:getHeatCapacityCv" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getHeatCapacityCvResponse"
+              message="tns:getHeatCapacityCvResponse" />
+    </operation>
+    <operation name="getlogFugacityCoefficientsDpressure">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureRequest"
+             message="tns:getlogFugacityCoefficientsDpressure" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDpressureResponse"
+              message="tns:getlogFugacityCoefficientsDpressureResponse" />
+    </operation>
+    <operation name="readFluidFromGQIT">
+      <input wsam:Action="http://neqsim/NeqSimCOService/readFluidFromGQIT" message="tns:readFluidFromGQIT" />
+    </operation>
+    <operation name="getlogFugacityCoefficientsDmoles">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesRequest"
+             message="tns:getlogFugacityCoefficientsDmoles" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getlogFugacityCoefficientsDmolesResponse"
+              message="tns:getlogFugacityCoefficientsDmolesResponse" />
+    </operation>
+    <operation name="getNormalBoilingpointTemperatures">
+      <input wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesRequest"
+             message="tns:getNormalBoilingpointTemperatures" />
+      <output wsam:Action="http://neqsim/NeqSimCOService/getNormalBoilingpointTemperaturesResponse"
+              message="tns:getNormalBoilingpointTemperaturesResponse" />
+    </operation>
+  </portType>
+  <binding name="NeqSimCOServicePortBinding" type="tns:NeqSimCOService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getEntropy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getlogFugacityCoefficientsDtemperature">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDensity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEnthalpy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getVolume">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getComponentNames">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNumberOfComponents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCompIDs">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMolecularWeights">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFormulaes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCASnumbers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getBoilingPointTemps">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFugacityCoefficients">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setTPFraction">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getHeatCapacityCp">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getHeatCapacityCv">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getlogFugacityCoefficientsDpressure">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="readFluidFromGQIT">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getlogFugacityCoefficientsDmoles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNormalBoilingpointTemperatures">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NeqSimCOService">
+    <port name="NeqSimCOServicePort" binding="tns:NeqSimCOServicePortBinding">
+      <soap:address location="http://pc-604459:8080/NeqSimCOService/NeqSimCOService" />
+    </port>
+  </service>
+</definitions>

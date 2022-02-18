@@ -211,7 +211,7 @@ namespace NeqSimExcel
                         else if (propertyComboBox.SelectedItem.ToString().Contains("fugacity coefficient"))
                         {
                             var name = propertyComboBox.SelectedItem.ToString().Replace("fugacity coefficient ", "");
-                            value = thermoSystem.getPhaseOfType(phaseType).getComponent(name).getFugasityCoefficient()
+                            value = thermoSystem.getPhaseOfType(phaseType).getComponent(name).getFugacityCoefficient()
                                 .ToString();
                         }
                         else if (propertyComboBox.SelectedItem.ToString().Contains("wt fraction"))

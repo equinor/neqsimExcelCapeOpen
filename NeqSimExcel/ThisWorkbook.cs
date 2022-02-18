@@ -10,6 +10,7 @@ namespace NeqSimExcel
 
         private void ThisWorkbook_Startup(object sender, EventArgs e)
         {
+            Application.UseSystemSeparators = true;
         }
 
         private void ThisWorkbook_Shutdown(object sender, EventArgs e)

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://neqsim/" xmlns:ns1="http://jaxb.dev.java.net/array" targetNamespace="http://neqsim/"
+           version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/NeqSimCOService/NeqSimCOService?xsd=2"
+             namespace="http://jaxb.dev.java.net/array" />
+  <xs:element name="getBoilingPointTemps" type="tns:getBoilingPointTemps" />
+  <xs:element name="getBoilingPointTempsResponse" type="tns:getBoilingPointTempsResponse" />
+  <xs:element name="getCASnumbers" type="tns:getCASnumbers" />
+  <xs:element name="getCASnumbersResponse" type="tns:getCASnumbersResponse" />
+  <xs:element name="getCompIDs" type="tns:getCompIDs" />
+  <xs:element name="getCompIDsResponse" type="tns:getCompIDsResponse" />
+  <xs:element name="getComponentNames" type="tns:getComponentNames" />
+  <xs:element name="getComponentNamesResponse" type="tns:getComponentNamesResponse" />
+  <xs:element name="getDensity" type="tns:getDensity" />
+  <xs:element name="getDensityResponse" type="tns:getDensityResponse" />
+  <xs:element name="getEnthalpy" type="tns:getEnthalpy" />
+  <xs:element name="getEnthalpyResponse" type="tns:getEnthalpyResponse" />
+  <xs:element name="getEntropy" type="tns:getEntropy" />
+  <xs:element name="getEntropyResponse" type="tns:getEntropyResponse" />
+  <xs:element name="getFormulaes" type="tns:getFormulaes" />
+  <xs:element name="getFormulaesResponse" type="tns:getFormulaesResponse" />
+  <xs:element name="getFugacityCoefficients" type="tns:getFugacityCoefficients" />
+  <xs:element name="getFugacityCoefficientsResponse" type="tns:getFugacityCoefficientsResponse" />
+  <xs:element name="getHeatCapacityCp" type="tns:getHeatCapacityCp" />
+  <xs:element name="getHeatCapacityCpResponse" type="tns:getHeatCapacityCpResponse" />
+  <xs:element name="getHeatCapacityCv" type="tns:getHeatCapacityCv" />
+  <xs:element name="getHeatCapacityCvResponse" type="tns:getHeatCapacityCvResponse" />
+  <xs:element name="getMolecularWeights" type="tns:getMolecularWeights" />
+  <xs:element name="getMolecularWeightsResponse" type="tns:getMolecularWeightsResponse" />
+  <xs:element name="getNormalBoilingpointTemperatures" type="tns:getNormalBoilingpointTemperatures" />
+  <xs:element name="getNormalBoilingpointTemperaturesResponse" type="tns:getNormalBoilingpointTemperaturesResponse" />
+  <xs:element name="getNumberOfComponents" type="tns:getNumberOfComponents" />
+  <xs:element name="getNumberOfComponentsResponse" type="tns:getNumberOfComponentsResponse" />
+  <xs:element name="getVolume" type="tns:getVolume" />
+  <xs:element name="getVolumeResponse" type="tns:getVolumeResponse" />
+  <xs:element name="getlogFugacityCoefficientsDmoles" type="tns:getlogFugacityCoefficientsDmoles" />
+  <xs:element name="getlogFugacityCoefficientsDmolesResponse" type="tns:getlogFugacityCoefficientsDmolesResponse" />
+  <xs:element name="getlogFugacityCoefficientsDpressure" type="tns:getlogFugacityCoefficientsDpressure" />
+  <xs:element name="getlogFugacityCoefficientsDpressureResponse" type="tns:getlogFugacityCoefficientsDpressureResponse" />
+  <xs:element name="getlogFugacityCoefficientsDtemperature" type="tns:getlogFugacityCoefficientsDtemperature" />
+  <xs:element name="getlogFugacityCoefficientsDtemperatureResponse"
+              type="tns:getlogFugacityCoefficientsDtemperatureResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="readFluidFromGQIT" type="tns:readFluidFromGQIT" />
+  <xs:element name="setTPFraction" type="tns:setTPFraction" />
+  <xs:complexType name="getNormalBoilingpointTemperatures">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getNormalBoilingpointTemperaturesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDpressure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDpressureResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEntropy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEntropyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDtemperature">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDtemperatureResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHeatCapacityCp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHeatCapacityCpResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFormulaes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFormulaesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCASnumbers">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCASnumbersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDmoles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getlogFugacityCoefficientsDmolesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ns1:doubleArray" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBoilingPointTemps">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getBoilingPointTempsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readFluidFromGQIT">
+    <xs:sequence>
+      <xs:element name="fluidID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVolume">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVolumeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFugacityCoefficients">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFugacityCoefficientsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTPFraction">
+    <xs:sequence>
+      <xs:element name="T" type="xs:double" />
+      <xs:element name="P" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="x" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnthalpy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnthalpyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMolecularWeights">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getMolecularWeightsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDensity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDensityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNumberOfComponents">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getNumberOfComponentsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getComponentNames">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getComponentNamesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCompIDs">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCompIDsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHeatCapacityCv">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="phase" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHeatCapacityCvResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
