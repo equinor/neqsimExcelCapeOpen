@@ -128,7 +128,7 @@ namespace NeqSimExcel
             feedThermoSystem.setTemperature(Range["B7"].Value2 + 273.15);
             feedThermoSystem.setPressure(Range["B6"].Value2);
 
-            var glycolTestSystem = (SystemInterface) feedThermoSystem.clone();
+            SystemInterface glycolTestSystem = (SystemInterface) feedThermoSystem.clone();
             glycolTestSystem.removeMoles();
             glycolTestSystem.addComponent("water", 100 - Range["B21"].Value2, "kg/hr");
             glycolTestSystem.addComponent(glycolName, Range["B21"].Value2, "kg/hr");
@@ -145,7 +145,7 @@ namespace NeqSimExcel
             var wellStream = new Stream("Well stream", feedThermoSystem);
 
             wellStream.getThermoSystem().setTotalFlowRate(Range["B5"].Value2, "MSm^3/day");
-            var separationModule = new MixerGasProcessingModule();
+            var separationModule = new MixerGasProcessingModule("mixer module");
             separationModule.addInputStream("feed stream", wellStream);
             separationModule.addInputStream("glycol feed stream", glycolFeedStream);
             separationModule.setSpecification("inlet separation temperature", Range["B12"].Value2);

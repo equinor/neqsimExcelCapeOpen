@@ -70,8 +70,8 @@ namespace NeqSimExcel
                     else
                         ops.TPflash();
 
-                    var stream = new Stream("Stream1", thermoSystem);
-                    var compressor = new Compressor(stream);
+                    Stream stream = new Stream("Stream1", thermoSystem);
+                    Compressor compressor = new Compressor("comp1", stream);
                     compressor.setOutletPressure(Range[pouttext].Value2);
                     compressor.setIsentropicEfficiency(Range[efficiencytest].Value2 / 100.0);
                     stream.run();

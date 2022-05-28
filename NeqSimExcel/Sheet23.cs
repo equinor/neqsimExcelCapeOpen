@@ -121,7 +121,7 @@ namespace NeqSimExcel
             var wellStream = new Stream("Well stream", feedThermoSystem);
 
             wellStream.getThermoSystem().setTotalFlowRate(Range["B5"].Value2, "MSm^3/day");
-            var separationModule = new SeparationTrainModule();
+            var separationModule = new SeparationTrainModule("sep module 1");
             separationModule.addInputStream("feed stream", wellStream);
             separationModule.setSpecification("Second stage pressure", Range["B14"].Value2);
             separationModule.setSpecification("heated oil temperature", 273.15 + Range["B13"].Value2);

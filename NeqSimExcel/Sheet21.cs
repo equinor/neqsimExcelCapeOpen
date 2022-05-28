@@ -68,8 +68,8 @@ namespace NeqSimExcel
                     else
                         ops.TPflash();
 
-                    var stream = new Stream("Stream1", thermoSystem);
-                    var valve_1 = new ThrottlingValve(stream);
+                    Stream stream = new Stream("Stream1", thermoSystem);
+                    ThrottlingValve valve_1 = new ThrottlingValve(stream);
                     valve_1.setOutletPressure(Range[pouttext].Value2);
                     stream.run();
                     valve_1.run();
