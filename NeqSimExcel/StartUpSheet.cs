@@ -33,6 +33,7 @@ namespace NeqSimExcel
             Globals.Sheet27.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet28.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet29.Visible = XlSheetVisibility.xlSheetHidden;
+            Globals.Sheet30.Visible = XlSheetVisibility.xlSheetHidden;
         }
 
         private void Sheet12_Shutdown(object sender, EventArgs e)
@@ -182,11 +183,13 @@ namespace NeqSimExcel
             {
                 Globals.valveSheet.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.compressorSheet.Visible = XlSheetVisibility.xlSheetVisible;
+                Globals.Sheet30.Visible = XlSheetVisibility.xlSheetVisible;
             }
             else
             {
                 Globals.valveSheet.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.compressorSheet.Visible = XlSheetVisibility.xlSheetHidden;
+                Globals.Sheet30.Visible = XlSheetVisibility.xlSheetHidden;
             }
         }
 

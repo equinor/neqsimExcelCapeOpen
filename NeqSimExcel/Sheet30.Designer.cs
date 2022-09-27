@@ -13,30 +13,20 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(28)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(27)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class SepProcessSheet : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class Sheet30 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
         
-        internal Microsoft.Office.Tools.Excel.Controls.Button calcuateButton;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.ComboBox fluidsComboBox;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.LinkLabel linkLabel1;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.ComboBox unitOpsNamesCheckBox;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.LinkLabel linkLabel2;
-        
-        internal Microsoft.Office.Tools.Excel.Controls.LinkLabel linkLabel3;
+        internal Microsoft.Office.Tools.Excel.Controls.Button button1;
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public SepProcessSheet(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Sheet23", "Sheet23") {
+        public Sheet30(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Sheet30", "Sheet30") {
         }
         
         /// 
@@ -45,7 +35,7 @@ namespace NeqSimExcel {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.SepProcessSheet = this;
+            Globals.Sheet30 = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -141,12 +131,7 @@ namespace NeqSimExcel {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.calcuateButton = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1633AAB911554C142501BF9817820FBE6FEDA1", "1633AAB911554C142501BF9817820FBE6FEDA1", this, "calcuateButton");
-            this.fluidsComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "236327E5329C47245D52A7AD2D6C7DD86F01C2", "236327E5329C47245D52A7AD2D6C7DD86F01C2", this, "fluidsComboBox");
-            this.linkLabel1 = new Microsoft.Office.Tools.Excel.Controls.LinkLabel(Globals.Factory, this.ItemProvider, this.HostContext, "357B2A79332498347F03B20031F8F571CF0933", "357B2A79332498347F03B20031F8F571CF0933", this, "linkLabel1");
-            this.unitOpsNamesCheckBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "4E43028E041544444F74A6C94396E211329D04", "4E43028E041544444F74A6C94396E211329D04", this, "unitOpsNamesCheckBox");
-            this.linkLabel2 = new Microsoft.Office.Tools.Excel.Controls.LinkLabel(Globals.Factory, this.ItemProvider, this.HostContext, "55503E7195534254BA65BF60556A460A274585", "55503E7195534254BA65BF60556A460A274585", this, "linkLabel2");
-            this.linkLabel3 = new Microsoft.Office.Tools.Excel.Controls.LinkLabel(Globals.Factory, this.ItemProvider, this.HostContext, "6152E46166DF4B643BD68A046FDB6C8411D1B6", "6152E46166DF4B643BD68A046FDB6C8411D1B6", this, "linkLabel3");
+            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1AA0A14DD18F2414614189F2114B04B423D361", "1AA0A14DD18F2414614189F2114B04B423D361", this, "button1");
         }
         
         /// 
@@ -155,49 +140,17 @@ namespace NeqSimExcel {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeComponents() {
             // 
-            // calcuateButton
+            // button1
             // 
-            this.calcuateButton.BackColor = System.Drawing.SystemColors.Control;
-            this.calcuateButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.calcuateButton.Name = "calcuateButton";
-            this.calcuateButton.Text = "Calculate";
-            this.calcuateButton.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Name = "button1";
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // fluidsComboBox
+            // Sheet30
             // 
-            this.fluidsComboBox.Name = "fluidsComboBox";
-            this.fluidsComboBox.Text = "Active fluid";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Text = "View";
-            // 
-            // unitOpsNamesCheckBox
-            // 
-            this.unitOpsNamesCheckBox.DropDownHeight = 100;
-            this.unitOpsNamesCheckBox.IntegralHeight = false;
-            this.unitOpsNamesCheckBox.ItemHeight = 13;
-            this.unitOpsNamesCheckBox.Name = "unitOpsNamesCheckBox";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Text = "View Properties";
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Text = "View Design";
-            // 
-            // SepProcessSheet
-            // 
-            this.calcuateButton.BindingContext = this.BindingContext;
-            this.fluidsComboBox.BindingContext = this.BindingContext;
-            this.linkLabel1.BindingContext = this.BindingContext;
-            this.unitOpsNamesCheckBox.BindingContext = this.BindingContext;
-            this.linkLabel2.BindingContext = this.BindingContext;
-            this.linkLabel3.BindingContext = this.BindingContext;
+            this.button1.BindingContext = this.BindingContext;
         }
         
         /// 
@@ -210,15 +163,15 @@ namespace NeqSimExcel {
     
     internal sealed partial class Globals {
         
-        private static SepProcessSheet _SepProcessSheet;
+        private static Sheet30 _Sheet30;
         
-        internal static SepProcessSheet SepProcessSheet {
+        internal static Sheet30 Sheet30 {
             get {
-                return _SepProcessSheet;
+                return _Sheet30;
             }
             set {
-                if ((_SepProcessSheet == null)) {
-                    _SepProcessSheet = value;
+                if ((_Sheet30 == null)) {
+                    _Sheet30 = value;
                 }
                 else {
                     throw new System.NotSupportedException();

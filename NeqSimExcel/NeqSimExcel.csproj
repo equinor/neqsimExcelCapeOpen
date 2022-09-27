@@ -26,7 +26,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.2.1\</PublishUrl>
+    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.4.0\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>1.0.0.18</ApplicationVersion>
@@ -403,6 +403,12 @@
     <Compile Include="Sheet292.Designer.Designer.cs">
       <DependentUpon>Sheet292.Designer.Designer.xml</DependentUpon>
     </Compile>
+    <Compile Include="Sheet30.cs">
+      <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet30.Designer.cs">
+      <DependentUpon>Sheet30.Designer.xml</DependentUpon>
+    </Compile>
     <Compile Include="StartUpSheet.cs">
       <DependentUpon>NeqSimExcel.xlsx</DependentUpon>
     </Compile>
@@ -559,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Olga.resx">
       <DependentUpon>Olga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sheet30.resx">
+      <DependentUpon>Sheet30.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sheet81.resx">
       <DependentUpon>Sheet81.cs</DependentUpon>
@@ -717,6 +726,11 @@
       <DependentUpon>Sheet292.cs</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Sheet30.Designer.xml">
+      <DependentUpon>Sheet30.cs</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -763,10 +777,10 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="NeqSimExcel.xlsx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLS" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/x &quot;[$OUTPUT]NeqSimExcel.xlsx&quot;" />
-        <Host Name="Excel Document" Path=".\NeqSimExcel.xlsx" GeneratedCodeNamespace="NeqSimExcel" PublishedHash="748D27A4F04DFC93481985B041260907A6D64DEB">
+        <Host Name="Excel Document" Path=".\NeqSimExcel.xlsx" GeneratedCodeNamespace="NeqSimExcel" PublishedHash="0DA85ED6735661E4CA29E0CB16D6BDE1AF7AE2E1">
           <HostItem Name="Sheet4" Code="hydrate.cs" CanonicalName="Sheet4" PublishedHash="15BD6629D5E4CB711C5BF7DEBD9B480DBAA8EAF3" DisplayName="Gas hydrate" Blueprint="hydrate.Designer.xml" GeneratedCode="hydrate.Designer.cs" />
-          <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="AD9782393E96B2C0FE5210740A11EE20645BCB36" DisplayName="SaveExportFluid" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
-          <HostItem Name="Sheet7" Code="Olga.cs" CanonicalName="Sheet7" PublishedHash="672F935EEC54106025477A8D3C8C3FE3827C261B" DisplayName="OLGA" Blueprint="Olga.Designer.xml" GeneratedCode="Olga.Designer.cs" />
+          <HostItem Name="Sheet6" Code="Hysys.cs" CanonicalName="Sheet6" PublishedHash="9FC6695B05B5A00A926544F4DE9FAC4C95B2FC79" DisplayName="SaveExportFluid" Blueprint="Hysys.Designer.xml" GeneratedCode="Hysys.Designer.cs" />
+          <HostItem Name="Sheet7" Code="Olga.cs" CanonicalName="Sheet7" PublishedHash="43834BCA0BFB711E25D5F1FF6EE382664294F112" DisplayName="OLGA" Blueprint="Olga.Designer.xml" GeneratedCode="Olga.Designer.cs" />
           <HostItem Name="Sheet5" Code="phaseEnvelope.cs" CanonicalName="Sheet5" PublishedHash="68F0C8B6DA0ACB15D82030B471DD72073A462E91" DisplayName="phase envelope" Blueprint="phaseEnvelope.Designer.xml" GeneratedCode="phaseEnvelope.Designer.cs" />
           <HostItem Name="Sheet1" Code="Sheet1.cs" CanonicalName="Sheet1" PublishedHash="F9B1D2698B094966A5B1A5274832F3A7B4E951FA" DisplayName="Fluid" Blueprint="Sheet1.Designer.xml" GeneratedCode="Sheet1.Designer.cs" />
           <HostItem Name="Sheet10" Code="Sheet104.cs" CanonicalName="Sheet10" PublishedHash="F056709827FEB2E51A34AF3C5CD483E866638B37" DisplayName="waxT" Blueprint="Sheet104.Designer.xml" GeneratedCode="Sheet104.Designer.cs" />
@@ -775,20 +789,21 @@
           <HostItem Name="Sheet14" Code="Sheet14.cs" CanonicalName="Sheet14" PublishedHash="61A581E0BC27170721AE1341EC1602AEABB1D948" DisplayName="Scale" Blueprint="Sheet14.Designer.xml" GeneratedCode="Sheet14.Designer.cs" />
           <HostItem Name="Sheet15" Code="Sheet15.cs" CanonicalName="Sheet15" PublishedHash="A32DE0D687FD15091DDC1844FD98195895281824" DisplayName="PVTfit" Blueprint="Sheet15.Designer.xml" GeneratedCode="Sheet15.Designer.cs" />
           <HostItem Name="Sheet17" Code="Sheet17.cs" CanonicalName="Sheet17" PublishedHash="07D1E76C94CBE099C0661192FBF67DFF1DFF1A2E" DisplayName="RFOpipedehyd" Blueprint="Sheet17.Designer.xml" GeneratedCode="Sheet17.Designer.cs" />
-          <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="425667BD5CD8F1708FD3E029ED411CD9B6B95D08" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
+          <HostItem Name="Sheet18" Code="Sheet18.cs" CanonicalName="Sheet18" PublishedHash="B0EE652B04475C7C0CE200D5B7E2F6A9FD8CA6E4" DisplayName="ModelSettings" Blueprint="Sheet18.Designer.xml" GeneratedCode="Sheet18.Designer.cs" />
           <HostItem Name="Sheet19" Code="Sheet191.cs" CanonicalName="Sheet19" PublishedHash="0E327626D87D516FD1DB81C9F9642A5E066346EB" DisplayName="Recombine" Blueprint="Sheet191.Designer.xml" GeneratedCode="Sheet191.Designer.cs" />
           <HostItem Name="Sheet2" Code="Sheet2.cs" CanonicalName="Sheet2" PublishedHash="D868625CDE6A88E598881E9E48C8188CEFAB1074" DisplayName="HC dew point" Blueprint="Sheet2.Designer.xml" GeneratedCode="Sheet2.Designer.cs" />
           <HostItem Name="Sheet20" Code="Sheet20.cs" CanonicalName="Sheet20" PublishedHash="71A4000ECFBC439CBA3BCA9A73A81C689724BB1B" DisplayName="Mix" Blueprint="Sheet20.Designer.xml" GeneratedCode="Sheet20.Designer.cs" />
           <HostItem Name="Sheet21" Code="Sheet21.cs" CanonicalName="Sheet21" PublishedHash="D893AB388D1D9C00F0787A312CB5CF1EDC762903" DisplayName="Valve" Blueprint="Sheet21.Designer.xml" GeneratedCode="Sheet21.Designer.cs" />
           <HostItem Name="Sheet22" Code="Sheet22.cs" CanonicalName="Sheet22" PublishedHash="6238A6A4997DADC000C7F09077E434FE32C09B88" DisplayName="Compressor" Blueprint="Sheet22.Designer.xml" GeneratedCode="Sheet22.Designer.cs" />
-          <HostItem Name="Sheet23" Code="Sheet23.cs" CanonicalName="Sheet23" PublishedHash="8C9A1F17C78270E148A2129F1D053F596FFF4448" DisplayName="SepProcess" Blueprint="Sheet23.Designer.xml" GeneratedCode="Sheet23.Designer.cs" />
+          <HostItem Name="Sheet23" Code="Sheet23.cs" CanonicalName="Sheet23" PublishedHash="65086EF1F2F576309FBA5A732DC05BD93ACD7941" DisplayName="SepProcess" Blueprint="Sheet23.Designer.xml" GeneratedCode="Sheet23.Designer.cs" />
           <HostItem Name="Sheet24" Code="Sheet241.cs" CanonicalName="Sheet24" PublishedHash="FBA7C4CAE279883D33E62BDDCDFE0832C89F0628" DisplayName="BinaryCalc" Blueprint="Sheet241.Designer.xml" GeneratedCode="Sheet241.Designer.cs" />
-          <HostItem Name="Sheet25" Code="Sheet25.cs" CanonicalName="Sheet25" PublishedHash="3A8B2086A1924C80036B10CFAA3BF32D2D1692D0" DisplayName="DewPointControl" Blueprint="Sheet25.Designer.xml" GeneratedCode="Sheet25.Designer.cs" />
+          <HostItem Name="Sheet25" Code="Sheet25.cs" CanonicalName="Sheet25" PublishedHash="C7E01767900E8C037DC89203DC95BE4B5B7108D0" DisplayName="DewPointControl" Blueprint="Sheet25.Designer.xml" GeneratedCode="Sheet25.Designer.cs" />
           <HostItem Name="Sheet26" Code="Sheet26.cs" CanonicalName="Sheet26" PublishedHash="5CFB5F8CFB6017A8AA1B16ACFFE6A7E3448A42F6" DisplayName="AddPseudo" Blueprint="Sheet26.Designer.xml" GeneratedCode="Sheet26.Designer.cs" />
           <HostItem Name="Sheet27" Code="Sheet27.cs" CanonicalName="Sheet27" PublishedHash="82D6FA7C4A62E37E7C69041A85D2CEBC31920643" DisplayName="ReadFluid" Blueprint="Sheet27.Designer.xml" GeneratedCode="Sheet27.Designer.cs" />
           <HostItem Name="Sheet28" Code="Sheet28.cs" CanonicalName="Sheet28" PublishedHash="5925A700B5434AD0024A7D61B696BAEABECC4C57" DisplayName="wellstream" Blueprint="Sheet28.Designer.xml" GeneratedCode="Sheet28.Designer.cs" />
           <HostItem Name="Sheet29" Code="Sheet292.cs" CanonicalName="Sheet29" PublishedHash="14A5F5EC00C0D5ACD6280354777BCEB109D348F2" DisplayName="Water dew point" Blueprint="Sheet292.Designer.Designer.xml" GeneratedCode="Sheet292.Designer.Designer.cs" />
           <HostItem Name="Sheet3" Code="Sheet3.cs" CanonicalName="Sheet3" PublishedHash="40BA50514B8A572ADAFFF5E36AF0F613ABD23DD7" DisplayName="TPflash" Blueprint="Sheet3.Designer.xml" GeneratedCode="Sheet3.Designer.cs" />
+          <HostItem Name="Sheet30" Code="Sheet30.cs" CanonicalName="Sheet30" DisplayName="Expander" Blueprint="Sheet30.Designer.xml" GeneratedCode="Sheet30.Designer.cs" PublishedHash="1D99FE4C0CC2F3CBCCEA5B0AE3D7B5EEF18322E4" />
           <HostItem Name="Sheet8" Code="Sheet81.cs" CanonicalName="Sheet8" PublishedHash="E842721FEDFB72AE482041B2A1F935BF6F953DC5" DisplayName="PVTcalc" Blueprint="Sheet81.Designer.xml" GeneratedCode="Sheet81.Designer.cs" />
           <HostItem Name="Sheet9" Code="Sheet9.cs" CanonicalName="Sheet9" PublishedHash="E534079896BCA8074F4100A51AADF355C9EC4D2C" DisplayName="Characterized fluid" Blueprint="Sheet9.Designer.xml" GeneratedCode="Sheet9.Designer.cs" />
           <HostItem Name="Sheet12" Code="StartUpSheet.cs" CanonicalName="Sheet12" PublishedHash="6A41F0BD1465264DC2EFB33C2952FA63C1A8F0C4" DisplayName="Startup" Blueprint="StartUpSheet.Designer.xml" GeneratedCode="StartUpSheet.Designer.cs" />
