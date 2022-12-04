@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>NeqSimRegistration</RootNamespace>
     <AssemblyName>NeqSimRegistration</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -90,6 +90,9 @@
       <Project>{51856c94-2811-4175-9d84-b221ad786b2c}</Project>
       <Name>CapeOpenThermoLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

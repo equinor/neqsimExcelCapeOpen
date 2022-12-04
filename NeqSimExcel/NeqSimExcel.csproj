@@ -26,10 +26,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.4.0\</PublishUrl>
+    <PublishUrl>C:\Users\esol\OneDrive - Equinor\programming\neqsimexcelpublish2.4.1\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.18</ApplicationVersion>
+    <ApplicationVersion>2.4.1.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -803,7 +803,7 @@
           <HostItem Name="Sheet28" Code="Sheet28.cs" CanonicalName="Sheet28" PublishedHash="5925A700B5434AD0024A7D61B696BAEABECC4C57" DisplayName="wellstream" Blueprint="Sheet28.Designer.xml" GeneratedCode="Sheet28.Designer.cs" />
           <HostItem Name="Sheet29" Code="Sheet292.cs" CanonicalName="Sheet29" PublishedHash="14A5F5EC00C0D5ACD6280354777BCEB109D348F2" DisplayName="Water dew point" Blueprint="Sheet292.Designer.Designer.xml" GeneratedCode="Sheet292.Designer.Designer.cs" />
           <HostItem Name="Sheet3" Code="Sheet3.cs" CanonicalName="Sheet3" PublishedHash="40BA50514B8A572ADAFFF5E36AF0F613ABD23DD7" DisplayName="TPflash" Blueprint="Sheet3.Designer.xml" GeneratedCode="Sheet3.Designer.cs" />
-          <HostItem Name="Sheet30" Code="Sheet30.cs" CanonicalName="Sheet30" DisplayName="Expander" Blueprint="Sheet30.Designer.xml" GeneratedCode="Sheet30.Designer.cs" PublishedHash="1D99FE4C0CC2F3CBCCEA5B0AE3D7B5EEF18322E4" />
+          <HostItem Name="Sheet30" Code="Sheet30.cs" CanonicalName="Sheet30" PublishedHash="1D99FE4C0CC2F3CBCCEA5B0AE3D7B5EEF18322E4" DisplayName="Expander" Blueprint="Sheet30.Designer.xml" GeneratedCode="Sheet30.Designer.cs" />
           <HostItem Name="Sheet8" Code="Sheet81.cs" CanonicalName="Sheet8" PublishedHash="E842721FEDFB72AE482041B2A1F935BF6F953DC5" DisplayName="PVTcalc" Blueprint="Sheet81.Designer.xml" GeneratedCode="Sheet81.Designer.cs" />
           <HostItem Name="Sheet9" Code="Sheet9.cs" CanonicalName="Sheet9" PublishedHash="E534079896BCA8074F4100A51AADF355C9EC4D2C" DisplayName="Characterized fluid" Blueprint="Sheet9.Designer.xml" GeneratedCode="Sheet9.Designer.cs" />
           <HostItem Name="Sheet12" Code="StartUpSheet.cs" CanonicalName="Sheet12" PublishedHash="6A41F0BD1465264DC2EFB33C2952FA63C1A8F0C4" DisplayName="Startup" Blueprint="StartUpSheet.Designer.xml" GeneratedCode="StartUpSheet.Designer.cs" />
