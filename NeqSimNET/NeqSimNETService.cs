@@ -226,10 +226,10 @@ namespace NeqSimNET
             }
 
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
-                factor = 10.0;
+                factor = 1.0;
             else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") ||
                       thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) &&
-                     phase.Equals("Vapor")) factor = 10.0;
+                     phase.Equals("Vapor")) factor = 1.0;
 
             var fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (var i = 0; i < fugacityCoef.Length; i++)
@@ -261,10 +261,10 @@ namespace NeqSimNET
             }
 
             if (thermoSystem.getPhase(0).getPhaseTypeName().Equals("gas") && phase.Equals("Liquid"))
-                factor = 10.0;
+                factor = 1.0;
             else if ((thermoSystem.getPhase(0).getPhaseTypeName().Equals("aqueous") ||
                       thermoSystem.getPhase(0).getPhaseTypeName().Equals("oil")) &&
-                     phase.Equals("Vapor")) factor = 10.0;
+                     phase.Equals("Vapor")) factor = 1.0;
 
             var fugacityCoef = new double[thermoSystem.getPhase(0).getNumberOfComponents()];
             for (var i = 0; i < fugacityCoef.Length; i++)
