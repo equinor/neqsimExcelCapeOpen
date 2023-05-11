@@ -122,7 +122,9 @@ namespace NeqSimExcel
             liqThermoSystem.init(0);
             liqThermoSystem.init(1);
             liqThermoSystem.setMultiPhaseCheck(true);
-            liqThermoSystem.setTemperature(Range["B6"].Value2 + 273.15);
+            liqThermoSystem.setTemperature(Range["B6"].Value2 + 273.15);'
+            
+            //add new comment
             liqThermoSystem.setPressure(Range["B7"].Value2);
             var liqOps = new ThermodynamicOperations(liqThermoSystem);
             liqOps.TPflash();
