@@ -303,7 +303,8 @@ namespace NeqSimExcel {
                         "UMR-PRU-EoS",
                         "SRK-TwuCoon-EOS",
                         "Duan-Sun",
-                        "Electrolyte-CPA-EOS"});
+                        "Electrolyte-CPA-EOS",
+                        "GERG-water-EOS"});
             this.EoScombobox.Name = "EoScombobox";
             // 
             // button2

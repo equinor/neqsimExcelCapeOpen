@@ -13,20 +13,24 @@ namespace NeqSimExcel {
     
     
     /// 
-    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(16)]
+    [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(30)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class Hydrate : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class Sheet16 : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
         
-        internal Microsoft.Office.Tools.Excel.Controls.Button button1;
+        internal Microsoft.Office.Tools.Excel.Controls.Button calcuateButton;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.ComboBox isoStandardVolumeRefTempComboBox;
+        
+        internal Microsoft.Office.Tools.Excel.Controls.ComboBox energyRefTempComboBox;
         
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Hydrate(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
-                base(factory, serviceProvider, "Sheet4", "Sheet4") {
+        public Sheet16(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+                base(factory, serviceProvider, "Sheet16", "Sheet16") {
         }
         
         /// 
@@ -35,7 +39,7 @@ namespace NeqSimExcel {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.Hydrate = this;
+            Globals.Sheet16 = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -131,7 +135,9 @@ namespace NeqSimExcel {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeControls() {
-            this.button1 = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "110F4782515531149711B3081885B053ECE5B1", "110F4782515531149711B3081885B053ECE5B1", this, "button1");
+            this.calcuateButton = new Microsoft.Office.Tools.Excel.Controls.Button(Globals.Factory, this.ItemProvider, this.HostContext, "1E827B2E6129BE14CEF1BEFF13C65B239865E1", "1E827B2E6129BE14CEF1BEFF13C65B239865E1", this, "calcuateButton");
+            this.isoStandardVolumeRefTempComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "281916BAE228E924BCA29C3323681521B0F072", "281916BAE228E924BCA29C3323681521B0F072", this, "isoStandardVolumeRefTempComboBox");
+            this.energyRefTempComboBox = new Microsoft.Office.Tools.Excel.Controls.ComboBox(Globals.Factory, this.ItemProvider, this.HostContext, "3AE381B113974A341003822138759C265D71A3", "3AE381B113974A341003822138759C265D71A3", this, "energyRefTempComboBox");
         }
         
         /// 
@@ -140,17 +146,41 @@ namespace NeqSimExcel {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         private void InitializeComponents() {
             // 
-            // button1
+            // calcuateButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Name = "button1";
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = false;
+            this.calcuateButton.BackColor = System.Drawing.SystemColors.Control;
+            this.calcuateButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.calcuateButton.Name = "calcuateButton";
+            this.calcuateButton.Text = "Calculate";
+            this.calcuateButton.UseVisualStyleBackColor = false;
             // 
-            // hydrate
+            // isoStandardVolumeRefTempComboBox
             // 
-            this.button1.BindingContext = this.BindingContext;
+            this.isoStandardVolumeRefTempComboBox.Items.AddRange(new object[] {
+                        "0",
+                        "15",
+                        "15.55",
+                        "20",
+                        "25"});
+            this.isoStandardVolumeRefTempComboBox.Name = "isoStandardVolumeRefTempComboBox";
+            this.isoStandardVolumeRefTempComboBox.Text = "15";
+            // 
+            // energyRefTempComboBox
+            // 
+            this.energyRefTempComboBox.Items.AddRange(new object[] {
+                        "0",
+                        "15",
+                        "15.55",
+                        "20",
+                        "25"});
+            this.energyRefTempComboBox.Name = "energyRefTempComboBox";
+            this.energyRefTempComboBox.Text = "15";
+            // 
+            // Sheet16
+            // 
+            this.calcuateButton.BindingContext = this.BindingContext;
+            this.isoStandardVolumeRefTempComboBox.BindingContext = this.BindingContext;
+            this.energyRefTempComboBox.BindingContext = this.BindingContext;
         }
         
         /// 
@@ -163,15 +193,15 @@ namespace NeqSimExcel {
     
     internal sealed partial class Globals {
         
-        private static Hydrate _Hydrate;
+        private static Sheet16 _Sheet16;
         
-        internal static Hydrate Hydrate {
+        internal static Sheet16 Sheet16 {
             get {
-                return _Hydrate;
+                return _Sheet16;
             }
             set {
-                if ((_Hydrate == null)) {
-                    _Hydrate = value;
+                if ((_Sheet16 == null)) {
+                    _Sheet16 = value;
                 }
                 else {
                     throw new System.NotSupportedException();

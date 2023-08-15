@@ -1,6 +1,7 @@
 ﻿using System;
 using neqsim.thermo.system;
 using Office = Microsoft.Office.Core;
+using EXCEL = Microsoft.Office.Interop.Excel;
 
 namespace NeqSimExcel
 {
@@ -15,6 +16,7 @@ namespace NeqSimExcel
 
         private void ThisWorkbook_Shutdown(object sender, EventArgs e)
         {
+            this.Application.ActiveWorkbook.Close(false, missing, missing);
         }
 
 
