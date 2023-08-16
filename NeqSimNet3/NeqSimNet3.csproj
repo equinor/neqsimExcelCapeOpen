@@ -16,7 +16,7 @@
     </PackageReference>
   </ItemGroup>
 	<ItemGroup>
-		<IkvmReference Include="..\..\..\..\..\..\..\..\temp\neqsim-2.4.7-Java8.jar" />
+		<IkvmReference Include="neqsim-2.5.5-Java8.jar" />
 	</ItemGroup>
 
 </Project>
