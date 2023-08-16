@@ -8,7 +8,7 @@ using Office = Microsoft.Office.Core;
 
 namespace NeqSimExcel
 {
-    public partial class hydrate
+    public partial class Hydrate
     {
         private void Sheet4_Startup(object sender, EventArgs e)
         {
@@ -26,14 +26,14 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             this.Startup += new System.EventHandler(this.Sheet4_Startup);
 
         }
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             var rangeClear = Range["D2", "N300"];
             rangeClear.Clear();
@@ -56,7 +56,7 @@ namespace NeqSimExcel
             thermoSystem.setHydrateCheck(true);
             var range = Range["A2", "A100"];
             var number = 1;
-            int writeStartCell = 1, writeEndCell = 8;
+            int writeStartCell = 1;
 
             foreach (Range r in range.Cells)
             {
@@ -67,13 +67,13 @@ namespace NeqSimExcel
                     thermoSystem.setPressure(r.Value2);
                     var ops = new ThermodynamicOperations(thermoSystem);
                     ops.hydrateFormationTemperature();
-                    var textVar = "B" + number;
+                    var textVar = "B" + number.ToString();
                     Range[textVar].Value2 = thermoSystem.getTemperature() - 273.15;
 
                     var table = thermoSystem.createTable("fluid");
                     var rows = table.Length;
                     var columns = table[1].Length;
-                    writeEndCell = writeStartCell + rows;
+                    int writeEndCell = writeStartCell + rows;
 
                     var startCell = Cells[writeStartCell, 7];
                     var endCell = Cells[writeEndCell - 1, columns + 6];

@@ -15,7 +15,7 @@ namespace NeqSimExcel {
     /// 
     [Microsoft.VisualStudio.Tools.Applications.Runtime.StartupObjectAttribute(16)]
     [global::System.Security.Permissions.PermissionSetAttribute(global::System.Security.Permissions.SecurityAction.Demand, Name="FullTrust")]
-    public sealed partial class hydrate : Microsoft.Office.Tools.Excel.WorksheetBase {
+    public sealed partial class Hydrate : Microsoft.Office.Tools.Excel.WorksheetBase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "17.0.0.0")]
         private global::System.Object missing = global::System.Type.Missing;
@@ -25,7 +25,7 @@ namespace NeqSimExcel {
         /// 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public hydrate(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
+        public Hydrate(global::Microsoft.Office.Tools.Excel.Factory factory, global::System.IServiceProvider serviceProvider) : 
                 base(factory, serviceProvider, "Sheet4", "Sheet4") {
         }
         
@@ -35,7 +35,7 @@ namespace NeqSimExcel {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void Initialize() {
             base.Initialize();
-            Globals.hydrate = this;
+            Globals.Hydrate = this;
             global::System.Windows.Forms.Application.EnableVisualStyles();
             this.InitializeCachedData();
             this.InitializeControls();
@@ -163,15 +163,15 @@ namespace NeqSimExcel {
     
     internal sealed partial class Globals {
         
-        private static hydrate _hydrate;
+        private static Hydrate _Hydrate;
         
-        internal static hydrate hydrate {
+        internal static Hydrate Hydrate {
             get {
-                return _hydrate;
+                return _Hydrate;
             }
             set {
-                if ((_hydrate == null)) {
-                    _hydrate = value;
+                if ((_Hydrate == null)) {
+                    _Hydrate = value;
                 }
                 else {
                     throw new System.NotSupportedException();

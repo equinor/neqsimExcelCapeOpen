@@ -34,7 +34,7 @@ namespace NeqSimRegistration
             {
                 Console.WriteLine("start creating directory for neqsim fluid files....");
                 string filePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-                filePath = filePath + "/AppData/Roaming/neqsim/fluids/";
+                filePath += "/AppData/Roaming/neqsim/fluids/";
                 if (!Directory.Exists(filePath))
                 {
                     DirectoryInfo di = Directory.CreateDirectory(filePath);

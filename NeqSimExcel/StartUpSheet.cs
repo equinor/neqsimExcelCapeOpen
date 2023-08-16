@@ -13,7 +13,7 @@ namespace NeqSimExcel
             Globals.Olga.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet6.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet17.Visible = XlSheetVisibility.xlSheetHidden;
-            Globals.hydrate.Visible = XlSheetVisibility.xlSheetHidden;
+            Globals.Hydrate.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet10.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet11.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet18.Visible = XlSheetVisibility.xlSheetHidden;
@@ -34,6 +34,7 @@ namespace NeqSimExcel
             Globals.Sheet28.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet29.Visible = XlSheetVisibility.xlSheetHidden;
             Globals.Sheet30.Visible = XlSheetVisibility.xlSheetHidden;
+            Globals.Sheet16.Visible = XlSheetVisibility.xlSheetHidden;
         }
 
         private void Sheet12_Shutdown(object sender, EventArgs e)
@@ -48,15 +49,15 @@ namespace NeqSimExcel
         /// </summary>
         private void InternalStartup()
         {
-            this.activateOperationsCheckBox.CheckedChanged += new System.EventHandler(this.activateOperationsCheckBox_CheckedChanged);
-            this.activatePVTcheckBox.CheckedChanged += new System.EventHandler(this.activatePVTcheckBox_CheckedChanged);
-            this.exportCheckBox.CheckedChanged += new System.EventHandler(this.exportCheckBox_CheckedChanged);
+            this.activateOperationsCheckBox.CheckedChanged += new System.EventHandler(this.ActivateOperationsCheckBox_CheckedChanged);
+            this.activatePVTcheckBox.CheckedChanged += new System.EventHandler(this.ActivatePVTcheckBox_CheckedChanged);
+            this.exportCheckBox.CheckedChanged += new System.EventHandler(this.ExportCheckBox_CheckedChanged);
             this.RFOCheckBox.CheckedChanged += new System.EventHandler(this.RFOCheckBox_CheckedChanged);
-            this.activateFACheckBox.CheckedChanged += new System.EventHandler(this.activateFACheckBox_CheckedChanged);
-            this.advancedCheckBox.CheckedChanged += new System.EventHandler(this.advancedCheckBox_CheckedChanged);
-            this.activateFluidOperationCheckBox.CheckedChanged += new System.EventHandler(this.activateFluidOperationCheckBox_CheckedChanged);
-            this.unitOperationcheckBox.CheckedChanged += new System.EventHandler(this.unitOperationcheckBox_CheckedChanged);
-            this.processCheckBox.CheckedChanged += new System.EventHandler(this.processCheckBox_CheckedChanged);
+            this.activateFACheckBox.CheckedChanged += new System.EventHandler(this.ActivateFACheckBox_CheckedChanged);
+            this.advancedCheckBox.CheckedChanged += new System.EventHandler(this.AdvancedCheckBox_CheckedChanged);
+            this.activateFluidOperationCheckBox.CheckedChanged += new System.EventHandler(this.ActivateFluidOperationCheckBox_CheckedChanged);
+            this.unitOperationcheckBox.CheckedChanged += new System.EventHandler(this.UnitOperationcheckBox_CheckedChanged);
+            this.processCheckBox.CheckedChanged += new System.EventHandler(this.ProcessCheckBox_CheckedChanged);
             this.Startup += new System.EventHandler(this.Sheet12_Startup);
             this.Shutdown += new System.EventHandler(this.Sheet12_Shutdown);
 
@@ -64,7 +65,7 @@ namespace NeqSimExcel
 
         #endregion
 
-        private void activateOperationsCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ActivateOperationsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (activateOperationsCheckBox.Checked)
             {
@@ -89,7 +90,7 @@ namespace NeqSimExcel
 
         }
 
-        private void activatePVTcheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ActivatePVTcheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (activatePVTcheckBox.Checked)
             {
@@ -103,7 +104,7 @@ namespace NeqSimExcel
             }
         }
 
-        private void exportCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ExportCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (exportCheckBox.Checked)
             {
@@ -127,23 +128,23 @@ namespace NeqSimExcel
                 Globals.Sheet17.Visible = XlSheetVisibility.xlSheetHidden;
         }
 
-        private void activateFACheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ActivateFACheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (activateFACheckBox.Checked)
             {
-                Globals.hydrate.Visible = XlSheetVisibility.xlSheetVisible;
+                Globals.Hydrate.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet10.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet14.Visible = XlSheetVisibility.xlSheetVisible;
             }
             else
             {
-                Globals.hydrate.Visible = XlSheetVisibility.xlSheetHidden;
+                Globals.Hydrate.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet10.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet14.Visible = XlSheetVisibility.xlSheetHidden;
             }
         }
 
-        private void advancedCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void AdvancedCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (advancedCheckBox.Checked)
             {
@@ -157,7 +158,7 @@ namespace NeqSimExcel
             }
         }
 
-        private void activateFluidOperationCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ActivateFluidOperationCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (activateFluidOperationCheckBox.Checked)
             {
@@ -177,7 +178,7 @@ namespace NeqSimExcel
             }
         }
 
-        private void unitOperationcheckBox_CheckedChanged(object sender, EventArgs e)
+        private void UnitOperationcheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (unitOperationcheckBox.Checked)
             {
@@ -193,17 +194,19 @@ namespace NeqSimExcel
             }
         }
 
-        private void processCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void ProcessCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (processCheckBox.Checked)
             {
                 Globals.SepProcessSheet.Visible = XlSheetVisibility.xlSheetVisible;
                 Globals.Sheet25.Visible = XlSheetVisibility.xlSheetVisible;
+                Globals.Sheet16.Visible = XlSheetVisibility.xlSheetVisible;
             }
             else
             {
                 Globals.SepProcessSheet.Visible = XlSheetVisibility.xlSheetHidden;
                 Globals.Sheet25.Visible = XlSheetVisibility.xlSheetHidden;
+                Globals.Sheet16.Visible = XlSheetVisibility.xlSheetHidden;
             }
         }
     }

@@ -1,10 +1,12 @@
 ﻿using neqsim.thermo.system;
+using org.apache.logging.log4j.core.appender;
+using org.apache.logging.log4j.core.layout;
 
 namespace NeqSimExcel
 {
     public static class NeqSimThermoSystem
     {
-        private static SystemInterface thermoSystem = new SystemSrkEos(273, 1.0);
+        private static SystemInterface thermoSystem;// = new SystemSrkEos(273, 1.0);
 
         public static string LocalFilePath { get; set; } = null;
 

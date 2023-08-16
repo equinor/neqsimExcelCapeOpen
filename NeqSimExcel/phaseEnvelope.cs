@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-using ikvm.extensions;
+//using ikvm.extensions;
 using Microsoft.Office.Interop.Excel;
 using neqsim.thermo.system;
 using neqsim.thermodynamicOperations;
@@ -150,7 +150,7 @@ namespace NeqSimExcel
                     }
                     catch(Exception er)
                     {
-                        er.printStackTrace();
+                        //er.printStackTrace();
                     }
 
                     var bubTPoints = ops.get("bubT");
@@ -165,7 +165,7 @@ namespace NeqSimExcel
                     }
                     catch(Exception err)
                     {
-                        err.printStackTrace();
+                     //   err.printStackTrace();
                     }
 
                     var criticalPoint = ops.get("criticalPoint1");

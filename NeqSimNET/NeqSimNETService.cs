@@ -237,7 +237,7 @@ namespace NeqSimNET
                     fugacityCoef[i] =
                         Math.Exp(1.0 + thermoSystem.getPhase(0).getComponent(i).getLogFugacityCoefficient());
                 else
-                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getFugacityCoefficient();
+                    fugacityCoef[i] = thermoSystem.getPhase(0).getComponent(i).getLogFugacityCoefficient();
 
             return fugacityCoef;
         }
