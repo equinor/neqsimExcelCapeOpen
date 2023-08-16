@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapeOpenThermoLib", "NeqSimCapeOpen\CapeOpenThermoLib.csproj", "{51856C94-2811-4175-9D84-B221AD786B2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{658BF43C-1523-4315-B58A-4E4F15D15818} = {658BF43C-1523-4315-B58A-4E4F15D15818}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSimExcel", "NeqSimExcel\NeqSimExcel.csproj", "{F9DCF507-D12A-4DC9-A4E5-A338629A42E7}"
 EndProject
@@ -15,7 +18,7 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NeqSimInstaller", "NeqSimIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeqSim.NET", "NeqSimNET\NeqSim.NET.csproj", "{658BF43C-1523-4315-B58A-4E4F15D15818}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeqSimNet3", "NeqSimNet3\NeqSimNet3.csproj", "{17AAE9D7-EF41-47FE-98DE-5931417121AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeqSimNet3", "NeqSimNet3\NeqSimNet3.csproj", "{CE5B15EB-0F1C-479D-84D8-65B0AD487898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,14 +71,14 @@ Global
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|Any CPU.Build.0 = Release|Any CPU
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|x86.ActiveCfg = Release|x86
 		{658BF43C-1523-4315-B58A-4E4F15D15818}.Release|x86.Build.0 = Release|x86
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Debug|x86.Build.0 = Debug|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Release|x86.ActiveCfg = Release|Any CPU
-		{17AAE9D7-EF41-47FE-98DE-5931417121AF}.Release|x86.Build.0 = Release|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE5B15EB-0F1C-479D-84D8-65B0AD487898}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
